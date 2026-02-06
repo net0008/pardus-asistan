@@ -92,56 +92,88 @@
         <div class="modal-content" id="mContent"></div>
     </div>
 
-    <script>
-        // İÇERİK VERİTABANI
-        const data = [
-            { id: 'usb', icon: 'fa-usb', title: 'Flash Bellek Okumuyor', steps: ['Masaüstündeki "Dosyalar" simgesine tıklayın.', 'Sol menüde cihaz adını görüp tıklayın.', 'Eğer açılmazsa "Disks" uygulamasından "Mount" (Oynat) butonuna basın.'] },
-            { id: 'sound', icon: 'fa-volume-mute', title: 'Ses Gelmiyor', steps: ['Sağ alt ses simgesinden "Sessiz" modunu kapatın.', 'Ayarlar > Ses > Çıkış Cihazı kısmını "HDMI" veya "Line Out" yapın.', 'Kabloların takılı olduğunu fiziksel kontrol edin.'] },
-            { id: 'wifi', icon: 'fa-wifi', title: 'İnternet / Fatih Ağı', steps: ['Sertifika yüklü mü? Değilse sertifika.meb.gov.tr adresinden yükleyin.', 'Sağ alt ağ simgesinden Wi-Fi\'yi kapatıp açın.', 'Fatih ağına bağlanırken TC ve Şifre ekranı gelmiyorsa tarayıcıyı açıp "google.com" yazın.'] },
-            { id: 'exe', icon: 'fa-box-open', title: 'EXE / Z-Kitap Açma', steps: ['Z-Kitap dosyasına sağ tıklayın.', '"Birlikte Aç" > "Wine Windows Program Loader" seçin.', 'Mümkünse yayınevinden Pardus uyumlu sürümü isteyin.'] },
-            { id: 'print', icon: 'fa-print', title: 'Yazıcı Tanıtma', steps: ['Ayarlar > Yazıcılar menüsüne gidin.', 'Kilidi aç (Yönetici şifresi genelde "etapadmin" veya okulun belirlediği şifredir).', '"Ekle" butonuna basıp ağdaki yazıcıyı taratın.'] },
-            { id: 'keyboard', icon: 'fa-keyboard', title: 'Ekran Klavyesi', steps: ['Sağ alt köşedeki "Erişilebilirlik" (İnsan simgesi) menüsüne tıklayın.', '"Ekran Klavyesi"ni aktif hale getirin.', 'Fiziksel klavye çalışmıyorsa USB portunu değiştirin.'] }
-        ];
+    // Değişkenler
+    let allData = [];
+    const grid = document.getElementById('menuGrid');
+    const modal = document.getElementById('detailModal');
 
-        // Sayfa Yüklendiğinde
-        const grid = document.getElementById('menuGrid');
+    // 1. Verileri JSON Dosyasından Çek
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            allData = data; // Veriyi hafızaya at
+            renderMenu(allData); // Menüyü çiz
+        })
+        .catch(error => {
+            console.error('Veri çekilemedi:', error);
+            grid.innerHTML = '<p style="text-align:center; width:100%;">Veriler yüklenirken hata oluştu.</p>';
+        });
+
+    // 2. Menüyü Ekrana Basan Fonksiyon
+    function renderMenu(items) {
+        grid.innerHTML = ''; // Önce temizle
         
-        function renderMenu(filterText = '') {
-            grid.innerHTML = '';
-            data.forEach(item => {
-                if(item.title.toLowerCase().includes(filterText.toLowerCase())) {
-                    grid.innerHTML += `
-                        <div class="card" onclick="openDetail('${item.id}')">
-                            <i class="fas ${item.icon}"></i>
-                            <span>${item.title}</span>
-                        </div>
-                    `;
-                }
-            });
-        }
-        renderMenu();
-
-        function filter(val) { renderMenu(val); }
-
-        function openDetail(id) {
-            const item = data.find(d => d.id === id);
-            document.getElementById('mTitle').innerText = item.title;
-            let html = '';
-            item.steps.forEach(s => html += `<div class="step-box">${s}</div>`);
-            document.getElementById('mContent').innerHTML = html;
-            document.getElementById('detailModal').style.display = 'block';
+        if(items.length === 0) {
+            grid.innerHTML = '<p style="text-align:center; color:#888; grid-column: 1/-1;">Sonuç bulunamadı.</p>';
+            return;
         }
 
-        function closeModal() {
-            document.getElementById('detailModal').style.display = 'none';
+        items.forEach(item => {
+            grid.innerHTML += `
+                <div class="card" onclick="openDetail('${item.id}')">
+                    <i class="fas ${item.icon}"></i>
+                    <span>${item.title}</span>
+                    <small style="display:block; font-size:0.7rem; color:#999; margin-top:5px;">
+                        ${item.windows_karsiligi.split('/')[0]}
+                    </small>
+                </div>
+            `;
+        });
+    }
+
+    // 3. Akıllı Arama Fonksiyonu (Windows Terimlerini de Arar!)
+    function filter(val) {
+        const searchTerm = val.toLowerCase();
+        
+        const filtered = allData.filter(item => {
+            // Hem başlıkta ARA, hem de Windows karşılığında ARA
+            return item.title.toLowerCase().includes(searchTerm) || 
+                   item.windows_karsiligi.toLowerCase().includes(searchTerm);
+        });
+        
+        renderMenu(filtered);
+    }
+
+    // 4. Detay Açma
+    function openDetail(id) {
+        const item = allData.find(d => d.id === id);
+        if(!item) return;
+
+        document.getElementById('mTitle').innerText = item.title;
+        
+        let html = '';
+        // Varsa Windows karşılığını da gösterelim
+        if(item.windows_karsiligi) {
+            html += `<div style="background:#e3f2fd; color:#0d47a1; padding:10px; border-radius:8px; margin-bottom:15px; font-size:0.9rem;">
+                        <i class="fab fa-windows"></i> <strong>Windows'ta:</strong> ${item.windows_karsiligi}
+                     </div>`;
         }
 
-        // PWA SERVICE WORKER KAYDI
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-            .then(() => console.log("Asistan Çevrimdışı Çalışmaya Hazır"));
-        }
-    </script>
+        item.steps.forEach(s => html += `<div class="step-box">${s}</div>`);
+        
+        document.getElementById('mContent').innerHTML = html;
+        modal.style.display = 'block';
+    }
+
+    // 5. Modalı Kapat
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    // PWA Kaydı (Aynen kalsın)
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+    }
 
 </body>
 </html>

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "usb-sorunu",
+    "category": "donanim",
+    "title": "Flash Bellek Görünmüyor",
+    "windows_karsiligi": "USB Takıldı Sesi Gelmedi / Sürücü Görünmüyor",
+    "icon": "fa-usb",
+    "steps": [
+      "Pardus'ta USB takınca bazen pencere açılmaz.",
+      "Masaüstündeki 'Ev Dizini' veya 'Dosyalar' simgesine tıklayın.",
+      "Sol menüde cihazınızın adını (Örn: KINGSTON) görüp üzerine tıklayın.",
+      "Eğer NTFS formatlıysa ve açılmıyorsa: 'Disks' uygulamasını açıp 'Oynat' (Üçgen) butonuna basarak bağlayın."
+    ]
+  },
+  {
+    "id": "ses-yok",
+    "category": "donanim",
+    "title": "Tahtadan Ses Gelmiyor",
+    "windows_karsiligi": "Ses Sürücüsü / Hoparlör Ayarı",
+    "icon": "fa-volume-mute",
+    "steps": [
+      "Sağ alt köşedeki ses simgesine tıklayın. 'Sessiz' (Mute) kutucuğunun işaretli OLMADIĞINDAN emin olun.",
+      "Ayarlar > Ses > Çıkış Cihazı menüsüne gidin.",
+      "'HDMI / DisplayPort' veya 'Line Out' seçeneğini seçin. Yanlışlıkla 'Dummy Output' veya 'Kulaklık' seçildiyse ses gelmez."
+    ]
+  },
+  {
+    "id": "libre-writer",
+    "category": "ofis",
+    "title": "Word Dosyası Açma (Writer)",
+    "windows_karsiligi": "Microsoft Word / Ofis Programı",
+    "icon": "fa-file-word",
+    "steps": [
+      "Pardus'ta Word'ün karşılığı 'LibreOffice Writer'dır.",
+      "Mevcut .docx dosyalarınızı sorunsuz açar.",
+      "Kaydederken: Dosya > Farklı Kaydet > 'Word 2007-365 (.docx)' seçerseniz, dosyanızı Windows kullanan arkadaşlarınız da açabilir."
+    ]
+  },
+  {
+    "id": "libre-calc",
+    "category": "ofis",
+    "title": "Excel Dosyası Açma (Calc)",
+    "windows_karsiligi": "Microsoft Excel / Tablo",
+    "icon": "fa-file-excel",
+    "steps": [
+      "Excel'in karşılığı 'LibreOffice Calc' programıdır.",
+      "Formüllerin %90'ı (Topla, Ortalama vb.) aynıdır.",
+      "Hücre biçimlendirmek için sağ tık > 'Hücreleri Biçimlendir' demeniz yeterlidir."
+    ]
+  },
+  {
+    "id": "z-kitap",
+    "category": "uygulama",
+    "title": "Z-Kitap (EXE) Çalıştırma",
+    "windows_karsiligi": "Program Kurma / EXE Açma",
+    "icon": "fa-book-reader",
+    "steps": [
+      "Pardus .exe dosyalarını doğrudan tanımaz.",
+      "Dosyaya sağ tıklayın > 'Birlikte Aç' > 'Wine Windows Program Loader' seçin.",
+      "Eğer açılmazsa: Yayınevinin sitesinden 'Pardus/Linux' uyumlu sürümü (genelde .deb uzantılı) indirin."
+    ]
+  },
+  {
+    "id": "wifi-sertifika",
+    "category": "internet",
+    "title": "Fatih Ağına Bağlanma",
+    "windows_karsiligi": "İnternet Yok / Wi-Fi Ünlem İşareti",
+    "icon": "fa-wifi",
+    "steps": [
+      "MEB Sertifikası yüklü değilse internete giremezsiniz.",
+      "sertifika.meb.gov.tr adresinden sertifikayı indirin.",
+      "İnen dosyaya çift tıklayıp kurun veya tarayıcı ayarlarına gidip 'Sertifikaları Yönet' kısmından içe aktarın."
+    ]
+  },
+  {
+    "id": "kilit-ekrani",
+    "category": "sistem",
+    "title": "Ekran Sürekli Kapanıyor",
+    "windows_karsiligi": "Güç Seçenekleri / Uyku Modu",
+    "icon": "fa-clock",
+    "steps": [
+      "Ayarlar > Güç Yöneticisi menüsüne gidin.",
+      "'Ekran' sekmesinde 'Şu kadar süre sonra ekranı kapat' seçeneğini en sona çekip 'Asla' yapın.",
+      "Böylece ders anlatırken tahta kararmayacaktır."
+    ]
+  }
+]
