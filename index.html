@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#0047ba"> <title>Pardus Asistan</title>
+    <meta name="theme-color" content="#0047ba"> 
+    <title>Pardus Asistan</title>
     
     <link rel="manifest" href="manifest.json">
     
@@ -12,7 +13,26 @@
     
     <style>
         :root { --pardus-blue: #0047ba; --bg-gray: #f4f6f8; }
-        body { margin: 0; font-family: 'Roboto', sans-serif; background: var(--bg-gray); color: #333; padding-bottom: 20px;}
+        
+        body { 
+            margin: 0; 
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg-gray);
+            color: #333;
+            padding-bottom: 80px; /* Alt menü için boşluk */
+            
+            /* Masaüstünde mobil gibi görünmesi için */
+            max-width: 600px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #fff;
+            border-left: 1px solid #e0e0e0;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        /* HTML arka planı (Body dışı) */
+        html { background-color: #f0f2f5; }
         
         /* Header */
         .app-header {
@@ -30,13 +50,16 @@
             cursor: pointer; display: none; /* JS ile gösterilecek */
         }
 
-        /* Arama */
+        /* Arama Kutusu (Negatif Margin ile Yukarı Çekme) */
         .search-box {
-            margin: -25px 20px 20px; position: relative;
+            margin: -25px 20px 20px; 
+            position: relative;
+            z-index: 10; /* Header'ın üstünde kalsın */
         }
         .search-box input {
             width: 100%; padding: 15px 20px 15px 50px; border: none; border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08); font-size: 1rem; outline: none; box-sizing: border-box;
+            background: white;
         }
         .search-box i { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: #999; }
 
@@ -45,106 +68,54 @@
         .card {
             background: white; padding: 20px; border-radius: 15px; text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.03); transition: 0.2s; cursor: pointer;
+            border: 1px solid #eee;
         }
         .card:active { transform: scale(0.96); background: #f0f0f0; }
         .card i { font-size: 2rem; color: var(--pardus-blue); margin-bottom: 10px; }
-        .card span { display: block; font-weight: 600; font-size: 0.9rem; }
+        .card span { display: block; font-weight: 600; font-size: 0.9rem; color: #444; }
+
+        /* Reklam Alanı */
+        .ad-banner {
+            width: 100%; height: 60px; background-color: #f5f5f5;
+            margin-bottom: 20px; display: flex; align-items: center; justify-content: center;
+            color: #999; font-size: 0.8rem; border-radius: 12px; border: 2px dashed #ddd;
+        }
+
+        /* Alt Menü (Sticky Footer) */
+        .bottom-nav {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            height: 60px; background: white; display: flex; justify-content: space-around; align-items: center;
+            border-top: 1px solid #ddd; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 999;
+            max-width: 600px; margin: 0 auto; /* Masaüstü hizalama */
+        }
+        .nav-item { text-align: center; color: #888; cursor: pointer; flex: 1; }
+        .nav-item i { font-size: 1.2rem; margin-bottom: 2px; display: block; }
+        .nav-item span { font-size: 0.7rem; }
+        .nav-item.active { color: var(--pardus-blue); font-weight: bold; }
 
         /* Modal (Detay Ekranı) */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: white; z-index: 1000; display: none; overflow-y: auto;
             animation: slideIn 0.3s ease;
+            /* Modal da masaüstünde 600px olsun */
+            max-width: 600px; margin: 0 auto; left: 50%; transform: translateX(-50%);
         }
+        /* Animasyon sırasında transform çakışmasını önlemek için */
+        @keyframes slideIn { 
+            from { top: 100%; } 
+            to { top: 0; } 
+        }
+
         .modal-nav {
             padding: 15px; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 15px;
-            position: sticky; top: 0; background: white;
+            position: sticky; top: 0; background: white; z-index: 1001;
         }
         .modal-content { padding: 20px; line-height: 1.6; }
         .step-box { background: #f9f9f9; padding: 15px; border-left: 4px solid var(--pardus-blue); margin-bottom: 15px; border-radius: 4px; }
-        
-        @keyframes slideIn { from { transform: translateY(100%); } to { transform: translateY(0); } }
-        /* --- YENİ EKLENEN STİLLER --- */
-
-/* 1. Reklam/Duyuru Alanı (Banner) */
-.ad-banner {
-    width: 100%;
-    height: 60px; /* Standart mobil reklam yüksekliği */
-    background-color: #e0e0e0;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #757575;
-    font-size: 0.8rem;
-    border-radius: 8px;
-    border: 1px dashed #999;
-}
-
-/* 2. Alt Menü (Sticky Footer) - Instagram gibi sabit durur */
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0; 
-    right: 0; /* Genişliği ekrana yay */
-    height: 60px;
-    background: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid #ddd;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-    z-index: 999;
-    
-    /* Masaüstünde 600px'i geçmesin diye */
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.nav-item {
-    text-align: center;
-    color: #888;
-    cursor: pointer;
-    flex: 1; /* Eşit dağıl */
-}
-
-.nav-item i { font-size: 1.2rem; margin-bottom: 2px; display: block; }
-.nav-item span { font-size: 0.7rem; }
-.nav-item.active { color: var(--pardus-blue); font-weight: bold; }
-
-/* İçerik alt menünün altında kalmasın diye padding verelim */
-body { padding-bottom: 70px !important; }
     </style>
 </head>
 <body>
-    <div class="search-box">
-    <i class="fas fa-search"></i>
-    <input type="text" placeholder="Sorun ara (Ses, USB, İnternet)..." onkeyup="filter(this.value)">
-</div>
-
-<div style="padding: 0 20px;">
-    <div class="ad-banner">
-        <span>Reklam / Duyuru Alanı</span>
-    </div>
-</div>
-
-<div class="grid" id="menuGrid">
-    </div>
-
-<nav class="bottom-nav">
-    <div class="nav-item active" onclick="location.reload()">
-        <i class="fas fa-home"></i>
-        <span>Ana Sayfa</span>
-    </div>
-    <div class="nav-item">
-        <i class="fas fa-star"></i>
-        <span>Favoriler</span>
-    </div>
-    <div class="nav-item">
-        <i class="fas fa-cog"></i>
-        <span>Ayarlar</span>
-    </div>
-</nav>
 
     <div class="app-header">
         <div class="header-text">
@@ -159,12 +130,33 @@ body { padding-bottom: 70px !important; }
         <input type="text" placeholder="Sorun ara (Ses, USB, İnternet)..." onkeyup="filter(this.value)">
     </div>
 
+    <div style="padding: 0 20px;">
+        <div class="ad-banner">
+            <span><i class="fas fa-ad"></i> Reklam / Duyuru Alanı</span>
+        </div>
+    </div>
+
     <div class="grid" id="menuGrid">
         </div>
 
+    <nav class="bottom-nav">
+        <div class="nav-item active" onclick="location.reload()">
+            <i class="fas fa-home"></i>
+            <span>Ana Sayfa</span>
+        </div>
+        <div class="nav-item">
+            <i class="fas fa-star"></i>
+            <span>Favoriler</span>
+        </div>
+        <div class="nav-item">
+            <i class="fas fa-cog"></i>
+            <span>Ayarlar</span>
+        </div>
+    </nav>
+
     <div class="modal" id="detailModal">
         <div class="modal-nav">
-            <i class="fas fa-arrow-left" onclick="closeModal()" style="font-size: 1.5rem; padding: 10px;"></i>
+            <i class="fas fa-arrow-left" onclick="closeModal()" style="font-size: 1.5rem; padding: 10px; cursor: pointer;"></i>
             <h3 id="mTitle" style="margin:0">Başlık</h3>
         </div>
         <div class="modal-content" id="mContent"></div>
@@ -172,87 +164,85 @@ body { padding-bottom: 70px !important; }
 
     <script>
         // Değişkenler
-    let allData = [];
-    const grid = document.getElementById('menuGrid');
-    const modal = document.getElementById('detailModal');
+        let allData = [];
+        const grid = document.getElementById('menuGrid');
+        const modal = document.getElementById('detailModal');
 
-    // 1. Verileri JSON Dosyasından Çek
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            allData = data; // Veriyi hafızaya at
-            renderMenu(allData); // Menüyü çiz
-        })
-        .catch(error => {
-            console.error('Veri çekilemedi:', error);
-            grid.innerHTML = '<p style="text-align:center; width:100%;">Veriler yüklenirken hata oluştu.</p>';
-        });
+        // 1. Verileri JSON Dosyasından Çek
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                allData = data;
+                renderMenu(allData);
+            })
+            .catch(error => {
+                console.error('Veri çekilemedi:', error);
+                grid.innerHTML = '<p style="text-align:center; width:100%; grid-column: 1/-1;">Veriler yüklenirken hata oluştu.</p>';
+            });
 
-    // 2. Menüyü Ekrana Basan Fonksiyon
-    function renderMenu(items) {
-        grid.innerHTML = ''; // Önce temizle
-        
-        if(items.length === 0) {
-            grid.innerHTML = '<p style="text-align:center; color:#888; grid-column: 1/-1;">Sonuç bulunamadı.</p>';
-            return;
+        // 2. Menüyü Ekrana Basan Fonksiyon
+        function renderMenu(items) {
+            grid.innerHTML = '';
+            
+            if(items.length === 0) {
+                grid.innerHTML = '<p style="text-align:center; color:#888; grid-column: 1/-1;">Sonuç bulunamadı.</p>';
+                return;
+            }
+
+            items.forEach(item => {
+                grid.innerHTML += `
+                    <div class="card" onclick="openDetail('${item.id}')">
+                        <i class="fas ${item.icon}"></i>
+                        <span>${item.title}</span>
+                        <small style="display:block; font-size:0.7rem; color:#999; margin-top:5px;">
+                            ${item.windows_karsiligi.split('/')[0]}
+                        </small>
+                    </div>
+                `;
+            });
         }
 
-        items.forEach(item => {
-            grid.innerHTML += `
-                <div class="card" onclick="openDetail('${item.id}')">
-                    <i class="fas ${item.icon}"></i>
-                    <span>${item.title}</span>
-                    <small style="display:block; font-size:0.7rem; color:#999; margin-top:5px;">
-                        ${item.windows_karsiligi.split('/')[0]}
-                    </small>
-                </div>
-            `;
-        });
-    }
-
-    // 3. Akıllı Arama Fonksiyonu (Windows Terimlerini de Arar!)
-    function filter(val) {
-        const searchTerm = val.toLowerCase();
-        
-        const filtered = allData.filter(item => {
-            // Hem başlıkta ARA, hem de Windows karşılığında ARA
-            return item.title.toLowerCase().includes(searchTerm) || 
-                   item.windows_karsiligi.toLowerCase().includes(searchTerm);
-        });
-        
-        renderMenu(filtered);
-    }
-
-    // 4. Detay Açma
-    function openDetail(id) {
-        const item = allData.find(d => d.id === id);
-        if(!item) return;
-
-        document.getElementById('mTitle').innerText = item.title;
-        
-        let html = '';
-        // Varsa Windows karşılığını da gösterelim
-        if(item.windows_karsiligi) {
-            html += `<div style="background:#e3f2fd; color:#0d47a1; padding:10px; border-radius:8px; margin-bottom:15px; font-size:0.9rem;">
-                        <i class="fab fa-windows"></i> <strong>Windows'ta:</strong> ${item.windows_karsiligi}
-                     </div>`;
+        // 3. Arama Fonksiyonu
+        function filter(val) {
+            const searchTerm = val.toLowerCase();
+            const filtered = allData.filter(item => {
+                return item.title.toLowerCase().includes(searchTerm) || 
+                       item.windows_karsiligi.toLowerCase().includes(searchTerm);
+            });
+            renderMenu(filtered);
         }
 
-        item.steps.forEach(s => html += `<div class="step-box">${s}</div>`);
-        
-        document.getElementById('mContent').innerHTML = html;
-        modal.style.display = 'block';
-    }
+        // 4. Detay Açma
+        function openDetail(id) {
+            const item = allData.find(d => d.id === id);
+            if(!item) return;
 
-    // 5. Modalı Kapat
-    function closeModal() {
-        modal.style.display = 'none';
-    }
+            document.getElementById('mTitle').innerText = item.title;
+            
+            let html = '';
+            if(item.windows_karsiligi) {
+                html += `<div style="background:#e3f2fd; color:#0d47a1; padding:10px; border-radius:8px; margin-bottom:15px; font-size:0.9rem;">
+                            <i class="fab fa-windows"></i> <strong>Windows'ta:</strong> ${item.windows_karsiligi}
+                         </div>`;
+            }
 
-    // PWA Kaydı (Aynen kalsın)
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js');
-    }
+            item.steps.forEach(s => html += `<div class="step-box">${s}</div>`);
+            document.getElementById('mContent').innerHTML = html;
+            
+            // Animasyon sorunu olmaması için display block
+            modal.style.display = 'block';
+            modal.style.animation = 'slideIn 0.3s ease forwards';
+        }
+
+        // 5. Modalı Kapat
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // PWA Kaydı
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
     </script>
 
 </body>
