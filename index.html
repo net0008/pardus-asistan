@@ -113,6 +113,31 @@
         }
         .modal-content { padding: 20px; line-height: 1.6; }
         .step-box { background: #f9f9f9; padding: 15px; border-left: 4px solid var(--pardus-blue); margin-bottom: 15px; border-radius: 4px; }
+        /* ... Diğer CSS kodlarının altına ... */
+
+/* Favori Butonu (Kartın Sağ Üstü) */
+.fav-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    color: #e0e0e0; /* Pasif renk (Gri) */
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 5; /* Yazının üstünde olsun */
+    padding: 5px; /* Tıklama alanı genişlesin */
+}
+
+/* Seçilince Sarı Olsun */
+.fav-btn.active {
+    color: #f1c40f; /* Altın Sarısı */
+}
+
+/* Kartın kendisi (Position relative eklemeliyiz ki yıldız ona göre hizalansın) */
+.card {
+    position: relative; /* EKLENDİ */
+    /* ... eski kodlar aynen kalsın ... */
+}
     </style>
 </head>
 <body>
@@ -163,86 +188,135 @@
     </div>
 
     <script>
-        // Değişkenler
-        let allData = [];
-        const grid = document.getElementById('menuGrid');
-        const modal = document.getElementById('detailModal');
+       // DEĞİŞKENLER
+    let allData = [];
+    let favorites = JSON.parse(localStorage.getItem('pardusFavs')) || []; // Hafızadan favorileri çek
+    let currentTab = 'home'; // Şu an hangi sekmedeyiz?
 
-        // 1. Verileri JSON Dosyasından Çek
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                allData = data;
-                renderMenu(allData);
-            })
-            .catch(error => {
-                console.error('Veri çekilemedi:', error);
-                grid.innerHTML = '<p style="text-align:center; width:100%; grid-column: 1/-1;">Veriler yüklenirken hata oluştu.</p>';
-            });
+    const grid = document.getElementById('menuGrid');
+    const modal = document.getElementById('detailModal');
 
-        // 2. Menüyü Ekrana Basan Fonksiyon
-        function renderMenu(items) {
-            grid.innerHTML = '';
+    // 1. VERİLERİ ÇEK
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            allData = data;
+            renderMenu(allData);
+        })
+        .catch(error => {
+            console.error('Veri hatası:', error);
+            grid.innerHTML = '<p style="text-align:center; width:100%; grid-column:1/-1">Veri yüklenemedi.</p>';
+        });
+
+    // 2. MENÜYÜ ÇİZ (Yıldız Desteğiyle)
+    function renderMenu(items) {
+        grid.innerHTML = '';
+        
+        if(items.length === 0) {
+            grid.innerHTML = '<div style="text-align:center; width:100%; grid-column:1/-1; padding:40px; color:#999;">' + 
+                             (currentTab === 'fav' ? '<i class="fas fa-star-half-alt" style="font-size:3rem; margin-bottom:10px;"></i><br>Henüz favori eklemediniz.' : 'Sonuç bulunamadı.') + 
+                             '</div>';
+            return;
+        }
+
+        items.forEach(item => {
+            // Bu ürün favorilerde var mı?
+            const isFav = favorites.includes(item.id);
+            const starClass = isFav ? 'fas fa-star active' : 'far fa-star'; // Dolu veya Boş yıldız
+
+            grid.innerHTML += `
+                <div class="card" onclick="openDetail('${item.id}')">
+                    <i class="${starClass} fav-btn" onclick="toggleFav(event, '${item.id}')"></i>
+                    
+                    <i class="fas ${item.icon}"></i>
+                    <span>${item.title}</span>
+                    <small style="display:block; font-size:0.7rem; color:#999; margin-top:5px;">
+                        ${item.windows_karsiligi.split('/')[0]}
+                    </small>
+                </div>
+            `;
+        });
+    }
+
+    // 3. FAVORİ EKLE / ÇIKAR
+    function toggleFav(e, id) {
+        e.stopPropagation(); // Karta tıklamış gibi yapma (Detay açılmasın)
+        
+        if (favorites.includes(id)) {
+            // Varsa çıkar
+            favorites = favorites.filter(favId => favId !== id);
+        } else {
+            // Yoksa ekle
+            favorites.push(id);
+        }
+
+        // Hafızaya Kaydet
+        localStorage.setItem('pardusFavs', JSON.stringify(favorites));
+
+        // Ekranı Yenile (Eğer favoriler sekmesindeysek anlık kaybolsun)
+        if (currentTab === 'fav') {
+            const favItems = allData.filter(item => favorites.includes(item.id));
+            renderMenu(favItems);
+        } else {
+            // Ana sayfadaysak sadece yıldızın rengini değiştir (Tüm listeyi çizmeye gerek yok)
+            renderMenu(allData); // Basit olsun diye şimdilik hepsini çiziyoruz
+        }
+    }
+
+    // 4. SEKME DEĞİŞTİR (Ana Sayfa <-> Favoriler)
+    function switchTab(tab) {
+        currentTab = tab;
+        
+        // Buton renklerini ayarla
+        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+        if(tab === 'home') document.getElementById('btnHome').classList.add('active');
+        if(tab === 'fav') document.getElementById('btnFav').classList.add('active');
+
+        // İçeriği filtrele
+        if (tab === 'home') {
+            document.querySelector('.search-box').style.display = 'block'; // Aramayı göster
+            document.querySelector('.ad-banner').style.display = 'flex';   // Reklamı göster
+            renderMenu(allData);
+        } else if (tab === 'fav') {
+            document.querySelector('.search-box').style.display = 'none';  // Aramayı gizle
+            document.querySelector('.ad-banner').style.display = 'none';   // Reklamı gizle
             
-            if(items.length === 0) {
-                grid.innerHTML = '<p style="text-align:center; color:#888; grid-column: 1/-1;">Sonuç bulunamadı.</p>';
-                return;
-            }
-
-            items.forEach(item => {
-                grid.innerHTML += `
-                    <div class="card" onclick="openDetail('${item.id}')">
-                        <i class="fas ${item.icon}"></i>
-                        <span>${item.title}</span>
-                        <small style="display:block; font-size:0.7rem; color:#999; margin-top:5px;">
-                            ${item.windows_karsiligi.split('/')[0]}
-                        </small>
-                    </div>
-                `;
-            });
+            // Sadece favori olanları filtrele
+            const favItems = allData.filter(item => favorites.includes(item.id));
+            renderMenu(favItems);
         }
+    }
 
-        // 3. Arama Fonksiyonu
-        function filter(val) {
-            const searchTerm = val.toLowerCase();
-            const filtered = allData.filter(item => {
-                return item.title.toLowerCase().includes(searchTerm) || 
-                       item.windows_karsiligi.toLowerCase().includes(searchTerm);
-            });
-            renderMenu(filtered);
+    // 5. ARAMA & DETAY (Eski kodlar)
+    function filter(val) {
+        if(currentTab === 'fav') return; // Favorilerde arama yapma
+        const searchTerm = val.toLowerCase();
+        const filtered = allData.filter(item => {
+            return item.title.toLowerCase().includes(searchTerm) || 
+                   item.windows_karsiligi.toLowerCase().includes(searchTerm);
+        });
+        renderMenu(filtered);
+    }
+
+    function openDetail(id) {
+        const item = allData.find(d => d.id === id);
+        if(!item) return;
+        document.getElementById('mTitle').innerText = item.title;
+        let html = '';
+        if(item.windows_karsiligi) {
+            html += `<div style="background:#e3f2fd; color:#0d47a1; padding:10px; border-radius:8px; margin-bottom:15px; font-size:0.9rem;">
+                        <i class="fab fa-windows"></i> <strong>Windows'ta:</strong> ${item.windows_karsiligi}
+                     </div>`;
         }
+        item.steps.forEach(s => html += `<div class="step-box">${s}</div>`);
+        document.getElementById('mContent').innerHTML = html;
+        modal.style.display = 'block';
+        modal.style.animation = 'slideIn 0.3s ease forwards';
+    }
 
-        // 4. Detay Açma
-        function openDetail(id) {
-            const item = allData.find(d => d.id === id);
-            if(!item) return;
-
-            document.getElementById('mTitle').innerText = item.title;
-            
-            let html = '';
-            if(item.windows_karsiligi) {
-                html += `<div style="background:#e3f2fd; color:#0d47a1; padding:10px; border-radius:8px; margin-bottom:15px; font-size:0.9rem;">
-                            <i class="fab fa-windows"></i> <strong>Windows'ta:</strong> ${item.windows_karsiligi}
-                         </div>`;
-            }
-
-            item.steps.forEach(s => html += `<div class="step-box">${s}</div>`);
-            document.getElementById('mContent').innerHTML = html;
-            
-            // Animasyon sorunu olmaması için display block
-            modal.style.display = 'block';
-            modal.style.animation = 'slideIn 0.3s ease forwards';
-        }
-
-        // 5. Modalı Kapat
-        function closeModal() {
-            modal.style.display = 'none';
-        }
-
-        // PWA Kaydı
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js');
-        }
+    function closeModal() { modal.style.display = 'none'; }
+    
+    if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js'); }
     </script>
 
 </body>
