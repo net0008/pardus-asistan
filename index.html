@@ -64,9 +64,87 @@
         .step-box { background: #f9f9f9; padding: 15px; border-left: 4px solid var(--pardus-blue); margin-bottom: 15px; border-radius: 4px; }
         
         @keyframes slideIn { from { transform: translateY(100%); } to { transform: translateY(0); } }
+        /* --- YENİ EKLENEN STİLLER --- */
+
+/* 1. Reklam/Duyuru Alanı (Banner) */
+.ad-banner {
+    width: 100%;
+    height: 60px; /* Standart mobil reklam yüksekliği */
+    background-color: #e0e0e0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #757575;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    border: 1px dashed #999;
+}
+
+/* 2. Alt Menü (Sticky Footer) - Instagram gibi sabit durur */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0; 
+    right: 0; /* Genişliği ekrana yay */
+    height: 60px;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    z-index: 999;
+    
+    /* Masaüstünde 600px'i geçmesin diye */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.nav-item {
+    text-align: center;
+    color: #888;
+    cursor: pointer;
+    flex: 1; /* Eşit dağıl */
+}
+
+.nav-item i { font-size: 1.2rem; margin-bottom: 2px; display: block; }
+.nav-item span { font-size: 0.7rem; }
+.nav-item.active { color: var(--pardus-blue); font-weight: bold; }
+
+/* İçerik alt menünün altında kalmasın diye padding verelim */
+body { padding-bottom: 70px !important; }
     </style>
 </head>
 <body>
+    <div class="search-box">
+    <i class="fas fa-search"></i>
+    <input type="text" placeholder="Sorun ara (Ses, USB, İnternet)..." onkeyup="filter(this.value)">
+</div>
+
+<div style="padding: 0 20px;">
+    <div class="ad-banner">
+        <span>Reklam / Duyuru Alanı</span>
+    </div>
+</div>
+
+<div class="grid" id="menuGrid">
+    </div>
+
+<nav class="bottom-nav">
+    <div class="nav-item active" onclick="location.reload()">
+        <i class="fas fa-home"></i>
+        <span>Ana Sayfa</span>
+    </div>
+    <div class="nav-item">
+        <i class="fas fa-star"></i>
+        <span>Favoriler</span>
+    </div>
+    <div class="nav-item">
+        <i class="fas fa-cog"></i>
+        <span>Ayarlar</span>
+    </div>
+</nav>
 
     <div class="app-header">
         <div class="header-text">
