@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pardus-rehber-v2'; // Versiyonu v2 yaptık ki tarayıcı yenilesin
+const CACHE_NAME = 'pardus-rehber-v3'; // Versiyonu v3 yaptık!
 const ASSETS = [
   '/',
   '/index.html',
@@ -11,14 +11,12 @@ const ASSETS = [
   'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'
 ];
 
-// Yükleme Anı (Dosyaları hafızaya at)
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
   );
 });
 
-// Çalışma Anı (İnternet yoksa hafızadan getir)
 self.addEventListener('fetch', (e) => {
   e.respondWith(
     caches.match(e.request).then((response) => response || fetch(e.request))
