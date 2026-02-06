@@ -35,21 +35,36 @@ body {
 html { background-color: #202124; } /* HTML dış arka planı */
 
 /* HEADER */
+/* style.css içinde bu bloğu bul ve güncelle */
 .app-header {
-    background: var(--pardus-blue); color: white;
+    background: var(--pardus-blue); 
+    color: white;
     padding: 30px 20px 40px 20px;
-    border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px; 
+    border-bottom-right-radius: 25px;
     box-shadow: 0 5px 15px rgba(0,71,186,0.3);
-    display: flex; align-items: center; justify-content: space-between;
+    
+    /* DEĞİŞEN KISIM BURASI: */
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; /* Eskiden space-between idi */
 }
 .header-text h1 { margin: 0; font-size: 1.4rem; }
 .header-text p { margin: 5px 0 0; opacity: 0.8; font-size: 0.85rem; }
+/* style.css içinde bu bloğu bul ve güncelle */
 .install-btn {
-    background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4);
-    color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem;
-    cursor: pointer; display: none;
+    background: rgba(255,255,255,0.2); 
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white; 
+    padding: 5px 12px; 
+    border-radius: 20px; 
+    font-size: 0.75rem;
+    cursor: pointer; 
+    display: none;
+    
+    /* YENİ EKLENEN SATIR: */
+    margin-left: auto; /* Bu kod butonu en sağa iter */
 }
-
 /* ARAMA KUTUSU */
 .search-box {
     margin: -25px 20px 20px; 
@@ -127,7 +142,7 @@ html { background-color: #202124; } /* HTML dış arka planı */
 .setting-item {
     background: var(--card-bg);
     padding: 15px; border-radius: 12px;
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; justify-content: flex-start; align-items: center;
     margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 /* Switch CSS */
