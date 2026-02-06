@@ -12,78 +12,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-       /* MEVCUT :root kısmını bununla değiştir */
-:root { 
-    --pardus-blue: #0047ba; 
-    --bg-gray: #f4f6f8; 
-    --text-color: #333;
-    --card-bg: #fff;
-}
+        /* --- TEMEL DEĞİŞKENLER --- */
+        :root { 
+            --pardus-blue: #0047ba; 
+            --bg-gray: #f4f6f8; 
+            --text-color: #333;
+            --card-bg: #fff;
+        }
 
-/* Koyu Tema Değişkenleri */
-body.dark-mode {
-    --bg-gray: #121212;      /* Simsiyah arka plan */
-    --text-color: #e0e0e0;   /* Açık gri yazı */
-    --card-bg: #1e1e1e;      /* Koyu gri kartlar */
-}
+        /* KOYU TEMA (DARK MODE) */
+        body.dark-mode {
+            --bg-gray: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+        }
 
-/* Genel Yazı Rengi Ayarı (Body içine eklemiş olacağız) */
-body {
-    /* ... eski kodların aynen kalsın ... */
-    color: var(--text-color); /* Rengi değişkenden al */
-    transition: background 0.3s, color 0.3s; /* Yumuşak geçiş */
-}
+        /* GENEL AYARLAR */
+        body { 
+            margin: 0; 
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg-gray);
+            color: var(--text-color);
+            padding-bottom: 80px; /* Alt menü boşluğu */
+            transition: background 0.3s, color 0.3s;
+            
+            /* Masaüstü Görünüm Sınırlaması */
+            max-width: 600px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: var(--bg-gray); /* İçerik rengi */
+            border-left: 1px solid #333; /* Sınır belli olsun */
+            border-right: 1px solid #333;
+        }
 
-/* Kartların arka planını değişkene bağla */
-.card {
-    background: var(--card-bg); /* Değişti */
-    border: none; /* Çizgiyi kaldıralım, karanlık modda kötü durur */
-    /* ... diğer ayarlar kalsın ... */
-}
-
-/* Arama kutusu karanlık mod uyumu */
-.search-box input {
-    background: var(--card-bg);
-    color: var(--text-color);
-}
-
-/* Ayarlar Sayfası Stili (YENİ) */
-.settings-container {
-    padding: 20px;
-    display: none; /* Başlangıçta gizli */
-}
-
-.setting-item {
-    background: var(--card-bg);
-    padding: 15px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-/* Toggle Switch (Açma Kapama Düğmesi) */
-.switch {
-    position: relative; display: inline-block; width: 50px; height: 26px;
-}
-.switch input { opacity: 0; width: 0; height: 0; }
-.slider {
-    position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #ccc; transition: .4s; border-radius: 34px;
-}
-.slider:before {
-    position: absolute; content: ""; height: 20px; width: 20px; left: 3px; bottom: 3px;
-    background-color: white; transition: .4s; border-radius: 50%;
-}
-input:checked + .slider { background-color: var(--pardus-blue); }
-input:checked + .slider:before { transform: translateX(24px); }
-
-        /* HTML arka planı (Body dışı) */
-        html { background-color: #f0f2f5; }
+        html { background-color: #202124; } /* HTML dış arka planı */
         
-        /* Header */
+        /* HEADER */
         .app-header {
             background: var(--pardus-blue); color: white;
             padding: 30px 20px 40px 20px;
@@ -96,97 +61,97 @@ input:checked + .slider:before { transform: translateX(24px); }
         .install-btn {
             background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4);
             color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem;
-            cursor: pointer; display: none; /* JS ile gösterilecek */
+            cursor: pointer; display: none;
         }
 
-        /* Arama Kutusu (Negatif Margin ile Yukarı Çekme) */
+        /* ARAMA KUTUSU */
         .search-box {
             margin: -25px 20px 20px; 
             position: relative;
-            z-index: 10; /* Header'ın üstünde kalsın */
+            z-index: 10;
         }
         .search-box input {
             width: 100%; padding: 15px 20px 15px 50px; border: none; border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08); font-size: 1rem; outline: none; box-sizing: border-box;
-            background: white;
+            background: var(--card-bg);
+            color: var(--text-color);
+            transition: 0.3s;
         }
         .search-box i { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: #999; }
 
-        /* Kategoriler */
+        /* KARTLAR (GRID) */
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 20px; }
+        
         .card {
-            background: white; padding: 20px; border-radius: 15px; text-align: center;
+            background: var(--card-bg); 
+            padding: 20px; border-radius: 15px; text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.03); transition: 0.2s; cursor: pointer;
-            border: 1px solid #eee;
+            position: relative; /* Yıldız için gerekli */
         }
-        .card:active { transform: scale(0.96); background: #f0f0f0; }
-        .card i { font-size: 2rem; color: var(--pardus-blue); margin-bottom: 10px; }
-        .card span { display: block; font-weight: 600; font-size: 0.9rem; color: #444; }
+        .card:active { transform: scale(0.96); opacity: 0.8; }
+        .card i.main-icon { font-size: 2rem; color: var(--pardus-blue); margin-bottom: 10px; }
+        .card span { display: block; font-weight: 600; font-size: 0.9rem; }
 
-        /* Reklam Alanı */
+        /* FAVORİ YILDIZI */
+        .fav-btn {
+            position: absolute; top: 10px; right: 10px;
+            font-size: 1.2rem; color: #ccc; cursor: pointer; z-index: 5; padding: 5px;
+        }
+        .fav-btn.active { color: #f1c40f; }
+
+        /* REKLAM ALANI */
         .ad-banner {
-            width: 100%; height: 60px; background-color: #f5f5f5;
+            width: 100%; height: 60px; background-color: rgba(0,0,0,0.05);
             margin-bottom: 20px; display: flex; align-items: center; justify-content: center;
-            color: #999; font-size: 0.8rem; border-radius: 12px; border: 2px dashed #ddd;
+            color: #999; font-size: 0.8rem; border-radius: 12px; border: 2px dashed #ccc;
         }
 
-        /* Alt Menü (Sticky Footer) */
+        /* ALT MENÜ */
         .bottom-nav {
             position: fixed; bottom: 0; left: 0; right: 0;
-            height: 60px; background: white; display: flex; justify-content: space-around; align-items: center;
-            border-top: 1px solid #ddd; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 999;
-            max-width: 600px; margin: 0 auto; /* Masaüstü hizalama */
+            height: 60px; background: var(--card-bg); 
+            display: flex; justify-content: space-around; align-items: center;
+            border-top: 1px solid rgba(0,0,0,0.1); 
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 999;
+            max-width: 600px; margin: 0 auto;
         }
         .nav-item { text-align: center; color: #888; cursor: pointer; flex: 1; }
         .nav-item i { font-size: 1.2rem; margin-bottom: 2px; display: block; }
         .nav-item span { font-size: 0.7rem; }
         .nav-item.active { color: var(--pardus-blue); font-weight: bold; }
 
-        /* Modal (Detay Ekranı) */
+        /* MODAL (DETAY) */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: white; z-index: 1000; display: none; overflow-y: auto;
-            animation: slideIn 0.3s ease;
-            /* Modal da masaüstünde 600px olsun */
+            background: var(--card-bg); z-index: 1000; display: none; overflow-y: auto;
             max-width: 600px; margin: 0 auto; left: 50%; transform: translateX(-50%);
         }
-        /* Animasyon sırasında transform çakışmasını önlemek için */
-        @keyframes slideIn { 
-            from { top: 100%; } 
-            to { top: 0; } 
-        }
-
         .modal-nav {
-            padding: 15px; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 15px;
-            position: sticky; top: 0; background: white; z-index: 1001;
+            padding: 15px; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center; gap: 15px;
+            position: sticky; top: 0; background: var(--card-bg); z-index: 1001;
         }
         .modal-content { padding: 20px; line-height: 1.6; }
-        .step-box { background: #f9f9f9; padding: 15px; border-left: 4px solid var(--pardus-blue); margin-bottom: 15px; border-radius: 4px; }
-        /* ... Diğer CSS kodlarının altına ... */
+        .step-box { background: rgba(0, 71, 186, 0.1); padding: 15px; border-left: 4px solid var(--pardus-blue); margin-bottom: 15px; border-radius: 4px; }
 
-/* Favori Butonu (Kartın Sağ Üstü) */
-.fav-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.2rem;
-    color: #e0e0e0; /* Pasif renk (Gri) */
-    cursor: pointer;
-    transition: 0.2s;
-    z-index: 5; /* Yazının üstünde olsun */
-    padding: 5px; /* Tıklama alanı genişlesin */
-}
+        /* AYARLAR SAYFASI */
+        .settings-container {
+            padding: 20px;
+            display: none; /* Başlangıçta gizli */
+        }
+        .setting-item {
+            background: var(--card-bg);
+            padding: 15px; border-radius: 12px;
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        /* Switch CSS */
+        .switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
+        .slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+        input:checked + .slider { background-color: var(--pardus-blue); }
+        input:checked + .slider:before { transform: translateX(24px); }
 
-/* Seçilince Sarı Olsun */
-.fav-btn.active {
-    color: #f1c40f; /* Altın Sarısı */
-}
-
-/* Kartın kendisi (Position relative eklemeliyiz ki yıldız ona göre hizalansın) */
-.card {
-    position: relative; /* EKLENDİ */
-    /* ... eski kodlar aynen kalsın ... */
-}
     </style>
 </head>
 <body>
@@ -210,40 +175,41 @@ input:checked + .slider:before { transform: translateX(24px); }
         </div>
     </div>
 
-    <div class="grid" id="menuGrid">
-        <div class="settings-container" id="settingsView">
-    <h2 style="margin-top:0;">Uygulama Ayarları</h2>
-    
-    <div class="setting-item">
-        <div>
-            <div style="font-weight:bold;"><i class="fas fa-moon"></i> Gece Modu</div>
-            <div style="font-size:0.8rem; opacity:0.7;">Göz yormayan koyu tema</div>
-        </div>
-        <label class="switch">
-            <input type="checkbox" id="darkModeToggle" onchange="toggleTheme()">
-            <span class="slider"></span>
-        </label>
-    </div>
+    <div class="grid" id="menuGrid"></div>
 
-    <div style="text-align:center; margin-top:30px; opacity:0.5; font-size:0.8rem;">
-        <p>Pardus Asistan v1.0</p>
-        <p>Geliştirici: Hasbi Erdoğmuş</p>
-    </div>
-</div>
+    <div class="settings-container" id="settingsView">
+        <h2 style="margin-top:0;">Uygulama Ayarları</h2>
+        
+        <div class="setting-item">
+            <div>
+                <div style="font-weight:bold;"><i class="fas fa-moon"></i> Gece Modu</div>
+                <div style="font-size:0.8rem; opacity:0.7;">Göz yormayan koyu tema</div>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle" onchange="toggleTheme()">
+                <span class="slider"></span>
+            </label>
         </div>
+
+        <div style="text-align:center; margin-top:30px; opacity:0.5; font-size:0.8rem;">
+            <p>Pardus Asistan v1.0</p>
+            <p>Geliştirici: Hasbi Erdoğmuş</p>
+        </div>
+    </div>
 
     <nav class="bottom-nav">
-        <div class="nav-item active" onclick="location.reload()">
+        <div class="nav-item active" id="btnHome" onclick="switchTab('home')">
             <i class="fas fa-home"></i>
             <span>Ana Sayfa</span>
         </div>
-        <div class="nav-item">
+        <div class="nav-item" id="btnFav" onclick="switchTab('fav')">
             <i class="fas fa-star"></i>
             <span>Favoriler</span>
         </div>
-        <div class="nav-item" id="btnSettings" onclick="switchTab('settings')"> <i class="fas fa-cog"></i>
-    <span>Ayarlar</span>
-</div>
+        <div class="nav-item" id="btnSettings" onclick="switchTab('settings')">
+            <i class="fas fa-cog"></i>
+            <span>Ayarlar</span>
+        </div>
     </nav>
 
     <div class="modal" id="detailModal">
@@ -255,187 +221,169 @@ input:checked + .slider:before { transform: translateX(24px); }
     </div>
 
     <script>
-       // DEĞİŞKENLER
-    let allData = [];
-    let favorites = JSON.parse(localStorage.getItem('pardusFavs')) || []; // Hafızadan favorileri çek
-    let currentTab = 'home'; // Şu an hangi sekmedeyiz?
-
-    const grid = document.getElementById('menuGrid');
-    const modal = document.getElementById('detailModal');
-
-    // 1. VERİLERİ ÇEK
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            allData = data;
-            renderMenu(allData);
-        })
-        .catch(error => {
-            console.error('Veri hatası:', error);
-            grid.innerHTML = '<p style="text-align:center; width:100%; grid-column:1/-1">Veri yüklenemedi.</p>';
-        });
-
-    // 2. MENÜYÜ ÇİZ (Yıldız Desteğiyle)
-    function renderMenu(items) {
-        grid.innerHTML = '';
+        // --- DEĞİŞKENLER ---
+        let allData = [];
+        let favorites = JSON.parse(localStorage.getItem('pardusFavs')) || [];
+        let currentTab = 'home';
         
-        if(items.length === 0) {
-            grid.innerHTML = '<div style="text-align:center; width:100%; grid-column:1/-1; padding:40px; color:#999;">' + 
-                             (currentTab === 'fav' ? '<i class="fas fa-star-half-alt" style="font-size:3rem; margin-bottom:10px;"></i><br>Henüz favori eklemediniz.' : 'Sonuç bulunamadı.') + 
-                             '</div>';
-            return;
+        const grid = document.getElementById('menuGrid');
+        const modal = document.getElementById('detailModal');
+        const settingsView = document.getElementById('settingsView');
+        const searchBox = document.querySelector('.search-box');
+        const adBanner = document.querySelector('.ad-banner');
+
+        // --- BAŞLANGIÇ AYARLARI ---
+        // Karanlık mod kontrolü
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('darkModeToggle').checked = true;
         }
 
-        items.forEach(item => {
-            // Bu ürün favorilerde var mı?
-            const isFav = favorites.includes(item.id);
-            const starClass = isFav ? 'fas fa-star active' : 'far fa-star'; // Dolu veya Boş yıldız
+        // --- VERİ ÇEKME ---
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                allData = data;
+                renderMenu(allData);
+            })
+            .catch(error => {
+                console.error('Veri hatası:', error);
+                grid.innerHTML = '<p style="text-align:center; width:100%; grid-column:1/-1">Veri yüklenemedi.</p>';
+            });
 
-            grid.innerHTML += `
-                <div class="card" onclick="openDetail('${item.id}')">
-                    <i class="${starClass} fav-btn" onclick="toggleFav(event, '${item.id}')"></i>
-                    
-                    <i class="fas ${item.icon}"></i>
-                    <span>${item.title}</span>
-                    <small style="display:block; font-size:0.7rem; color:#999; margin-top:5px;">
-                        ${item.windows_karsiligi.split('/')[0]}
-                    </small>
-                </div>
-            `;
-        });
-    }
-
-    // 3. FAVORİ EKLE / ÇIKAR
-    function toggleFav(e, id) {
-        e.stopPropagation(); // Karta tıklamış gibi yapma (Detay açılmasın)
-        
-        if (favorites.includes(id)) {
-            // Varsa çıkar
-            favorites = favorites.filter(favId => favId !== id);
-        } else {
-            // Yoksa ekle
-            favorites.push(id);
-        }
-
-        // Hafızaya Kaydet
-        localStorage.setItem('pardusFavs', JSON.stringify(favorites));
-
-        // Ekranı Yenile (Eğer favoriler sekmesindeysek anlık kaybolsun)
-        if (currentTab === 'fav') {
-            const favItems = allData.filter(item => favorites.includes(item.id));
-            renderMenu(favItems);
-        } else {
-            // Ana sayfadaysak sadece yıldızın rengini değiştir (Tüm listeyi çizmeye gerek yok)
-            renderMenu(allData); // Basit olsun diye şimdilik hepsini çiziyoruz
-        }
-    }
-
-    // 4. SEKME DEĞİŞTİR (Ana Sayfa <-> Favoriler)
-    function switchTab(tab) {
-        currentTab = tab;
-        
-        // Buton renklerini ayarla
-        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-        if(tab === 'home') document.getElementById('btnHome').classList.add('active');
-        if(tab === 'fav') document.getElementById('btnFav').classList.add('active');
-
-        // İçeriği filtrele
-        if (tab === 'home') {
-            document.querySelector('.search-box').style.display = 'block'; // Aramayı göster
-            document.querySelector('.ad-banner').style.display = 'flex';   // Reklamı göster
-            renderMenu(allData);
-        } else if (tab === 'fav') {
-            document.querySelector('.search-box').style.display = 'none';  // Aramayı gizle
-            document.querySelector('.ad-banner').style.display = 'none';   // Reklamı gizle
+        // --- MENÜYÜ ÇİZME FONKSİYONU ---
+        function renderMenu(items) {
+            grid.innerHTML = '';
             
-            // Sadece favori olanları filtrele
-            const favItems = allData.filter(item => favorites.includes(item.id));
-            renderMenu(favItems);
+            if(items.length === 0) {
+                grid.innerHTML = '<div style="text-align:center; width:100%; grid-column:1/-1; padding:40px; color:#999;">' + 
+                                 (currentTab === 'fav' ? '<i class="fas fa-star-half-alt" style="font-size:3rem; margin-bottom:10px;"></i><br>Henüz favori eklemediniz.' : 'Sonuç bulunamadı.') + 
+                                 '</div>';
+                return;
+            }
+
+            items.forEach(item => {
+                const isFav = favorites.includes(item.id);
+                const starClass = isFav ? 'fas fa-star active' : 'far fa-star';
+
+                grid.innerHTML += `
+                    <div class="card" onclick="openDetail('${item.id}')">
+                        <i class="${starClass} fav-btn" onclick="toggleFav(event, '${item.id}')"></i>
+                        <i class="fas ${item.icon} main-icon"></i>
+                        <span>${item.title}</span>
+                        <small style="display:block; font-size:0.7rem; opacity:0.7; margin-top:5px;">
+                            ${item.windows_karsiligi.split('/')[0]}
+                        </small>
+                    </div>
+                `;
+            });
         }
-    }
 
-    // 5. ARAMA & DETAY (Eski kodlar)
-    function filter(val) {
-        if(currentTab === 'fav') return; // Favorilerde arama yapma
-        const searchTerm = val.toLowerCase();
-        const filtered = allData.filter(item => {
-            return item.title.toLowerCase().includes(searchTerm) || 
-                   item.windows_karsiligi.toLowerCase().includes(searchTerm);
-        });
-        renderMenu(filtered);
-    }
-
-    function openDetail(id) {
-        const item = allData.find(d => d.id === id);
-        if(!item) return;
-        document.getElementById('mTitle').innerText = item.title;
-        let html = '';
-        if(item.windows_karsiligi) {
-            html += `<div style="background:#e3f2fd; color:#0d47a1; padding:10px; border-radius:8px; margin-bottom:15px; font-size:0.9rem;">
-                        <i class="fab fa-windows"></i> <strong>Windows'ta:</strong> ${item.windows_karsiligi}
-                     </div>`;
+        // --- FAVORİ İŞLEMLERİ ---
+        function toggleFav(e, id) {
+            e.stopPropagation(); // Karta tıklanmasını engelle
+            
+            if (favorites.includes(id)) {
+                favorites = favorites.filter(favId => favId !== id);
+            } else {
+                favorites.push(id);
+            }
+            
+            localStorage.setItem('pardusFavs', JSON.stringify(favorites));
+            
+            // Eğer favoriler sekmesindeysek listeyi yenile
+            if (currentTab === 'fav') {
+                const favItems = allData.filter(item => favorites.includes(item.id));
+                renderMenu(favItems);
+            } else {
+                // Değilse sadece yıldızı güncelle (Basitlik için tüm menüyü yeniliyoruz)
+                renderMenu(allData);
+            }
         }
-        item.steps.forEach(s => html += `<div class="step-box">${s}</div>`);
-        document.getElementById('mContent').innerHTML = html;
-        modal.style.display = 'block';
-        modal.style.animation = 'slideIn 0.3s ease forwards';
-    }
 
-    function closeModal() { modal.style.display = 'none'; }
-    
-    if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js'); }
-// ... Eski değişkenlerin altına ekle ...
-    const settingsView = document.getElementById('settingsView');
-    
-    // BAŞLANGIÇTA TEMAYI KONTROL ET
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-        document.getElementById('darkModeToggle').checked = true;
-    }
+        // --- SEKME DEĞİŞTİRME (NAVIGASYON) ---
+        function switchTab(tab) {
+            currentTab = tab;
+            
+            // 1. Buton Aktifliği
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            if(tab === 'home') document.getElementById('btnHome').classList.add('active');
+            if(tab === 'fav') document.getElementById('btnFav').classList.add('active');
+            if(tab === 'settings') document.getElementById('btnSettings').classList.add('active');
 
-    // TEMA DEĞİŞTİRME FONKSİYONU
-    function toggleTheme() {
-        document.body.classList.toggle('dark-mode');
-        // Tercihi kaydet
-        if (document.body.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
+            // 2. Görünürlük Ayarları (Önce hepsini gizle)
+            grid.style.display = 'none';
+            settingsView.style.display = 'none';
+            searchBox.style.display = 'none';
+            adBanner.style.display = 'none';
+
+            // 3. Seçilen Sekmeyi Göster
+            if (tab === 'home') {
+                grid.style.display = 'grid';
+                searchBox.style.display = 'block';
+                adBanner.style.display = 'flex';
+                renderMenu(allData); // Tüm veriyi göster
+            } 
+            else if (tab === 'fav') {
+                grid.style.display = 'grid';
+                // Sadece favorileri filtrele
+                const favItems = allData.filter(item => favorites.includes(item.id));
+                renderMenu(favItems);
+            }
+            else if (tab === 'settings') {
+                settingsView.style.display = 'block'; // Sadece ayarları göster
+            }
         }
-    }
 
-    // SEKME DEĞİŞTİRME (GÜNCELLENMİŞ HALİ)
-    function switchTab(tab) {
-        currentTab = tab;
-        
-        // Buton renkleri
-        document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-        if(tab === 'home') document.getElementById('btnHome').classList.add('active');
-        if(tab === 'fav') document.getElementById('btnFav').classList.add('active');
-        if(tab === 'settings') document.getElementById('btnSettings').classList.add('active');
-
-        // Sayfaları Gizle/Göster
-        grid.style.display = 'none';
-        settingsView.style.display = 'none';
-        document.querySelector('.search-box').style.display = 'none';
-        document.querySelector('.ad-banner').style.display = 'none';
-
-        if (tab === 'home') {
-            grid.style.display = 'grid'; // Grid'i geri getir
-            document.querySelector('.search-box').style.display = 'block';
-            document.querySelector('.ad-banner').style.display = 'flex';
-            renderMenu(allData);
-        } 
-        else if (tab === 'fav') {
-            grid.style.display = 'grid'; // Grid'i geri getir
-            const favItems = allData.filter(item => favorites.includes(item.id));
-            renderMenu(favItems);
+        // --- TEMA DEĞİŞTİRME ---
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
         }
-        else if (tab === 'settings') {
-            settingsView.style.display = 'block'; // Sadece ayarları göster
-        }
-    }
 
+        // --- ARAMA ---
+        function filter(val) {
+            if(currentTab === 'fav') return;
+            const searchTerm = val.toLowerCase();
+            const filtered = allData.filter(item => {
+                return item.title.toLowerCase().includes(searchTerm) || 
+                       item.windows_karsiligi.toLowerCase().includes(searchTerm);
+            });
+            renderMenu(filtered);
+        }
+
+        // --- MODAL İŞLEMLERİ ---
+        function openDetail(id) {
+            const item = allData.find(d => d.id === id);
+            if(!item) return;
+
+            document.getElementById('mTitle').innerText = item.title;
+            
+            let html = '';
+            if(item.windows_karsiligi) {
+                html += `<div style="background:rgba(0, 71, 186, 0.1); color:var(--pardus-blue); padding:10px; border-radius:8px; margin-bottom:15px; font-size:0.9rem;">
+                            <i class="fab fa-windows"></i> <strong>Windows'ta:</strong> ${item.windows_karsiligi}
+                         </div>`;
+            }
+
+            item.steps.forEach(s => html += `<div class="step-box">${s}</div>`);
+            document.getElementById('mContent').innerHTML = html;
+            
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // --- PWA SERVICE WORKER ---
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
     </script>
 
 </body>
