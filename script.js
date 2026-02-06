@@ -161,3 +161,33 @@ function closeModal() {
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js');
 }
+// --- UYGULAMA YÜKLEME (INSTALL) BUTONU MANTIĞI ---
+let deferredPrompt;
+const installBtn = document.getElementById('installApp');
+
+// Tarayıcı "Yüklenebilir" sinyali verdiğinde çalışır
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Otomatik çıkan çirkin barı engelle
+    e.preventDefault();
+    // Olayı daha sonra tetiklemek için sakla
+    deferredPrompt = e;
+    // Bizim özel butonumuzu görünür yap
+    installBtn.style.display = 'block';
+});
+
+// Butona tıklandığında
+installBtn.addEventListener('click', (e) => {
+    // Butonu gizle
+    installBtn.style.display = 'none';
+    // Yükleme ekranını tetikle
+    deferredPrompt.prompt();
+    // Kullanıcının cevabını bekle
+    deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+            console.log('Kullanıcı uygulamayı yükledi');
+        } else {
+            console.log('Kullanıcı yüklemeyi reddetti');
+        }
+        deferredPrompt = null;
+    });
+});

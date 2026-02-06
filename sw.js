@@ -1,7 +1,11 @@
-const CACHE_NAME = 'pardus-rehber-v1';
+const CACHE_NAME = 'pardus-rehber-v2'; // Versiyonu v2 yaptık ki tarayıcı yenilesin
 const ASSETS = [
   '/',
   '/index.html',
+  '/style.css',
+  '/script.js',
+  '/data.json',
+  '/icon.png',
   '/manifest.json',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
   'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'
