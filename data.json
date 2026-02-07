@@ -1,629 +1,201 @@
 [
-
   {
-    "id": "etap-dokunmatik-jestler",
+    "id": "etap-panel-jestler",
     "category": "etap",
-    "title": "Sihirli Dokunuşlar (Jestler)",
-    "windows_karsiligi": "Sağ Tık / Pencere Düzeni",
+    "title": "ETA Panel ve Sihirli Dokunuşlar",
+    "windows_karsiligi": "Tablet Modu / Hızlı Erişim",
     "icon": "fa-hand-pointer",
     "steps": [
-      "**Tek Parmak:** Klasik sol tık (seçme) işlemi yapar.",
-      "**İki Parmak (Aynı Anda):** Ekrana iki parmağınızla dokunursanız **Sağ Tık** menüsü açılır.",
-      "**Üç Parmak (Kaydırma):** Bir pencereyi 3 parmakla tutup sağa veya sola sürüklerseniz, ekranı tam ortadan ikiye böler."
+      "**ETA Panel:** Ekranın kenarındaki ok işaretine basarak paneli açın. Buradan ekran görüntüsü alabilir veya sanal klavyeyi açabilirsiniz.",
+      "**İki Parmak:** Ekrana iki parmakla aynı anda dokunmak **Sağ Tık** menüsünü açar.",
+      "**Üç Parmak:** Bir pencereyi 3 parmakla tutup sağa/sola sürüklerseniz ekranı ikiye böler."
     ]
   },
   {
-    "id": "etap-usb-anahtar-yapimi",
+    "id": "etap-usb-anahtar",
     "category": "etap",
     "title": "USB Anahtar (Şifresiz Giriş)",
     "windows_karsiligi": "Windows Hello",
     "icon": "fa-key",
     "steps": [
-      "Tahtayı açarken şifre girmekle uğraşmak istemiyorsanız:",
-      "Uygulamalar menüsünden **ETA Giriş** programını açın.",
+      "Tahtayı şifresiz açmak için: Uygulamalar > **ETA Giriş** programını açın.",
       "Flash belleğinizi takın ve **Anahtar Oluştur** butonuna basın.",
-      "Artık belleği tahtaya taktığınız an oturum şifresiz açılacaktır."
+      "Artık belleği tahtaya taktığınız an oturum otomatik açılacaktır."
     ]
   },
   {
-    "id": "etap-panel-kullanimi",
-    "category": "etap",
-    "title": "ETA Panel (Yan Menü)",
-    "windows_karsiligi": "Hızlı Araçlar",
-    "icon": "fa-tools",
-    "steps": [
-      "Ekranın sağ veya sol kenarında, ortada küçük bir **Ok İşareti** (>) göreceksiniz.",
-      "Buna dokunduğunuzda **ETA Panel** açılır.",
-      "Buradan **Ekran Görüntüsü** alabilir, **Sanal Klavye**yi açabilir veya **Ekranı Karart** özelliğini kullanabilirsiniz."
-    ]
-  },
-  {
-    "id": "etap-kalibrasyon-ayari",
-    "category": "donanim",
-    "title": "Dokunmatik Sapıttı (Kalibrasyon)",
-    "windows_karsiligi": "Dokunmatik Ayarı",
-    "icon": "fa-bullseye",
-    "steps": [
-      "Eğer bastığınız yerin 2-3 cm yanını algılıyorsa:",
-      "Ayarlar > **Pardus Kalibrasyon** uygulamasını açın.",
-      "Gri ekranda çıkan **Kırmızı Hedeflere** (Köşelere ve merkeze) parmağınızla hassasça dokunun.",
-      "İşlem bitince 'Kaydet' diyerek çıkın."
-    ]
-  },
-  {
-    "id": "etap-z-kitap-sorunu",
-    "category": "uygulama",
-    "title": "Z-Kitap Açılmıyor",
-    "windows_karsiligi": "EXE Çalıştırma",
-    "icon": "fa-book",
-    "steps": [
-      "Yayınevinin **Pardus / Linux** uyumlu sürümünü (genelde .deb uzantılı) indirin.",
-      "İndirdiğiniz dosyaya çift tıklayıp **Kur** deyin.",
-      "Eğer sadece .exe varsa: Dosyaya **Sağ Tık > Birlikte Aç > Wine** seçeneğini deneyin.",
-      "**İpucu:** Fernus altyapılı Z-Kitaplar Pardus'ta sorunsuz çalışır."
-    ]
-  },
-{
-  "id": "etap-etkilesimli-tahta-dugmeleri",
-  "category": "donanim",
-  "title": "Etkileşimli Tahta Düğmeleri",
-  "windows_karsiligi": "Güç Düğmesi, Ekran Klavyesi, Windows Ink",
-  "icon": "fa-power-off",
-  "steps": [
-    "**Güç Düğmesi:** Tahtayı fiziksel olarak açmak ve kapatmak için kullanılan ana düğmedir.",
-    "**Açılış (Boot) Tuşları:** Kurulum ve USB'den başlatma işlemleri için açılış sırasında **Vestel ve Aidata** tahtalarda **F7**, **Arçelik** tahtalarda ise **F12** tuşu kullanılır [1].",
-    "**Eta Klavye Düğmeleri:** Dokunmatik ekran klavyesinde ayarları değiştirmek (çark simgesi) ve parola girişlerinde karakterleri gizlemek (**P** düğmesi) için kullanılır [2].",
-    "**Eta Kalem Araçları:** Ekran üzerinde çizim yapma, silme, renk ve kalınlık ayarlarını kontrol eden sanal düğmelerdir [2].",
-    "**Pencere Kontrol Düğmeleri:** Pencereleri kapatmak, simge durumuna küçültmek veya ekranı kaplamak için pencere başlık çubuğunda bulunan düğmelerdir [3]."
-  ]
-},
-
-
-  {
-    "id": "usb-sorunu",
-    "category": "donanim",
-    "title": "Flash Bellek Görünmüyor",
-    "windows_karsiligi": "USB Takıldı Sesi Gelmedi",
-    "icon": "fa-usb",
-    "steps": [
-      "Masaüstündeki 'Ev Dizini' veya 'Dosyalar' simgesine tıklayın.",
-      "Sol menüde cihazınızın adını (Örn: KINGSTON) görüp üzerine tıklayın.",
-      "Eğer NTFS formatlıysa ve açılmıyorsa: 'Disks' (Diskler) uygulamasını açıp 'Oynat' (Üçgen) butonuna basarak bağlayın."
-    ]
-  },
-{
-    "id": "internet-ve-ag-ayarlari",
+    "id": "genel-wifi-internet",
     "category": "internet",
-    "title": "İnternet ve Ağ Bağlantı Ayarları",
-    "windows_karsiligi": "Ağ ve İnternet Ayarları",
+    "title": "Kablosuz Ağ (Wi-Fi) ve İnternet",
+    "windows_karsiligi": "Wi-Fi Ayarları",
     "icon": "fa-wifi",
     "steps": [
-      "İnternet erişim durumunu kontrol etmek için panel üzerindeki **Ağ** simgesini (kablolu veya kablosuz) kullanın.",
-      "Kablosuz ağlara bağlanmak için listeden ağ adını seçin; daha önce bağlanılmış ağları **Bilinen Kablosuz Ağlar** menüsünden yönetebilirsiniz.",
-      "Kablolu bağlantı ayarları için **Ağ** sekmesini kullanın; burada IP adresi, DNS ve Ağ Geçidi ayarlarını **Elle** veya **Kendiliğinden (DHCP)** olarak yapılandırabilirsiniz.",
-      "VPN bağlantısı eklemek veya Ağ Vekili (Proxy) ayarlarını değiştirmek için Genel Ayarlar altındaki **Ağ** bölümünü kullanın.",
-      "İnternet bağlantısını diğer cihazlarla paylaşmak için **Kablosuz Erişim Noktası Aç (Hotspot)** seçeneğini kullanabilirsiniz."
+      "Paneldeki (Sağ alt veya üst) **Ağ/Wi-Fi** simgesine tıklayın.",
+      "Listeden okul ağını seçip şifrenizi girin.",
+      "**Gizli Ağ:** Ağ listesinde yoksa 'Gizli Ağa Bağlan' diyerek SSID ve şifreyi elle girin.",
+      "**MEB Sertifikası:** İnternet var ama siteler açılmıyorsa 'sertifika.meb.gov.tr' adresinden sertifikayı indirip çift tıklayarak kurun."
     ]
   },
-
   {
-    "id": "yazici-ekle",
+    "id": "genel-yazici-kurulum",
     "category": "donanim",
-    "title": "Yazıcı Tanıtma",
-    "windows_karsiligi": "Aygıtlar ve Yazıcılar / Sürücü",
+    "title": "Yazıcı Kurulumu (Tümü)",
+    "windows_karsiligi": "Yazıcı Ekle",
     "icon": "fa-print",
     "steps": [
-      "Başlat Menüsü > Ayarlar > Yazıcı Ayarları yolunu izleyin.",
-      "Kilit simgesine tıklayıp şifrenizi girin (Genelde: etap, pardus veya 1).",
-      "'Ekle' (+) butonuna basın. Yazıcınız USB ise listede görünür, seçip 'İleri' deyin.",
-      "Ağ yazıcısı ise 'Ağ Yazıcısı Bul' seçeneğini kullanın."
+      "**Ayarlar > Yazıcılar** (veya Yazıcı Ayarları) menüsünü açın ve kilit simgesinden şifreyi girin.",
+      "**Ekle (+)** butonuna basın. USB yazıcılar listede direkt görünür.",
+      "**Ağ Yazıcısı:** 'Ağ Yazıcısı Bul' diyerek IP adresini girin (Genelde AppSocket/HP JetDirect seçilir).",
+      "**Sürücü:** Modeliniz listede yoksa marka olarak 'Generic', model olarak **'PCL 6/PCL XL'** seçin. Çoğu okul yazıcısını çalıştırır."
     ]
   },
   {
-    "id": "ses-yok",
-    "category": "donanim",
-    "title": "Tahtadan Ses Gelmiyor",
-    "windows_karsiligi": "Ses Sürücüsü / Hoparlör",
-    "icon": "fa-volume-mute",
+    "id": "genel-uygulama-yukle",
+    "category": "uygulama",
+    "title": "Uygulama Yükleme (Mağaza)",
+    "windows_karsiligi": "Microsoft Store / Setup.exe",
+    "icon": "fa-shopping-bag",
     "steps": [
-      "Sağ alt köşedeki ses simgesine tıklayın. 'Sessiz' (Mute) kutucuğunun işaretli OLMADIĞINDAN emin olun.",
-      "Ayarlar > Ses > Çıkış Cihazı menüsüne gidin.",
-      "'HDMI / DisplayPort' veya 'Line Out' seçeneğini seçin. 'Dummy Output' seçiliyse ses gelmez."
+      "**Pardus Mağaza** (veya Yazılımlar) uygulamasını açın.",
+      "Arama kutusuna program adını yazın (Örn: Chrome, VLC, Zoom).",
+      "**Kur** butonuna basıp şifrenizi girin.",
+      "Mağazada olmayan **.deb** uzantılı dosyaları (Örn: Z-Kitaplar) indirdikten sonra çift tıklayarak kurabilirsiniz."
     ]
   },
   {
-    "id": "ekran-klavye",
-    "category": "etap",
-    "title": "Ekran Klavyesi Açılmıyor",
-    "windows_karsiligi": "Dokunmatik Klavye",
-    "icon": "fa-keyboard",
+    "id": "genel-ekran-guc",
+    "category": "sistem",
+    "title": "Ekran Kapanmasını Engelleme",
+    "windows_karsiligi": "Güç ve Uyku",
+    "icon": "fa-power-off",
     "steps": [
-      "Pardus ETAP'ta klavye genelde alttan çekince gelir.",
-      "Gelmezse: Sağ alt köşedeki 'Klavye' simgesine tıklayın.",
-      "O da yoksa: Başlat menüsüne 'Onboard' yazın ve sanal klavye uygulamasını çalıştırın."
+      "Ders anlatırken ekranın kararmasını istemiyorsanız:",
+      "**Ayarlar > Güç Yöneticisi** (veya Güç) menüsüne gidin.",
+      "**Ekran** sekmesindeki 'Şu kadar süre sonra ekranı kapat' ayarını **Asla** konumuna getirin.",
+      "Güvenlik sekmesindeki 'Uyku moduna geçince kilitle' seçeneğini kapatın."
     ]
   },
   {
-    "id": "xfce-panel-duzenleme",
-    "category": "gorunum",
-    "title": "Alt Paneli Değiştirme",
-    "windows_karsiligi": "Görev Çubuğu Ayarları",
-    "icon": "fa-columns",
-    "steps": [
-      "Paneldeki boş bir yere **Sağ Tık > Panel > Panel Tercihleri** yolunu izleyin.",
-      "**Öğeler** sekmesinden yeni araç ekleyebilir (Artı işareti) veya sırasını değiştirebilirsiniz.",
-      "Paneli ekranın üstüne veya soluna almak için **Görüntüle** sekmesindeki 'Kip' ayarını değiştirin."
-    ]
-  },
-  {
-    "id": "xfce-masaustu-resmi",
+    "id": "genel-masaustu-arkaplan",
     "category": "gorunum",
     "title": "Masaüstü Resmini Değiştirme",
     "windows_karsiligi": "Kişiselleştirme",
     "icon": "fa-image",
     "steps": [
-      "Masaüstünde boş bir yere **Sağ Tıklayın**.",
-      "**Masaüstü Ayarları** seçeneğine girin.",
-      "**Arkaplan** sekmesinden yüklü resimlerden birini seçin veya '+' butonuyla kendi fotoğrafınızı ekleyin."
+      "Masaüstünde boş bir yere **Sağ Tık** yapın.",
+      "**Masaüstü Ayarları** (veya Arkaplan Değiştir) seçeneğine girin.",
+      "Mevcut resimlerden birini seçin veya **(+) / Resim Ekle** butonuyla kendi fotoğrafınızı yükleyin."
     ]
   },
   {
-    "id": "xfce-guc-ayarlari",
-    "category": "sistem",
-    "title": "Bilgisayar Kapanmasın (Güç)",
-    "windows_karsiligi": "Güç ve Uyku Ayarları",
-    "icon": "fa-plug",
-    "steps": [
-      "Başlat Menüsü > Ayarlar > **Güç Yöneticisi** uygulamasını açın.",
-      "**Ekran** sekmesine gelin.",
-      "'Şu kadar süre sonra ekranı kapat' çubuğunu en sola çekerek **Asla** konumuna getirin."
-    ]
-  },
-  {
-    "id": "xfce-varsayilan-uygulamalar",
-    "category": "sistem",
-    "title": "Varsayılan Programları Seçme",
-    "windows_karsiligi": "Varsayılan Uygulamalar",
-    "icon": "fa-check-double",
-    "steps": [
-      "İnternet linklerinin Chrome yerine Firefox ile açılmasını istiyorsanız:",
-      "Başlat Menüsü > Ayarlar > **Tercih Edilen Uygulamalar**'a girin.",
-      "Buradan Web Tarayıcısı, E-Posta veya Dosya Yöneticisi için varsayılan programı değiştirebilirsiniz."
-    ]
-  },
-  {
-    "id": "xfce-kisayol-atama",
-    "category": "sistem",
-    "title": "Klavye Kısayolu Ekleme",
-    "windows_karsiligi": "Kısayol Tuşları",
-    "icon": "fa-keyboard",
-    "steps": [
-      "Sık kullandığınız bir programı tuşla açmak için:",
-      "Ayarlar > **Klavye** > **Uygulama Kısayolları** sekmesine gelin.",
-      "'Ekle' butonuna basın, programı seçin ve atamak istediğiniz tuşlara (Örn: Ctrl+Alt+T) basın."
-    ]
-  },
-{
-    "id": "app-vlc",
-    "category": "uygulama",
-    "title": "VLC Media Player",
-    "windows_karsiligi": "Windows Media Player / GOM Player",
-    "icon": "fa-play-circle",
-    "steps": [
-      "Dünyanın en popüler video oynatıcısıdır.",
-      "Windows'ta açılmayan video formatlarını (MKV, FLV, MP4) sorunsuz açar.",
-      "Pardus Mağaza'dan 'VLC' yazarak indirebilirsiniz."
-    ]
-  },
-  {
-    "id": "app-gimp",
-    "category": "uygulama",
-    "title": "GIMP (Resim Düzenleme)",
-    "windows_karsiligi": "Adobe Photoshop",
-    "icon": "fa-paint-brush",
-    "steps": [
-      "Fotoğraf düzenleme, rötüş ve logo tasarımı için kullanılır.",
-      "Photoshop'un yaptığı işlemlerin %90'ını ücretsiz yapar.",
-      "Katmanlı (Layer) çalışma mantığına sahiptir."
-    ]
-  },
-  {
-    "id": "app-inkscape",
-    "category": "uygulama",
-    "title": "Inkscape (Vektörel Çizim)",
-    "windows_karsiligi": "CorelDRAW / Adobe Illustrator",
-    "icon": "fa-pen-nib",
-    "steps": [
-      "Afiş, broşür ve vektörel çizimler hazırlamak için kullanılır.",
-      "Çizimleri büyütüp küçültseniz de (vektör olduğu için) bozulmaz.",
-      "SVG formatındaki dosyaları düzenlemek için en iyi araçtır."
-    ]
-  },
-  {
-    "id": "app-audacity",
-    "category": "uygulama",
-    "title": "Audacity (Ses Düzenleme)",
-    "windows_karsiligi": "Adobe Audition / Ses Kaydedici",
-    "icon": "fa-microphone-alt",
-    "steps": [
-      "Törenler için müzik kesme, birleştirme veya ses kaydetme işleri için idealdir.",
-      "MP3 dosyalarını kesip biçebilir, gürültü temizleyebilirsiniz.",
-      "Okul radyosu veya dinleme sınavları hazırlamak için birebirdir."
-    ]
-  },
-  {
-    "id": "app-shutter",
-    "category": "uygulama",
-    "title": "Flameshot / Shutter",
-    "windows_karsiligi": "Lightshot / Ekran Alıntısı Aracı",
-    "icon": "fa-camera",
-    "steps": [
-      "Ekran görüntüsü almak ve üzerine ok/yazı eklemek için kullanılır.",
-      "Klavyedeki 'Print Screen' tuşuna bastığınızda otomatik devreye girer (Ayarlarsanız).",
-      "Çektiğiniz görüntüyü kaydetmeden kopyalayıp WhatsApp Web'e yapıştırabilirsiniz."
-    ]
-  },
-  {
-    "id": "app-chromium",
-    "category": "internet",
-    "title": "Chromium Tarayıcı",
-    "windows_karsiligi": "Google Chrome / Edge",
-    "icon": "fa-chrome",
-    "steps": [
-      "Google Chrome'un açık kaynak kodlu tabanıdır.",
-      "Chrome'daki tüm yer imleriniz ve eklentileriniz burada da çalışır.",
-      "Pardus'ta Firefox yüklü gelir ama Chrome alışkanlığınız varsa bunu kurabilirsiniz."
-    ]
-  },
-  {
-    "id": "app-openboard",
-    "category": "etap",
-    "title": "OpenBoard (Akıllı Tahta)",
-    "windows_karsiligi": "StarBoard / Antropi",
-    "icon": "fa-chalkboard",
-    "steps": [
-      "Etkileşimli tahtalar için geliştirilmiş en iyi ders anlatım yazılımıdır.",
-      "Kalem, silgi, cetvel, pergel gibi araçları içinde barındırır.",
-      "Dersinizi video olarak kaydedebilir veya PDF olarak dışa aktarabilirsiniz."
-    ]
-  },
-  {
-    "id": "app-thunderbird",
-    "category": "ofis",
-    "title": "Thunderbird (E-Posta)",
-    "windows_karsiligi": "Microsoft Outlook",
-    "icon": "fa-envelope-open-text",
-    "steps": [
-      "Kurumsal (MEB) veya kişisel maillerinizi yönetmek için kullanılır.",
-      "Takvim ve görev yöneticisi özellikleri vardır.",
-      "İnternetiniz olmasa bile eski maillerinizi okuyabilirsiniz."
-    ]
-  },
-  {
-    "id": "libre-impress",
-    "category": "ofis",
-    "title": "Sunum Hazırlama (PowerPoint)",
-    "windows_karsiligi": "Microsoft PowerPoint",
-    "icon": "fa-file-powerpoint",
-    "steps": [
-      "Pardus'ta sunum programının adı **LibreOffice Impress**'tir.",
-      "Windows'ta hazırladığınız **.pptx** ve **.ppt** sunumlarını sorunsuz açar.",
-      "Sunumu başlatmak için klavyeden **F5** tuşuna basmanız yeterlidir."
-    ]
-  },
-  {
-    "id": "pdf-sunum",
-    "category": "ofis",
-    "title": "PDF'i Sunum Gibi Oynat",
-    "windows_karsiligi": "Tam Ekran Modu",
-    "icon": "fa-expand",
-    "steps": [
-      "Sunumunuz kaymasın diye PDF yaptıysanız, onu da sunum gibi oynatabilirsiniz.",
-      "PDF dosyasını açın (Atril Belge Görüntüleyici ile).",
-      "**F5** tuşuna basın veya Görünüm > **Tam Ekran** deyin. Artık tıklayarak sayfaları geçebilirsiniz."
-    ]
-  },
-  {
-    "id": "donanim-fiziksel-tuslar",
+    "id": "genel-ses-sorunu",
     "category": "donanim",
-    "title": "Tahta Üzerindeki Düğmeler",
-    "windows_karsiligi": "Monitör Ayarları",
-    "icon": "fa-toggle-on",
+    "title": "Ses Gelmiyor / Çıkış Ayarı",
+    "windows_karsiligi": "Ses Düzeyi Karıştırıcısı",
+    "icon": "fa-volume-up",
     "steps": [
-      "**Power (Güç):** Tahtayı açar veya kapatır (Bilgisayarı değil, sadece ekranı kapatmak için de kullanılabilir).",
-      "**Source (Kaynak):** Tahtaya bağlı başka cihazlar (HDMI ile laptop vb.) varsa onlar arasında geçiş yapar.",
-      "**Dokunmatik İptal (Kilit):** Teneffüste öğrenciler kurcalamasın diye veya tahtayı silerken dokunmatiği geçici olarak kapatır.",
-      "**Ses (+ / -):** Hoparlör sesini fiziksel olarak artırıp azaltır."
+      "Sağ üst veya alt köşedeki ses simgesinden sesin açık olduğunu kontrol edin.",
+      "**Ayarlar > Ses** menüsüne gidin.",
+      "**Çıkış Cihazı** kısmından 'HDMI', 'Line Out' veya 'Speakers' seçeneklerini deneyerek doğru olanı bulun. ('Dummy Output' yazıyorsa sürücü sorunu olabilir)."
+    ]
+  },
+  {
+    "id": "genel-projeksiyon",
+    "category": "donanim",
+    "title": "Projeksiyon / Ekran Yansıtma",
+    "windows_karsiligi": "Yansıt (Win+P)",
+    "icon": "fa-projector",
+    "steps": [
+      "Kabloyu taktıktan sonra **Ayarlar > Ekranlar** menüsüne gidin.",
+      "**Yansıt (Ayna):** Tahtadaki görüntünün aynısını perdede gösterir.",
+      "**Birleştir (Genişlet):** Projeksiyonu ikinci bir ekran gibi kullanır.",
+      "Ayar yaptıktan sonra **Uygula** demeyi unutmayın."
+    ]
+  },
+  {
+    "id": "format-usb-hazirlama",
+    "category": "sistem",
+    "title": "Format USB'si Hazırlama (İndir & Yaz)",
+    "windows_karsiligi": "Rufus / Format",
+    "icon": "fa-hdd",
+    "steps": [
+      "**1. İndir:** <a href='https://bulut.pardus.org.tr/s/MSSsLqRc2aY560m' target='_blank'>Pardus ETAP 23 ISO</a> dosyasını indirin.",
+      "**2. Rufus (Windows):** Rufus programını açın, ISO'yu seçin. Başlat'a basınca çıkan uyarıda mutlaka **DD Yansısı (DD Image)** modunu seçin.",
+      "**3. Pardus Disk Yazıcı (Pardus):** Pardus kullanıyorsanız 'Pardus Disk Kalıbı Yazıcı' programı ile ISO'yu belleğe yazdırabilirsiniz."
+    ]
+  },
+  {
+    "id": "format-atama-islemi",
+    "category": "sistem",
+    "title": "Format Atma (Boot & Kurulum)",
+    "windows_karsiligi": "BIOS Boot",
+    "icon": "fa-cog",
+    "steps": [
+      "Hazırladığınız USB'yi tahtaya takın.",
+      "Tahtayı açarken sürekli; **Vestel/Aidata** için **F7**, **Arçelik** için **F12** tuşuna basıp çekin.",
+      "Açılan listeden USB belleğinizi seçin.",
+      "Gelen ekranda **'Pardus ETAP Yükle'** seçeneğini seçin. Kurulum otomatiktir, tüm veriler silinir."
     ]
   },
   {
     "id": "etap-fatih-kalem",
     "category": "etap",
-    "title": "Fatih Kalem (Ekran Çizimi)",
-    "windows_karsiligi": "Fatih Kalem / Epic Pen",
+    "title": "Ekran Çizimi (Fatih Kalem Alternatifi)",
+    "windows_karsiligi": "Epic Pen",
     "icon": "fa-pen-fancy",
     "steps": [
-      "Pardus ETAP'ta program kurmanıza gerek yoktur. Sistemde **ETA Kalem** yüklü gelir.",
-      "Ekranın sağ veya solundaki oka basıp **ETA Panel**'i açın.",
-      "**Kalem Simgesine** tıkladığınızda ekran donar ve üzerine (Chrome, Video veya Masaüstü fark etmeksizin) çizim yapabilirsiniz."
+      "Program kurmanıza gerek yoktur, ETA Panel'deki **Kalem** simgesine tıklayın.",
+      "Ekran donar ve üzerine çizim yapabilirsiniz.",
+      "PDF üzerine yazmak için dosyaya **Sağ Tık > Birlikte Aç > Xournal++** uygulamasını kullanın."
     ]
   },
   {
-    "id": "pdf-xournal",
-    "category": "uygulama",
-    "title": "PDF Üzerine Yazı (Xournal++)",
-    "windows_karsiligi": "Acrobat Pro / Fatih Kalem",
-    "icon": "fa-file-signature",
-    "steps": [
-      "PDF dosyasını sadece okumak değil, üzerine test çözmek veya not almak istiyorsanız en iyi araç **Xournal++**'tır.",
-      "PDF dosyasına **Sağ Tık > Birlikte Aç > Xournal++** seçeneğini seçin.",
-      "Üstteki menüden Kalem, Fosforlu Kalem veya Silgiyi seçip kağıt gibi kullanın.",
-      "Kaydederken: Dosya > **PDF Olarak Dışa Aktar** demeyi unutmayın."
-    ]
-  },
-  {
-    "id": "etap-beyaz-tahta",
-    "category": "etap",
-    "title": "Boş Beyaz Tahta Açma",
-    "windows_karsiligi": "Whiteboard",
-    "icon": "fa-chalkboard",
-    "steps": [
-      "Ders anlatmak için boş bir sayfaya ihtiyacınız varsa:",
-      "ETA Panel'i açın ve **Kareli Defter / Tahta** simgesine dokunun.",
-      "Veya **Uygulamalar > Pardus > ETA Tahta** uygulamasını çalıştırın.",
-      "Siyah, beyaz veya kareli zemin seçip sonsuz bir sayfada ders anlatabilirsiniz."
-    ]
-  },
-  {
-    "id": "yazici-usb-kurulum",
+    "id": "donanim-fiziksel-tuslar",
     "category": "donanim",
-    "title": "USB Yazıcı Kurulumu",
-    "windows_karsiligi": "Aygıtlar ve Yazıcılar",
-    "icon": "fa-print",
+    "title": "Tahta Düğmeleri ve Dokunmatik Kilidi",
+    "windows_karsiligi": "Donanım Tuşları",
+    "icon": "fa-toggle-on",
     "steps": [
-      "Yazıcıyı USB kablosuyla bilgisayara/tahtaya bağlayın ve açın.",
-      "**Ayarlar > Yazıcı Ayarları** menüsüne gidin.",
-      "Sağ üstteki **Kilit** simgesine tıklayıp şifrenizi girin.",
-      "**Ekle (+)** butonuna basın. Listede yazıcınızın adını görüp seçin ve 'İleri' diyerek tamamlayın."
+      "**Power:** Ekranı kapatıp açar.",
+      "**Source:** HDMI/VGA girişleri arasında geçiş yapar.",
+      "**Dokunmatik İptal (El Simgesi):** Teneffüste veya tahtayı silerken dokunmatiği geçici kapatır. Tekrar basınca açılır."
     ]
   },
   {
-    "id": "yazici-surucu-bulamama",
+    "id": "genel-kalibrasyon",
     "category": "donanim",
-    "title": "Sürücü Listede Yok (Generic)",
-    "windows_karsiligi": "Sürücü Güncelle",
-    "icon": "fa-search",
+    "title": "Dokunmatik Kalibrasyonu",
+    "windows_karsiligi": "Tablet Ayarları",
+    "icon": "fa-bullseye",
     "steps": [
-      "Yazıcı modelinizi listede bulamıyorsanız endişelenmeyin.",
-      "Marka listesinden **Generic** (Genel) seçeneğini seçin.",
-      "Model olarak **PCL 6/PCL XL Printer** sürücüsünü seçin.",
-      "Bu sürücü, okullardaki büyük fotokopi makinelerinin %90'ını sorunsuz çalıştırır."
+      "Dokunmatik algılamasında kayma varsa:",
+      "Ayarlar > **Pardus Kalibrasyon** aracını çalıştırın.",
+      "Gri ekranda çıkan kırmızı hedeflere parmağınızla sırayla ve hassasça dokunun."
     ]
   },
   {
-    "id": "yazici-ppd-yukleme",
-    "category": "donanim",
-    "title": "PPD Dosyası ile Kurulum",
-    "windows_karsiligi": "Disketi Var",
-    "icon": "fa-file-code",
-    "steps": [
-      "Üreticinin sitesinden Linux sürücüsünü (genelde **.ppd** uzantılıdır) indirin.",
-      "Yazıcı ekleme ekranında sürücü seçerken **'PPD Dosyası Sağla'** seçeneğini işaretleyin.",
-      "İndirdiğiniz dosyayı seçip 'İleri' deyin. Yazıcı tüm özellikleriyle kurulacaktır."
-    ]
-  },
-  {
-    "id": "yazici-ag-kurulum",
-    "category": "internet",
-    "title": "Ağ Yazıcısı (IP ile Ekleme)",
-    "windows_karsiligi": "TCP/IP Yazıcı Ekleme",
-    "icon": "fa-network-wired",
-    "steps": [
-      "Yazıcı Ayarları > Ekle > **Ağ Yazıcısı** bölümünü açın.",
-      "**Ağ Yazıcısı Bul** diyerek IP adresini (Örn: 192.168.1.50) yazın.",
-      "Bağlantı türü olarak genelde **AppSocket / HP JetDirect** en sorunsuz olandır.",
-      "Sürücü adımında yine modelini veya Generic PCL 6'yı seçin."
-    ]
-  },
-  {
-    "id": "fatih-kalem-kurulum",
-    "category": "uygulama",
-    "title": "Fatih Kalem'i İlla Kurmak İstiyorum",
-    "windows_karsiligi": "Exe Kurulumu",
-    "icon": "fa-download",
-    "steps": [
-      "Eğer sistemin kendi kalemi yerine orijinal Fatih Kalem'i istiyorsanız:",
-      "fatihkalem.com.tr adresinden **Pardus (Debian)** sürümünü (.deb uzantılı) indirin.",
-      "İndirilen dosyaya çift tıklayıp 'Kur' diyerek yükleyin.",
-      "Başlat menüsünden çalıştırın. (Not: Sistemin kendi ETA Kalemi daha stabil çalışır.)"
-    ]
-  },
-  {
-    "id": "donanim-dokunmatik-kapatma",
-    "category": "donanim",
-    "title": "Dokunmatiği Geçici Kapatma",
-    "windows_karsiligi": "Aygıt Yöneticisi",
-    "icon": "fa-fingerprint",
-    "steps": [
-      "Tahtayı silerken çizim yapılmasın istiyorsanız:",
-      "Tahtanın ön çerçevesindeki **Dokunmatik (El/Parmak Simgesi)** tuşuna bir kez basın.",
-      "Tekrar açmak için aynı tuşa basın.",
-      "**İpucu:** Bazı modellerde bu özellik **Ayarlar > Pardus Kalibrasyon** menüsü içinden de yapılabilir."
-    ]
-  },
-  {
-    "id": "libre-writer",
+    "id": "ofis-uygulamalari",
     "category": "ofis",
-    "title": "Word Dosyası Açma",
-    "windows_karsiligi": "Microsoft Word",
+    "title": "Word / Excel / Sunum Açma",
+    "windows_karsiligi": "Microsoft Office",
     "icon": "fa-file-word",
     "steps": [
-      "Pardus'ta Word'ün karşılığı 'LibreOffice Writer'dır.",
-      "Mevcut .docx dosyalarınızı sorunsuz açar.",
-      "Kaydederken: Dosya > Farklı Kaydet > 'Word 2007-365 (.docx)' seçerseniz, dosyanızı Windows kullananlar da açabilir."
+      "**Word:** LibreOffice Writer (.docx destekler).",
+      "**Excel:** LibreOffice Calc (.xlsx destekler).",
+      "**Sunum:** LibreOffice Impress (.pptx destekler). F5 ile sunumu başlatabilirsiniz.",
+      "**PDF:** Atril ile görüntüleyebilir, Xournal++ ile üzerine yazı yazabilirsiniz."
     ]
   },
   {
-    "id": "libre-calc",
-    "category": "ofis",
-    "title": "Excel Dosyası Açma",
-    "windows_karsiligi": "Microsoft Excel",
-    "icon": "fa-file-excel",
-    "steps": [
-      "Excel'in karşılığı 'LibreOffice Calc' programıdır.",
-      "Formüllerin %90'ı (Topla, Ortalama vb.) aynıdır.",
-      "Hücre biçimlendirmek için sağ tık > 'Hücreleri Biçimlendir' demeniz yeterlidir."
-    ]
-  },
-  {
-    "id": "pdf-duzenle",
-    "category": "ofis",
-    "title": "PDF Üzerine Yazı Yazma",
-    "windows_karsiligi": "Acrobat Reader / PDF Editör",
-    "icon": "fa-file-pdf",
-    "steps": [
-      "PDF dosyanıza sağ tıklayın > Birlikte Aç > 'LibreOffice Draw' seçin.",
-      "PDF resim gibi açılacaktır. İstediğiniz metne tıklayıp değiştirebilir veya yeni metin kutusu ekleyebilirsiniz.",
-      "İşiniz bitince: Dosya > PDF Olarak Dışa Aktar deyin."
-    ]
-  },
-  {
-    "id": "format-iso-indir",
-    "category": "sistem",
-    "title": "Adım 1: Format Dosyasını İndir",
-    "windows_karsiligi": "ISO İndirme",
-    "icon": "fa-download",
-    "steps": [
-      "Pardus'un resmi sitesinden **ETAP 23** sürümünü indirin.",
-      "İndirdiğiniz dosyanın uzantısı **.iso** olacaktır.",
-      "Dosyanın bozuk inip inmediğini anlamak için (opsiyonel) **MD5** kontrolü yapabilirsiniz."
-    ]
-  },
-  {
-    "id": "iso-ve-rufus",
-    "category": "sistem",
-    "title": "İndirme Linkleri ve USB Hazırlama",
-    "windows_karsiligi": "Format USB'si Hazırlama",
-    "icon": "fa-cloud-download-alt",
-    "steps": [
-      "**Pardus ETAP 23 ISO İndir:** <a href='https://bulut.pardus.org.tr/s/MSSsLqRc2aY560m' target='_blank'>Resmi İndirme Linki (Tıkla)</a> ",
-      "**Rufus İndir:** USB yazdırmak için <a href='https://rufus.ie' target='_blank'>Rufus (Resmi Site)</a> programını indirin.",
-      "**KRİTİK AYAR:** Rufus'ta ISO dosyasını seçtikten sonra 'Başlat'a basınca çıkan uyarıda mutlaka **DD Yansısı (DD Image)** modunu seçin. Yoksa kurulum hata verebilir.",
-      "Detaylı USB hazırlama rehberi için: <a href='https://pardus.org.tr/pardus-usb-olusturma/' target='_blank'>Pardus USB Rehberi</a> [cite: 20]"
-    ]
-  },
-  {
-    "id": "format-usb-hazirla",
-    "category": "sistem",
-    "title": "Adım 2: USB Belleği Hazırla (Rufus)",
-    "windows_karsiligi": "Bootable USB Yapma",
-    "icon": "fa-hdd",
-    "steps": [
-      "Windows bilgisayarda **Rufus** programını açın.",
-      "İndirdiğiniz Pardus ISO dosyasını seçin.",
-      "**ÖNEMLİ:** Yazdırma modu sorulursa **DD Yansısı (DD Image)** modunu seçin. (ISO modu bazen tahtada hata verir).",
-      "Başlat'a basın. Bellekteki her şey silinecektir!"
-    ]
-  },
-  {
-    "id": "format-boot-etme",
-    "category": "sistem",
-    "title": "Adım 3: Tahtayı USB'den Başlat",
-    "windows_karsiligi": "BIOS / Boot Menu",
-    "icon": "fa-power-off",
-    "steps": [
-      "USB belleği tahtaya takın.",
-      "Tahtanın güç düğmesine basın ve hemen ardından klavyeden seri şekilde şu tuşlara basın:",
-      "**Vestel / Aidata:** F7 tuşu",
-      "**Arçelik:** F12 tuşu",
-      "Açılan mavi/siyah menüden **USB belleğinizi** (SanDisk, Kingston vb.) seçip Enter'a basın."
-    ]
-  },
-  {
-    "id": "format-kurulum-baslat",
-    "category": "sistem",
-    "title": "Adım 4: Kurulumu Tamamla",
-    "windows_karsiligi": "Windows Setup",
-    "icon": "fa-cog",
-    "steps": [
-      "Açılan menüden **Pardus ETAP Yükle** seçeneğini seçin.",
-      "Kurulum otomatiktir. Diskleri kendi siler ve biçimlendirir (Tüm veriler gider!).",
-      "Yönetici şifresi sormaz, standart olarak **etapadmin** kullanıcısını oluşturur.",
-      "İşlem bitince tahta kapanıp açılır. USB'yi çıkarmayı unutmayın."
-    ]
-  },
-
-  {
-    "id": "z-kitap",
-    "category": "uygulama",
-    "title": "Z-Kitap (EXE) Çalıştırma",
-    "windows_karsiligi": "Program Kurma / EXE Açma",
-    "icon": "fa-book-reader",
-    "steps": [
-      "Dosyaya sağ tıklayın > 'Birlikte Aç' > 'Wine Windows Program Loader' seçin.",
-      "Çalışmazsa: Yayınevinin sitesinden 'Pardus/Linux' uyumlu sürümü (genelde .deb veya .sh uzantılı) indirin.",
-      "İpucu: Fernus altyapılı Z-Kitaplar Pardus'ta sorunsuz çalışır."
-    ]
-  },
-  {
-    "id": "uygulama-yukle",
-    "category": "uygulama",
-    "title": "Program / Uygulama Yükleme",
-    "windows_karsiligi": "Setup.exe / Google Play",
-    "icon": "fa-download",
-    "steps": [
-      "Başlat menüsünden 'Pardus Mağaza'yı açın.",
-      "Arama kutusuna program adını yazın (Örn: Chrome, Zoom, VLC).",
-      "'Kur' butonuna basın ve şifrenizi girin."
-    ]
-  },
-  {
-    "id": "wifi-sertifika",
-    "category": "internet",
-    "title": "Fatih Ağına Bağlanma",
-    "windows_karsiligi": "Gizlilik Hatası / Bağlantınız Özel Değil",
-    "icon": "fa-wifi",
-    "steps": [
-      "MEB Sertifikası yüklü değilse 'Bağlantınız gizli değil' hatası alırsınız.",
-      "sertifika.meb.gov.tr adresinden sertifikayı indirin.",
-      "İnen dosyaya çift tıklayıp kurun veya tarayıcı ayarlarından 'Sertifikaları Yönet' > 'Otoriteler' > 'İçe Aktar' yolunu izleyin."
-    ]
-  },
-  {
-    "id": "ip-sabitle",
+    "id": "ip-sabitleme",
     "category": "internet",
     "title": "Elle IP Verme (Sabit IP)",
-    "windows_karsiligi": "Ağ Özellikleri / IPv4 Ayarı",
+    "windows_karsiligi": "IPv4 Ayarları",
     "icon": "fa-network-wired",
     "steps": [
-      "Sağ alttaki ağ simgesine sağ tıklayın > 'Bağlantıları Düzenle'.",
-      "Kablolu bağlantıyı seçip 'Ayarlar' (Çark) simgesine basın.",
-      "'IPv4 Ayarları' sekmesine gelin. Yöntemi 'Elle' yapın.",
-      "Adres: 192.168.x.x (Okulunuza uygun IP), Ağ Maskesi: 255.255.255.0, Ağ Geçidi: Okul modem IP'si."
-    ]
-  },
-  {
-    "id": "kilit-ekrani",
-    "category": "sistem",
-    "title": "Ekran Sürekli Kapanıyor",
-    "windows_karsiligi": "Güç Seçenekleri / Uyku Modu",
-    "icon": "fa-clock",
-    "steps": [
-      "Ayarlar > Güç Yöneticisi menüsüne gidin.",
-      "'Ekran' sekmesinde 'Şu kadar süre sonra ekranı kapat' seçeneğini en sona çekip 'Asla' yapın.",
-      "Güvenlik sekmesinde 'Ekran koruyucu başladığında kilitle' seçeneğini kapatın."
-    ]
-  },
-  {
-    "id": "terminal-guncelleme",
-    "category": "sistem",
-    "title": "Sistemi Komutla Güncelleme",
-    "windows_karsiligi": "Windows Update / CMD",
-    "icon": "fa-terminal",
-    "steps": [
-      "Başlat menüsünden 'Uçbirim' (Terminal) uygulamasını açın.",
-      "Şu komutu yazıp Enter'a basın: sudo apt update && sudo apt full-upgrade -y",
-      "Şifrenizi yazın (Yazarken ekranda görünmez, siz yazıp Enter'a basın). İşlem bitince sistemi yeniden başlatın."
+      "Ağ simgesine sağ tıklayıp **Bağlantıları Düzenle** (veya Ayarlar > Ağ) deyin.",
+      "Kablolu bağlantının yanındaki Çark simgesine basın.",
+      "**IPv4** sekmesinden yöntemi **Elle** yapın ve IP, Ağ Maskesi, Ağ Geçidi bilgilerini girin."
     ]
   }
 ]
