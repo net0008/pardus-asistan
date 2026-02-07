@@ -224,5 +224,20 @@
       "Boş bir alana **Sağ Tık > Yapıştır** deyin.",
       "**Önemli:** USB'yi çekmeden önce isminin yanındaki **Çıkar (Üçgen/Eject)** simgesine mutlaka basın."
     ]
+  },
+{
+    "id": "etap-kullanici-rolleri",
+    "category": "sistem",
+    "title": "Varsayılan Kullanıcılar ve Şifreler",
+    "windows_karsiligi": "Administrator / Guest Hesabı",
+    "icon": "fa-users-cog",
+    "steps": [
+      "**etapadmin (Yönetici):** Tam yetkili hesaptır. Program kurarken veya sistem ayarlarını değiştirirken bu hesabın şifresi istenir.",
+      "**ogretmen (Standart):** Günlük ders anlatımı içindir. Tahta açıldığında genelde otomatik olarak bu hesap açılır.",
+      "**ogrenci (Kısıtlı):** Sınırlı erişim modudur. Öğrencilerin tahtayı sadece belirli uygulamalarla kullanması ve sistemi bozmaması içindir.",
+      "**İpucu:** Yönetici şifresi kurulumu yapan kişi tarafından belirlenir ancak çoğu okulda varsayılan şifre **1**, **etap** veya **pardus** olarak ayarlanır."
+    ]
   }
+
 ]
+
