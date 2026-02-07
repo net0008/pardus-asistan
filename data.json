@@ -1,5 +1,68 @@
 [
 
+  {
+    "id": "etap-dokunmatik-jestler",
+    "category": "etap",
+    "title": "Sihirli Dokunuşlar (Jestler)",
+    "windows_karsiligi": "Sağ Tık / Pencere Düzeni",
+    "icon": "fa-hand-pointer",
+    "steps": [
+      "**Tek Parmak:** Klasik sol tık (seçme) işlemi yapar.",
+      "**İki Parmak (Aynı Anda):** Ekrana iki parmağınızla dokunursanız **Sağ Tık** menüsü açılır.",
+      "**Üç Parmak (Kaydırma):** Bir pencereyi 3 parmakla tutup sağa veya sola sürüklerseniz, ekranı tam ortadan ikiye böler."
+    ]
+  },
+  {
+    "id": "etap-usb-anahtar-yapimi",
+    "category": "etap",
+    "title": "USB Anahtar (Şifresiz Giriş)",
+    "windows_karsiligi": "Windows Hello",
+    "icon": "fa-key",
+    "steps": [
+      "Tahtayı açarken şifre girmekle uğraşmak istemiyorsanız:",
+      "Uygulamalar menüsünden **ETA Giriş** programını açın.",
+      "Flash belleğinizi takın ve **Anahtar Oluştur** butonuna basın.",
+      "Artık belleği tahtaya taktığınız an oturum şifresiz açılacaktır."
+    ]
+  },
+  {
+    "id": "etap-panel-kullanimi",
+    "category": "etap",
+    "title": "ETA Panel (Yan Menü)",
+    "windows_karsiligi": "Hızlı Araçlar",
+    "icon": "fa-tools",
+    "steps": [
+      "Ekranın sağ veya sol kenarında, ortada küçük bir **Ok İşareti** (>) göreceksiniz.",
+      "Buna dokunduğunuzda **ETA Panel** açılır.",
+      "Buradan **Ekran Görüntüsü** alabilir, **Sanal Klavye**yi açabilir veya **Ekranı Karart** özelliğini kullanabilirsiniz."
+    ]
+  },
+  {
+    "id": "etap-kalibrasyon-ayari",
+    "category": "donanim",
+    "title": "Dokunmatik Sapıttı (Kalibrasyon)",
+    "windows_karsiligi": "Dokunmatik Ayarı",
+    "icon": "fa-bullseye",
+    "steps": [
+      "Eğer bastığınız yerin 2-3 cm yanını algılıyorsa:",
+      "Ayarlar > **Pardus Kalibrasyon** uygulamasını açın.",
+      "Gri ekranda çıkan **Kırmızı Hedeflere** (Köşelere ve merkeze) parmağınızla hassasça dokunun.",
+      "İşlem bitince 'Kaydet' diyerek çıkın."
+    ]
+  },
+  {
+    "id": "etap-z-kitap-sorunu",
+    "category": "uygulama",
+    "title": "Z-Kitap Açılmıyor",
+    "windows_karsiligi": "EXE Çalıştırma",
+    "icon": "fa-book",
+    "steps": [
+      "Yayınevinin **Pardus / Linux** uyumlu sürümünü (genelde .deb uzantılı) indirin.",
+      "İndirdiğiniz dosyaya çift tıklayıp **Kur** deyin.",
+      "Eğer sadece .exe varsa: Dosyaya **Sağ Tık > Birlikte Aç > Wine** seçeneğini deneyin.",
+      "**İpucu:** Fernus altyapılı Z-Kitaplar Pardus'ta sorunsuz çalışır."
+    ]
+  },
 {
   "id": "etap-etkilesimli-tahta-dugmeleri",
   "category": "donanim",
