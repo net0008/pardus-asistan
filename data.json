@@ -324,6 +324,83 @@
     ]
   },
   {
+    "id": "donanim-fiziksel-tuslar",
+    "category": "donanim",
+    "title": "Tahta Üzerindeki Düğmeler",
+    "windows_karsiligi": "Monitör Ayarları",
+    "icon": "fa-toggle-on",
+    "steps": [
+      "**Power (Güç):** Tahtayı açar veya kapatır (Bilgisayarı değil, sadece ekranı kapatmak için de kullanılabilir).",
+      "**Source (Kaynak):** Tahtaya bağlı başka cihazlar (HDMI ile laptop vb.) varsa onlar arasında geçiş yapar.",
+      "**Dokunmatik İptal (Kilit):** Teneffüste öğrenciler kurcalamasın diye veya tahtayı silerken dokunmatiği geçici olarak kapatır.",
+      "**Ses (+ / -):** Hoparlör sesini fiziksel olarak artırıp azaltır."
+    ]
+  },
+  {
+    "id": "etap-fatih-kalem",
+    "category": "etap",
+    "title": "Fatih Kalem (Ekran Çizimi)",
+    "windows_karsiligi": "Fatih Kalem / Epic Pen",
+    "icon": "fa-pen-fancy",
+    "steps": [
+      "Pardus ETAP'ta program kurmanıza gerek yoktur. Sistemde **ETA Kalem** yüklü gelir.",
+      "Ekranın sağ veya solundaki oka basıp **ETA Panel**'i açın.",
+      "**Kalem Simgesine** tıkladığınızda ekran donar ve üzerine (Chrome, Video veya Masaüstü fark etmeksizin) çizim yapabilirsiniz."
+    ]
+  },
+  {
+    "id": "pdf-xournal",
+    "category": "uygulama",
+    "title": "PDF Üzerine Yazı (Xournal++)",
+    "windows_karsiligi": "Acrobat Pro / Fatih Kalem",
+    "icon": "fa-file-signature",
+    "steps": [
+      "PDF dosyasını sadece okumak değil, üzerine test çözmek veya not almak istiyorsanız en iyi araç **Xournal++**'tır.",
+      "PDF dosyasına **Sağ Tık > Birlikte Aç > Xournal++** seçeneğini seçin.",
+      "Üstteki menüden Kalem, Fosforlu Kalem veya Silgiyi seçip kağıt gibi kullanın.",
+      "Kaydederken: Dosya > **PDF Olarak Dışa Aktar** demeyi unutmayın."
+    ]
+  },
+  {
+    "id": "etap-beyaz-tahta",
+    "category": "etap",
+    "title": "Boş Beyaz Tahta Açma",
+    "windows_karsiligi": "Whiteboard",
+    "icon": "fa-chalkboard",
+    "steps": [
+      "Ders anlatmak için boş bir sayfaya ihtiyacınız varsa:",
+      "ETA Panel'i açın ve **Kareli Defter / Tahta** simgesine dokunun.",
+      "Veya **Uygulamalar > Pardus > ETA Tahta** uygulamasını çalıştırın.",
+      "Siyah, beyaz veya kareli zemin seçip sonsuz bir sayfada ders anlatabilirsiniz."
+    ]
+  },
+  {
+    "id": "fatih-kalem-kurulum",
+    "category": "uygulama",
+    "title": "Fatih Kalem'i İlla Kurmak İstiyorum",
+    "windows_karsiligi": "Exe Kurulumu",
+    "icon": "fa-download",
+    "steps": [
+      "Eğer sistemin kendi kalemi yerine orijinal Fatih Kalem'i istiyorsanız:",
+      "fatihkalem.com.tr adresinden **Pardus (Debian)** sürümünü (.deb uzantılı) indirin.",
+      "İndirilen dosyaya çift tıklayıp 'Kur' diyerek yükleyin.",
+      "Başlat menüsünden çalıştırın. (Not: Sistemin kendi ETA Kalemi daha stabil çalışır.)"
+    ]
+  },
+  {
+    "id": "donanim-dokunmatik-kapatma",
+    "category": "donanim",
+    "title": "Dokunmatiği Geçici Kapatma",
+    "windows_karsiligi": "Aygıt Yöneticisi",
+    "icon": "fa-fingerprint",
+    "steps": [
+      "Tahtayı silerken çizim yapılmasın istiyorsanız:",
+      "Tahtanın ön çerçevesindeki **Dokunmatik (El/Parmak Simgesi)** tuşuna bir kez basın.",
+      "Tekrar açmak için aynı tuşa basın.",
+      "**İpucu:** Bazı modellerde bu özellik **Ayarlar > Pardus Kalibrasyon** menüsü içinden de yapılabilir."
+    ]
+  },
+  {
     "id": "libre-writer",
     "category": "ofis",
     "title": "Word Dosyası Açma",
