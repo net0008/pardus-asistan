@@ -197,5 +197,17 @@
       "Kablolu bağlantının yanındaki Çark simgesine basın.",
       "**IPv4** sekmesinden yöntemi **Elle** yapın ve IP, Ağ Maskesi, Ağ Geçidi bilgilerini girin."
     ]
+  },
+  {
+    "id": "dosya-sikistirma-acma",
+    "category": "sistem",
+    "title": "Dosya Sıkıştırma ve Açma (Zip/Rar)",
+    "windows_karsiligi": "WinRAR / WinZip",
+    "icon": "fa-file-archive",
+    "steps": [
+      "**Sıkıştırma (Zip):** Dosya veya klasörlere **Sağ Tıklayın** > **Sıkıştır** (veya Arşiv Oluştur) deyin. '.zip' formatını seçip 'Oluştur'a basın.",
+      "**Açma (Ayıklama):** İndirdiğiniz arşiv dosyasına **Sağ Tıklayın** > **Buraya Ayıkla** (Extract Here) seçeneğini seçin.",
+      "**Önemli:** Pardus'ta WinRAR kurmanıza gerek yoktur. Sistemdeki **Arşiv Yöneticisi**; Zip, Rar ve 7z dosyalarını otomatik açar."
+    ]
   }
 ]
