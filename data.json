@@ -91,6 +91,21 @@
       "Eğer NTFS formatlıysa ve açılmıyorsa: 'Disks' (Diskler) uygulamasını açıp 'Oynat' (Üçgen) butonuna basarak bağlayın."
     ]
   },
+{
+    "id": "internet-ve-ag-ayarlari",
+    "category": "internet",
+    "title": "İnternet ve Ağ Bağlantı Ayarları",
+    "windows_karsiligi": "Ağ ve İnternet Ayarları",
+    "icon": "fa-wifi",
+    "steps": [
+      "İnternet erişim durumunu kontrol etmek için panel üzerindeki **Ağ** simgesini (kablolu veya kablosuz) kullanın.",
+      "Kablosuz ağlara bağlanmak için listeden ağ adını seçin; daha önce bağlanılmış ağları **Bilinen Kablosuz Ağlar** menüsünden yönetebilirsiniz.",
+      "Kablolu bağlantı ayarları için **Ağ** sekmesini kullanın; burada IP adresi, DNS ve Ağ Geçidi ayarlarını **Elle** veya **Kendiliğinden (DHCP)** olarak yapılandırabilirsiniz.",
+      "VPN bağlantısı eklemek veya Ağ Vekili (Proxy) ayarlarını değiştirmek için Genel Ayarlar altındaki **Ağ** bölümünü kullanın.",
+      "İnternet bağlantısını diğer cihazlarla paylaşmak için **Kablosuz Erişim Noktası Aç (Hotspot)** seçeneğini kullanabilirsiniz."
+    ]
+  },
+
   {
     "id": "yazici-ekle",
     "category": "donanim",
