@@ -3,49 +3,85 @@
     "id": "usb-sorunu",
     "category": "donanim",
     "title": "Flash Bellek Görünmüyor",
-    "windows_karsiligi": "USB Takıldı Sesi Gelmedi / Sürücü Görünmüyor",
+    "windows_karsiligi": "USB Takıldı Sesi Gelmedi",
     "icon": "fa-usb",
     "steps": [
-      "Pardus'ta USB takınca bazen pencere açılmaz.",
       "Masaüstündeki 'Ev Dizini' veya 'Dosyalar' simgesine tıklayın.",
       "Sol menüde cihazınızın adını (Örn: KINGSTON) görüp üzerine tıklayın.",
-      "Eğer NTFS formatlıysa ve açılmıyorsa: 'Disks' uygulamasını açıp 'Oynat' (Üçgen) butonuna basarak bağlayın."
+      "Eğer NTFS formatlıysa ve açılmıyorsa: 'Disks' (Diskler) uygulamasını açıp 'Oynat' (Üçgen) butonuna basarak bağlayın."
+    ]
+  },
+  {
+    "id": "yazici-ekle",
+    "category": "donanim",
+    "title": "Yazıcı Tanıtma",
+    "windows_karsiligi": "Aygıtlar ve Yazıcılar / Sürücü",
+    "icon": "fa-print",
+    "steps": [
+      "Başlat Menüsü > Ayarlar > Yazıcı Ayarları yolunu izleyin.",
+      "Kilit simgesine tıklayıp şifrenizi girin (Genelde: etap, pardus veya 1).",
+      "'Ekle' (+) butonuna basın. Yazıcınız USB ise listede görünür, seçip 'İleri' deyin.",
+      "Ağ yazıcısı ise 'Ağ Yazıcısı Bul' seçeneğini kullanın."
     ]
   },
   {
     "id": "ses-yok",
     "category": "donanim",
     "title": "Tahtadan Ses Gelmiyor",
-    "windows_karsiligi": "Ses Sürücüsü / Hoparlör Ayarı",
+    "windows_karsiligi": "Ses Sürücüsü / Hoparlör",
     "icon": "fa-volume-mute",
     "steps": [
       "Sağ alt köşedeki ses simgesine tıklayın. 'Sessiz' (Mute) kutucuğunun işaretli OLMADIĞINDAN emin olun.",
       "Ayarlar > Ses > Çıkış Cihazı menüsüne gidin.",
-      "'HDMI / DisplayPort' veya 'Line Out' seçeneğini seçin. Yanlışlıkla 'Dummy Output' veya 'Kulaklık' seçildiyse ses gelmez."
+      "'HDMI / DisplayPort' veya 'Line Out' seçeneğini seçin. 'Dummy Output' seçiliyse ses gelmez."
+    ]
+  },
+  {
+    "id": "ekran-klavye",
+    "category": "etap",
+    "title": "Ekran Klavyesi Açılmıyor",
+    "windows_karsiligi": "Dokunmatik Klavye",
+    "icon": "fa-keyboard",
+    "steps": [
+      "Pardus ETAP'ta klavye genelde alttan çekince gelir.",
+      "Gelmezse: Sağ alt köşedeki 'Klavye' simgesine tıklayın.",
+      "O da yoksa: Başlat menüsüne 'Onboard' yazın ve sanal klavye uygulamasını çalıştırın."
     ]
   },
   {
     "id": "libre-writer",
     "category": "ofis",
-    "title": "Word Dosyası Açma (Writer)",
-    "windows_karsiligi": "Microsoft Word / Ofis Programı",
+    "title": "Word Dosyası Açma",
+    "windows_karsiligi": "Microsoft Word",
     "icon": "fa-file-word",
     "steps": [
       "Pardus'ta Word'ün karşılığı 'LibreOffice Writer'dır.",
       "Mevcut .docx dosyalarınızı sorunsuz açar.",
-      "Kaydederken: Dosya > Farklı Kaydet > 'Word 2007-365 (.docx)' seçerseniz, dosyanızı Windows kullanan arkadaşlarınız da açabilir."
+      "Kaydederken: Dosya > Farklı Kaydet > 'Word 2007-365 (.docx)' seçerseniz, dosyanızı Windows kullananlar da açabilir."
     ]
   },
   {
     "id": "libre-calc",
     "category": "ofis",
-    "title": "Excel Dosyası Açma (Calc)",
-    "windows_karsiligi": "Microsoft Excel / Tablo",
+    "title": "Excel Dosyası Açma",
+    "windows_karsiligi": "Microsoft Excel",
     "icon": "fa-file-excel",
     "steps": [
       "Excel'in karşılığı 'LibreOffice Calc' programıdır.",
       "Formüllerin %90'ı (Topla, Ortalama vb.) aynıdır.",
       "Hücre biçimlendirmek için sağ tık > 'Hücreleri Biçimlendir' demeniz yeterlidir."
+    ]
+  },
+  {
+    "id": "pdf-duzenle",
+    "category": "ofis",
+    "title": "PDF Üzerine Yazı Yazma",
+    "windows_karsiligi": "Acrobat Reader / PDF Editör",
+    "icon": "fa-file-pdf",
+    "steps": [
+      "PDF dosyanıza sağ tıklayın > Birlikte Aç > 'LibreOffice Draw' seçin.",
+      "PDF resim gibi açılacaktır. İstediğiniz metne tıklayıp değiştirebilir veya yeni metin kutusu ekleyebilirsiniz.",
+      "İşiniz bitince: Dosya > PDF Olarak Dışa Aktar deyin."
     ]
   },
   {
@@ -55,21 +91,46 @@
     "windows_karsiligi": "Program Kurma / EXE Açma",
     "icon": "fa-book-reader",
     "steps": [
-      "Pardus .exe dosyalarını doğrudan tanımaz.",
       "Dosyaya sağ tıklayın > 'Birlikte Aç' > 'Wine Windows Program Loader' seçin.",
-      "Eğer açılmazsa: Yayınevinin sitesinden 'Pardus/Linux' uyumlu sürümü (genelde .deb uzantılı) indirin."
+      "Çalışmazsa: Yayınevinin sitesinden 'Pardus/Linux' uyumlu sürümü (genelde .deb veya .sh uzantılı) indirin.",
+      "İpucu: Fernus altyapılı Z-Kitaplar Pardus'ta sorunsuz çalışır."
+    ]
+  },
+  {
+    "id": "uygulama-yukle",
+    "category": "uygulama",
+    "title": "Program / Uygulama Yükleme",
+    "windows_karsiligi": "Setup.exe / Google Play",
+    "icon": "fa-download",
+    "steps": [
+      "Başlat menüsünden 'Pardus Mağaza'yı açın.",
+      "Arama kutusuna program adını yazın (Örn: Chrome, Zoom, VLC).",
+      "'Kur' butonuna basın ve şifrenizi girin."
     ]
   },
   {
     "id": "wifi-sertifika",
     "category": "internet",
     "title": "Fatih Ağına Bağlanma",
-    "windows_karsiligi": "İnternet Yok / Wi-Fi Ünlem İşareti",
+    "windows_karsiligi": "Gizlilik Hatası / Bağlantınız Özel Değil",
     "icon": "fa-wifi",
     "steps": [
-      "MEB Sertifikası yüklü değilse internete giremezsiniz.",
+      "MEB Sertifikası yüklü değilse 'Bağlantınız gizli değil' hatası alırsınız.",
       "sertifika.meb.gov.tr adresinden sertifikayı indirin.",
-      "İnen dosyaya çift tıklayıp kurun veya tarayıcı ayarlarına gidip 'Sertifikaları Yönet' kısmından içe aktarın."
+      "İnen dosyaya çift tıklayıp kurun veya tarayıcı ayarlarından 'Sertifikaları Yönet' > 'Otoriteler' > 'İçe Aktar' yolunu izleyin."
+    ]
+  },
+  {
+    "id": "ip-sabitle",
+    "category": "internet",
+    "title": "Elle IP Verme (Sabit IP)",
+    "windows_karsiligi": "Ağ Özellikleri / IPv4 Ayarı",
+    "icon": "fa-network-wired",
+    "steps": [
+      "Sağ alttaki ağ simgesine sağ tıklayın > 'Bağlantıları Düzenle'.",
+      "Kablolu bağlantıyı seçip 'Ayarlar' (Çark) simgesine basın.",
+      "'IPv4 Ayarları' sekmesine gelin. Yöntemi 'Elle' yapın.",
+      "Adres: 192.168.x.x (Okulunuza uygun IP), Ağ Maskesi: 255.255.255.0, Ağ Geçidi: Okul modem IP'si."
     ]
   },
   {
@@ -81,7 +142,19 @@
     "steps": [
       "Ayarlar > Güç Yöneticisi menüsüne gidin.",
       "'Ekran' sekmesinde 'Şu kadar süre sonra ekranı kapat' seçeneğini en sona çekip 'Asla' yapın.",
-      "Böylece ders anlatırken tahta kararmayacaktır."
+      "Güvenlik sekmesinde 'Ekran koruyucu başladığında kilitle' seçeneğini kapatın."
+    ]
+  },
+  {
+    "id": "terminal-guncelleme",
+    "category": "sistem",
+    "title": "Sistemi Komutla Güncelleme",
+    "windows_karsiligi": "Windows Update / CMD",
+    "icon": "fa-terminal",
+    "steps": [
+      "Başlat menüsünden 'Uçbirim' (Terminal) uygulamasını açın.",
+      "Şu komutu yazıp Enter'a basın: sudo apt update && sudo apt full-upgrade -y",
+      "Şifrenizi yazın (Yazarken ekranda görünmez, siz yazıp Enter'a basın). İşlem bitince sistemi yeniden başlatın."
     ]
   }
 ]
