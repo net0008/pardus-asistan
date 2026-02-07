@@ -500,6 +500,19 @@
     ]
   },
   {
+    "id": "iso-ve-rufus",
+    "category": "sistem",
+    "title": "İndirme Linkleri ve USB Hazırlama",
+    "windows_karsiligi": "Format USB'si Hazırlama",
+    "icon": "fa-cloud-download-alt",
+    "steps": [
+      "**Pardus ETAP 23 ISO İndir:** <a href='https://bulut.pardus.org.tr/s/MSSsLqRc2aY560m' target='_blank'>Resmi İndirme Linki (Tıkla)</a> ",
+      "**Rufus İndir:** USB yazdırmak için <a href='https://rufus.ie' target='_blank'>Rufus (Resmi Site)</a> programını indirin.",
+      "**KRİTİK AYAR:** Rufus'ta ISO dosyasını seçtikten sonra 'Başlat'a basınca çıkan uyarıda mutlaka **DD Yansısı (DD Image)** modunu seçin. Yoksa kurulum hata verebilir.",
+      "Detaylı USB hazırlama rehberi için: <a href='https://pardus.org.tr/pardus-usb-olusturma/' target='_blank'>Pardus USB Rehberi</a> [cite: 20]"
+    ]
+  },
+  {
     "id": "format-usb-hazirla",
     "category": "sistem",
     "title": "Adım 2: USB Belleği Hazırla (Rufus)",
@@ -539,7 +552,7 @@
       "İşlem bitince tahta kapanıp açılır. USB'yi çıkarmayı unutmayın."
     ]
   },
-  
+
   {
     "id": "z-kitap",
     "category": "uygulama",
