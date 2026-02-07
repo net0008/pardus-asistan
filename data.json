@@ -226,16 +226,17 @@
     ]
   },
 {
-    "id": "etap-kullanici-rolleri",
+    "id": "etap-kullanici-sifreleri",
     "category": "sistem",
-    "title": "Varsayılan Kullanıcılar ve Şifreler",
-    "windows_karsiligi": "Administrator / Guest Hesabı",
-    "icon": "fa-users-cog",
+    "title": "Kullanıcı Adı ve Şifreler",
+    "windows_karsiligi": "Administrator Şifresi",
+    "icon": "fa-key",
     "steps": [
-      "**etapadmin (Yönetici):** Tam yetkili hesaptır. Program kurarken veya sistem ayarlarını değiştirirken bu hesabın şifresi istenir.",
-      "**ogretmen (Standart):** Günlük ders anlatımı içindir. Tahta açıldığında genelde otomatik olarak bu hesap açılır.",
-      "**ogrenci (Kısıtlı):** Sınırlı erişim modudur. Öğrencilerin tahtayı sadece belirli uygulamalarla kullanması ve sistemi bozmaması içindir.",
-      "**İpucu:** Yönetici şifresi kurulumu yapan kişi tarafından belirlenir ancak çoğu okulda varsayılan şifre **1**, **etap** veya **pardus** olarak ayarlanır."
+      "**Öğretmen Hesabı:** Kullanıcı adı: **ogretmen** | Şifre: **ogretmen**",
+      "**Öğrenci Hesabı:** Kullanıcı adı: **ogrenci** | Şifre: **1**",
+      "**Etap Admin (Yönetici):** Program kurma ve kritik ayarlar için bu şifre gereklidir.",
+      "Bu şifreyi **okulunuzdaki YEĞİTEK okul sorumlusundan** öğrenebilirsiniz.",
+      "Eğer okulda yoksa, **İl/İlçe YEĞİTEK Bilişim Koordinatöründen** talep etmelisiniz."
     ]
   }
 
