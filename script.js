@@ -191,3 +191,25 @@ installBtn.addEventListener('click', (e) => {
         deferredPrompt = null;
     });
 });
+// ... yukarıdaki diğer kodlar ...
+
+// --- KATEGORİ FİLTRELEME (EN ALTA EKLENECEK) ---
+function filterCategory(category) {
+    // 1. Düğme renklerini ayarla (Aktif olanı boya)
+    document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+    
+    // Tıklanan düğmeye 'active' sınıfını ver
+    // (event nesnesi otomatik gelir)
+    if(event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+    }
+
+    // 2. İçeriği filtrele
+    if (category === 'all') {
+        renderMenu(allData);
+    } else {
+        // Sadece kategorisi eşleşenleri süz
+        const filtered = allData.filter(item => item.category === category);
+        renderMenu(filtered);
+    }
+}

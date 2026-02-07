@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pardus-rehber-v3'; // Versiyonu v3 yaptık!
+const CACHE_NAME = 'pardus-rehber-v4';
 const ASSETS = [
   '/',
   '/index.html',
