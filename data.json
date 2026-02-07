@@ -1,4 +1,21 @@
 [
+
+{
+  "id": "etap-etkilesimli-tahta-dugmeleri",
+  "category": "donanim",
+  "title": "Etkileşimli Tahta Düğmeleri",
+  "windows_karsiligi": "Güç Düğmesi, Ekran Klavyesi, Windows Ink",
+  "icon": "fa-power-off",
+  "steps": [
+    "**Güç Düğmesi:** Tahtayı fiziksel olarak açmak ve kapatmak için kullanılan ana düğmedir.",
+    "**Açılış (Boot) Tuşları:** Kurulum ve USB'den başlatma işlemleri için açılış sırasında **Vestel ve Aidata** tahtalarda **F7**, **Arçelik** tahtalarda ise **F12** tuşu kullanılır [1].",
+    "**Eta Klavye Düğmeleri:** Dokunmatik ekran klavyesinde ayarları değiştirmek (çark simgesi) ve parola girişlerinde karakterleri gizlemek (**P** düğmesi) için kullanılır [2].",
+    "**Eta Kalem Araçları:** Ekran üzerinde çizim yapma, silme, renk ve kalınlık ayarlarını kontrol eden sanal düğmelerdir [2].",
+    "**Pencere Kontrol Düğmeleri:** Pencereleri kapatmak, simge durumuna küçültmek veya ekranı kaplamak için pencere başlık çubuğunda bulunan düğmelerdir [3]."
+  ]
+},
+
+
   {
     "id": "usb-sorunu",
     "category": "donanim",

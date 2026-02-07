@@ -156,7 +156,11 @@ function openDetail(id) {
                  </div>`;
     }
 
-    item.steps.forEach(s => html += `<div class="step-box">${s}</div>`);
+    item.steps.forEach(s => {
+    // **yazı** şeklindeki metinleri <b>yazı</b> yapar
+    let formatted = s.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    html += `<div class="step-box">${formatted}</div>`;
+});
 
     if (mContent) mContent.innerHTML = html;
     if (modal) modal.style.display = 'block';
