@@ -375,6 +375,57 @@
     ]
   },
   {
+    "id": "yazici-usb-kurulum",
+    "category": "donanim",
+    "title": "USB Yazıcı Kurulumu",
+    "windows_karsiligi": "Aygıtlar ve Yazıcılar",
+    "icon": "fa-print",
+    "steps": [
+      "Yazıcıyı USB kablosuyla bilgisayara/tahtaya bağlayın ve açın.",
+      "**Ayarlar > Yazıcı Ayarları** menüsüne gidin.",
+      "Sağ üstteki **Kilit** simgesine tıklayıp şifrenizi girin.",
+      "**Ekle (+)** butonuna basın. Listede yazıcınızın adını görüp seçin ve 'İleri' diyerek tamamlayın."
+    ]
+  },
+  {
+    "id": "yazici-surucu-bulamama",
+    "category": "donanim",
+    "title": "Sürücü Listede Yok (Generic)",
+    "windows_karsiligi": "Sürücü Güncelle",
+    "icon": "fa-search",
+    "steps": [
+      "Yazıcı modelinizi listede bulamıyorsanız endişelenmeyin.",
+      "Marka listesinden **Generic** (Genel) seçeneğini seçin.",
+      "Model olarak **PCL 6/PCL XL Printer** sürücüsünü seçin.",
+      "Bu sürücü, okullardaki büyük fotokopi makinelerinin %90'ını sorunsuz çalıştırır."
+    ]
+  },
+  {
+    "id": "yazici-ppd-yukleme",
+    "category": "donanim",
+    "title": "PPD Dosyası ile Kurulum",
+    "windows_karsiligi": "Disketi Var",
+    "icon": "fa-file-code",
+    "steps": [
+      "Üreticinin sitesinden Linux sürücüsünü (genelde **.ppd** uzantılıdır) indirin.",
+      "Yazıcı ekleme ekranında sürücü seçerken **'PPD Dosyası Sağla'** seçeneğini işaretleyin.",
+      "İndirdiğiniz dosyayı seçip 'İleri' deyin. Yazıcı tüm özellikleriyle kurulacaktır."
+    ]
+  },
+  {
+    "id": "yazici-ag-kurulum",
+    "category": "internet",
+    "title": "Ağ Yazıcısı (IP ile Ekleme)",
+    "windows_karsiligi": "TCP/IP Yazıcı Ekleme",
+    "icon": "fa-network-wired",
+    "steps": [
+      "Yazıcı Ayarları > Ekle > **Ağ Yazıcısı** bölümünü açın.",
+      "**Ağ Yazıcısı Bul** diyerek IP adresini (Örn: 192.168.1.50) yazın.",
+      "Bağlantı türü olarak genelde **AppSocket / HP JetDirect** en sorunsuz olandır.",
+      "Sürücü adımında yine modelini veya Generic PCL 6'yı seçin."
+    ]
+  },
+  {
     "id": "fatih-kalem-kurulum",
     "category": "uygulama",
     "title": "Fatih Kalem'i İlla Kurmak İstiyorum",
