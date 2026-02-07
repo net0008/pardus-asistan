@@ -488,6 +488,59 @@
     ]
   },
   {
+    "id": "format-iso-indir",
+    "category": "sistem",
+    "title": "Adım 1: Format Dosyasını İndir",
+    "windows_karsiligi": "ISO İndirme",
+    "icon": "fa-download",
+    "steps": [
+      "Pardus'un resmi sitesinden **ETAP 23** sürümünü indirin.",
+      "İndirdiğiniz dosyanın uzantısı **.iso** olacaktır.",
+      "Dosyanın bozuk inip inmediğini anlamak için (opsiyonel) **MD5** kontrolü yapabilirsiniz."
+    ]
+  },
+  {
+    "id": "format-usb-hazirla",
+    "category": "sistem",
+    "title": "Adım 2: USB Belleği Hazırla (Rufus)",
+    "windows_karsiligi": "Bootable USB Yapma",
+    "icon": "fa-hdd",
+    "steps": [
+      "Windows bilgisayarda **Rufus** programını açın.",
+      "İndirdiğiniz Pardus ISO dosyasını seçin.",
+      "**ÖNEMLİ:** Yazdırma modu sorulursa **DD Yansısı (DD Image)** modunu seçin. (ISO modu bazen tahtada hata verir).",
+      "Başlat'a basın. Bellekteki her şey silinecektir!"
+    ]
+  },
+  {
+    "id": "format-boot-etme",
+    "category": "sistem",
+    "title": "Adım 3: Tahtayı USB'den Başlat",
+    "windows_karsiligi": "BIOS / Boot Menu",
+    "icon": "fa-power-off",
+    "steps": [
+      "USB belleği tahtaya takın.",
+      "Tahtanın güç düğmesine basın ve hemen ardından klavyeden seri şekilde şu tuşlara basın:",
+      "**Vestel / Aidata:** F7 tuşu",
+      "**Arçelik:** F12 tuşu",
+      "Açılan mavi/siyah menüden **USB belleğinizi** (SanDisk, Kingston vb.) seçip Enter'a basın."
+    ]
+  },
+  {
+    "id": "format-kurulum-baslat",
+    "category": "sistem",
+    "title": "Adım 4: Kurulumu Tamamla",
+    "windows_karsiligi": "Windows Setup",
+    "icon": "fa-cog",
+    "steps": [
+      "Açılan menüden **Pardus ETAP Yükle** seçeneğini seçin.",
+      "Kurulum otomatiktir. Diskleri kendi siler ve biçimlendirir (Tüm veriler gider!).",
+      "Yönetici şifresi sormaz, standart olarak **etapadmin** kullanıcısını oluşturur.",
+      "İşlem bitince tahta kapanıp açılır. USB'yi çıkarmayı unutmayın."
+    ]
+  },
+  
+  {
     "id": "z-kitap",
     "category": "uygulama",
     "title": "Z-Kitap (EXE) Çalıştırma",
