@@ -203,7 +203,102 @@
       "'Ekle' butonuna basın, programı seçin ve atamak istediğiniz tuşlara (Örn: Ctrl+Alt+T) basın."
     ]
   },
-
+{
+    "id": "app-vlc",
+    "category": "uygulama",
+    "title": "VLC Media Player",
+    "windows_karsiligi": "Windows Media Player / GOM Player",
+    "icon": "fa-play-circle",
+    "steps": [
+      "Dünyanın en popüler video oynatıcısıdır.",
+      "Windows'ta açılmayan video formatlarını (MKV, FLV, MP4) sorunsuz açar.",
+      "Pardus Mağaza'dan 'VLC' yazarak indirebilirsiniz."
+    ]
+  },
+  {
+    "id": "app-gimp",
+    "category": "uygulama",
+    "title": "GIMP (Resim Düzenleme)",
+    "windows_karsiligi": "Adobe Photoshop",
+    "icon": "fa-paint-brush",
+    "steps": [
+      "Fotoğraf düzenleme, rötüş ve logo tasarımı için kullanılır.",
+      "Photoshop'un yaptığı işlemlerin %90'ını ücretsiz yapar.",
+      "Katmanlı (Layer) çalışma mantığına sahiptir."
+    ]
+  },
+  {
+    "id": "app-inkscape",
+    "category": "uygulama",
+    "title": "Inkscape (Vektörel Çizim)",
+    "windows_karsiligi": "CorelDRAW / Adobe Illustrator",
+    "icon": "fa-pen-nib",
+    "steps": [
+      "Afiş, broşür ve vektörel çizimler hazırlamak için kullanılır.",
+      "Çizimleri büyütüp küçültseniz de (vektör olduğu için) bozulmaz.",
+      "SVG formatındaki dosyaları düzenlemek için en iyi araçtır."
+    ]
+  },
+  {
+    "id": "app-audacity",
+    "category": "uygulama",
+    "title": "Audacity (Ses Düzenleme)",
+    "windows_karsiligi": "Adobe Audition / Ses Kaydedici",
+    "icon": "fa-microphone-alt",
+    "steps": [
+      "Törenler için müzik kesme, birleştirme veya ses kaydetme işleri için idealdir.",
+      "MP3 dosyalarını kesip biçebilir, gürültü temizleyebilirsiniz.",
+      "Okul radyosu veya dinleme sınavları hazırlamak için birebirdir."
+    ]
+  },
+  {
+    "id": "app-shutter",
+    "category": "uygulama",
+    "title": "Flameshot / Shutter",
+    "windows_karsiligi": "Lightshot / Ekran Alıntısı Aracı",
+    "icon": "fa-camera",
+    "steps": [
+      "Ekran görüntüsü almak ve üzerine ok/yazı eklemek için kullanılır.",
+      "Klavyedeki 'Print Screen' tuşuna bastığınızda otomatik devreye girer (Ayarlarsanız).",
+      "Çektiğiniz görüntüyü kaydetmeden kopyalayıp WhatsApp Web'e yapıştırabilirsiniz."
+    ]
+  },
+  {
+    "id": "app-chromium",
+    "category": "internet",
+    "title": "Chromium Tarayıcı",
+    "windows_karsiligi": "Google Chrome / Edge",
+    "icon": "fa-chrome",
+    "steps": [
+      "Google Chrome'un açık kaynak kodlu tabanıdır.",
+      "Chrome'daki tüm yer imleriniz ve eklentileriniz burada da çalışır.",
+      "Pardus'ta Firefox yüklü gelir ama Chrome alışkanlığınız varsa bunu kurabilirsiniz."
+    ]
+  },
+  {
+    "id": "app-openboard",
+    "category": "etap",
+    "title": "OpenBoard (Akıllı Tahta)",
+    "windows_karsiligi": "StarBoard / Antropi",
+    "icon": "fa-chalkboard",
+    "steps": [
+      "Etkileşimli tahtalar için geliştirilmiş en iyi ders anlatım yazılımıdır.",
+      "Kalem, silgi, cetvel, pergel gibi araçları içinde barındırır.",
+      "Dersinizi video olarak kaydedebilir veya PDF olarak dışa aktarabilirsiniz."
+    ]
+  },
+  {
+    "id": "app-thunderbird",
+    "category": "ofis",
+    "title": "Thunderbird (E-Posta)",
+    "windows_karsiligi": "Microsoft Outlook",
+    "icon": "fa-envelope-open-text",
+    "steps": [
+      "Kurumsal (MEB) veya kişisel maillerinizi yönetmek için kullanılır.",
+      "Takvim ve görev yöneticisi özellikleri vardır.",
+      "İnternetiniz olmasa bile eski maillerinizi okuyabilirsiniz."
+    ]
+  },
   {
     "id": "libre-writer",
     "category": "ofis",
