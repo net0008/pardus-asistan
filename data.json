@@ -144,6 +144,67 @@
     ]
   },
   {
+    "id": "xfce-panel-duzenleme",
+    "category": "gorunum",
+    "title": "Alt Paneli Değiştirme",
+    "windows_karsiligi": "Görev Çubuğu Ayarları",
+    "icon": "fa-columns",
+    "steps": [
+      "Paneldeki boş bir yere **Sağ Tık > Panel > Panel Tercihleri** yolunu izleyin.",
+      "**Öğeler** sekmesinden yeni araç ekleyebilir (Artı işareti) veya sırasını değiştirebilirsiniz.",
+      "Paneli ekranın üstüne veya soluna almak için **Görüntüle** sekmesindeki 'Kip' ayarını değiştirin."
+    ]
+  },
+  {
+    "id": "xfce-masaustu-resmi",
+    "category": "gorunum",
+    "title": "Masaüstü Resmini Değiştirme",
+    "windows_karsiligi": "Kişiselleştirme",
+    "icon": "fa-image",
+    "steps": [
+      "Masaüstünde boş bir yere **Sağ Tıklayın**.",
+      "**Masaüstü Ayarları** seçeneğine girin.",
+      "**Arkaplan** sekmesinden yüklü resimlerden birini seçin veya '+' butonuyla kendi fotoğrafınızı ekleyin."
+    ]
+  },
+  {
+    "id": "xfce-guc-ayarlari",
+    "category": "sistem",
+    "title": "Bilgisayar Kapanmasın (Güç)",
+    "windows_karsiligi": "Güç ve Uyku Ayarları",
+    "icon": "fa-plug",
+    "steps": [
+      "Başlat Menüsü > Ayarlar > **Güç Yöneticisi** uygulamasını açın.",
+      "**Ekran** sekmesine gelin.",
+      "'Şu kadar süre sonra ekranı kapat' çubuğunu en sola çekerek **Asla** konumuna getirin."
+    ]
+  },
+  {
+    "id": "xfce-varsayilan-uygulamalar",
+    "category": "sistem",
+    "title": "Varsayılan Programları Seçme",
+    "windows_karsiligi": "Varsayılan Uygulamalar",
+    "icon": "fa-check-double",
+    "steps": [
+      "İnternet linklerinin Chrome yerine Firefox ile açılmasını istiyorsanız:",
+      "Başlat Menüsü > Ayarlar > **Tercih Edilen Uygulamalar**'a girin.",
+      "Buradan Web Tarayıcısı, E-Posta veya Dosya Yöneticisi için varsayılan programı değiştirebilirsiniz."
+    ]
+  },
+  {
+    "id": "xfce-kisayol-atama",
+    "category": "sistem",
+    "title": "Klavye Kısayolu Ekleme",
+    "windows_karsiligi": "Kısayol Tuşları",
+    "icon": "fa-keyboard",
+    "steps": [
+      "Sık kullandığınız bir programı tuşla açmak için:",
+      "Ayarlar > **Klavye** > **Uygulama Kısayolları** sekmesine gelin.",
+      "'Ekle' butonuna basın, programı seçin ve atamak istediğiniz tuşlara (Örn: Ctrl+Alt+T) basın."
+    ]
+  },
+
+  {
     "id": "libre-writer",
     "category": "ofis",
     "title": "Word Dosyası Açma",
