@@ -209,5 +209,20 @@
       "**Açma (Ayıklama):** İndirdiğiniz arşiv dosyasına **Sağ Tıklayın** > **Buraya Ayıkla** (Extract Here) seçeneğini seçin.",
       "**Önemli:** Pardus'ta WinRAR kurmanıza gerek yoktur. Sistemdeki **Arşiv Yöneticisi**; Zip, Rar ve 7z dosyalarını otomatik açar."
     ]
+  },
+  {
+    "id": "indirilen-dosya-usb",
+    "category": "sistem",
+    "title": "İndirilen Dosyayı USB'ye Atma",
+    "windows_karsiligi": "İndirilenler Klasörü",
+    "icon": "fa-file-export",
+    "steps": [
+      "Masaüstündeki **Ev Dizini** (veya Dosyalar) klasörünü açın.",
+      "Sol taraftaki menüden **İndirilenler** klasörüne tıklayın.",
+      "Dosyanızı bulup üzerine **Sağ Tık > Kopyala** deyin.",
+      "USB belleğinizi takın ve sol menüden USB ismine tıklayın.",
+      "Boş bir alana **Sağ Tık > Yapıştır** deyin.",
+      "**Önemli:** USB'yi çekmeden önce isminin yanındaki **Çıkar (Üçgen/Eject)** simgesine mutlaka basın."
+    ]
   }
 ]
