@@ -36,7 +36,14 @@
             <span><i class="fas fa-ad"></i> Reklam / Duyuru Alanı</span>
         </div>
     </div>
-
+<div class="category-scroll">
+        <button class="cat-btn active" onclick="filterCategory('all')">Tümü</button>
+        <button class="cat-btn" onclick="filterCategory('donanim')"><i class="fas fa-microchip"></i> Donanım</button>
+        <button class="cat-btn" onclick="filterCategory('internet')"><i class="fas fa-wifi"></i> İnternet</button>
+        <button class="cat-btn" onclick="filterCategory('ofis')"><i class="fas fa-file-alt"></i> Ofis</button>
+        <button class="cat-btn" onclick="filterCategory('uygulama')"><i class="fas fa-cube"></i> Uygulama</button>
+        <button class="cat-btn" onclick="filterCategory('sistem')"><i class="fas fa-cog"></i> Sistem</button>
+    </div>
     <div class="grid" id="menuGrid"></div>
 
     <div class="settings-container" id="settingsView">
