@@ -300,6 +300,30 @@
     ]
   },
   {
+    "id": "libre-impress",
+    "category": "ofis",
+    "title": "Sunum Hazırlama (PowerPoint)",
+    "windows_karsiligi": "Microsoft PowerPoint",
+    "icon": "fa-file-powerpoint",
+    "steps": [
+      "Pardus'ta sunum programının adı **LibreOffice Impress**'tir.",
+      "Windows'ta hazırladığınız **.pptx** ve **.ppt** sunumlarını sorunsuz açar.",
+      "Sunumu başlatmak için klavyeden **F5** tuşuna basmanız yeterlidir."
+    ]
+  },
+  {
+    "id": "pdf-sunum",
+    "category": "ofis",
+    "title": "PDF'i Sunum Gibi Oynat",
+    "windows_karsiligi": "Tam Ekran Modu",
+    "icon": "fa-expand",
+    "steps": [
+      "Sunumunuz kaymasın diye PDF yaptıysanız, onu da sunum gibi oynatabilirsiniz.",
+      "PDF dosyasını açın (Atril Belge Görüntüleyici ile).",
+      "**F5** tuşuna basın veya Görünüm > **Tam Ekran** deyin. Artık tıklayarak sayfaları geçebilirsiniz."
+    ]
+  },
+  {
     "id": "libre-writer",
     "category": "ofis",
     "title": "Word Dosyası Açma",
