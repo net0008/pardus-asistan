@@ -226,17 +226,16 @@
     ]
   },
 {
-    "id": "etap-kullanici-sifreleri",
+    "id": "etap-kullanici-rolleri",
     "category": "sistem",
-    "title": "Kullanıcı Adı ve Şifreler",
-    "windows_karsiligi": "Administrator Şifresi",
-    "icon": "fa-key",
+    "title": "Kullanıcı Hesapları ve Şifreler",
+    "windows_karsiligi": "Administrator / Guest Hesabı",
+    "icon": "fa-users-cog",
     "steps": [
-      "**Öğretmen Hesabı:** Kullanıcı adı: **ogretmen** | Şifre: **ogretmen**",
-      "**Öğrenci Hesabı:** Kullanıcı adı: **ogrenci** | Şifre: **1**",
-      "**Etap Admin (Yönetici):** Program kurma ve kritik ayarlar için bu şifre gereklidir.",
-      "Bu şifreyi **okulunuzdaki YEĞİTEK okul sorumlusundan** öğrenebilirsiniz.",
-      "Eğer okulda yoksa, **İl/İlçe YEĞİTEK Bilişim Koordinatöründen** talep etmelisiniz."
+      "**Öğretmen (ogretmen):** Günlük ders kullanımı içindir. USB anahtar ile otomatik açılan hesaptır. Şifresi: **ogretmen**",
+      "**Öğrenci (ogrenci):** Kısıtlı yetkiye sahiptir, ayarları değiştiremez ve program kuramaz. Şifresi: **1**",
+      "**Yönetici (etapadmin):** Program kurmak ve kritik sistem ayarlarını değiştirmek için tam yetkili hesaptır.",
+      "**Önemli:** Yönetici şifresini **okulunuzdaki YEĞİTEK sorumlusundan** veya **İl/İlçe Bilişim Koordinatöründen** öğrenmelisiniz."
     ]
   }
 
