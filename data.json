@@ -24,6 +24,19 @@
     ]
   },
   {
+    "id": "etap-kullanici-rolleri",
+    "category": "sistem",
+    "title": "Kullanıcı Adı ve Şifreler",
+    "windows_karsiligi": "Yönetici Şifresi",
+    "icon": "fa-users-cog",
+    "steps": [
+      "**Öğretmen Hesabı:** Kullanıcı: **ogretmen** | Şifre: **ogretmen**",
+      "**Öğrenci Hesabı:** Kullanıcı: **ogrenci** | Şifre: **1**",
+      "**Yönetici (etapadmin):** Program kurmak için gereklidir.",
+      "**Önemli:** Yönetici şifresini **okulunuzdaki YEĞİTEK sorumlusundan** veya yoksa **İl/İlçe Bilişim Koordinatöründen** öğrenmelisiniz."
+    ]
+  },
+  {
     "id": "genel-wifi-internet",
     "category": "internet",
     "title": "Kablosuz Ağ (Wi-Fi) ve İnternet",
@@ -60,6 +73,30 @@
       "Arama kutusuna program adını yazın (Örn: Chrome, VLC, Zoom).",
       "**Kur** butonuna basıp şifrenizi girin.",
       "Mağazada olmayan **.deb** uzantılı dosyaları (Örn: Z-Kitaplar) indirdikten sonra çift tıklayarak kurabilirsiniz."
+    ]
+  },
+  {
+    "id": "oyun-gcompris",
+    "category": "uygulama",
+    "title": "GCompris (Zeka Oyunları)",
+    "windows_karsiligi": "Akıl Oyunları",
+    "icon": "fa-puzzle-piece",
+    "steps": [
+      "Pardus ETAP ile yüklü gelen, 2-10 yaş arası çocuklar için 100'den fazla eğitici oyun paketidir.",
+      "Matematik, Coğrafya, Okuma ve Mantık oyunları içerir.",
+      "**Menü > Eğitim > GCompris** yolunu izleyerek açabilirsiniz."
+    ]
+  },
+  {
+    "id": "oyun-scratch",
+    "category": "uygulama",
+    "title": "Scratch (Kodlama)",
+    "windows_karsiligi": "Mblock",
+    "icon": "fa-code",
+    "steps": [
+      "Çocuklar için blok tabanlı kodlama aracıdır.",
+      "İnternet olmasa bile çalışır.",
+      "Kendi oyununuzu ve animasyonunuzu yapabilirsiniz."
     ]
   },
   {
@@ -197,47 +234,5 @@
       "Kablolu bağlantının yanındaki Çark simgesine basın.",
       "**IPv4** sekmesinden yöntemi **Elle** yapın ve IP, Ağ Maskesi, Ağ Geçidi bilgilerini girin."
     ]
-  },
-  {
-    "id": "dosya-sikistirma-acma",
-    "category": "sistem",
-    "title": "Dosya Sıkıştırma ve Açma (Zip/Rar)",
-    "windows_karsiligi": "WinRAR / WinZip",
-    "icon": "fa-file-archive",
-    "steps": [
-      "**Sıkıştırma (Zip):** Dosya veya klasörlere **Sağ Tıklayın** > **Sıkıştır** (veya Arşiv Oluştur) deyin. '.zip' formatını seçip 'Oluştur'a basın.",
-      "**Açma (Ayıklama):** İndirdiğiniz arşiv dosyasına **Sağ Tıklayın** > **Buraya Ayıkla** (Extract Here) seçeneğini seçin.",
-      "**Önemli:** Pardus'ta WinRAR kurmanıza gerek yoktur. Sistemdeki **Arşiv Yöneticisi**; Zip, Rar ve 7z dosyalarını otomatik açar."
-    ]
-  },
-  {
-    "id": "indirilen-dosya-usb",
-    "category": "sistem",
-    "title": "İndirilen Dosyayı USB'ye Atma",
-    "windows_karsiligi": "İndirilenler Klasörü",
-    "icon": "fa-file-export",
-    "steps": [
-      "Masaüstündeki **Ev Dizini** (veya Dosyalar) klasörünü açın.",
-      "Sol taraftaki menüden **İndirilenler** klasörüne tıklayın.",
-      "Dosyanızı bulup üzerine **Sağ Tık > Kopyala** deyin.",
-      "USB belleğinizi takın ve sol menüden USB ismine tıklayın.",
-      "Boş bir alana **Sağ Tık > Yapıştır** deyin.",
-      "**Önemli:** USB'yi çekmeden önce isminin yanındaki **Çıkar (Üçgen/Eject)** simgesine mutlaka basın."
-    ]
-  },
-{
-    "id": "etap-kullanici-rolleri",
-    "category": "sistem",
-    "title": "Kullanıcı Hesapları ve Şifreler",
-    "windows_karsiligi": "Administrator / Guest Hesabı",
-    "icon": "fa-users-cog",
-    "steps": [
-      "**Öğretmen (ogretmen):** Günlük ders kullanımı içindir. USB anahtar ile otomatik açılan hesaptır. Şifresi: **ogretmen**",
-      "**Öğrenci (ogrenci):** Kısıtlı yetkiye sahiptir, ayarları değiştiremez ve program kuramaz. Şifresi: **1**",
-      "**Yönetici (etapadmin):** Program kurmak ve kritik sistem ayarlarını değiştirmek için tam yetkili hesaptır.",
-      "**Önemli:** Yönetici şifresini **okulunuzdaki YEĞİTEK sorumlusundan** veya **İl/İlçe Bilişim Koordinatöründen** öğrenmelisiniz."
-    ]
   }
-
 ]
-
