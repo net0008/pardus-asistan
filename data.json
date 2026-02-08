@@ -384,5 +384,21 @@
       "**Şifre Hakkında:** Komutları uygularken yönetici şifresi istenir (Yazarken ekranda görünmez, yazıp Enter'a basın).",
       "**Şifreyi Bilmiyorsanız:** Okulunuzdaki **YEĞİTEK Sorumlusu**, **Okul Müdürü** veya **İl/İlçe Bilişim Koordinatöründen** öğrenebilirsiniz."
     ]
+  },
+  {
+    "id": "wine-winetricks-ileri",
+    "category": "sistem",
+    "title": "Z-Kitap Hâlâ Açılmıyor (Winetricks)",
+    "windows_karsiligi": "DirectX / .NET Framework Yükleme",
+    "icon": "fa-tools",
+    "steps": [
+      "Eğer 32-bit desteğini kurmanıza rağmen program hala açılmıyorsa ek paketler (Fontlar, DirectX vb.) gerekebilir.",
+      "**1. Adım (Kurulum):** Uçbirim'i açın ve şu komutu yapıştırıp Enter'a basın: <br><code style='font-size:1.2em; font-weight:bold; color:#c7254e; background-color:#f9f2f4; padding:5px; display:block;'>sudo apt install winetricks</code>",
+      "**2. Adım (Açma):** Kurulum bitince uçbirime <code>winetricks --gui</code> yazın.",
+      "**3. Adım (Yükleme):** Açılan pencerede **'Select the default wineprefix'** seçeneğini seçin.",
+      "**4. Adım:** **'Install a Windows DLL or component'** seçeneğine tıklayın.",
+      "**5. Adım:** Listeden ihtiyacınız olanı (Genelde: **d3dx9**, **mfc42**, **vcrun2015**) kutucuğunu işaretleyip 'OK' diyerek yükleyin."
+    ]
   }
+
 ]
