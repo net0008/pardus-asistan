@@ -3,14 +3,12 @@ let allData = [];
 let favorites = JSON.parse(localStorage.getItem('pardusFavs')) || [];
 let currentTab = 'home';
 
-// Elementleri seçme
-const mainContent = document.getElementById('mainContent');
+const mainView = document.getElementById('mainView');
 const detailView = document.getElementById('detailView');
 const settingsView = document.getElementById('settingsView');
 const grid = document.getElementById('menuGrid');
 
 // --- BAŞLANGIÇ AYARLARI ---
-// Karanlık mod kontrolü
 if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
     const toggle = document.getElementById('darkModeToggle');
@@ -19,21 +17,20 @@ if (localStorage.getItem('theme') === 'dark') {
 
 // --- VERİ ÇEKME ---
 fetch('data.json')
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
         allData = data;
         renderMenu(allData);
     })
-    .catch(error => {
-        console.error('Veri hatası:', error);
-        if (grid) grid.innerHTML = '<p style="text-align:center;">Veri yüklenemedi.</p>';
+    .catch(err => {
+        if(grid) grid.innerHTML = '<p style="text-align:center">Veri yüklenemedi.</p>';
     });
 
-// --- MENÜYÜ ÇİZME ---
+// --- MENÜ ÇİZME ---
 function renderMenu(items) {
-    if (!grid) return;
+    if(!grid) return;
     grid.innerHTML = '';
-
+    
     if (items.length === 0) {
         grid.innerHTML = '<div style="text-align:center; width:100%; grid-column:1/-1; padding:40px; color:#999;">Sonuç bulunamadı.</div>';
         return;
@@ -42,168 +39,121 @@ function renderMenu(items) {
     items.forEach(item => {
         const isFav = favorites.includes(item.id);
         const starClass = isFav ? 'fas fa-star active' : 'far fa-star';
-
         grid.innerHTML += `
             <div class="card" onclick="openDetail('${item.id}')">
                 <i class="${starClass} fav-btn" onclick="toggleFav(event, '${item.id}')"></i>
                 <i class="fas ${item.icon} main-icon"></i>
                 <span>${item.title}</span>
-                <small style="display:block; font-size:0.7rem; opacity:0.7; margin-top:5px;">
-                    ${item.windows_karsiligi.split('/')[0]}
-                </small>
+                <small style="display:block; opacity:0.7; font-size:0.7rem; margin-top:5px;">${item.windows_karsiligi.split('/')[0]}</small>
             </div>
         `;
     });
 }
 
-// --- DETAY SAYFASINI AÇMA (YENİ SİSTEM) ---
+// --- DETAY SAYFASI AÇ (KUTUCUKLU TASARIM) ---
 function openDetail(id) {
     const item = allData.find(x => x.id === id);
     if (!item) return;
 
-    // 1. Ana İçeriği Gizle, Detayı Göster
-    if (mainContent) mainContent.style.display = 'none';
-    if (settingsView) settingsView.style.display = 'none';
-    if (detailView) detailView.style.display = 'block';
-
-    // 2. İçeriği Doldur
+    // Sayfa Geçişi
+    mainView.style.display = 'none';
+    settingsView.style.display = 'none';
+    detailView.style.display = 'block';
+    
+    // Başlık ve İkon
     document.getElementById('detailTitle').innerText = item.title;
-    document.getElementById('detailWindows').innerHTML = `<i class="fab fa-windows"></i> Windows: ${item.windows_karsiligi}`;
-    document.getElementById('detailIcon').innerHTML = `<i class="fas ${item.icon}"></i>`;
+    document.getElementById('detailWindows').innerHTML = `<i class="fab fa-windows"></i> <strong>Windows'ta:</strong> ${item.windows_karsiligi}`;
 
-    // 3. Resim Kontrolü
+    // Resim Varsa Göster
     const imgContainer = document.getElementById('detailImageContainer');
-    if (item.image) {
+    if(item.image) {
         imgContainer.style.display = 'block';
-        imgContainer.innerHTML = `<img src="${item.image}">`;
+        imgContainer.innerHTML = `<img src="${item.image}" style="max-width:100%; border-radius:8px; border:1px solid #ddd;">`;
     } else {
         imgContainer.style.display = 'none';
     }
 
-    // 4. Adımları Listele
-    const list = document.getElementById('detailSteps');
-    list.innerHTML = '';
+    // --- ADIMLARI KUTUCUK (STEP BOX) OLARAK OLUŞTUR ---
+    const container = document.getElementById('detailStepsContainer');
+    container.innerHTML = ''; // Temizle
+    
     item.steps.forEach(step => {
-        const li = document.createElement('li');
-        li.innerHTML = step;
-        list.appendChild(li);
+        const div = document.createElement('div');
+        div.className = 'step-box'; // CSS'teki mavi kutu sınıfı
+        div.innerHTML = step;
+        container.appendChild(div);
     });
 
-    // Sayfanın en tepesine kaydır (Telefonda aşağıda kalmasın)
     window.scrollTo(0, 0);
 }
 
-// --- GERİ DÖN FONKSİYONU ---
+// --- GERİ DÖN ---
 function closeDetail() {
-    // Detayı gizle, ana içeriği aç
-    if (detailView) detailView.style.display = 'none';
-    
-    // Hangi sekmedeysek oraya dön
-    if (currentTab === 'settings') {
-        if (settingsView) settingsView.style.display = 'block';
+    detailView.style.display = 'none';
+    if(currentTab === 'settings') {
+        settingsView.style.display = 'block';
     } else {
-        if (mainContent) mainContent.style.display = 'block';
-    }
-}
-
-// --- FAVORİ İŞLEMLERİ ---
-function toggleFav(e, id) {
-    e.stopPropagation(); 
-    if (favorites.includes(id)) {
-        favorites = favorites.filter(favId => favId !== id);
-    } else {
-        favorites.push(id);
-    }
-    localStorage.setItem('pardusFavs', JSON.stringify(favorites));
-
-    if (currentTab === 'fav') {
-        const favItems = allData.filter(item => favorites.includes(item.id));
-        renderMenu(favItems);
-    } else {
-        renderMenu(allData);
-    }
-}
-
-// --- SEKME DEĞİŞTİRME ---
-function switchTab(tab) {
-    currentTab = tab;
-    
-    // Detay açıksa kapat
-    if (detailView) detailView.style.display = 'none';
-
-    // Buton aktiflikleri
-    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-    if (tab === 'home') document.getElementById('btnHome').classList.add('active');
-    if (tab === 'fav') document.getElementById('btnFav').classList.add('active');
-    if (tab === 'settings') document.getElementById('btnSettings').classList.add('active');
-
-    // Görünürlük ayarları
-    if (mainContent) mainContent.style.display = 'none';
-    if (settingsView) settingsView.style.display = 'none';
-
-    if (tab === 'settings') {
-        if (settingsView) settingsView.style.display = 'block';
-    } else {
-        if (mainContent) mainContent.style.display = 'block';
-        // İçerik filtreleme
-        if (tab === 'home') {
-            renderMenu(allData);
-        } else if (tab === 'fav') {
-            const favItems = allData.filter(item => favorites.includes(item.id));
-            renderMenu(favItems);
-        }
+        mainView.style.display = 'block';
     }
 }
 
 // --- DİĞER FONKSİYONLAR ---
+function toggleFav(e, id) {
+    e.stopPropagation();
+    if(favorites.includes(id)) favorites = favorites.filter(x => x !== id);
+    else favorites.push(id);
+    localStorage.setItem('pardusFavs', JSON.stringify(favorites));
+    renderMenu(currentTab === 'fav' ? allData.filter(x => favorites.includes(x.id)) : allData);
+}
+
+function switchTab(tab) {
+    currentTab = tab;
+    closeDetail();
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    
+    if(tab === 'home') document.getElementById('btnHome').classList.add('active');
+    if(tab === 'fav') document.getElementById('btnFav').classList.add('active');
+    if(tab === 'settings') document.getElementById('btnSettings').classList.add('active');
+
+    mainView.style.display = 'none';
+    settingsView.style.display = 'none';
+
+    if(tab === 'settings') {
+        settingsView.style.display = 'block';
+    } else {
+        mainView.style.display = 'block';
+        renderMenu(tab === 'fav' ? allData.filter(x => favorites.includes(x.id)) : allData);
+    }
+}
+
+function filterCategory(cat) {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    if(event) event.currentTarget.classList.add('active');
+    renderMenu(cat === 'all' ? allData : allData.filter(x => x.category === cat));
+}
+
+function filter(val) {
+    const term = val.toLowerCase();
+    renderMenu(allData.filter(x => x.title.toLowerCase().includes(term) || x.windows_karsiligi.toLowerCase().includes(term)));
+}
+
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
     localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
 }
 
-function filter(val) {
-    if (currentTab === 'fav') return;
-    const searchTerm = val.toLowerCase();
-    const filtered = allData.filter(item => {
-        return item.title.toLowerCase().includes(searchTerm) ||
-            item.windows_karsiligi.toLowerCase().includes(searchTerm);
-    });
-    renderMenu(filtered);
-}
+// PWA
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 
-function filterCategory(category) {
-    document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
-    if (event && event.currentTarget) event.currentTarget.classList.add('active');
-    
-    if (category === 'all') {
-        renderMenu(allData);
-    } else {
-        const filtered = allData.filter(item => item.category === category);
-        renderMenu(filtered);
-    }
-}
-
-// PWA Servis İşçisi
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-}
-
-// Yükle Butonu
 let deferredPrompt;
 const installBtn = document.getElementById('installApp');
 window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
+    e.preventDefault(); deferredPrompt = e;
     if (installBtn) installBtn.style.display = 'block';
 });
 if (installBtn) {
-    installBtn.addEventListener('click', (e) => {
+    installBtn.addEventListener('click', () => {
         installBtn.style.display = 'none';
-        if (deferredPrompt) {
-            deferredPrompt.prompt();
-            deferredPrompt.userChoice.then((choiceResult) => {
-                deferredPrompt = null;
-            });
-        }
+        if (deferredPrompt) deferredPrompt.prompt();
     });
 }
