@@ -32,8 +32,8 @@
     "steps": [
       "**Öğretmen Hesabı:** Kullanıcı: **ogretmen** | Şifre: **ogretmen**",
       "**Öğrenci Hesabı:** Kullanıcı: **ogrenci** | Şifre: **1**",
-      "**Yönetici (etapadmin):** Program kurmak için gereklidir.",
-      "**Önemli:** Yönetici şifresini **okulunuzdaki YEĞİTEK sorumlusundan** veya yoksa **İl/İlçe Bilişim Koordinatöründen** öğrenmelisiniz."
+      "**Yönetici (Etap Yetkili):** Program kurmak için gereklidir.",
+      "**Önemli:** Etap Yetkili şifresini **okulunuzdaki  YEĞİTEK okul sorumlusundan** veya yoksa **İl/İlçe Bilişim Koordinatöründen** öğrenmelisiniz. Bu şifreyi sadece öğretmenler bilmelidir, öğrencilerle kesinlikle paylaşılmamalıdır."
     ]
   },
   {
@@ -383,7 +383,7 @@
       "**2. Komut:** <br><code style='font-size:1.3em; font-weight:bold; color:#d63384; background-color:#f8f9fa; padding:10px; display:block; border: 1px solid #d63384; border-radius: 8px; margin-top:5px;'>sudo apt update</code>",
       "**3. Komut:** <br><code style='font-size:1.3em; font-weight:bold; color:#d63384; background-color:#f8f9fa; padding:10px; display:block; border: 1px solid #d63384; border-radius: 8px; margin-top:5px;'>sudo apt install wine wine32 wine64</code>",
       "**Şifre Hakkında:** Komutları uygularken yönetici şifresi istenir (Yazarken ekranda görünmez, yazıp Enter'a basın).",
-      "**Şifreyi Bilmiyorsanız:** Okulunuzdaki **YEĞİTEK Sorumlusu**, **Okul Müdürü** veya **İl/İlçe Bilişim Koordinatöründen** öğrenebilirsiniz."
+      "**Şifreyi Bilmiyorsanız:** Okulunuzdaki **YEĞİTEK okul sorumlusundan**, **Okul Müdürü** veya **İl/İlçe Bilişim Koordinatöründen** öğrenebilirsiniz. Bu şifre sadece öğretmenler tarafından bilinmelidir, öğrencilerle kesinlikle paylaşılmamalıdır."
     ]
   },
 {
@@ -405,30 +405,37 @@
     ]
   },
   {
-    "id": "etap-usb-1-anahtar",
+    "id": "etap-usb-anahtar-olusturma",
     "category": "etap",
-    "title": "USB Anahtar Yapımı (1. Aşama - Tüm Öğretmenler)",
-    "windows_karsiligi": "Kilit Anahtarı Oluşturma",
+    "title": "ETA USB Anahtar Oluşturma",
+    "windows_karsiligi": "Windows Hello / USB Key",
     "icon": "fa-key",
     "steps": [
-      "Teneffüse çıkarken tahtanın kilitlenmesi için her öğretmen kendi USB belleğini bir kez anahtara dönüştürmelidir.",
-      "**1. Adım:** USB belleğinizi tahtaya takın. (Dosyalarınız silinmez.)",
-      "**2. Adım:** Uygulamalar > **Eta Giriş** programını açın.",
-      "**3. Adım:** **'Anahtar Oluştur'** sekmesine gelin, şifreyi girip **'Oluştur'** butonuna basın.",
-      "**Önemli:** Bu işlemi sadece bir kez yapmanız yeterlidir. USB belleğiniz artık okuldaki (şifresi aynı olan) tüm tahtaları açabilir."
+      "**Önemli:** Teneffüse çıkarken tahtanın kilitlenmesi için her öğretmen kendi USB belleğini bir kez anahtara dönüştürmelidir.",
+      "**Uygulama:** Tahta üzerinde veya Pardus yüklü sistemde **Eta USB Kayıt** uygulamasını açın.",
+      "**Hazırlık:** USB belleğinizi takın. (Daha önce anahtar olarak kullanılmamış, boş bir bellek önerilir).",
+      "**Bilgi Girişi:** TC Kimlik Numarası, EBA üzerinden belirlediğiniz USB Parolası ve Etap bilgilerini eksiksiz doldurun.",
+      "**Oluşturma:** Listeden taktığınız USB belleği seçin ve **Oluştur** butonuna tıklayın.",
+      "**Kullanım:** Belleği kilitli tahtaya taktığınızda sistem otomatik açılır. Ayrıca EBA'ya da şifresiz girmenizi sağlar.",
+      "**Güvenlik (Kaybolursa):** Belleği kaybederseniz hemen 2. bir anahtar oluşturun. Yeni anahtar yapıldığı an, eski (kayıp) anahtar otomatik olarak iptal olur.",
+      "**Video Anlatım:** İşlemin yapılışını izlemek için <a href='https://www.youtube.com/watch?v=-l29VMP-H80' target='_blank'>buraya tıklayarak</a> videoyu açabilirsiniz."
     ]
   },
   {
-    "id": "etap-usb-2-kilit",
+    "id": "etap-usb-kilit",
     "category": "etap",
-    "title": "USB Çekilince Kilitle (2. Aşama - Tüm Okul)",
+    "title": "Tahtaları Sadece USB Anahtar ile Açma",
     "windows_karsiligi": "Otomatik Kilitleme Ayarı",
     "icon": "fa-user-lock",
     "steps": [
-      "USB çekildiğinde tahtanın kararması için **HER TAHTADA** bu ayarın yapılması şarttır.",
-      "**1. Adım:** **Eta Giriş** programını açıp Ayarlar (Çark) simgesine tıklayın.",
-      "**2. Adım:** **'USB çıkarıldığında oturumu kilitle'** kutucuğunu işaretleyip kaydedin.",
-      "**Notu:** Bu ayar USB belleğe değil, tahtaya kaydedilir. Bu yüzden okuldaki **tüm tahtaları** tek tek dolaşıp bu kutucuğu işaretlemeniz gerekir. Aksi takdirde öğretmen yan sınıfta USB'yi çekince tahta kapanmaz."
+      "**Gereklilik:** Aşağıdaki adımları gerçekleştirebilmek için Etap Yetkili şifresini idareden, YEĞİTEK okul sorumlusundan veya İl/İlçe Bilişim Koordinatöründen öğrenmelisiniz.",
+      "**Amaç:** Tahtaların sadece USB anahtarla açılmasını sağlamak için, şifresi herkesçe bilinen 'öğrenci' hesabının silinmesi ve 'öğretmen' hesabının şifresinin değiştirilmesi gerekir.",
+      "**1. Adım:** **Etap Yetkili** hesabıyla giriş yapın. Başlat menüsüne tıklayıp arama kutusuna **Kullanıcılar** yazın.",
+      "**2. Adım:** **'Kullanıcılar ve Gruplar'** menüsüne tıklayın. Sistem tekrar şifre isteyecektir; Etap Yetkili şifresini girin.",
+      "**3. Adım (Temizlik):** Listeden **'ogrenci'** hesabını seçip **Sil** butonuna basın. **'ogretmen'** hesabını seçip şifresini güçlü bir şifreyle değiştirin (Bu şifreyi öğrencilerle paylaşmayın).",
+      "**4. Adım (Yetkili Şifresi):** Eğer Etap Yetkili şifresinin öğrenciler tarafından öğrenildiğini düşünüyorsanız, bu şifreyi de değiştirin. Yeni şifreyi mutlaka not edip okul idaresine bildirin.",
+      "**Video Anlatım:** İşlemin yapılışını izlemek için <a href='https://www.youtube.com/watch?v=Q2VLZrqy7_U' target='_blank'>buraya tıklayarak</a> videoyu açabilirsiniz.",
+      "**Not:** Bu güvenlik ayarlarını okuldaki **tüm tahtalarda tek tek** uygulamanız gerekmektedir."
     ]
   },
   {
