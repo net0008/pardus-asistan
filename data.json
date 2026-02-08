@@ -234,5 +234,116 @@
       "Kablolu bağlantının yanındaki Çark simgesine basın.",
       "**IPv4** sekmesinden yöntemi **Elle** yapın ve IP, Ağ Maskesi, Ağ Geçidi bilgilerini girin."
     ]
+  },
+{
+    "id": "app-veyon",
+    "category": "etap",
+    "title": "Veyon (Sınıf Yönetimi)",
+    "windows_karsiligi": "NetSupport School",
+    "icon": "fa-chalkboard-teacher",
+    "steps": [
+      "Laboratuvar sınıfları için ücretsiz ve açık kaynaklı sınıf yönetim programıdır.",
+      "Öğretmen bilgisayarından öğrenci ekranlarını izleyebilir, kilitleyebilir veya kontrol edebilirsiniz.",
+      "Tüm sınıfa aynı anda ekranınızı yansıtabilirsiniz."
+    ]
+  },
+  {
+    "id": "app-geogebra",
+    "category": "uygulama",
+    "title": "GeoGebra (Matematik)",
+    "windows_karsiligi": "GeoGebra",
+    "icon": "fa-calculator",
+    "steps": [
+      "Matematik ve Geometri öğretmenleri için vazgeçilmez bir araçtır.",
+      "Fonksiyon grafikleri çizebilir, dinamik geometrik şekiller oluşturabilirsiniz.",
+      "İnternet olmasa bile çalışır, akıllı tahtada dokunmatik uyumludur."
+    ]
+  },
+  {
+    "id": "app-stellarium",
+    "category": "uygulama",
+    "title": "Stellarium (Sanal Gökyüzü)",
+    "windows_karsiligi": "Starry Night",
+    "icon": "fa-star",
+    "steps": [
+      "Fen Bilgisi ve Coğrafya dersleri için 3D gökyüzü simülasyonudur.",
+      "Sınıfı karanlık yapıp tahtadan yıldızları, gezegenleri ve takımyıldızlarını gösterebilirsiniz.",
+      "Konumunuzu seçerek o anki gökyüzünü birebir simüle eder."
+    ]
+  },
+  {
+    "id": "app-vokoscreen",
+    "category": "uygulama",
+    "title": "Vokoscreen (Ders Kaydı)",
+    "windows_karsiligi": "Camtasia / Bandicam",
+    "icon": "fa-video",
+    "steps": [
+      "Ekranda yaptıklarınızı ve sesinizi kaydederek ders videosu hazırlamanızı sağlar.",
+      "Kullanımı çok basittir, 'Başlat' ve 'Durdur' diyerek kaydı alırsınız.",
+      "Uzaktan eğitim veya tekrar videoları hazırlamak için idealdir."
+    ]
+  },
+  {
+    "id": "app-ezil",
+    "category": "etap",
+    "title": "E-Zil (Okul Zil Programı)",
+    "windows_karsiligi": "Supertone / Zil Programları",
+    "icon": "fa-bell",
+    "steps": [
+      "Okulun giriş-çıkış saatlerini ve zil melodilerini ayarlayabileceğiniz yerli yazılımdır.",
+      "Teneffüslerde müzik yayını yapabilir.",
+      "Pardus ETAP yüklü bir bilgisayarı okulun ses sistemine bağlayarak kullanabilirsiniz."
+    ]
+  },
+  {
+    "id": "app-calibre",
+    "category": "ofis",
+    "title": "Calibre (E-Kitap Kütüphanesi)",
+    "windows_karsiligi": "Calibre",
+    "icon": "fa-book",
+    "steps": [
+      "PDF, EPUB ve diğer e-kitap formatlarını düzenlemek ve dönüştürmek için kullanılır.",
+      "Kendi dijital kütüphanenizi oluşturabilir, kitapların formatını değiştirebilirsiniz.",
+      "Z-Kitaplarınızı arşivlemek için harika bir araçtır."
+    ]
+  },
+  {
+    "id": "app-zotero",
+    "category": "ofis",
+    "title": "Zotero (Akademik Araştırma)",
+    "windows_karsiligi": "EndNote",
+    "icon": "fa-graduation-cap",
+    "steps": [
+      "Yüksek lisans veya doktora yapan öğretmenler için kaynakça yönetim aracıdır.",
+      "Makaleleri, kitapları ve web sitelerini tek tıkla kaydeder.",
+      "Otomatik olarak APA veya diğer formatlarda kaynakça oluşturur."
+    ]
+  },
+  {
+    "id": "app-java-kurucu",
+    "category": "sistem",
+    "title": "Pardus Java Kurucu",
+    "windows_karsiligi": "Java Runtime",
+    "icon": "fa-coffee",
+    "steps": [
+      "Eski MEB uygulamaları (Örn: DYS, bazı e-İmza uygulamaları) Java gerektirebilir.",
+      "Bu araç ile tek tıkla sisteminize en uygun Java sürümünü kurabilirsiniz.",
+      "Pardus Mağaza'da 'Java Kurucu' diye aratarak bulabilirsiniz."
+    ]
+  },
+  {
+    "id": "app-google-earth",
+    "category": "uygulama",
+    "title": "Google Earth Pro",
+    "windows_karsiligi": "Google Earth (Aynısı)",
+    "icon": "fa-globe-americas",
+    "steps": [
+      "Coğrafya ve Sosyal Bilgiler derslerinin vazgeçilmezi olan 3 boyutlu dünya atlasıdır.",
+      "**Sokak Görünümü (Street View):** Sarı adamı haritaya sürükleyip sokaklarda gezebilirsiniz.",
+      "**Zaman Makinesi:** Geçmiş yıllara ait uydu görüntülerini (Örn: 2005 yılındaki İstanbul) inceleyebilirsiniz.",
+      "**Kurulum:** Pardus Mağaza'da yoksa, Google'ın sitesinden **.deb (Debian/Ubuntu)** sürümünü indirip çift tıklayarak kurun."
+    ]
   }
+
+
 ]
