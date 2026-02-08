@@ -361,21 +361,23 @@
       "**Kullanım:** Kurulum bitince .exe dosyasına **Sağ Tık > Birlikte Aç > Wine** seçeneğini seçin."
     ]
   },
-  {
+ {
     "id": "wine-32-bit-kurulum",
     "category": "sistem",
-    "title": "Z-Kitap Açılmıyor (32-Bit Desteği)",
+    "title": "Z-Kitap Açılmıyor (Wine 32-Bit)",
     "windows_karsiligi": "Exe Çalıştırma Sorunu",
     "icon": "fa-wine-glass-alt",
     "steps": [
-      "Eğer Z-Kitaplarınız açılmıyorsa sisteme 32-bit mimariyi eklemeniz gerekir.",
+      "Z-Kitapları açmak için 32-bit desteği şarttır. Aşağıdaki iki yöntemden birini seçin.",
       "**1. Adım:** Başlat menüsünden **Uçbirim (Terminal)** uygulamasını açın.",
-      "**2. Adım (Kolay Yöntem):** Uzun kod yazmakla uğraşmamak için tarayıcıyı açın ve adres çubuğuna **meb.ai/UZccBuP** yazıp Enter'a basın. Açılan sayfadaki kodu kopyalayıp Uçbirim'e yapıştırın.",
-      "**2. Adım (Alternatif - Elle):** Linke giremezseniz şu kodu aynen yazıp Enter'a basın: <br><code>sudo dpkg --add-architecture i386 && sudo apt update</code>",
-      "**Önemli:** Linki Google'da aratmayın, tarayıcının en tepesindeki adres çubuğuna yazın.",
-      "**3. Adım:** Şifrenizi isteyecektir. (Yazarken ekranda hiçbir şey görünmez, siz şifreyi yazıp Enter'a basın).",
-      "**4. Adım:** İşlem bitince Wine'ı kurmak için şu komutu yapıştırın: <br><code>sudo apt install wine wine32 wine64</code>"
+      "--- **YÖNTEM A: Kopyala / Yapıştır (Kolay)** ---",
+      "Tarayıcıdan **meb.ai/UZccBuP** adresine girin. Sayfadaki komutları kopyalayıp Uçbirim'e yapıştırın.",
+      "--- **YÖNTEM B: Elle Yazma (İnternet Yoksa)** ---",
+      "Eğer siteye giremiyorsanız şu 3 komutu sırasıyla ve hatasız yazıp Enter'a basın:",
+      "**1. Komut:** <code>sudo dpkg --add-architecture i386</code>",
+      "**2. Komut:** <code>sudo apt update</code>",
+      "**3. Komut:** <code>sudo apt install wine wine32 wine64</code>",
+      "**Not:** Şifre sorulduğunda yazın ve Enter'a basın. (Güvenlik gereği şifre ekranda görünmez.)"
     ]
   }
-
 ]
