@@ -175,7 +175,7 @@ input:checked + .slider:before { transform: translateX(22px); }
 /* KUTU İÇİNDEKİ BAŞLIKLAR (RENKLİ) */
 .step-box strong {
     font-weight: 700;             /* Başlıklar Çok Kalın */
-    color: var(--pardus-blue);    /* Başlıklar Mavi */
+    color: #000;    /* Başlıklar Siyah */
     letter-spacing: 0.3px;
 }
 
