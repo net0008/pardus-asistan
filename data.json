@@ -368,16 +368,21 @@
     "windows_karsiligi": "Exe Çalıştırma Sorunu",
     "icon": "fa-wine-glass-alt",
     "steps": [
-      "Z-Kitapları açmak için 32-bit desteği şarttır. Aşağıdaki iki yöntemden birini seçin.",
+      "Z-Kitapları açmak için 32-bit desteği şarttır. Aşağıdaki yöntemlerden birini seçin.",
       "**1. Adım:** Başlat menüsünden **Uçbirim (Terminal)** uygulamasını açın.",
       "--- **YÖNTEM A: Kopyala / Yapıştır (Kolay)** ---",
-      "Tarayıcıdan **meb.ai/UZccBuP** adresine girin. Sayfadaki komutları kopyalayıp Uçbirim'e yapıştırın.",
+      "1. Tarayıcıdan **meb.ai/UZccBuP** adresine girin.",
+      "*(**Önemli:** Bu adresi Google'da aramayın, tarayıcının en tepesindeki adres çubuğuna yazıp Enter'a basın.)*",
+      "2. Sayfadaki kodu kopyalayın.",
+      "3. Uçbirim penceresine gelin, boş bir yere **Sağ Tıklayın** ve **'Yapıştır'** seçeneğini seçin.",
+      "*(Not: Pardus Terminalinde Ctrl+V çalışmaz. Ya Sağ Tık > Yapıştır yapın ya da Ctrl+Shift+V kullanın.)*",
       "--- **YÖNTEM B: Elle Yazma (İnternet Yoksa)** ---",
-      "Eğer siteye giremiyorsanız şu 3 komutu sırasıyla ve hatasız yazıp Enter'a basın:",
+      "Eğer siteye giremiyorsanız şu 3 komutu sırasıyla yazıp Enter'a basın:",
       "**1. Komut:** <code>sudo dpkg --add-architecture i386</code>",
       "**2. Komut:** <code>sudo apt update</code>",
       "**3. Komut:** <code>sudo apt install wine wine32 wine64</code>",
-      "**Not:** Şifre sorulduğunda yazın ve Enter'a basın. (Güvenlik gereği şifre ekranda görünmez.)"
+      "**Şifre Hakkında:** Komutları uygularken yönetici şifresi istenir (Yazarken ekranda görünmez, yazıp Enter'a basın).",
+      "**Şifreyi Bilmiyorsanız:** Okulunuzdaki **YEĞİTEK Sorumlusu**, **Okul Müdürü** veya **İl/İlçe Bilişim Koordinatöründen** öğrenebilirsiniz."
     ]
   }
 ]
