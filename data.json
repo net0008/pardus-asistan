@@ -388,7 +388,7 @@
   {
     "id": "wine-32-bit-kurulum2",
     "category": "sistem",
-    "title": "Z-Kitap Açılmıyor (Wine 32-Bit)",
+    "title": "Z-Kitap Açılmıyor2 (Wine 32-Bit)",
     "windows_karsiligi": "Exe Çalıştırma Sorunu",
     "icon": "fa-windows",
     "steps": [
