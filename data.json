@@ -338,12 +338,14 @@
     "windows_karsiligi": "Google Earth",
     "icon": "fa-globe-americas",
     "steps": [
-      "Coğrafya derslerinin vazgeçilmezi olan 3 boyutlu dünya atlasıdır.",
-      "**1. Adım (İndirme):** <a href='https://www.google.com/earth/about/versions/#earth-pro' target='_blank'>Buraya Tıklayarak</a> resmi sayfayı açın.",
-      "**2. Adım (Seçim):** Çıkan pencerede mutlaka **'64 bit .deb (Debian/Ubuntu)'** seçeneğini işaretleyin ve 'Kabul Et ve İndir' butonuna basın.",
-      "**3. Adım (Kurulum):** İndirilenler klasörüne gidin, inen dosyaya (google-earth-pro...deb) çift tıklayın ve **'Kur'** diyerek şifrenizi girin."
+            "Coğrafya ve Sosyal Bilgiler derslerinin vazgeçilmezi olan 3 boyutlu dünya atlasıdır.",
+      "**Sokak Görünümü (Street View):** Sarı adamı haritaya sürükleyip sokaklarda gezebilirsiniz.",
+      "**Zaman Makinesi:** Geçmiş yıllara ait uydu görüntülerini (Örn: 2005 yılındaki İstanbul) inceleyebilirsiniz.",
+     "**Kurulum:** Pardus Mağaza'dan indirebilirsiniz. Mağzada yoksa, aşağıdaki adımları izleyiniz.",
+      "**1. Adım (İndirme):** <a href='https://dl.google.com/dl/earth/client/current/google-earth-pro-stable_current_amd64.deb'>Buraya Tıklayarak</a> Pardus uyumlu dosyayı doğrudan indirin. (Siteyle uğraşmanıza gerek yok, direkt iner.)",
+      "**2. Adım (Kurulum):** İndirilenler klasörüne gidin.",
+      "**3. Adım:** İnen **.deb** uzantılı dosyaya çift tıklayın ve **'Kur'** butonuna basın. (Yönetici şifresi isterse girin.)"
     ]
   }
-
 
 ]
