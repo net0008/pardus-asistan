@@ -430,6 +430,46 @@
       "**2. Adım:** **'USB çıkarıldığında oturumu kilitle'** kutucuğunu işaretleyip kaydedin.",
       "**Notu:** Bu ayar USB belleğe değil, tahtaya kaydedilir. Bu yüzden okuldaki **tüm tahtaları** tek tek dolaşıp bu kutucuğu işaretlemeniz gerekir. Aksi takdirde öğretmen yan sınıfta USB'yi çekince tahta kapanmaz."
     ]
+  },
+  {
+    "id": "sorun-donma-cozum",
+    "category": "donanim",
+    "title": "Tahta Dondu! (Fişi Çekmeyin)",
+    "windows_karsiligi": "Görev Yöneticisi / Reset",
+    "icon": "fa-snowflake",
+    "steps": [
+      "Tahta kilitlendiğinde fişi çekmek sisteme kalıcı hasar verir. Bunun yerine şu güvenli yöntemleri uygulayın:",
+      "**Yöntem 1 (Klavye Varsa):** Klavyeden **Ctrl + Alt + Backspace (Silme Tuşu)** kombinasyonuna aynı anda basın. Bu işlem sadece ekranı yeniden başlatır.",
+      "**Yöntem 2 (Garanti Çözüm):** Tahtanın çerçevesindeki veya yan panelindeki **Güç (Power)** düğmesine parmağınızı basılı tutun.",
+      "**Süre:** Yaklaşık **10-15 saniye** hiç çekmeden bekleyin. Tahta 'tık' sesiyle güvenli şekilde kapanacaktır.",
+      "**Önemli:** Fişi çekmek 'beyin kanaması' gibidir, Güç tuşuna basılı tutmak ise 'uyutmak'tır. Her zaman tuşu kullanın."
+    ]
+  },
+  {
+    "id": "sorun-donma-onleme",
+    "category": "sistem",
+    "title": "Donmayı Engelleme 1 (Hafıza Tüyosu)",
+    "windows_karsiligi": "RAM Temizleme",
+    "icon": "fa-memory",
+    "steps": [
+      "Z-Kitaplar çok fazla hafıza (RAM) kullanır ve tahtayı dondurabilir. Bunu önlemek için:",
+      "**1. Kural:** Derse başlarken tarayıcıda (Chrome/Firefox) çok fazla sekme açık bırakmayın.",
+      "**2. Kural:** Aynı anda 2-3 farklı yayınevinin Z-Kitabını açmayın. İşiniz biteni kapatın.",
+      "**3. İpucu:** Teneffüslerde tahtayı sadece kilitlemek yerine, gün ortasında bir kez **Yeniden Başlat** yapmak hafızayı sıfırlar ve performansı artırır."
+    ]
+  },
+  {
+    "id": "sorun-isinma-onleme",
+    "category": "donanim",
+    "title": "Donmayı Engelleme 2 (Tahtanın Isınması)",
+    "windows_karsiligi": "Aşırı Isınma / Fan Sesi",
+    "icon": "fa-thermometer-three-quarters",
+    "steps": [
+      "Özellikle yaz aylarında yaşanan donmaların en büyük sebebi 'Aşırı Isınma'dır.",
+      "**Hatalı Davranış:** Tahta çalışırken veya teneffüste kilitliyken önündeki **Sürgülü Kapağı (Beyaz Tahtayı)** kapatmak.",
+      "**Sonuç (Sera Etkisi):** Sürgü kapatıldığında tahta hava alamaz, sıcaklık içeride hapsolur. İşlemci kendini korumak için sistemi yavaşlatır veya kilitler.",
+      "**Altın Kural:** Tahta açık olduğu sürece (ders işlerken veya teneffüste) sürgüyü **ASLA KAPATMAYIN**. Sürgüyü sadece okuldaki işiniz bitip tahtayı tamamen kapattıktan sonra çekin."
+    ]
   }
 
 
