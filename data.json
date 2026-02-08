@@ -361,32 +361,9 @@
       "**Kullanım:** Kurulum bitince .exe dosyasına **Sağ Tık > Birlikte Aç > Wine** seçeneğini seçin."
     ]
   },
- {
-    "id": "wine-32-bit-kurulum",
-    "category": "sistem",
-    "title": "Z-Kitap Açılmıyor (Wine 32-Bit)",
-    "windows_karsiligi": "Exe Çalıştırma Sorunu",
-    "icon": "fa-windows",
-    "steps": [
-      "Z-Kitapları açmak için 32-bit desteği şarttır. Aşağıdaki yöntemlerden birini seçin.",
-      "**1. Adım:** Başlat menüsünden **Uçbirim (Terminal)** uygulamasını açın.",
-      "--- **YÖNTEM A: Kopyala / Yapıştır (Kolay)** ---",
-      "1. Tarayıcıdan **meb.ai/UZccBuP** adresine girin.",
-      "*(**Önemli:** Bu adresi Google'da aramayın, tarayıcının en tepesindeki adres çubuğuna yazıp Enter'a basın.)*",
-      "2. Sayfadaki kodu kopyalayın.",
-      "3. Uçbirim penceresine gelin, boş bir yere **Sağ Tıklayın** ve **'Yapıştır'** seçeneğini seçin.",
-      "*(Not: Pardus Terminalinde Ctrl+V çalışmaz. Ya Sağ Tık > Yapıştır yapın ya da Ctrl+Shift+V kullanın.)*",
-      "--- **YÖNTEM B: Elle Yazma (İnternet Yoksa)** ---",
-      "Eğer siteye giremiyorsanız şu 3 komutu sırasıyla yazıp Enter'a basın:",
-      "**1. Komut:** <br><code style='font-size:1.4em; font-weight:bold; color:#c7254e; background-color:#f9f2f4; padding:5px; display:block; margin-top:5px;'>sudo dpkg --add-architecture i386</code>",
-      "**2. Komut:** <br><code style='font-size:1.4em; font-weight:bold; color:#c7254e; background-color:#f9f2f4; padding:5px; display:block; margin-top:5px;'>sudo apt update</code>",
-      "**3. Komut:** <br><code style='font-size:1.4em; font-weight:bold; color:#c7254e; background-color:#f9f2f4; padding:5px; display:block; margin-top:5px;'>sudo apt install wine wine32 wine64</code>",
-      "**Şifre Hakkında:** Komutları uygularken yönetici şifresi istenir (Yazarken ekranda görünmez, yazıp Enter'a basın).",
-      "**Şifreyi Bilmiyorsanız:** Okulunuzdaki **YEĞİTEK Sorumlusu**, **Okul Müdürü** veya **İl/İlçe Bilişim Koordinatöründen** öğrenebilirsiniz."
-    ]
-  },
+ 
   {
-    "id": "wine-32-bit-kurulum2",
+    "id": "wine-32-bit-kurulum",
     "category": "sistem",
     "title": "Z-Kitap Açılmıyor2 (Wine 32-Bit)",
     "windows_karsiligi": "Exe Çalıştırma Sorunu",
@@ -426,5 +403,35 @@
       "2. **Install a Windows DLL or component** seçeneğine tıklayın.",
       "3. Listeden **d3dx9**, **mfc42** ve **vcrun2015** kutucuklarını işaretleyip 'OK' butonuna basın."
     ]
+  },
+  {
+    "id": "etap-usb-1-anahtar",
+    "category": "etap",
+    "title": "USB Anahtar Yapımı (1. Aşama - Tüm Öğretmenler)",
+    "windows_karsiligi": "Kilit Anahtarı Oluşturma",
+    "icon": "fa-key",
+    "steps": [
+      "Teneffüse çıkarken tahtanın kilitlenmesi için her öğretmen kendi USB belleğini bir kez anahtara dönüştürmelidir.",
+      "**1. Adım:** USB belleğinizi tahtaya takın. (Dosyalarınız silinmez.)",
+      "**2. Adım:** Uygulamalar > **Eta Giriş** programını açın.",
+      "**3. Adım:** **'Anahtar Oluştur'** sekmesine gelin, şifreyi girip **'Oluştur'** butonuna basın.",
+      "**Önemli:** Bu işlemi sadece bir kez yapmanız yeterlidir. USB belleğiniz artık okuldaki (şifresi aynı olan) tüm tahtaları açabilir."
+    ]
+  },
+  {
+    "id": "etap-usb-2-kilit",
+    "category": "etap",
+    "title": "USB Çekilince Kilitle (2. Aşama - Tüm Okul)",
+    "windows_karsiligi": "Otomatik Kilitleme Ayarı",
+    "icon": "fa-user-lock",
+    "steps": [
+      "USB çekildiğinde tahtanın kararması için **HER TAHTADA** bu ayarın yapılması şarttır.",
+      "**1. Adım:** **Eta Giriş** programını açıp Ayarlar (Çark) simgesine tıklayın.",
+      "**2. Adım:** **'USB çıkarıldığında oturumu kilitle'** kutucuğunu işaretleyip kaydedin.",
+      "**Notu:** Bu ayar USB belleğe değil, tahtaya kaydedilir. Bu yüzden okuldaki **tüm tahtaları** tek tek dolaşıp bu kutucuğu işaretlemeniz gerekir. Aksi takdirde öğretmen yan sınıfta USB'yi çekince tahta kapanmaz."
+    ]
   }
+
+
+
 ]
