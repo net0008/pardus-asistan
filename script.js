@@ -140,36 +140,36 @@ function filter(val) {
 }
 
 // --- MODAL İŞLEMLERİ ---
-function openDetail(id) {
-    const item = allData.find(d => d.id === id);
-    if (!item) return;
+function openModal(item) {
+            // Başlık ve İkon
+            document.getElementById('modalTitle').innerText = item.title;
+            document.getElementById('modalWindows').innerHTML = `<i class="fab fa-windows"></i> Windows Karşılığı: ${item.windows_karsiligi}`;
+            document.getElementById('modalIcon').innerHTML = `<i class="fas ${item.icon}"></i>`;
+            
+            // --- YENİ EKLENEN RESİM BÖLÜMÜ ---
+            const imgContainer = document.getElementById('modalImageContainer');
+            if (item.image) {
+                // Eğer JSON'da resim varsa göster
+                imgContainer.style.display = 'block';
+                imgContainer.innerHTML = `<img src="${item.image}" style="width:100%; max-height:300px; object-fit:contain; border-radius:10px; margin-bottom:15px; border:1px solid #ddd;">`;
+            } else {
+                // Resim yoksa o alanı gizle
+                imgContainer.style.display = 'none';
+                imgContainer.innerHTML = '';
+            }
+            // ----------------------------------
 
-    const mTitle = document.getElementById('mTitle');
-    const mContent = document.getElementById('mContent');
+            // Adımları Listele
+            const list = document.getElementById('modalSteps');
+            list.innerHTML = '';
+            item.steps.forEach(step => {
+                const li = document.createElement('li');
+                li.innerHTML = step;
+                list.appendChild(li);
+            });
 
-    if (mTitle) mTitle.innerText = item.title;
-
-    let html = '';
-    if (item.windows_karsiligi) {
-        html += `<div style="background:rgba(0, 71, 186, 0.1); color:var(--pardus-blue); padding:10px; border-radius:8px; margin-bottom:15px; font-size:0.9rem;">
-                    <i class="fab fa-windows"></i> <strong>Windows'ta:</strong> ${item.windows_karsiligi}
-                 </div>`;
-    }
-
-    item.steps.forEach(s => {
-    // **yazı** şeklindeki metinleri <b>yazı</b> yapar
-    let formatted = s.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-    html += `<div class="step-box">${formatted}</div>`;
-});
-
-    if (mContent) mContent.innerHTML = html;
-    if (modal) modal.style.display = 'block';
-}
-
-function closeModal() {
-    if (modal) modal.style.display = 'none';
-}
-
+            document.getElementById('modalOverlay').style.display = 'flex';
+        }
 // --- PWA SERVICE WORKER ---
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js');

@@ -82,15 +82,16 @@
         </div>
     </nav>
 
-    <div class="modal" id="detailModal">
-        <div class="modal-nav">
-            <i class="fas fa-arrow-left" onclick="closeModal()" style="font-size: 1.5rem; padding: 10px; cursor: pointer;"></i>
-            <h3 id="mTitle" style="margin:0">Başlık</h3>
-        </div>
-        <div class="modal-content" id="mContent"></div>
-    </div>
+    <div style="text-align: center; margin-bottom: 20px;">
+                <div id="modalIcon" style="font-size: 3rem; color: var(--primary); margin-bottom: 10px;"></div>
+                <h2 id="modalTitle" style="margin: 0;"></h2>
+                <small id="modalWindows" style="color: #666; display: block; margin-top: 5px;"></small>
+            </div>
+            
+            <div id="modalImageContainer" style="display:none;"></div> 
+            <hr style="border: 0; border-top: 1px solid #eee;">
     
-    <script src="script.js?v=1.1"></script>
+    <script src="script.js?v=1.2"></script>
 
 </body>
 </html>
