@@ -78,6 +78,37 @@ html { background-color: #202124; }
 }
 .search-box i { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); color: var(--pardus-blue); font-size: 1.2rem; }
 
+.ad-banner {
+    width: 100%;
+    min-height: 42px;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 71, 186, 0.18);
+    background: rgba(0, 71, 186, 0.05);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.2;
+    box-sizing: border-box;
+}
+
+.ad-banner span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.ad-banner i {
+    color: var(--pardus-blue);
+    font-size: 0.8rem;
+}
+
 .category-scroll { display: flex; gap: 12px; padding: 0 20px 20px 20px; overflow-x: auto; scrollbar-width: none; }
 .category-scroll::-webkit-scrollbar { display: none; }
 .cat-btn {
@@ -165,4 +196,9 @@ code { font-family: 'Courier New', Courier, monospace; background-color: #fce4ec
 body.dark-mode .step-box { background: #252525; border-left-color: #5c9aff; color: #fff; border: 1px solid #333; }
 body.dark-mode .step-box strong { color: #5c9aff; }
 body.dark-mode .app-header { background: #1a1a1a; }
+body.dark-mode .ad-banner {
+    background: rgba(92, 154, 255, 0.16);
+    border-color: rgba(92, 154, 255, 0.4);
+    color: #d6e6ff;
+}
 body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: #444; }
