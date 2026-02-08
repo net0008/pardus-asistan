@@ -432,8 +432,8 @@
       "**Amaç:** Tahtaların sadece USB anahtarla açılmasını sağlamak için, şifresi herkesçe bilinen 'öğrenci' hesabının silinmesi ve 'öğretmen' hesabının şifresinin değiştirilmesi gerekir.",
       "**1. Adım:** **Etap Yetkili** hesabıyla giriş yapın. Başlat menüsüne tıklayıp arama kutusuna **Kullanıcılar** yazın.",
       "**2. Adım:** **'Kullanıcılar ve Gruplar'** menüsüne tıklayın. Sistem tekrar şifre isteyecektir; Etap Yetkili şifresini girin.",
-      "**3. Adım (Temizlik):** Listeden **'ogrenci'** hesabını seçip **Sil** butonuna basın. **'ogretmen'** hesabını seçip şifresini güçlü bir şifreyle değiştirin (Bu şifreyi öğrencilerle paylaşmayın).",
-      "**4. Adım (Yetkili Şifresi):** Eğer Etap Yetkili şifresinin öğrenciler tarafından öğrenildiğini düşünüyorsanız, bu şifreyi de değiştirin. Yeni şifreyi mutlaka not edip okul idaresine bildirin.",
+      "**3. Adım (Temizlik):** Listeden **'ogrenci'** hesabını seçip **Sil** butonuna basın. **'ogretmen'** hesabını seçip şifresini makul bir şifreyle değiştirin. Şifreyi not alıp idareye bildirin. (Bu şifreyi öğrencilerle paylaşmayın).",
+      "**4. Adım (Yetkili Şifresi):**Etap Yetkili şifresini **sadece** şifrenin öğrenciler tarafından öğrenildiğini düşünüyorsanız, bu şifreyi de değiştirin. Yeni şifreyi mutlaka not edip okul idaresine bildirin.",
       "**Video Anlatım:** İşlemin yapılışını izlemek için <a href='https://www.youtube.com/watch?v=Q2VLZrqy7_U' target='_blank'>buraya tıklayarak</a> videoyu açabilirsiniz.",
       "**Not:** Bu güvenlik ayarlarını okuldaki **tüm tahtalarda tek tek** uygulamanız gerekmektedir."
     ]
