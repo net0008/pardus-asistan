@@ -146,11 +146,19 @@ input:checked + .slider:before { transform: translateX(24px); }
 
 /* MAVİ ADIM KUTUCUKLARI (STEP BOX) */
 .step-box {
-    background-color: #e3f2fd; /* Açık mavi */
-    border-left: 5px solid #2196f3; /* Sol kalın çizgi */
-    padding: 15px; margin-bottom: 12px; border-radius: 4px;
-    color: #333; line-height: 1.5; font-size: 0.95rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    background-color: #e3f2fd; 
+    border-left: 5px solid #2196f3; 
+    padding: 16px; /* İç boşluğu artırdım */
+    margin-bottom: 15px; 
+    border-radius: 6px;
+    
+    color: #111; /* Tam siyaha yakın renk (Daha net) */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500; /* ARTIK DAHA KALIN (Medium) */
+    font-size: 1.1rem; /* ARTIK DAHA BÜYÜK (Eskisi 0.95 idi) */
+    line-height: 1.6; /* Satır araları daha ferah */
+    
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
 }
 
 /* Kod Bloğu Stili (Renkli Kutu) */
