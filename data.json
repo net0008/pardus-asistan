@@ -344,7 +344,7 @@
      "**Kurulum:** Pardus Mağaza'dan indirebilirsiniz. Mağzada yoksa, aşağıdaki adımları izleyiniz.",
       "**1. Adım (İndirme):** <a href='https://dl.google.com/dl/earth/client/current/google-earth-pro-stable_current_amd64.deb'>Buraya Tıklayarak</a> Pardus uyumlu dosyayı doğrudan indirin. (Siteyle uğraşmanıza gerek yok, direkt iner.)",
       "**2. Adım (Kurulum):** İndirilenler klasörüne gidin.",
-      "**3. Adım:** İnen **.deb** uzantılı dosyaya çift tıklayın ve **'Kur'** butonuna basın. (Yönetici şifresi isterse girin.)"
+      "**3. Adım:** İnen **.deb** uzantılı dosyaya çift tıklayın ve **'Kur'** butonuna basın. (Yönetici şifresi isterse girin. Bilmiyorsanız okulunuzdaki YEĞİTEK sorumlusundan veya İl/İlçe Bilişim Koordinatöründen öğrenebilirsiniz.)",
     ]
   }
 
