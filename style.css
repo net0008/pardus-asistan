@@ -153,14 +153,22 @@ input:checked + .slider:before { transform: translateX(22px); }
 }
 .windows-badge i { color: var(--pardus-blue); font-size: 1.3rem; }
 
+<<<<<<< HEAD
 /* --- MAVİ ADIM KUTUCUKLARI (RENK KODU İLE) --- */
 .step-box {
     background-color:#d4e3f5;       /* Zemin Açık mavi */
     border-left: 6px solid #0047ba; /* SOL ÇİZGİ: Pardus Mavisi (#0047ba) */
+=======
+/* --- MAVİ ADIM KUTUCUKLARI (GÜNCELLENDİ v2.0 - FULL KALIN) --- */
+.step-box {
+    background-color: #fff;       /* Zemin Beyaz */
+    border-left: 6px solid var(--pardus-blue); /* Sol Çizgi Mavi */
+>>>>>>> parent of 9285aa7 (Revert "css")
     padding: 18px; 
     margin-bottom: 16px; 
     border-radius: 8px;
     
+<<<<<<< HEAD
     /* Yazı Ayarları */
     color: #000;                  /* Metin Rengi: Tam Siyah */
     font-family: 'Roboto', sans-serif;
@@ -170,10 +178,21 @@ input:checked + .slider:before { transform: translateX(22px); }
     
     /* Gölge ve Çerçeve */
     box-shadow: 0 3px 6px rgba(0,0,0,0.06); 
+=======
+    /* İSTEK: Yazıların hepsi Siyah ve Kalın */
+    color: #000;                  /* Metin Rengi: Tam Siyah */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;             /* ARTIK HEPSİ KALIN (BOLD) */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    
+    box-shadow: 0 3px 6px rgba(0,0,0,0.06); /* Gölge (Havada durma efekti) */
+>>>>>>> parent of 9285aa7 (Revert "css")
     border: 1px solid rgba(0,0,0,0.03);
 }
 
 /* KUTU İÇİNDEKİ BAŞLIKLAR (RENKLİ OLANLAR) */
+<<<<<<< HEAD
 .step-box strong {
     font-weight: 700;
     color: #0047ba;               /* BAŞLIK RENGİ: Pardus Mavisi (#0047ba) */
@@ -185,9 +204,27 @@ body.dark-mode .step-box {
     background: #252525;
     border-left-color: #5c9aff;   /* Gece modu için daha açık mavi */
     color: #fff;
+=======
+/* JSON'daki ** ile yazılan yerler buraya düşer */
+.step-box strong {
+    font-weight: 700;             /* Zaten kalın */
+    color: var(--pardus-blue);    /* Sadece Rengi Mavi Olsun */
+    letter-spacing: 0.3px;
+}
+
+/* --- GECE MODU AYARLARI --- */
+body.dark-mode .step-box {
+    background: #252525;
+    border-left-color: #5c9aff;
+    color: #fff;                  /* Gece modunda beyaz kalın */
+>>>>>>> parent of 9285aa7 (Revert "css")
     border: 1px solid #333;
 }
 
 body.dark-mode .step-box strong {
+<<<<<<< HEAD
     color: #5c9aff;               /* Gece modu başlık rengi */
+=======
+    color: #5c9aff;               /* Başlıklar Açık Mavi */
+>>>>>>> parent of 9285aa7 (Revert "css")
 }
