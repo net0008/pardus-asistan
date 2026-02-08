@@ -121,18 +121,7 @@ html { background-color: #202124; } /* HTML dış arka planı */
 .nav-item span { font-size: 0.7rem; }
 .nav-item.active { color: var(--pardus-blue); font-weight: bold; }
 
-/* MODAL (DETAY) */
-.modal {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: var(--card-bg); z-index: 1000; display: none; overflow-y: auto;
-    max-width: 600px; margin: 0 auto; left: 50%; transform: translateX(-50%);
-}
-.modal-nav {
-    padding: 15px; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center; gap: 15px;
-    position: sticky; top: 0; background: var(--card-bg); z-index: 1001;
-}
-.modal-content { padding: 20px; line-height: 1.6; }
-.step-box { background: rgba(0, 71, 186, 0.1); padding: 15px; border-left: 4px solid var(--pardus-blue); margin-bottom: 15px; border-radius: 4px; }
+
 
 /* AYARLAR SAYFASI */
 .settings-container {
@@ -189,18 +178,92 @@ input:checked + .slider:before { transform: translateX(24px); }
     border-color: var(--pardus-blue);
     box-shadow: 0 4px 10px rgba(0, 71, 186, 0.3);
 }
-/* Modal içindeki resim alanı */
-.modal-image-container {
-    display: none; /* Resim yoksa gizli dursun */
-    text-align: center;
-    margin: 15px 0;
-    padding: 0 10px;
+/* --- MODAL (AÇILIR PENCERE) STİLİ --- */
+
+/* 1. Arka Plan (Karartma) */
+.modal-overlay {
+    display: none; /* Başlangıçta gizli */
+    position: fixed;
+    z-index: 2000; /* En üstte dursun */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Arkası yarı saydam siyah */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    backdrop-filter: blur(3px); /* Arkadaki sayfayı hafif bulanıklaştır */
 }
 
-.modal-image-container img {
-    max-width: 100%;      /* Mobilde taşmasın */
-    max-height: 250px;    /* Çok uzun resimler ekranı kaplamasın */
-    border-radius: 8px;   /* Köşeleri yuvarlatalım */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Hafif gölge */
-    border: 1px solid #eee;
+/* 2. Beyaz Kutu (İçerik) */
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    width: 100%;
+    max-width: 500px; /* Çok geniş olmasın */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    position: relative;
+    max-height: 85vh; /* Ekranın %85'inden uzun olmasın */
+    overflow-y: auto; /* Uzarsa kaydırma çubuğu çıksın */
+    padding: 0;
+    animation: zoomIn 0.3s ease; /* Açılış efekti */
+}
+
+/* 3. Başlık Alanı */
+.modal-header {
+    background: var(--pardus-blue);
+    color: white;
+    padding: 15px 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* 4. Kapatma Butonu (X) */
+.close-btn {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+.close-btn:hover { color: #ffcccc; }
+
+/* 5. İçerik Gövdesi */
+.modal-body {
+    padding: 20px;
+}
+
+.modal-body ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.modal-body li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Açılış Animasyonu */
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Gece Modu Uyumlu Resim Çerçevesi */
+body.dark-mode .modal-image-container img {
+    border-color: #444;
 }
