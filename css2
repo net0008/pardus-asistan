@@ -1,0 +1,168 @@
+/* --- TEMEL DEĞİŞKENLER (RENK PALETİ) --- */
+:root { 
+    --pardus-blue: #0047ba;
+    --pardus-blue-dark: #00338a;
+    --bg-gray: #f4f6f8;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* KOYU TEMA (DARK MODE) */
+body.dark-mode {
+    --bg-gray: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #e0e0e0;
+    --text-muted: #b0b3b8;
+    --shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* --- GENEL AYARLAR --- */
+body { 
+    margin: 0; padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg-gray);
+    color: var(--text-main);
+    padding-bottom: 90px;
+    max-width: 600px; margin: 0 auto;
+    min-height: 100vh;
+    border-left: 1px solid rgba(0,0,0,0.05);
+    border-right: 1px solid rgba(0,0,0,0.05);
+    -webkit-font-smoothing: antialiased; 
+}
+
+html { background-color: #202124; }
+
+/* --- HEADER --- */
+.app-header {
+    background: linear-gradient(135deg, var(--pardus-blue), var(--pardus-blue-dark));
+    color: white;
+    padding: 30px 20px 45px 20px;
+    border-bottom-left-radius: 30px; 
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0, 71, 186, 0.25);
+    display: flex; align-items: center;
+}
+.header-text h1 { margin: 0; font-size: 1.5rem; font-weight: 800; letter-spacing: 0.5px; }
+.header-text p { margin: 5px 0 0; opacity: 0.9; font-size: 0.9rem; font-weight: 500; }
+
+/* --- GÜVENLİ YÜKLEME ALANI --- */
+.install-wrapper {
+    margin-left: auto;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 5px;
+    animation: fadeIn 1s ease-out;
+}
+.trust-info { text-align: right; color: white; font-size: 0.7rem; line-height: 1.3; }
+.trust-title { font-weight: bold; color: #a6dcff; margin-bottom: 2px; font-size: 0.75rem; display: flex; align-items: center; justify-content: flex-end; gap: 5px; }
+.trust-details span { display: inline-block; background: rgba(0,0,0,0.2); padding: 2px 6px; border-radius: 4px; margin-left: 3px; font-size: 0.65rem; white-space: nowrap; }
+.install-btn-final {
+    background: #fff; color: var(--pardus-blue); border: none; padding: 8px 16px; border-radius: 20px;
+    font-size: 0.8rem; font-weight: 800; cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 6px;
+    transition: transform 0.2s; animation: pulseBtn 3s infinite;
+}
+.install-btn-final:active { transform: scale(0.95); }
+@keyframes pulseBtn {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+/* --- ARAMA & KATEGORİ --- */
+.search-box { margin: -30px 20px 25px; position: relative; z-index: 10; }
+.search-box input {
+    width: 100%; padding: 16px 20px 16px 55px; border: none; border-radius: 18px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1); font-size: 1.05rem; font-weight: 500;
+    outline: none; box-sizing: border-box; background: var(--card-bg); color: var(--text-main);
+}
+.search-box i { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); color: var(--pardus-blue); font-size: 1.2rem; }
+
+.category-scroll { display: flex; gap: 12px; padding: 0 20px 20px 20px; overflow-x: auto; scrollbar-width: none; }
+.category-scroll::-webkit-scrollbar { display: none; }
+.cat-btn {
+    background: var(--card-bg); border: 1px solid rgba(0,0,0,0.08); color: var(--text-muted);
+    padding: 10px 18px; border-radius: 25px; font-size: 0.95rem; font-weight: 600;
+    cursor: pointer; white-space: nowrap; display: flex; align-items: center; gap: 8px;
+}
+.cat-btn.active { background: var(--pardus-blue); color: white; border-color: var(--pardus-blue); box-shadow: 0 4px 10px rgba(0, 71, 186, 0.3); }
+
+/* --- KARTLAR --- */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 20px; }
+.card {
+    background: var(--card-bg); padding: 20px 15px; border-radius: 16px; text-align: center;
+    box-shadow: var(--shadow); cursor: pointer; position: relative; border: 1px solid rgba(0,0,0,0.03);
+}
+.card:active { transform: scale(0.98); }
+.card i.main-icon { font-size: 2.2rem; color: var(--pardus-blue); margin-bottom: 12px; display: inline-block; }
+.card span { display: block; font-weight: 700; font-size: 1rem; margin-bottom: 6px; }
+.card small { display: block; font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+.fav-btn { position: absolute; top: 10px; right: 10px; font-size: 1.3rem; color: #d0d0d0; padding: 5px; }
+.fav-btn.active { color: #f1c40f; }
+
+/* --- ALT MENÜ & AYARLAR --- */
+.bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0; height: 70px;
+    background: var(--card-bg); display: flex; justify-content: space-around; align-items: center;
+    border-top: 1px solid rgba(0,0,0,0.05); box-shadow: 0 -5px 20px rgba(0,0,0,0.05); 
+    max-width: 600px; margin: 0 auto; z-index: 999;
+}
+.nav-item { text-align: center; color: #999; cursor: pointer; flex: 1; }
+.nav-item i { font-size: 1.4rem; margin-bottom: 4px; display: block; }
+.nav-item span { font-size: 0.75rem; font-weight: 600; display: block; }
+.nav-item.active { color: var(--pardus-blue); transform: translateY(-2px); }
+
+.settings-container { padding: 20px; display: none; }
+.setting-item {
+    background: var(--card-bg); padding: 18px; border-radius: 16px;
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 15px; box-shadow: var(--shadow);
+}
+.switch { position: relative; display: inline-block; width: 50px; height: 28px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
+.slider:before { position: absolute; content: ""; height: 22px; width: 22px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+input:checked + .slider { background-color: var(--pardus-blue); }
+input:checked + .slider:before { transform: translateX(22px); }
+
+/* --- DETAY SAYFASI --- */
+.detail-view { display: none; background: var(--bg-gray); min-height: 100vh; animation: fadeIn 0.2s ease-in; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.detail-header {
+    background: var(--card-bg); padding: 15px 20px; border-bottom: 1px solid rgba(0,0,0,0.08);
+    display: flex; align-items: center; gap: 15px; position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+.back-btn { background: none; border: none; font-size: 1.3rem; color: var(--text-main); cursor: pointer; padding: 5px; }
+.detail-title { font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin: 0; flex: 1; line-height: 1.2; }
+.detail-content { padding: 25px 20px; }
+.windows-badge {
+    background: #eef4fc; color: #222; padding: 14px 16px; border-radius: 10px; 
+    font-size: 1rem; font-weight: 600; margin-bottom: 25px;
+    display: flex; align-items: center; gap: 12px; border: 1px solid rgba(0, 71, 186, 0.15);
+}
+.windows-badge i { color: var(--pardus-blue); font-size: 1.3rem; }
+
+/* --- MAVİ ADIM KUTUCUKLARI (BEYAZ ZEMİN & KALIN YAZI) --- */
+.step-box {
+    background-color: #fff;       /* ZEMİN ARTIK BEYAZ */
+    padding: 18px; 
+    margin-bottom: 16px; 
+    border-radius: 8px;
+    color: #000;                  /* YAZI SİYAH */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;             /* YAZI KALIN */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.06); 
+    border: 1px solid rgba(0,0,0,0.05);
+    border-left: 6px solid #0047ba; /* SOL ÇİZGİ MAVİ */
+}
+.step-box strong { font-weight: 700; color: #0047ba; letter-spacing: 0.3px; }
+code { font-family: 'Courier New', Courier, monospace; background-color: #fce4ec; color: #c2185b; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 1rem; }
+
+/* --- GECE MODU --- */
+body.dark-mode .step-box { background: #252525; border-left-color: #5c9aff; color: #fff; border: 1px solid #333; }
+body.dark-mode .step-box strong { color: #5c9aff; }
+body.dark-mode .app-header { background: #1a1a1a; }
+body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: #444; }
