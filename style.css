@@ -205,7 +205,7 @@ input:checked + .slider:before { transform: translateX(22px); }
 }
 .windows-badge i { color: var(--pardus-blue); font-size: 1.3rem; }
 
-/* --- MAVİ ADIM KUTUCUKLARI (DÜZELTİLMİŞ HALİ) --- */
+/* --- MAVİ ADIM KUTUCUKLARI (HATA GİDERİLDİ v2.4) --- */
 .step-box {
     background-color: #fff;       /* Zemin Beyaz */
     padding: 18px; 
@@ -223,7 +223,7 @@ input:checked + .slider:before { transform: translateX(22px); }
     box-shadow: 0 3px 6px rgba(0,0,0,0.06); 
     border: 1px solid rgba(0,0,0,0.05);
 
-    /* Sol Çizgi En Sonda (Ezilmemesi için) */
+    /* Sol Çizgi En Sonda */
     border-left: 6px solid #0047ba; /* Pardus Mavisi */
 }
 
