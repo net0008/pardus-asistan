@@ -3,9 +3,11 @@ let allData = [];
 let favorites = JSON.parse(localStorage.getItem('pardusFavs')) || [];
 let currentTab = 'home';
 
-// Elementleri seçerken (Eğer sayfada yoksa hata vermesin diye null kontrolü yapacağız)
+// Elementleri seçme
 const grid = document.getElementById('menuGrid');
-const modal = document.getElementById('detailModal');
+const modal = document.getElementById('detailModal'); // HTML'deki ID'ye dikkat (modalOverlay veya detailModal)
+const modalOverlay = document.getElementById('modalOverlay');
+const closeModalBtn = document.getElementById('closeModal');
 const settingsView = document.getElementById('settingsView');
 const searchBox = document.querySelector('.search-box');
 const adBanner = document.querySelector('.ad-banner');
@@ -32,7 +34,7 @@ fetch('data.json')
 
 // --- MENÜYÜ ÇİZME FONKSİYONU ---
 function renderMenu(items) {
-    if (!grid) return; // Grid yoksa dur
+    if (!grid) return;
 
     grid.innerHTML = '';
 
@@ -47,6 +49,7 @@ function renderMenu(items) {
         const isFav = favorites.includes(item.id);
         const starClass = isFav ? 'fas fa-star active' : 'far fa-star';
 
+        // DİKKAT: Burada openDetail('${item.id}') çağırıyoruz.
         grid.innerHTML += `
             <div class="card" onclick="openDetail('${item.id}')">
                 <i class="${starClass} fav-btn" onclick="toggleFav(event, '${item.id}')"></i>
@@ -60,19 +63,66 @@ function renderMenu(items) {
     });
 }
 
+// --- DETAY MODALINI AÇMA (DÜZELTİLEN KISIM) ---
+function openDetail(id) {
+    // 1. ID'den ilgili veriyi bul
+    const item = allData.find(x => x.id === id);
+    if (!item) return; // Veri yoksa dur
+
+    // 2. Başlık ve İkonları Doldur
+    document.getElementById('modalTitle').innerText = item.title;
+    document.getElementById('modalWindows').innerHTML = `<i class="fab fa-windows"></i> Windows Karşılığı: ${item.windows_karsiligi}`;
+    document.getElementById('modalIcon').innerHTML = `<i class="fas ${item.icon}"></i>`;
+
+    // 3. Resim Kontrolü (Varsa göster, yoksa gizle)
+    const imgContainer = document.getElementById('modalImageContainer');
+    if (imgContainer) {
+        if (item.image) {
+            imgContainer.style.display = 'block';
+            imgContainer.innerHTML = `<img src="${item.image}" style="width:100%; max-height:300px; object-fit:contain; border-radius:10px; margin-bottom:15px; border:1px solid #ddd;">`;
+        } else {
+            imgContainer.style.display = 'none';
+            imgContainer.innerHTML = '';
+        }
+    }
+
+    // 4. Adımları Listele
+    const list = document.getElementById('modalSteps');
+    list.innerHTML = '';
+    item.steps.forEach(step => {
+        const li = document.createElement('li');
+        li.innerHTML = step;
+        list.appendChild(li);
+    });
+
+    // 5. Modalı Göster
+    if (modalOverlay) modalOverlay.style.display = 'flex';
+}
+
+// --- MODALI KAPATMA İŞLEMLERİ (YENİ EKLENDİ) ---
+// Çarpı butonuna basınca
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
+        if (modalOverlay) modalOverlay.style.display = 'none';
+    });
+}
+// Boşluğa tıklayınca
+window.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+        modalOverlay.style.display = 'none';
+    }
+});
+
 // --- FAVORİ İŞLEMLERİ ---
 function toggleFav(e, id) {
     e.stopPropagation(); // Karta tıklanmasını engelle
-
     if (favorites.includes(id)) {
         favorites = favorites.filter(favId => favId !== id);
     } else {
         favorites.push(id);
     }
-
     localStorage.setItem('pardusFavs', JSON.stringify(favorites));
 
-    // Eğer favoriler sekmesindeysek listeyi yenile
     if (currentTab === 'fav') {
         const favItems = allData.filter(item => favorites.includes(item.id));
         renderMenu(favItems);
@@ -81,11 +131,9 @@ function toggleFav(e, id) {
     }
 }
 
-// --- SEKME DEĞİŞTİRME (NAVIGASYON - GÜVENLİ VERSİYON) ---
+// --- SEKME DEĞİŞTİRME ---
 function switchTab(tab) {
     currentTab = tab;
-
-    // 1. Buton Aktifliği
     document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
 
     const btnHome = document.getElementById('btnHome');
@@ -96,14 +144,11 @@ function switchTab(tab) {
     if (tab === 'fav' && btnFav) btnFav.classList.add('active');
     if (tab === 'settings' && btnSettings) btnSettings.classList.add('active');
 
-    // 2. Görünürlük Ayarları (Önce hepsini güvenlice gizle)
-    // "if (grid)" demek "eğer grid değişkeni varsa" demektir. Yoksa işlem yapmaz, hata vermez.
     if (grid) grid.style.display = 'none';
     if (settingsView) settingsView.style.display = 'none';
     if (searchBox) searchBox.style.display = 'none';
     if (adBanner) adBanner.style.display = 'none';
 
-    // 3. Seçilen Sekmeyi Göster
     if (tab === 'home') {
         if (grid) grid.style.display = 'grid';
         if (searchBox) searchBox.style.display = 'block';
@@ -118,14 +163,10 @@ function switchTab(tab) {
     }
 }
 
-// --- TEMA DEĞİŞTİRME ---
+// --- TEMA ---
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
+    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
 }
 
 // --- ARAMA ---
@@ -139,52 +180,19 @@ function filter(val) {
     renderMenu(filtered);
 }
 
-// --- MODAL İŞLEMLERİ ---
-function openModal(item) {
-            // Başlık ve İkon
-            document.getElementById('modalTitle').innerText = item.title;
-            document.getElementById('modalWindows').innerHTML = `<i class="fab fa-windows"></i> Windows Karşılığı: ${item.windows_karsiligi}`;
-            document.getElementById('modalIcon').innerHTML = `<i class="fas ${item.icon}"></i>`;
-            
-            // --- YENİ EKLENEN RESİM BÖLÜMÜ ---
-            const imgContainer = document.getElementById('modalImageContainer');
-            if (item.image) {
-                // Eğer JSON'da resim varsa göster
-                imgContainer.style.display = 'block';
-                imgContainer.innerHTML = `<img src="${item.image}" style="width:100%; max-height:300px; object-fit:contain; border-radius:10px; margin-bottom:15px; border:1px solid #ddd;">`;
-            } else {
-                // Resim yoksa o alanı gizle
-                imgContainer.style.display = 'none';
-                imgContainer.innerHTML = '';
-            }
-            // ----------------------------------
-
-            // Adımları Listele
-            const list = document.getElementById('modalSteps');
-            list.innerHTML = '';
-            item.steps.forEach(step => {
-                const li = document.createElement('li');
-                li.innerHTML = step;
-                list.appendChild(li);
-            });
-
-            document.getElementById('modalOverlay').style.display = 'flex';
-        }
 // --- PWA SERVICE WORKER ---
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js');
 }
 
-// --- UYGULAMA YÜKLEME (INSTALL) BUTONU MANTIĞI ---
+// --- UYGULAMA YÜKLEME BUTONU ---
 let deferredPrompt;
 const installBtn = document.getElementById('installApp');
-
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
     if (installBtn) installBtn.style.display = 'block';
 });
-
 if (installBtn) {
     installBtn.addEventListener('click', (e) => {
         installBtn.style.display = 'none';
@@ -199,15 +207,9 @@ if (installBtn) {
 
 // --- KATEGORİ FİLTRELEME ---
 function filterCategory(category) {
-    // 1. Düğme renklerini ayarla
     document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
-
-    // Tıklanan düğmeye 'active' sınıfını ver
-    if (event && event.currentTarget) {
-        event.currentTarget.classList.add('active');
-    }
-
-    // 2. İçeriği filtrele
+    if (event && event.currentTarget) event.currentTarget.classList.add('active');
+    
     if (category === 'all') {
         renderMenu(allData);
     } else {

@@ -189,3 +189,18 @@ input:checked + .slider:before { transform: translateX(24px); }
     border-color: var(--pardus-blue);
     box-shadow: 0 4px 10px rgba(0, 71, 186, 0.3);
 }
+/* Modal içindeki resim alanı */
+.modal-image-container {
+    display: none; /* Resim yoksa gizli dursun */
+    text-align: center;
+    margin: 15px 0;
+    padding: 0 10px;
+}
+
+.modal-image-container img {
+    max-width: 100%;      /* Mobilde taşmasın */
+    max-height: 250px;    /* Çok uzun resimler ekranı kaplamasın */
+    border-radius: 8px;   /* Köşeleri yuvarlatalım */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Hafif gölge */
+    border: 1px solid #eee;
+}
