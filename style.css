@@ -51,7 +51,7 @@ html { background-color: #202124; }
 .header-text h1 { margin: 0; font-size: 1.5rem; font-weight: 800; letter-spacing: 0.5px; }
 .header-text p { margin: 5px 0 0; opacity: 0.9; font-size: 0.9rem; font-weight: 500; }
 
-/* --- GÜVENLİ YÜKLEME ALANI (SON HALİ) --- */
+/* --- GÜVENLİ YÜKLEME ALANI --- */
 .install-wrapper {
     margin-left: auto;
     display: flex;
@@ -61,7 +61,6 @@ html { background-color: #202124; }
     animation: fadeIn 1s ease-out;
 }
 
-/* 1. Güvenlik Bilgi Kutusu */
 .trust-info {
     text-align: right;
     color: white;
@@ -71,18 +70,15 @@ html { background-color: #202124; }
 
 .trust-title {
     font-weight: bold;
-    color: #a6dcff; /* Açık mavi ile dikkat çeksin */
+    color: #a6dcff; /* Açık mavi */
     margin-bottom: 2px;
     font-size: 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 5px;
+    display: flex; align-items: center; justify-content: flex-end; gap: 5px;
 }
 
 .trust-details span {
     display: inline-block;
-    background: rgba(0, 0, 0, 0.2); /* Hafif karartma */
+    background: rgba(0, 0, 0, 0.2);
     padding: 2px 6px;
     border-radius: 4px;
     margin-left: 3px;
@@ -90,7 +86,6 @@ html { background-color: #202124; }
     white-space: nowrap;
 }
 
-/* 2. Ana Buton */
 .install-btn-final {
     background: #fff;
     color: var(--pardus-blue);
@@ -101,20 +96,12 @@ html { background-color: #202124; }
     font-weight: 800;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    display: flex; align-items: center; gap: 6px;
     transition: transform 0.2s;
-}
-
-.install-btn-final:active {
-    transform: scale(0.95);
-}
-
-/* Yanıp Sönme Efekti (Dürtücü) */
-.install-btn-final {
     animation: pulseBtn 3s infinite;
 }
+
+.install-btn-final:active { transform: scale(0.95); }
 
 @keyframes pulseBtn {
     0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
@@ -218,29 +205,32 @@ input:checked + .slider:before { transform: translateX(22px); }
 }
 .windows-badge i { color: var(--pardus-blue); font-size: 1.3rem; }
 
-/* --- MAVİ ADIM KUTUCUKLARI (HOCAM BU KISIM İSTEDİĞİN GİBİ OLDU) --- */
+/* --- MAVİ ADIM KUTUCUKLARI (DÜZELTİLMİŞ HALİ) --- */
 .step-box {
-    background-color: #cfe3ee;       /* Zemin açık mavi */
+    background-color: #fff;       /* Zemin Beyaz */
     padding: 18px; 
     margin-bottom: 16px; 
     border-radius: 8px;
     
-    color: #333;                  /* Metin Rengi: Koyu Gri */
+    /* İSTEK: Yazılar Siyah ve Kalın */
+    color: #000;                  /* Metin Tam Siyah */
     font-family: 'Roboto', sans-serif;
-    
-    font-weight: 400;             /* Metin İnce (Regular) */
-    font-size: 1.1rem;            /* Okunabilir Boyut */
+    font-weight: 700;             /* HEPSİ KALIN (BOLD) */
+    font-size: 1.1rem;
     line-height: 1.6;
     
-    box-shadow: 0 3px 6px rgba(0,0,0,0.06); /* GÖLGE BURADA (Havada durma hissi) */
-    border: 1px solid rgba(0,0,0,0.03);
-    border-left: 6px solid var(--pardus-blue); /* Sol Çizgi Mavi (Kalın) */
+    /* Gölge ve Çerçeve */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.06); 
+    border: 1px solid rgba(0,0,0,0.05);
+
+    /* Sol Çizgi En Sonda (Ezilmemesi için) */
+    border-left: 6px solid #0047ba; /* Pardus Mavisi */
 }
 
 /* KUTU İÇİNDEKİ BAŞLIKLAR (RENKLİ) */
 .step-box strong {
-    font-weight: 700;             /* Başlıklar Çok Kalın */
-    color: #000;    /* Başlıklar Siyah */
+    font-weight: 700;             /* Zaten kalın */
+    color: #0047ba;               /* BAŞLIK RENGİ: Mavi */
     letter-spacing: 0.3px;
 }
 
@@ -255,7 +245,7 @@ code {
 body.dark-mode .step-box {
     background: #252525;
     border-left-color: #5c9aff;
-    color: #e0e0e0;
+    color: #fff;
     border: 1px solid #333;
 }
 body.dark-mode .step-box strong { color: #5c9aff; }
