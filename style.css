@@ -120,7 +120,7 @@ input:checked + .slider:before { transform: translateX(24px); }
     color: #999; font-size: 0.8rem; border-radius: 12px; border: 2px dashed #ccc;
 }
 
-/* --- DETAY SAYFASI VE MAVİ KUTUCUKLAR --- */
+/* --- DETAY SAYFASI --- */
 .detail-view {
     display: none; background: var(--bg-gray); min-height: 100vh;
     animation: fadeIn 0.2s ease-in;
@@ -153,7 +153,7 @@ input:checked + .slider:before { transform: translateX(24px); }
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* Kod Bloğu Stili */
+/* Kod Bloğu Stili (Renkli Kutu) */
 code {
     font-family: 'Courier New', Courier, monospace;
     background-color: rgba(255,255,255,0.7);

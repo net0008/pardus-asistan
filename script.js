@@ -50,7 +50,7 @@ function renderMenu(items) {
     });
 }
 
-// --- DETAY SAYFASI AÇ (FORMATLAMA ÖZELLİĞİ EKLENDİ) ---
+// --- DETAY SAYFASI AÇ (KUTUCUKLU & KALIN YAZI DESTEKLİ) ---
 function openDetail(id) {
     const item = allData.find(x => x.id === id);
     if (!item) return;
@@ -73,22 +73,22 @@ function openDetail(id) {
         imgContainer.style.display = 'none';
     }
 
-    // --- ADIMLARI KUTUCUK OLARAK OLUŞTUR VE YAZIYI DÜZELT ---
+    // --- ADIMLARI KUTUCUK (STEP BOX) OLARAK BAS ---
     const container = document.getElementById('detailStepsContainer');
     container.innerHTML = ''; // Temizle
     
     item.steps.forEach(step => {
         const div = document.createElement('div');
-        div.className = 'step-box'; // Mavi kutu sınıfı
+        div.className = 'step-box'; // CSS'teki mavi kutu sınıfı
         
-        // SİHİRLİ DOKUNUŞ BURADA: **yazı** şeklindeki metinleri <b>yazı</b> etiketiyle değiştir
+        // ÖNEMLİ: **yazı** formatını <b>yazı</b> olarak değiştir
         let formattedStep = step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         
         div.innerHTML = formattedStep;
         container.appendChild(div);
     });
 
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0); // En tepeye kaydır
 }
 
 // --- GERİ DÖN ---
@@ -101,7 +101,7 @@ function closeDetail() {
     }
 }
 
-// --- DİĞER FONKSİYONLAR ---
+// --- DİĞER STANDART FONKSİYONLAR ---
 function toggleFav(e, id) {
     e.stopPropagation();
     if(favorites.includes(id)) favorites = favorites.filter(x => x !== id);
@@ -146,7 +146,7 @@ function toggleTheme() {
     localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
 }
 
-// PWA
+// PWA Servis İşçisi
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 
 let deferredPrompt;
