@@ -334,14 +334,14 @@
   {
     "id": "app-google-earth",
     "category": "uygulama",
-    "title": "Google Earth Pro",
-    "windows_karsiligi": "Google Earth (Aynısı)",
+    "title": "Google Earth Pro (Dünya Turu)",
+    "windows_karsiligi": "Google Earth",
     "icon": "fa-globe-americas",
     "steps": [
-      "Coğrafya ve Sosyal Bilgiler derslerinin vazgeçilmezi olan 3 boyutlu dünya atlasıdır.",
-      "**Sokak Görünümü (Street View):** Sarı adamı haritaya sürükleyip sokaklarda gezebilirsiniz.",
-      "**Zaman Makinesi:** Geçmiş yıllara ait uydu görüntülerini (Örn: 2005 yılındaki İstanbul) inceleyebilirsiniz.",
-      "**Kurulum:** Pardus Mağaza'da yoksa, Google'ın sitesinden **.deb (Debian/Ubuntu)** sürümünü indirip çift tıklayarak kurun."
+      "Coğrafya derslerinin vazgeçilmezi olan 3 boyutlu dünya atlasıdır.",
+      "**1. Adım (İndirme):** <a href='https://www.google.com/earth/about/versions/#earth-pro' target='_blank'>Buraya Tıklayarak</a> resmi sayfayı açın.",
+      "**2. Adım (Seçim):** Çıkan pencerede mutlaka **'64 bit .deb (Debian/Ubuntu)'** seçeneğini işaretleyin ve 'Kabul Et ve İndir' butonuna basın.",
+      "**3. Adım (Kurulum):** İndirilenler klasörüne gidin, inen dosyaya (google-earth-pro...deb) çift tıklayın ve **'Kur'** diyerek şifrenizi girin."
     ]
   }
 
