@@ -149,15 +149,30 @@ function toggleTheme() {
 // PWA Servis İşçisi
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 
+// --- UYGULAMA YÜKLEME (HIZLI VE NET) ---
 let deferredPrompt;
 const installBtn = document.getElementById('installApp');
+const installContainer = document.getElementById('installContainer');
+
+// 1. Tarayıcı "Yüklenebilir" dediğinde kutuyu göster
 window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault(); deferredPrompt = e;
-    if (installBtn) installBtn.style.display = 'block';
+    e.preventDefault();
+    deferredPrompt = e;
+    if (installContainer) installContainer.style.display = 'flex';
 });
+
+// 2. Butona basınca DİREKT yükleme ekranını aç
 if (installBtn) {
-    installBtn.addEventListener('click', () => {
-        installBtn.style.display = 'none';
-        if (deferredPrompt) deferredPrompt.prompt();
+    installBtn.addEventListener('click', async () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            deferredPrompt = null;
+            
+            // Eğer kabul ederse butonu gizle
+            if (outcome === 'accepted') {
+                if (installContainer) installContainer.style.display = 'none';
+            }
+        }
     });
 }

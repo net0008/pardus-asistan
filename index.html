@@ -24,9 +24,27 @@
                 <h1>Pardus Asistan</h1>
                 <p>Sınıf içi hızlı çözüm rehberi</p>
             </div>
-            <button id="installApp" class="install-btn"><i class="fas fa-download"></i> Yükle</button>
-        </div>
 
+
+
+            <div id="installContainer" class="install-wrapper" style="display: none;">
+            
+            <div class="trust-info">
+                <div class="trust-title">
+                    <i class="fas fa-shield-alt"></i> pardusasistan.org.tr
+                </div>
+                <div class="trust-details">
+                    <span><i class="fas fa-check"></i> İzin Yok</span>
+                    <span><i class="fas fa-check"></i> Ücret Yok</span>
+                    <span><i class="fas fa-check"></i> Sadece Kısayol</span>
+                </div>
+            </div>
+
+            <button id="installApp" class="install-btn-final">
+                <i class="fas fa-download"></i> Telefona Yükle
+            </button>
+        </div>
+           
         <div class="search-box">
             <i class="fas fa-search"></i>
             <input type="text" placeholder="Sorun ara (Ses, USB, İnternet)..." onkeyup="filter(this.value)">
