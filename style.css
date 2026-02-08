@@ -178,92 +178,67 @@ input:checked + .slider:before { transform: translateX(24px); }
     border-color: var(--pardus-blue);
     box-shadow: 0 4px 10px rgba(0, 71, 186, 0.3);
 }
-/* --- MODAL (AÇILIR PENCERE) STİLİ --- */
-
-/* 1. Arka Plan (Karartma) */
-.modal-overlay {
+/* --- DETAY SAYFASI (YENİ SAYFA GİBİ) --- */
+.detail-view {
     display: none; /* Başlangıçta gizli */
-    position: fixed;
-    z-index: 2000; /* En üstte dursun */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Arkası yarı saydam siyah */
-    justify-content: center;
-    align-items: center;
     padding: 20px;
-    box-sizing: border-box;
-    backdrop-filter: blur(3px); /* Arkadaki sayfayı hafif bulanıklaştır */
+    background: var(--bg-gray);
+    min-height: 80vh;
+    animation: slideIn 0.3s ease-out; /* Kayarak gelme efekti */
 }
 
-/* 2. Beyaz Kutu (İçerik) */
-.modal-content {
-    background-color: var(--card-bg);
+/* Animasyon: Sayfa hafifçe alttan yukarı kayar */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Geri Dön Butonu */
+.detail-nav { margin-bottom: 20px; }
+
+.back-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
     color: var(--text-color);
-    width: 100%;
-    max-width: 500px; /* Çok geniş olmasın */
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    position: relative;
-    max-height: 85vh; /* Ekranın %85'inden uzun olmasın */
-    overflow-y: auto; /* Uzarsa kaydırma çubuğu çıksın */
-    padding: 0;
-    animation: zoomIn 0.3s ease; /* Açılış efekti */
-}
-
-/* 3. Başlık Alanı */
-.modal-header {
-    background: var(--pardus-blue);
-    color: white;
-    padding: 15px 20px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.modal-header h2 {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-/* 4. Kapatma Butonu (X) */
-.close-btn {
-    color: white;
-    font-size: 28px;
-    font-weight: bold;
     cursor: pointer;
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    font-weight: bold;
 }
-.close-btn:hover { color: #ffcccc; }
+.back-btn:hover { color: var(--pardus-blue); }
 
-/* 5. İçerik Gövdesi */
-.modal-body {
-    padding: 20px;
+/* İçerik Kutusu (Beyaz Kart) */
+.detail-content {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-.modal-body ul {
+/* Adım Listesi */
+.step-card ul {
     padding-left: 20px;
     margin: 0;
 }
-
-.modal-body li {
-    margin-bottom: 10px;
-    line-height: 1.5;
+.step-card li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 1rem;
 }
 
-/* Açılış Animasyonu */
-@keyframes zoomIn {
-    from { transform: scale(0.9); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+/* Resim Alanı */
+.detail-image-container img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0,0,0,0.1);
 }
 
-/* Gece Modu Uyumlu Resim Çerçevesi */
-body.dark-mode .modal-image-container img {
-    border-color: #444;
+/* Gece Modu Uyum */
+body.dark-mode .detail-windows {
+    background: rgba(255,255,255,0.1) !important;
+    color: #ccc !important;
 }

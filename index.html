@@ -10,7 +10,7 @@
     <link rel="manifest" href="manifest.json">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=1.3"> 
+    <link rel="stylesheet" href="style.css?v=1.4"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -24,32 +24,58 @@
         <button id="installApp" class="install-btn"><i class="fas fa-download"></i> Yükle</button>
     </div>
 
-    <div class="search-box">
-        <i class="fas fa-search"></i>
-        <input type="text" placeholder="Sorun ara (Ses, USB, İnternet)..." onkeyup="filter(this.value)">
-    </div>
-
-    <div style="padding: 0 20px;">
-        <div class="ad-banner">
-            <span><i class="fas fa-ad"></i> Hasbi Hocam İyi Dersler Diler 🐆</span>
+    <div id="mainContent">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Sorun ara (Ses, USB, İnternet)..." onkeyup="filter(this.value)">
         </div>
+
+        <div style="padding: 0 20px;">
+            <div class="ad-banner">
+                <span><i class="fas fa-ad"></i> Hasbi Hocam İyi Dersler Diler 🐆</span>
+            </div>
+        </div>
+
+        <div class="category-scroll">
+            <button class="cat-btn active" onclick="filterCategory('all')">Tümü</button>
+            <button class="cat-btn" onclick="filterCategory('donanim')"><i class="fas fa-microchip"></i> Donanım</button>
+            <button class="cat-btn" onclick="filterCategory('internet')"><i class="fas fa-wifi"></i> İnternet</button>
+            <button class="cat-btn" onclick="filterCategory('ofis')"><i class="fas fa-file-alt"></i> Ofis</button>
+            <button class="cat-btn" onclick="filterCategory('uygulama')"><i class="fas fa-cube"></i> Uygulama</button>
+            <button class="cat-btn" onclick="filterCategory('sistem')"><i class="fas fa-cog"></i> Sistem</button>
+            <button class="cat-btn" onclick="filterCategory('etap')"><i class="fas fa-chalkboard"></i> ETAP</button>
+        </div>
+
+        <div class="grid" id="menuGrid"></div>
     </div>
 
-    <div class="category-scroll">
-        <button class="cat-btn active" onclick="filterCategory('all')">Tümü</button>
-        <button class="cat-btn" onclick="filterCategory('donanim')"><i class="fas fa-microchip"></i> Donanım</button>
-        <button class="cat-btn" onclick="filterCategory('internet')"><i class="fas fa-wifi"></i> İnternet</button>
-        <button class="cat-btn" onclick="filterCategory('ofis')"><i class="fas fa-file-alt"></i> Ofis</button>
-        <button class="cat-btn" onclick="filterCategory('uygulama')"><i class="fas fa-cube"></i> Uygulama</button>
-        <button class="cat-btn" onclick="filterCategory('sistem')"><i class="fas fa-cog"></i> Sistem</button>
-        <button class="cat-btn" onclick="filterCategory('etap')"><i class="fas fa-chalkboard"></i> ETAP</button>
+    <div id="detailView" class="detail-view">
+        <div class="detail-nav">
+            <button onclick="closeDetail()" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Geri Dön
+            </button>
+        </div>
+        
+        <div class="detail-content">
+            <div style="text-align: center; margin-bottom: 25px;">
+                <div id="detailIcon" style="font-size: 4rem; color: var(--pardus-blue); margin-bottom: 15px;"></div>
+                <h2 id="detailTitle" style="margin: 0; font-size: 1.6rem; color: var(--text-color);"></h2>
+                <div id="detailWindows" style="background: rgba(0,0,0,0.05); display: inline-block; padding: 5px 15px; border-radius: 20px; margin-top: 10px; font-size: 0.85rem; color: #666;"></div>
+            </div>
+
+            <div id="detailImageContainer" class="detail-image-container" style="display:none;"></div>
+
+            <div class="step-card">
+                <h3 style="color: var(--pardus-blue); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0;">
+                    <i class="fas fa-list-ul"></i> Çözüm Adımları
+                </h3>
+                <ul id="detailSteps"></ul>
+            </div>
+            
+            <br><br> </div>
     </div>
-
-    <div class="grid" id="menuGrid"></div>
-
     <div class="settings-container" id="settingsView">
         <h2 style="margin-top:0;">Uygulama Ayarları</h2>
-        
         <div class="setting-item">
             <div>
                 <div style="font-weight:bold;"><i class="fas fa-moon"></i> Gece Modu</div>
@@ -60,9 +86,8 @@
                 <span class="slider"></span>
             </label>
         </div>
-
         <div style="text-align:center; margin-top:30px; opacity:0.5; font-size:0.8rem;">
-            <p>Pardus Asistan v1.3</p>
+            <p>Pardus Asistan v1.4</p>
             <p>Geliştirici: Hasbi Erdoğmuş</p>
         </div>
     </div>
@@ -82,26 +107,6 @@
         </div>
     </nav>
 
-    <div id="modalOverlay" class="modal">
-        <div class="modal-nav">
-            <span id="closeModal" style="font-size: 24px; cursor: pointer; padding: 0 10px;">&times;</span>
-            <span style="font-weight: bold; flex: 1; text-align: center;">Çözüm Detayı</span>
-            <span style="width: 30px;"></span> </div>
-
-        <div class="modal-content">
-            <div style="text-align: center; margin-bottom: 20px;">
-                <div id="modalIcon" style="font-size: 3rem; color: var(--pardus-blue); margin-bottom: 10px;"></div>
-                <h2 id="modalTitle" style="margin: 0;"></h2>
-                <small id="modalWindows" style="color: #666; display: block; margin-top: 5px;"></small>
-            </div>
-
-            <div id="modalImageContainer" class="modal-image-container" style="display:none;"></div>
-
-            <ul id="modalSteps" style="padding-left: 20px; line-height: 1.6;"></ul>
-            
-            <br><br><br> </div>
-    </div>
-    <script src="script.js?v=1.3"></script>
-
+    <script src="script.js?v=1.4"></script>
 </body>
 </html>

@@ -4,13 +4,10 @@ let favorites = JSON.parse(localStorage.getItem('pardusFavs')) || [];
 let currentTab = 'home';
 
 // Elementleri seçme
-const grid = document.getElementById('menuGrid');
-const modal = document.getElementById('detailModal'); // HTML'deki ID'ye dikkat (modalOverlay veya detailModal)
-const modalOverlay = document.getElementById('modalOverlay');
-const closeModalBtn = document.getElementById('closeModal');
+const mainContent = document.getElementById('mainContent');
+const detailView = document.getElementById('detailView');
 const settingsView = document.getElementById('settingsView');
-const searchBox = document.querySelector('.search-box');
-const adBanner = document.querySelector('.ad-banner');
+const grid = document.getElementById('menuGrid');
 
 // --- BAŞLANGIÇ AYARLARI ---
 // Karanlık mod kontrolü
@@ -29,19 +26,16 @@ fetch('data.json')
     })
     .catch(error => {
         console.error('Veri hatası:', error);
-        if (grid) grid.innerHTML = '<p style="text-align:center; width:100%; grid-column:1/-1">Veri yüklenemedi.</p>';
+        if (grid) grid.innerHTML = '<p style="text-align:center;">Veri yüklenemedi.</p>';
     });
 
-// --- MENÜYÜ ÇİZME FONKSİYONU ---
+// --- MENÜYÜ ÇİZME ---
 function renderMenu(items) {
     if (!grid) return;
-
     grid.innerHTML = '';
 
     if (items.length === 0) {
-        grid.innerHTML = '<div style="text-align:center; width:100%; grid-column:1/-1; padding:40px; color:#999;">' +
-            (currentTab === 'fav' ? '<i class="fas fa-star-half-alt" style="font-size:3rem; margin-bottom:10px;"></i><br>Henüz favori eklemediniz.' : 'Sonuç bulunamadı.') +
-            '</div>';
+        grid.innerHTML = '<div style="text-align:center; width:100%; grid-column:1/-1; padding:40px; color:#999;">Sonuç bulunamadı.</div>';
         return;
     }
 
@@ -49,7 +43,6 @@ function renderMenu(items) {
         const isFav = favorites.includes(item.id);
         const starClass = isFav ? 'fas fa-star active' : 'far fa-star';
 
-        // DİKKAT: Burada openDetail('${item.id}') çağırıyoruz.
         grid.innerHTML += `
             <div class="card" onclick="openDetail('${item.id}')">
                 <i class="${starClass} fav-btn" onclick="toggleFav(event, '${item.id}')"></i>
@@ -63,31 +56,32 @@ function renderMenu(items) {
     });
 }
 
-// --- DETAY MODALINI AÇMA (DÜZELTİLEN KISIM) ---
+// --- DETAY SAYFASINI AÇMA (YENİ SİSTEM) ---
 function openDetail(id) {
-    // 1. ID'den ilgili veriyi bul
     const item = allData.find(x => x.id === id);
-    if (!item) return; // Veri yoksa dur
+    if (!item) return;
 
-    // 2. Başlık ve İkonları Doldur
-    document.getElementById('modalTitle').innerText = item.title;
-    document.getElementById('modalWindows').innerHTML = `<i class="fab fa-windows"></i> Windows Karşılığı: ${item.windows_karsiligi}`;
-    document.getElementById('modalIcon').innerHTML = `<i class="fas ${item.icon}"></i>`;
+    // 1. Ana İçeriği Gizle, Detayı Göster
+    if (mainContent) mainContent.style.display = 'none';
+    if (settingsView) settingsView.style.display = 'none';
+    if (detailView) detailView.style.display = 'block';
 
-    // 3. Resim Kontrolü (Varsa göster, yoksa gizle)
-    const imgContainer = document.getElementById('modalImageContainer');
-    if (imgContainer) {
-        if (item.image) {
-            imgContainer.style.display = 'block';
-            imgContainer.innerHTML = `<img src="${item.image}" style="width:100%; max-height:300px; object-fit:contain; border-radius:10px; margin-bottom:15px; border:1px solid #ddd;">`;
-        } else {
-            imgContainer.style.display = 'none';
-            imgContainer.innerHTML = '';
-        }
+    // 2. İçeriği Doldur
+    document.getElementById('detailTitle').innerText = item.title;
+    document.getElementById('detailWindows').innerHTML = `<i class="fab fa-windows"></i> Windows: ${item.windows_karsiligi}`;
+    document.getElementById('detailIcon').innerHTML = `<i class="fas ${item.icon}"></i>`;
+
+    // 3. Resim Kontrolü
+    const imgContainer = document.getElementById('detailImageContainer');
+    if (item.image) {
+        imgContainer.style.display = 'block';
+        imgContainer.innerHTML = `<img src="${item.image}">`;
+    } else {
+        imgContainer.style.display = 'none';
     }
 
     // 4. Adımları Listele
-    const list = document.getElementById('modalSteps');
+    const list = document.getElementById('detailSteps');
     list.innerHTML = '';
     item.steps.forEach(step => {
         const li = document.createElement('li');
@@ -95,27 +89,26 @@ function openDetail(id) {
         list.appendChild(li);
     });
 
-    // 5. Modalı Göster
-    if (modalOverlay) modalOverlay.style.display = 'flex';
+    // Sayfanın en tepesine kaydır (Telefonda aşağıda kalmasın)
+    window.scrollTo(0, 0);
 }
 
-// --- MODALI KAPATMA İŞLEMLERİ (YENİ EKLENDİ) ---
-// Çarpı butonuna basınca
-if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', () => {
-        if (modalOverlay) modalOverlay.style.display = 'none';
-    });
-}
-// Boşluğa tıklayınca
-window.addEventListener('click', (e) => {
-    if (e.target === modalOverlay) {
-        modalOverlay.style.display = 'none';
+// --- GERİ DÖN FONKSİYONU ---
+function closeDetail() {
+    // Detayı gizle, ana içeriği aç
+    if (detailView) detailView.style.display = 'none';
+    
+    // Hangi sekmedeysek oraya dön
+    if (currentTab === 'settings') {
+        if (settingsView) settingsView.style.display = 'block';
+    } else {
+        if (mainContent) mainContent.style.display = 'block';
     }
-});
+}
 
 // --- FAVORİ İŞLEMLERİ ---
 function toggleFav(e, id) {
-    e.stopPropagation(); // Karta tıklanmasını engelle
+    e.stopPropagation(); 
     if (favorites.includes(id)) {
         favorites = favorites.filter(favId => favId !== id);
     } else {
@@ -134,42 +127,40 @@ function toggleFav(e, id) {
 // --- SEKME DEĞİŞTİRME ---
 function switchTab(tab) {
     currentTab = tab;
+    
+    // Detay açıksa kapat
+    if (detailView) detailView.style.display = 'none';
+
+    // Buton aktiflikleri
     document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    if (tab === 'home') document.getElementById('btnHome').classList.add('active');
+    if (tab === 'fav') document.getElementById('btnFav').classList.add('active');
+    if (tab === 'settings') document.getElementById('btnSettings').classList.add('active');
 
-    const btnHome = document.getElementById('btnHome');
-    const btnFav = document.getElementById('btnFav');
-    const btnSettings = document.getElementById('btnSettings');
-
-    if (tab === 'home' && btnHome) btnHome.classList.add('active');
-    if (tab === 'fav' && btnFav) btnFav.classList.add('active');
-    if (tab === 'settings' && btnSettings) btnSettings.classList.add('active');
-
-    if (grid) grid.style.display = 'none';
+    // Görünürlük ayarları
+    if (mainContent) mainContent.style.display = 'none';
     if (settingsView) settingsView.style.display = 'none';
-    if (searchBox) searchBox.style.display = 'none';
-    if (adBanner) adBanner.style.display = 'none';
 
-    if (tab === 'home') {
-        if (grid) grid.style.display = 'grid';
-        if (searchBox) searchBox.style.display = 'block';
-        if (adBanner) adBanner.style.display = 'flex';
-        renderMenu(allData);
-    } else if (tab === 'fav') {
-        if (grid) grid.style.display = 'grid';
-        const favItems = allData.filter(item => favorites.includes(item.id));
-        renderMenu(favItems);
-    } else if (tab === 'settings') {
+    if (tab === 'settings') {
         if (settingsView) settingsView.style.display = 'block';
+    } else {
+        if (mainContent) mainContent.style.display = 'block';
+        // İçerik filtreleme
+        if (tab === 'home') {
+            renderMenu(allData);
+        } else if (tab === 'fav') {
+            const favItems = allData.filter(item => favorites.includes(item.id));
+            renderMenu(favItems);
+        }
     }
 }
 
-// --- TEMA ---
+// --- DİĞER FONKSİYONLAR ---
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
     localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
 }
 
-// --- ARAMA ---
 function filter(val) {
     if (currentTab === 'fav') return;
     const searchTerm = val.toLowerCase();
@@ -180,12 +171,24 @@ function filter(val) {
     renderMenu(filtered);
 }
 
-// --- PWA SERVICE WORKER ---
+function filterCategory(category) {
+    document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+    if (event && event.currentTarget) event.currentTarget.classList.add('active');
+    
+    if (category === 'all') {
+        renderMenu(allData);
+    } else {
+        const filtered = allData.filter(item => item.category === category);
+        renderMenu(filtered);
+    }
+}
+
+// PWA Servis İşçisi
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js');
 }
 
-// --- UYGULAMA YÜKLEME BUTONU ---
+// Yükle Butonu
 let deferredPrompt;
 const installBtn = document.getElementById('installApp');
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -203,17 +206,4 @@ if (installBtn) {
             });
         }
     });
-}
-
-// --- KATEGORİ FİLTRELEME ---
-function filterCategory(category) {
-    document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
-    if (event && event.currentTarget) event.currentTarget.classList.add('active');
-    
-    if (category === 'all') {
-        renderMenu(allData);
-    } else {
-        const filtered = allData.filter(item => item.category === category);
-        renderMenu(filtered);
-    }
 }
