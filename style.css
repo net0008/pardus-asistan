@@ -156,7 +156,6 @@ input:checked + .slider:before { transform: translateX(22px); }
 /* --- MAVİ ADIM KUTUCUKLARI (HOCAM BU KISIM İSTEDİĞİN GİBİ OLDU) --- */
 .step-box {
     background-color: #cfe3ee;       /* Zemin açık mavi */
-    border-left: 6px solid var(--pardus-blue); /* Sol Çizgi Mavi (Kalın) */
     padding: 18px; 
     margin-bottom: 16px; 
     border-radius: 8px;
@@ -170,6 +169,7 @@ input:checked + .slider:before { transform: translateX(22px); }
     
     box-shadow: 0 3px 6px rgba(0,0,0,0.06); /* GÖLGE BURADA (Havada durma hissi) */
     border: 1px solid rgba(0,0,0,0.03);
+    border-left: 6px solid var(--pardus-blue); /* Sol Çizgi Mavi (Kalın) */
 }
 
 /* KUTU İÇİNDEKİ BAŞLIKLAR (RENKLİ) */

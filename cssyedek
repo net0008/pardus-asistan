@@ -155,7 +155,7 @@ input:checked + .slider:before { transform: translateX(22px); }
 
 /* --- MAVİ ADIM KUTUCUKLARI (HOCAM BU KISIM İSTEDİĞİN GİBİ OLDU) --- */
 .step-box {
-    background-color: #fff;       /* Zemin Beyaz */
+    background-color: #cfe3ee;       /* Zemin açık mavi */
     border-left: 6px solid var(--pardus-blue); /* Sol Çizgi Mavi (Kalın) */
     padding: 18px; 
     margin-bottom: 16px; 
