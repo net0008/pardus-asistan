@@ -266,58 +266,42 @@ input:checked + .slider:before { transform: translateX(22px); }
     font-size: 1.3rem; 
 }
 
-/* MAVİ ADIM KUTUCUKLARI (STEP BOX - YENİ TASARIM) */
+/* --- MAVİ ADIM KUTUCUKLARI (GÜNCELLENDİ v1.9) --- */
 .step-box {
-    background-color: var(--card-bg); /* Kutuların içi beyaz olsun */
-    border-left: 6px solid var(--pardus-blue); /* Sol çizgi kalınlaştı */
+    background-color: #fff;       /* Zemin Beyaz */
+    border-left: 6px solid var(--pardus-blue); /* Sol Çizgi Mavi */
     padding: 18px; 
     margin-bottom: 16px; 
     border-radius: 8px;
     
-    color: var(--text-main); /* Ana metin rengi (Koyu) */
+    color: #333;                  /* Metin Rengi: Koyu Gri */
     font-family: 'Roboto', sans-serif;
-    font-weight: 500;       /* Tok yazı (Regular değil Medium) */
-    font-size: 1.1rem;      /* Büyük punto */
-    line-height: 1.6;       /* Satır arası */
     
-    box-shadow: 0 3px 6px rgba(0,0,0,0.06); /* Hafif gölge ile havada dursun */
-    border: 1px solid rgba(0,0,0,0.03); /* Çok ince çerçeve */
+    /* BURASI DEĞİŞTİ: Metin artık ince (Regular) */
+    font-weight: 400;             
+    font-size: 1.1rem;
+    line-height: 1.6;
+    
+    box-shadow: 0 3px 6px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.03);
 }
 
-/* Kod Bloğu Stili */
-code {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #fce4ec; /* Pembe zemin */
-    color: #c2185b;            /* Koyu pembe yazı */
-    padding: 2px 6px; 
-    border-radius: 4px; 
-    font-weight: 700;
-    font-size: 1rem;
+/* --- YENİ EKLENEN KISIM: BAŞLIKLAR RENKLİ VE KALIN --- */
+/* JSON'daki ** ile yazılan yerler buraya düşer */
+.step-box strong {
+    font-weight: 700;             /* Başlıklar Çok Kalın */
+    color: var(--pardus-blue);    /* Başlıklar Mavi Renk */
+    letter-spacing: 0.3px;        /* Harfler azıcık ayrılsın */
 }
 
-/* --- GECE MODU ÖZEL AYARLARI --- */
-body.dark-mode .app-header {
-    background: #1a1a1a; /* Header gece düz renk olsun */
-    border-bottom: 1px solid #333;
-}
-body.dark-mode .windows-badge {
-    background: #252525; 
-    color: #eee; 
-    border-color: #444;
-}
+/* --- GECE MODU AYARLARI --- */
 body.dark-mode .step-box {
-    background: #252525; /* Koyu gri kutu */
-    border-left-color: #5c9aff; /* Açık mavi çizgi */
-    color: #e0e0e0;
-    box-shadow: none;
+    background: #252525;
+    border-left-color: #5c9aff;   /* Çizgi açık mavi */
+    color: #e0e0e0;               /* Metin açık gri */
     border: 1px solid #333;
 }
-body.dark-mode code {
-    background-color: #333;
-    color: #ff80ab;
+
+body.dark-mode .step-box strong {
+    color: #5c9aff;               /* Başlıklar Gece Modunda Açık Mavi */
 }
-body.dark-mode .search-box input {
-    background: #252525;
-    color: white;
-}
-body.dark-mode .nav-item.active { color: #5c9aff; }
