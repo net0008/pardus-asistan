@@ -447,7 +447,7 @@
   },
   {
     "id": "sorun-donma-onleme",
-    "category": "sistem",
+    "category": "donanim",
     "title": "Donmayı Engelleme 1 (Hafıza Tüyosu)",
     "windows_karsiligi": "RAM Temizleme",
     "icon": "fa-memory",
