@@ -50,7 +50,7 @@ function renderMenu(items) {
     });
 }
 
-// --- DETAY SAYFASI AÇ (KUTUCUKLU TASARIM) ---
+// --- DETAY SAYFASI AÇ (FORMATLAMA ÖZELLİĞİ EKLENDİ) ---
 function openDetail(id) {
     const item = allData.find(x => x.id === id);
     if (!item) return;
@@ -73,14 +73,18 @@ function openDetail(id) {
         imgContainer.style.display = 'none';
     }
 
-    // --- ADIMLARI KUTUCUK (STEP BOX) OLARAK OLUŞTUR ---
+    // --- ADIMLARI KUTUCUK OLARAK OLUŞTUR VE YAZIYI DÜZELT ---
     const container = document.getElementById('detailStepsContainer');
     container.innerHTML = ''; // Temizle
     
     item.steps.forEach(step => {
         const div = document.createElement('div');
-        div.className = 'step-box'; // CSS'teki mavi kutu sınıfı
-        div.innerHTML = step;
+        div.className = 'step-box'; // Mavi kutu sınıfı
+        
+        // SİHİRLİ DOKUNUŞ BURADA: **yazı** şeklindeki metinleri <b>yazı</b> etiketiyle değiştir
+        let formattedStep = step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        
+        div.innerHTML = formattedStep;
         container.appendChild(div);
     });
 
