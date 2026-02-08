@@ -50,7 +50,7 @@ function renderMenu(items) {
     });
 }
 
-// --- DETAY SAYFASI AÇ (KUTUCUKLU & KALIN YAZI DESTEKLİ) ---
+// --- DETAY SAYFASI AÇ ---
 function openDetail(id) {
     const item = allData.find(x => x.id === id);
     if (!item) return;
@@ -73,15 +73,14 @@ function openDetail(id) {
         imgContainer.style.display = 'none';
     }
 
-    // --- ADIMLARI KUTUCUK (STEP BOX) OLARAK BAS ---
+    // --- ADIMLARI KUTUCUK OLARAK BAS ---
     const container = document.getElementById('detailStepsContainer');
     container.innerHTML = ''; // Temizle
     
     item.steps.forEach(step => {
         const div = document.createElement('div');
-        div.className = 'step-box'; // CSS'teki mavi kutu sınıfı
+        div.className = 'step-box'; // CSS'teki beyaz kutu
         
-        // ÖNEMLİ: **yazı** formatını <b>yazı</b> olarak değiştir
         let formattedStep = step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         
         div.innerHTML = formattedStep;
@@ -149,7 +148,7 @@ function toggleTheme() {
 // PWA Servis İşçisi
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 
-// --- UYGULAMA YÜKLEME (HIZLI VE NET) ---
+// --- UYGULAMA YÜKLEME ---
 let deferredPrompt;
 const installBtn = document.getElementById('installApp');
 const installContainer = document.getElementById('installContainer');
