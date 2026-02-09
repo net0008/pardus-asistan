@@ -15,16 +15,30 @@ if (localStorage.getItem('theme') === 'dark') {
     if (toggle) toggle.checked = true;
 }
 
-// --- VERİ ÇEKME ---
-fetch('data.json')
-    .then(res => res.json())
+// --- CİHAZ TESPİTİ VE VERİ ÇEKME ---
+// Eğer ekran genişliği 768px'den küçükse veya kullanıcı "Mobil" bir tarayıcıdaysa
+const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+// Hangi dosya yüklenecek?
+const dataFile = isMobile ? 'datamobil.json' : 'datapc.json';
+
+// Konsola bilgi verelim (F12 ile bakarsan görürsün)
+console.log(`Cihaz Algılandı: ${isMobile ? 'Mobil' : 'Bilgisayar/Tahta'} - Yüklenen Dosya: ${dataFile}`);
+
+fetch(dataFile)
+    .then(res => {
+        if (!res.ok) throw new Error("Dosya bulunamadı");
+        return res.json();
+    })
     .then(data => {
         allData = data;
         renderMenu(allData);
     })
     .catch(err => {
-        if(grid) grid.innerHTML = '<p style="text-align:center">Veri yüklenemedi.</p>';
+        console.error("Veri yükleme hatası:", err);
+        if(grid) grid.innerHTML = `<p style="text-align:center; color:red;">Veri yüklenemedi!<br>(${dataFile} dosyası eksik olabilir)</p>`;
     });
+
 
 // --- MENÜ ÇİZME ---
 function renderMenu(items) {
@@ -50,7 +64,7 @@ function renderMenu(items) {
     });
 }
 
-// --- DETAY SAYFASI AÇ ---
+// --- DETAY SAYFASI AÇ (KUTUCUKLU & KALIN YAZI DESTEKLİ) ---
 function openDetail(id) {
     const item = allData.find(x => x.id === id);
     if (!item) return;
@@ -73,14 +87,15 @@ function openDetail(id) {
         imgContainer.style.display = 'none';
     }
 
-    // --- ADIMLARI KUTUCUK OLARAK BAS ---
+    // --- ADIMLARI KUTUCUK (STEP BOX) OLARAK BAS ---
     const container = document.getElementById('detailStepsContainer');
     container.innerHTML = ''; // Temizle
     
     item.steps.forEach(step => {
         const div = document.createElement('div');
-        div.className = 'step-box'; // CSS'teki beyaz kutu
+        div.className = 'step-box'; // CSS'teki mavi kutu sınıfı
         
+        // ÖNEMLİ: **yazı** formatını <b>yazı</b> olarak değiştir
         let formattedStep = step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         
         div.innerHTML = formattedStep;
