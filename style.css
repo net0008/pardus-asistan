@@ -4,20 +4,23 @@
     --pardus-blue-dark: #f57f17;
     --bg-gray: #f4f6f8;
     --card-bg: #ffffff;
-    --text-main: #333333;
-    --text-muted: #666666;
+    
+    /* DAHA KOYU VE OKUNAKLI YAZI RENKLERİ */
+    --text-main: #222222; /* Tam siyah değil ama çok koyu gri */
+    --text-muted: #555555; /* Soluk gri yerine daha belirgin gri */
+    
     --shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 body.dark-mode {
     --bg-gray: #121212;
     --card-bg: #1e1e1e;
-    --text-main: #e0e0e0;
-    --text-muted: #b0b3b8;
+    --text-main: #f1f1f1;
+    --text-muted: #bbbbbb;
     --shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* --- KUTU MODELİ DÜZELTMESİ --- */
+/* --- KUTU MODELİ --- */
 * { box-sizing: border-box; } 
 
 /* --- GENEL AYARLAR --- */
@@ -26,10 +29,10 @@ body {
     font-family: 'Roboto', sans-serif;
     background: var(--bg-gray);
     color: var(--text-main);
-    /* Menü çok yukarıda olduğu için içeriğin altında kalmaması için ekstra boşluk */
     padding-bottom: 150px; 
     min-height: 100vh;
     -webkit-font-smoothing: antialiased; 
+    line-height: 1.5; /* Satır aralarını açarak okunabilirliği artırdık */
 }
 
 html { background-color: #202124; }
@@ -46,24 +49,24 @@ html { background-color: #202124; }
 
 .header-left { display: flex; align-items: center; gap: 12px; }
 .header-left img { height: 45px; width: 45px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
-.header-text h1 { margin: 0; font-size: 1.3rem; font-weight: 800; }
-.header-text p { margin: 0; opacity: 0.9; font-size: 0.8rem; font-weight: 500; }
+.header-text h1 { margin: 0; font-size: 1.3rem; font-weight: 800; color: #222; }
+.header-text p { margin: 0; opacity: 1; font-size: 0.85rem; font-weight: 600; color: #333; }
 
-/* PC MENU (Varsayılan: Gizli) */
+/* PC MENU */
 .pc-nav { display: none; gap: 10px; }
 .pc-nav button {
-    background: rgba(255,255,255,0.2); border: none; color: #333;
+    background: rgba(255,255,255,0.25); border: none; color: #222;
     padding: 8px 15px; border-radius: 20px; font-weight: bold; cursor: pointer;
-    display: flex; align-items: center; gap: 8px; font-size: 0.9rem;
+    display: flex; align-items: center; gap: 8px; font-size: 0.95rem;
     transition: 0.2s;
 }
-.pc-nav button:hover { background: rgba(255,255,255,0.4); }
+.pc-nav button:hover { background: rgba(255,255,255,0.5); }
 .pc-nav button.active { background: white; color: var(--pardus-blue-dark); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 
 /* Yükleme Butonu */
 .install-btn-final {
     background: #fff; color: var(--pardus-blue-dark); border: none; padding: 6px 12px; border-radius: 20px;
-    font-size: 0.75rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 6px;
+    font-size: 0.8rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 6px;
     animation: pulseBtn 3s infinite;
 }
 @keyframes pulseBtn {
@@ -72,125 +75,108 @@ html { background-color: #202124; }
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
 }
 
-/* --- İÇERİK DÜZENİ --- */
+/* --- İÇERİK --- */
 .main-container { padding: 15px; }
 
 .search-box { position: relative; margin-bottom: 15px; }
 .search-box input {
     width: 100%; padding: 14px 20px 14px 45px; border: none; border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); font-size: 1.05rem; font-weight: 500;
     outline: none; background: var(--card-bg); color: var(--text-main);
 }
 .search-box i { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--pardus-blue-dark); }
 
 .ad-banner {
-    width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 10px;
-    border: 1px solid rgba(251, 192, 45, 0.3); background: rgba(251, 192, 45, 0.1);
-    color: var(--text-main); text-align: center; font-weight: bold; font-size: 0.9rem;
+    width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px;
+    border: 1px solid rgba(251, 192, 45, 0.4); background: rgba(251, 192, 45, 0.15);
+    color: var(--text-main); text-align: center; font-weight: 700; font-size: 0.95rem;
 }
 
 /* Kategoriler */
 .category-scroll { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; margin-bottom: 10px; }
 .category-scroll::-webkit-scrollbar { display: none; }
 .cat-btn {
-    background: var(--card-bg); border: 1px solid rgba(0,0,0,0.1); color: var(--text-muted);
-    padding: 8px 14px; border-radius: 20px; font-weight: 600; cursor: pointer; white-space: nowrap;
+    background: var(--card-bg); border: 1px solid rgba(0,0,0,0.15); color: var(--text-muted);
+    padding: 9px 16px; border-radius: 20px; font-weight: 700; cursor: pointer; white-space: nowrap;
     display: flex; align-items: center; gap: 6px; font-size: 0.9rem;
 }
-.cat-btn.active { background: var(--pardus-blue); color: #333; border-color: var(--pardus-blue); }
+.cat-btn.active { background: var(--pardus-blue); color: #222; border-color: var(--pardus-blue); }
 
-/* --- KARTLAR (GRID) --- */
+/* --- KARTLAR --- */
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
 .card {
     background: var(--card-bg); padding: 20px 10px; border-radius: 12px; text-align: center;
-    box-shadow: var(--shadow); cursor: pointer; position: relative; border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: var(--shadow); cursor: pointer; position: relative; border: 1px solid rgba(0,0,0,0.08);
 }
 .card:active { transform: scale(0.98); }
-.card i.main-icon { font-size: 2rem; color: var(--pardus-blue); margin-bottom: 10px; display: inline-block; }
-.card span { display: block; font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; line-height: 1.2; }
-.card small { display: block; font-size: 0.75rem; color: var(--text-muted); }
-.fav-btn { position: absolute; top: 8px; right: 8px; font-size: 1.1rem; color: #d0d0d0; padding: 5px; z-index: 5; }
+.card i.main-icon { font-size: 2.2rem; color: var(--pardus-blue); margin-bottom: 10px; display: inline-block; }
+.card span { display: block; font-weight: 800; font-size: 1rem; margin-bottom: 4px; line-height: 1.2; color: var(--text-main); }
+.card small { display: block; font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+.fav-btn { position: absolute; top: 8px; right: 8px; font-size: 1.2rem; color: #ccc; padding: 5px; z-index: 5; }
 .fav-btn.active { color: #f1c40f; }
 
-/* =======================================================
-   🚀 YENİ ALT MENÜ (DAHA DAR & DAHA YUKARIDA)
-   ======================================================= */
+/* --- ALT MENÜ (YÜZEN) --- */
 .bottom-nav {
     position: fixed; 
-    bottom: 45px; /* Parmak hizası için yukarıda */
-    left: 50px;   /* Kenarlardan ciddi boşluk (Ada görünümü) */
-    right: 50px;  /* Kenarlardan ciddi boşluk (Ada görünümü) */
-    height: 60px; /* Biraz daha zarif yükseklik */
-    
+    bottom: 45px; left: 50px; right: 50px; height: 60px;
     background: var(--card-bg); 
     display: flex; justify-content: space-around; align-items: center;
-    
-    /* Tam Yuvarlak Kapsül */
     border-radius: 60px; 
-    
-    /* Derinlik Hissi */
     box-shadow: 0 10px 30px rgba(0,0,0,0.20); 
     border: 1px solid rgba(0,0,0,0.05);
-    
     z-index: 999;
 }
-
-.nav-item { text-align: center; color: #999; cursor: pointer; flex: 1; }
+.nav-item { text-align: center; color: #888; cursor: pointer; flex: 1; }
 .nav-item.active { color: var(--pardus-blue-dark); transform: translateY(-2px); }
-.nav-item i { font-size: 1.3rem; margin-bottom: 3px; display: block; }
-.nav-item span { font-size: 0.7rem; font-weight: 600; display: block; }
+.nav-item.active i { font-weight: 900; }
+.nav-item i { font-size: 1.4rem; margin-bottom: 3px; display: block; }
+.nav-item span { font-size: 0.75rem; font-weight: 700; display: block; }
 
 /* --- DETAY & AYARLAR --- */
 .detail-view, .settings-container { display: none; animation: fadeIn 0.3s; }
 .setting-item {
-    background: var(--card-bg); padding: 15px; border-radius: 12px;
+    background: var(--card-bg); padding: 18px; border-radius: 12px;
     display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; box-shadow: var(--shadow);
 }
-.detail-header { padding: 15px 0; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid rgba(0,0,0,0.05); margin-bottom: 15px; }
-.back-btn { background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text-main); }
-.detail-title { margin: 0; font-size: 1.1rem; }
+.detail-header { padding: 15px 0; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid rgba(0,0,0,0.1); margin-bottom: 15px; }
+.back-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-main); }
+.detail-title { margin: 0; font-size: 1.2rem; font-weight: 800; }
 .windows-badge {
-    background: #fffde7; color: #222; padding: 12px; border-radius: 10px; 
-    font-size: 0.9rem; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(251, 192, 45, 0.3);
+    background: #fffde7; color: #222; padding: 15px; border-radius: 10px; 
+    font-size: 0.95rem; font-weight: 700; margin-bottom: 20px; border: 1px solid rgba(251, 192, 45, 0.3);
 }
-.why-box { margin-top: 25px; text-align: left; background: rgba(0,0,0,0.03); padding: 15px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); }
+.why-box { 
+    margin-top: 15px; text-align: left; 
+    background: rgba(0,0,0,0.04); padding: 18px; 
+    border-radius: 12px; border: 1px solid rgba(0,0,0,0.08); 
+}
 
 .step-box {
-    background: #fff; padding: 15px; margin-bottom: 12px; border-radius: 8px; color: #000;
-    font-size: 1rem; line-height: 1.5; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.05); border-left: 5px solid #fbc02d;
+    background: #fff; padding: 18px; margin-bottom: 12px; border-radius: 8px; color: #000;
+    font-size: 1.05rem; line-height: 1.6; box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.1); border-left: 6px solid #fbc02d;
 }
-.step-box strong { color: #f9a825; }
+.step-box strong { color: #f57f17; font-weight: 800; }
 
-/* GECE MODU DÜZELTMELERİ */
-body.dark-mode .step-box { background: #252525; border-left-color: #fbc02d; color: #fff; border-color: #333; }
+/* GECE MODU */
+body.dark-mode .step-box { background: #252525; border-left-color: #fbc02d; color: #fff; border-color: #444; }
 body.dark-mode .step-box strong { color: #fbc02d; }
 body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: #444; }
 body.dark-mode .bottom-nav { border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+body.dark-mode .why-box { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
 
-/* =========================================
-   🚀 BİLGİSAYAR / TABLET (GENİŞ EKRAN) MODU
-   ========================================= */
+/* PC MODU */
 @media (min-width: 992px) {
     body { padding-bottom: 0; } 
-    
     .main-container { max-width: 1200px; margin: 0 auto; padding: 30px; }
     .app-header { padding: 15px 40px; }
-    .header-text h1 { font-size: 1.5rem; }
-
-    .grid { 
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
-        gap: 20px;
-    }
-
-    /* Alt Menüyü PC'de TAMAMEN GİZLE */
+    .header-text h1 { font-size: 1.6rem; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
     .bottom-nav { display: none !important; }
-    
     .pc-nav { display: flex; }
-
     .category-scroll { justify-content: center; flex-wrap: wrap; overflow: visible; }
     .cat-btn { padding: 10px 20px; font-size: 1rem; }
-    .search-box input { padding: 18px 25px 18px 55px; font-size: 1.1rem; }
+    .search-box input { padding: 18px 25px 18px 55px; font-size: 1.15rem; }
     .detail-view, .settings-container { max-width: 800px; margin: 0 auto; }
 }

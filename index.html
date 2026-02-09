@@ -26,12 +26,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css?v=6.1"> 
+    <link rel="stylesheet" href="style.css?v=7.0"> 
 </head>
 <body>
 
     <div class="app-header">
-        <div class="header-left">
+        <div class="header-left" onclick="switchTab('home')" style="cursor: pointer;">
             <img src="icon.png" alt="Pardus Logo">
             <div class="header-text">
                 <h1>Pardus Asistan</h1>
@@ -103,21 +103,36 @@
             </label>
         </div>
 
-        <div style="text-align:center; margin-top:30px; opacity:0.5; font-size:0.8rem;">
-            <p>Pardus Asistan v6.1</p>
+        <div style="text-align:center; margin-top:30px; opacity:0.8; font-size:0.9rem;">
+            <p>Pardus Asistan v7.0</p>
             <p>Geliştirici: Hasbi Erdoğmuş</p>
-            <p>İletişim: <a href="mailto:herdogmus35@gmail.com">herdogmus35@gmail.com</a></p>
+            <p>İletişim: <a href="mailto:herdogmus35@gmail.com" style="color: #f57f17; font-weight: bold; text-decoration: none;">herdogmus35@gmail.com</a></p>
         </div>
 
         <div class="why-box">
             <h4 style="margin: 0 0 10px 0; color: #f57f17; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                 <i class="fas fa-rocket"></i> Neden Pardus Asistan?
             </h4>
-            <ul style="margin: 0; padding-left: 20px; font-size: 0.85rem; line-height: 1.6; opacity: 0.85; color: var(--text-main);">
+            <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-main);">
                 <li style="margin-bottom: 5px;"><strong>Anında Çözüm:</strong> Sınıf içinde karşılaştığınız sorunları saniyeler içinde çözmeniz için tasarlandı.</li>
                 <li style="margin-bottom: 5px;"><strong>İnternet Gerekmez:</strong> İnternet bağlantınız kopsa bile çalışmaya devam eder.</li>
                 <li style="margin-bottom: 5px;"><strong>Tam Uyumlu:</strong> Pardus ETAP sürümleriyle %100 uyumludur.</li>
                 <li><strong>Güvenli:</strong> Veri toplamaz, tamamen ücretsizdir.</li>
+            </ul>
+        </div>
+
+        <div class="why-box" style="margin-top: 20px;">
+            <h4 style="margin: 0 0 10px 0; color: #f57f17; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-paw"></i> Pardus’u Tercih Edin Çünkü:
+            </h4>
+            <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-main);">
+                <li style="margin-bottom: 5px;">Özgürdür ve ücretsizdir</li>
+                <li style="margin-bottom: 5px;">Hızlıdır ve güvenlidir</li>
+                <li style="margin-bottom: 5px;">Kolay kullanılır, özelleştirilebilir</li>
+                <li style="margin-bottom: 5px;">Kurulmadan dahi çalışabilir, hızlı kurulur</li>
+                <li style="margin-bottom: 5px;">Birçok ücretsiz paket program içerir</li>
+                <li style="margin-bottom: 5px;">Şeffaftır</li>
+                <li>Türkçe dışında pek çok dile desteği vardır</li>
             </ul>
         </div>
     </div>
@@ -137,6 +152,6 @@
         </div>
     </nav>
 
-   <script src="script.js?v=6.4"></script>
+   <script src="script.js?v=7.0"></script>
 </body>
 </html>
