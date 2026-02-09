@@ -22,7 +22,7 @@ const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|Bla
 // Hangi dosya yüklenecek?
 const dataFile = isMobile ? 'datamobil.json' : 'datapc.json';
 
-// Konsola bilgi verelim (F12 ile bakarsan görürsün)
+// Konsola bilgi verelim
 console.log(`Cihaz Algılandı: ${isMobile ? 'Mobil' : 'Bilgisayar/Tahta'} - Yüklenen Dosya: ${dataFile}`);
 
 fetch(dataFile)
@@ -64,7 +64,7 @@ function renderMenu(items) {
     });
 }
 
-// --- DETAY SAYFASI AÇ (KUTUCUKLU & KALIN YAZI DESTEKLİ) ---
+// --- DETAY SAYFASI AÇ ---
 function openDetail(id) {
     const item = allData.find(x => x.id === id);
     if (!item) return;
@@ -87,22 +87,21 @@ function openDetail(id) {
         imgContainer.style.display = 'none';
     }
 
-    // --- ADIMLARI KUTUCUK (STEP BOX) OLARAK BAS ---
+    // --- ADIMLARI KUTUCUK OLARAK BAS ---
     const container = document.getElementById('detailStepsContainer');
     container.innerHTML = ''; // Temizle
     
     item.steps.forEach(step => {
         const div = document.createElement('div');
-        div.className = 'step-box'; // CSS'teki mavi kutu sınıfı
+        div.className = 'step-box'; 
         
-        // ÖNEMLİ: **yazı** formatını <b>yazı</b> olarak değiştir
         let formattedStep = step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         
         div.innerHTML = formattedStep;
         container.appendChild(div);
     });
 
-    window.scrollTo(0, 0); // En tepeye kaydır
+    window.scrollTo(0, 0); 
 }
 
 // --- GERİ DÖN ---
@@ -163,19 +162,24 @@ function toggleTheme() {
 // PWA Servis İşçisi
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
 
-// --- UYGULAMA YÜKLEME ---
+// --- UYGULAMA YÜKLEME (SADECE MOBİL İÇİN) ---
 let deferredPrompt;
 const installBtn = document.getElementById('installApp');
 const installContainer = document.getElementById('installContainer');
 
-// 1. Tarayıcı "Yüklenebilir" dediğinde kutuyu göster
+// 1. Tarayıcı "Yüklenebilir" dediğinde çalışır
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    if (installContainer) installContainer.style.display = 'flex';
+    
+    // EĞER CİHAZ MOBİL İSE BUTONU GÖSTER
+    if (installContainer && isMobile) {
+        installContainer.style.display = 'flex';
+    }
+    // PC ise hiçbir şey yapma (Gizli kalsın)
 });
 
-// 2. Butona basınca DİREKT yükleme ekranını aç
+// 2. Butona basınca yükleme ekranını aç
 if (installBtn) {
     installBtn.addEventListener('click', async () => {
         if (deferredPrompt) {
@@ -183,7 +187,6 @@ if (installBtn) {
             const { outcome } = await deferredPrompt.userChoice;
             deferredPrompt = null;
             
-            // Eğer kabul ederse butonu gizle
             if (outcome === 'accepted') {
                 if (installContainer) installContainer.style.display = 'none';
             }
