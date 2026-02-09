@@ -17,7 +17,7 @@ body.dark-mode {
     --shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* --- KUTU MODELİ DÜZELTMESİ --- */
+/* --- KUTU MODELİ DÜZELTMESİ (TAŞMALARI ENGELLER) --- */
 * { box-sizing: border-box; } 
 
 /* --- GENEL AYARLAR --- */
@@ -26,8 +26,8 @@ body {
     font-family: 'Roboto', sans-serif;
     background: var(--bg-gray);
     color: var(--text-main);
-    /* Alt menü yüzdüğü için içeriğin altında kalmaması için daha fazla boşluk */
-    padding-bottom: 100px; 
+    /* Menü çok yukarıda olduğu için alt boşluğu artırdık */
+    padding-bottom: 130px; 
     min-height: 100vh;
     -webkit-font-smoothing: antialiased; 
 }
@@ -114,23 +114,23 @@ html { background-color: #202124; }
 .fav-btn.active { color: #f1c40f; }
 
 /* =======================================================
-   🚀 YENİ ALT MENÜ (YÜZEN TASARIM - FLOATING BAR)
+   🚀 YENİ ALT MENÜ (DAHA YÜKSEK & KAPSÜL)
    ======================================================= */
 .bottom-nav {
     position: fixed; 
-    bottom: 20px; /* Ekranın en altından 20px yukarıda */
-    left: 20px;   /* Soldan boşluk */
-    right: 20px;  /* Sağdan boşluk */
+    bottom: 35px; /* Daha yukarıda */
+    left: 35px;   /* Kenarlardan daha fazla boşluk */
+    right: 35px;  /* Kenarlardan daha fazla boşluk */
     height: 65px;
     
-    background: var(--card-bg); /* Arka plan rengi */
+    background: var(--card-bg); 
     display: flex; justify-content: space-around; align-items: center;
     
-    /* Modern Yuvarlak Kenarlar */
-    border-radius: 50px; 
+    /* Tam Kapsül Görünümü */
+    border-radius: 60px; 
     
-    /* Derinlik ve Gölge */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15); 
+    /* Güçlü Gölge */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18); 
     border: 1px solid rgba(0,0,0,0.05);
     
     z-index: 999;
@@ -167,14 +167,13 @@ html { background-color: #202124; }
 body.dark-mode .step-box { background: #252525; border-left-color: #fbc02d; color: #fff; border-color: #333; }
 body.dark-mode .step-box strong { color: #fbc02d; }
 body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: #444; }
-/* Gece modunda alt menüye de hafif beyaz çerçeve ekleyelim ki belli olsun */
-body.dark-mode .bottom-nav { border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
+body.dark-mode .bottom-nav { border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
 /* =========================================
    🚀 BİLGİSAYAR / TABLET (GENİŞ EKRAN) MODU
    ========================================= */
 @media (min-width: 992px) {
-    body { padding-bottom: 0; } /* Alt menü olmadığı için boşluğu kaldır */
+    body { padding-bottom: 0; } 
     
     .main-container { max-width: 1200px; margin: 0 auto; padding: 30px; }
     .app-header { padding: 15px 40px; }
