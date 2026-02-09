@@ -152,7 +152,7 @@
   {
     "id": "format-usb-hazirlama",
     "category": "sistem",
-    "title": "Format USB'si Hazırlama (İndir & Yaz)",
+    "title": "Format Atma 1 (Yüklenebilir USB Hazırlama)",
     "windows_karsiligi": "Rufus / Format",
     "icon": "fa-hdd",
     "steps": [
@@ -164,7 +164,7 @@
   {
     "id": "format-atama-islemi",
     "category": "sistem",
-    "title": "Format Atma (Boot & Kurulum)",
+    "title": "Format Atma 2 (Kurulum)",
     "windows_karsiligi": "BIOS Boot",
     "icon": "fa-cog",
     "steps": [
