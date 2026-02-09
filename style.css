@@ -1,11 +1,14 @@
 /* --- TEMEL DEĞİŞKENLER (RENK PALETİ) --- */
 :root { 
-    --pardus-blue: #0047ba;
-    --pardus-blue-dark: #00338a;
+    /* MAVİ YERİNE SARI TONLARI */
+    --pardus-blue: #fbc02d;       /* Ana Renk: Canlı Sarı/Kehribar */
+    --pardus-blue-dark: #f57f17;  /* Koyu Ton: Turuncumsu Sarı (Gradient için) */
     --bg-gray: #f4f6f8;
     --card-bg: #ffffff;
+    
     --text-main: #333333;
     --text-muted: #666666;
+    
     --shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
@@ -37,11 +40,11 @@ html { background-color: #202124; }
 /* --- HEADER --- */
 .app-header {
     background: linear-gradient(135deg, var(--pardus-blue), var(--pardus-blue-dark));
-    color: white;
+    color: #333; /* Sarı üstüne beyaz yazı okunmaz, o yüzden koyu gri yaptım */
     padding: 30px 20px 45px 20px;
     border-bottom-left-radius: 30px; 
     border-bottom-right-radius: 30px;
-    box-shadow: 0 8px 20px rgba(0, 71, 186, 0.25);
+    box-shadow: 0 8px 20px rgba(251, 192, 45, 0.25); /* Sarı gölge */
     display: flex; align-items: center;
 }
 .header-text h1 { margin: 0; font-size: 1.5rem; font-weight: 800; letter-spacing: 0.5px; }
@@ -53,13 +56,25 @@ html { background-color: #202124; }
     display: flex; flex-direction: column; align-items: flex-end; gap: 5px;
     animation: fadeIn 1s ease-out;
 }
-.trust-info { text-align: right; color: white; font-size: 0.7rem; line-height: 1.3; }
-.trust-title { font-weight: bold; color: #a6dcff; margin-bottom: 2px; font-size: 0.75rem; display: flex; align-items: center; justify-content: flex-end; gap: 5px; }
-.trust-details span { display: inline-block; background: rgba(0,0,0,0.2); padding: 2px 6px; border-radius: 4px; margin-left: 3px; font-size: 0.65rem; white-space: nowrap; }
+.trust-info { text-align: right; color: #333; /* Sarı zemin üstünde koyu yazı */ font-size: 0.7rem; line-height: 1.3; }
+.trust-title { 
+    font-weight: bold; 
+    color: #fff; /* Başlık beyaz kalsın, sarı üstünde belirgin olur */ 
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 2px; font-size: 0.75rem; 
+    display: flex; align-items: center; justify-content: flex-end; gap: 5px; 
+}
+.trust-details span { 
+    display: inline-block; 
+    background: rgba(255, 255, 255, 0.3); /* Yarı saydam beyaz */
+    padding: 2px 6px; border-radius: 4px; margin-left: 3px; font-size: 0.65rem; white-space: nowrap; 
+}
 .install-btn-final {
-    background: #fff; color: var(--pardus-blue); border: none; padding: 8px 16px; border-radius: 20px;
+    background: #fff; 
+    color: var(--pardus-blue-dark); /* Buton yazısı koyu sarı/turuncu */
+    border: none; padding: 8px 16px; border-radius: 20px;
     font-size: 0.8rem; font-weight: 800; cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 6px;
     transition: transform 0.2s; animation: pulseBtn 3s infinite;
 }
 .install-btn-final:active { transform: scale(0.95); }
@@ -78,14 +93,16 @@ html { background-color: #202124; }
 }
 .search-box i { position: absolute; left: 22px; top: 50%; transform: translateY(-50%); color: var(--pardus-blue); font-size: 1.2rem; }
 
+/* Banner Kutusu */
 .ad-banner {
     width: 100%;
     min-height: 42px;
     margin-bottom: 10px;
     padding: 8px 12px;
     border-radius: 10px;
-    border: 1px solid rgba(0, 71, 186, 0.18);
-    background: rgba(0, 71, 186, 0.05);
+    /* Sarı Çerçeve ve Zemin */
+    border: 1px solid rgba(251, 192, 45, 0.3);
+    background: rgba(251, 192, 45, 0.1); 
     color: var(--text-main);
     display: flex;
     align-items: center;
@@ -105,7 +122,7 @@ html { background-color: #202124; }
 }
 
 .ad-banner i {
-    color: var(--pardus-blue);
+    color: var(--pardus-blue); /* İkon Rengi Sarı */
     font-size: 0.8rem;
 }
 
@@ -116,7 +133,12 @@ html { background-color: #202124; }
     padding: 10px 18px; border-radius: 25px; font-size: 0.95rem; font-weight: 600;
     cursor: pointer; white-space: nowrap; display: flex; align-items: center; gap: 8px;
 }
-.cat-btn.active { background: var(--pardus-blue); color: white; border-color: var(--pardus-blue); box-shadow: 0 4px 10px rgba(0, 71, 186, 0.3); }
+.cat-btn.active { 
+    background: var(--pardus-blue); 
+    color: #333; /* Aktif buton yazısı koyu */
+    border-color: var(--pardus-blue); 
+    box-shadow: 0 4px 10px rgba(251, 192, 45, 0.3); 
+}
 
 /* --- KARTLAR --- */
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 20px; }
@@ -129,7 +151,7 @@ html { background-color: #202124; }
 .card span { display: block; font-weight: 700; font-size: 1rem; margin-bottom: 6px; }
 .card small { display: block; font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
 .fav-btn { position: absolute; top: 10px; right: 10px; font-size: 1.3rem; color: #d0d0d0; padding: 5px; }
-.fav-btn.active { color: #f1c40f; }
+.fav-btn.active { color: #f1c40f; } /* Yıldız zaten sarıydı, aynı kalsın */
 
 /* --- ALT MENÜ & AYARLAR --- */
 .bottom-nav {
@@ -167,38 +189,45 @@ input:checked + .slider:before { transform: translateX(22px); }
 .back-btn { background: none; border: none; font-size: 1.3rem; color: var(--text-main); cursor: pointer; padding: 5px; }
 .detail-title { font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin: 0; flex: 1; line-height: 1.2; }
 .detail-content { padding: 25px 20px; }
+
 .windows-badge {
-    background: #eef4fc; color: #222; padding: 14px 16px; border-radius: 10px; 
+    background: #fffDE7; /* Çok açık sarı zemin */
+    color: #222; padding: 14px 16px; border-radius: 10px; 
     font-size: 1rem; font-weight: 600; margin-bottom: 25px;
-    display: flex; align-items: center; gap: 12px; border: 1px solid rgba(0, 71, 186, 0.15);
+    display: flex; align-items: center; gap: 12px; 
+    border: 1px solid rgba(251, 192, 45, 0.2); /* Sarı Çerçeve */
 }
 .windows-badge i { color: var(--pardus-blue); font-size: 1.3rem; }
 
-/* --- MAVİ ADIM KUTUCUKLARI (BEYAZ ZEMİN & KALIN YAZI) --- */
+/* --- ADIM KUTUCUKLARI (SARI VERSİYON) --- */
 .step-box {
-    background-color: #fff;       /* ZEMİN ARTIK BEYAZ */
+    background-color: #fff;
     padding: 18px; 
     margin-bottom: 16px; 
     border-radius: 8px;
-    color: #000;                  /* YAZI SİYAH */
+    color: #000;
     font-family: 'Roboto', sans-serif;
-    font-weight: 700;             /* YAZI KALIN */
+    font-weight: 700;
     font-size: 1.1rem;
     line-height: 1.6;
     box-shadow: 0 3px 6px rgba(0,0,0,0.06); 
     border: 1px solid rgba(0,0,0,0.05);
-    border-left: 6px solid #0047ba; /* SOL ÇİZGİ MAVİ */
+    /* Sol Çizgi Sarı */
+    border-left: 6px solid #fbc02d; 
 }
-.step-box strong { font-weight: 700; color: #0047ba; letter-spacing: 0.3px; }
-code { font-family: 'Courier New', Courier, monospace; background-color: #fce4ec; color: #c2185b; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 1rem; }
+/* Kutu içi başlıklar Sarı */
+.step-box strong { font-weight: 700; color: #f9a825; letter-spacing: 0.3px; }
+
+code { font-family: 'Courier New', Courier, monospace; background-color: #fff9c4; color: #e65100; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 1rem; }
 
 /* --- GECE MODU --- */
-body.dark-mode .step-box { background: #252525; border-left-color: #5c9aff; color: #fff; border: 1px solid #333; }
-body.dark-mode .step-box strong { color: #5c9aff; }
+body.dark-mode .step-box { background: #252525; border-left-color: #fbc02d; color: #fff; border: 1px solid #333; }
+body.dark-mode .step-box strong { color: #fbc02d; }
 body.dark-mode .app-header { background: #1a1a1a; }
+body.dark-mode .trust-info { color: #fff; }
 body.dark-mode .ad-banner {
-    background: rgba(92, 154, 255, 0.16);
-    border-color: rgba(92, 154, 255, 0.4);
-    color: #d6e6ff;
+    background: rgba(253, 216, 53, 0.1);
+    border-color: rgba(253, 216, 53, 0.3);
+    color: #fff59d;
 }
 body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: #444; }
