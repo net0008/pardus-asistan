@@ -17,19 +17,19 @@ body.dark-mode {
     --shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* --- KRİTİK DÜZELTME: KUTU MODELİ --- */
-* { box-sizing: border-box; } /* Bu satır ekranın taşmasını engeller! */
+/* --- KUTU MODELİ DÜZELTMESİ --- */
+* { box-sizing: border-box; } 
 
-/* --- GENEL AYARLAR (MOBİL ÖNCELİKLİ) --- */
+/* --- GENEL AYARLAR --- */
 body { 
     margin: 0; padding: 0;
     font-family: 'Roboto', sans-serif;
     background: var(--bg-gray);
     color: var(--text-main);
-    padding-bottom: 80px; /* Mobilde alt menü boşluğu */
+    /* Alt menü yüzdüğü için içeriğin altında kalmaması için daha fazla boşluk */
+    padding-bottom: 100px; 
     min-height: 100vh;
     -webkit-font-smoothing: antialiased; 
-    /* Max-width ve border'ı kaldırdık ki mobilde tam otursun */
 }
 
 html { background-color: #202124; }
@@ -41,7 +41,7 @@ html { background-color: #202124; }
     padding: 20px;
     box-shadow: 0 4px 15px rgba(251, 192, 45, 0.25);
     display: flex; align-items: center; justify-content: space-between;
-    position: sticky; top: 0; z-index: 1000; /* Header hep üstte kalsın */
+    position: sticky; top: 0; z-index: 1000;
 }
 
 .header-left { display: flex; align-items: center; gap: 12px; }
@@ -73,9 +73,8 @@ html { background-color: #202124; }
 }
 
 /* --- İÇERİK DÜZENİ --- */
-.main-container { padding: 15px; } /* Kenarlardan hafif boşluk */
+.main-container { padding: 15px; }
 
-/* Arama Kutusu */
 .search-box { position: relative; margin-bottom: 15px; }
 .search-box input {
     width: 100%; padding: 14px 20px 14px 45px; border: none; border-radius: 12px;
@@ -84,7 +83,6 @@ html { background-color: #202124; }
 }
 .search-box i { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--pardus-blue-dark); }
 
-/* Reklam */
 .ad-banner {
     width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 10px;
     border: 1px solid rgba(251, 192, 45, 0.3); background: rgba(251, 192, 45, 0.1);
@@ -102,7 +100,7 @@ html { background-color: #202124; }
 .cat-btn.active { background: var(--pardus-blue); color: #333; border-color: var(--pardus-blue); }
 
 /* --- KARTLAR (GRID) --- */
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; } /* Mobilde 2 sütun */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
 .card {
     background: var(--card-bg); padding: 20px 10px; border-radius: 12px; text-align: center;
@@ -115,12 +113,29 @@ html { background-color: #202124; }
 .fav-btn { position: absolute; top: 8px; right: 8px; font-size: 1.1rem; color: #d0d0d0; padding: 5px; z-index: 5; }
 .fav-btn.active { color: #f1c40f; }
 
-/* --- ALT MENÜ (MOBİL) --- */
+/* =======================================================
+   🚀 YENİ ALT MENÜ (YÜZEN TASARIM - FLOATING BAR)
+   ======================================================= */
 .bottom-nav {
-    position: fixed; bottom: 0; left: 0; right: 0; height: 65px;
-    background: var(--card-bg); display: flex; justify-content: space-around; align-items: center;
-    border-top: 1px solid rgba(0,0,0,0.05); z-index: 999; box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    position: fixed; 
+    bottom: 20px; /* Ekranın en altından 20px yukarıda */
+    left: 20px;   /* Soldan boşluk */
+    right: 20px;  /* Sağdan boşluk */
+    height: 65px;
+    
+    background: var(--card-bg); /* Arka plan rengi */
+    display: flex; justify-content: space-around; align-items: center;
+    
+    /* Modern Yuvarlak Kenarlar */
+    border-radius: 50px; 
+    
+    /* Derinlik ve Gölge */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15); 
+    border: 1px solid rgba(0,0,0,0.05);
+    
+    z-index: 999;
 }
+
 .nav-item { text-align: center; color: #999; cursor: pointer; flex: 1; }
 .nav-item.active { color: var(--pardus-blue-dark); transform: translateY(-2px); }
 .nav-item i { font-size: 1.3rem; margin-bottom: 3px; display: block; }
@@ -141,7 +156,6 @@ html { background-color: #202124; }
 }
 .why-box { margin-top: 25px; text-align: left; background: rgba(0,0,0,0.03); padding: 15px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); }
 
-/* Kutu Modeli (Step Box) */
 .step-box {
     background: #fff; padding: 15px; margin-bottom: 12px; border-radius: 8px; color: #000;
     font-size: 1rem; line-height: 1.5; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -149,40 +163,35 @@ html { background-color: #202124; }
 }
 .step-box strong { color: #f9a825; }
 
-/* GECE MODU */
+/* GECE MODU DÜZELTMELERİ */
 body.dark-mode .step-box { background: #252525; border-left-color: #fbc02d; color: #fff; border-color: #333; }
 body.dark-mode .step-box strong { color: #fbc02d; }
 body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: #444; }
+/* Gece modunda alt menüye de hafif beyaz çerçeve ekleyelim ki belli olsun */
+body.dark-mode .bottom-nav { border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
 
 /* =========================================
    🚀 BİLGİSAYAR / TABLET (GENİŞ EKRAN) MODU
    ========================================= */
 @media (min-width: 992px) {
-    body { padding-bottom: 0; } /* Alt menü boşluğunu kaldır */
+    body { padding-bottom: 0; } /* Alt menü olmadığı için boşluğu kaldır */
     
     .main-container { max-width: 1200px; margin: 0 auto; padding: 30px; }
-
-    /* Header Genişlet */
     .app-header { padding: 15px 40px; }
     .header-text h1 { font-size: 1.5rem; }
 
-    /* Kartları Yay */
     .grid { 
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Esnek Sütunlar (4-5 tane sığar) */
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
         gap: 20px;
     }
 
-    /* Alt Menüyü Gizle, Üst Menüyü Göster */
+    /* Alt Menüyü PC'de TAMAMEN GİZLE */
     .bottom-nav { display: none !important; }
+    
     .pc-nav { display: flex; }
 
-    /* Kategorileri Ortala */
     .category-scroll { justify-content: center; flex-wrap: wrap; overflow: visible; }
     .cat-btn { padding: 10px 20px; font-size: 1rem; }
-
-    /* Arama Çubuğunu Büyüt */
     .search-box input { padding: 18px 25px 18px 55px; font-size: 1.1rem; }
-    
-    /* Detay Sayfası PC'de dar kalsın, okunabilir olsun */
     .detail-view, .settings-container { max-width: 800px; margin: 0 auto; }
 }
