@@ -26,105 +26,99 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css?v=6.0"> 
+    <link rel="stylesheet" href="style.css?v=6.1"> 
 </head>
 <body>
 
-    <div id="mainView">
-        <div class="app-header">
-            <div class="header-left">
-                <img src="icon.png" alt="Pardus Logo">
-                <div class="header-text">
-                    <h1>Pardus Asistan</h1>
-                    <p>Sınıf içi hızlı çözüm rehberi</p>
-                </div>
-            </div>
-
-            <div class="pc-nav">
-                <button onclick="switchTab('home')" class="active" id="pcBtnHome"><i class="fas fa-home"></i> Ana Sayfa</button>
-                <button onclick="switchTab('fav')" id="pcBtnFav"><i class="fas fa-star"></i> Favoriler</button>
-                <button onclick="switchTab('settings')" id="pcBtnSettings"><i class="fas fa-cog"></i> Ayarlar</button>
-            </div>
-
-            <div id="installContainer" class="install-wrapper" style="display: none;">
-                <button id="installApp" class="install-btn-final">
-                    <i class="fas fa-download"></i> Telefona Yükle
-                </button>
+    <div class="app-header">
+        <div class="header-left">
+            <img src="icon.png" alt="Pardus Logo">
+            <div class="header-text">
+                <h1>Pardus Asistan</h1>
+                <p>Sınıf içi hızlı çözüm rehberi</p>
             </div>
         </div>
-           
-        <div class="main-container">
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Sorun ara (Ses, USB, İnternet)..." onkeyup="filter(this.value)">
-            </div>
 
-            <div style="padding: 0 10px;">
-                <div class="ad-banner">
-                    <span><i class="fas fa-ad"></i> İyi Dersler 🐆</span>
-                </div>
-            </div>
+        <div class="pc-nav">
+            <button onclick="switchTab('home')" id="pcBtnHome" class="active"><i class="fas fa-home"></i> Ana Sayfa</button>
+            <button onclick="switchTab('fav')" id="pcBtnFav"><i class="fas fa-star"></i> Favoriler</button>
+            <button onclick="switchTab('settings')" id="pcBtnSettings"><i class="fas fa-cog"></i> Ayarlar</button>
+        </div>
 
-            <div class="category-scroll">
-                <button class="cat-btn active" onclick="filterCategory('all')">Tümü</button>
-                <button class="cat-btn" onclick="filterCategory('donanim')"><i class="fas fa-microchip"></i> Donanım</button>
-                <button class="cat-btn" onclick="filterCategory('internet')"><i class="fas fa-wifi"></i> İnternet</button>
-                <button class="cat-btn" onclick="filterCategory('ofis')"><i class="fas fa-file-alt"></i> Ofis</button>
-                <button class="cat-btn" onclick="filterCategory('uygulama')"><i class="fas fa-cube"></i> Uygulama</button>
-                <button class="cat-btn" onclick="filterCategory('sistem')"><i class="fas fa-cog"></i> Sistem</button>
-                <button class="cat-btn" onclick="filterCategory('etap')"><i class="fas fa-chalkboard"></i> ETAP</button>
-            </div>
-
-            <div class="grid" id="menuGrid"></div>
+        <div id="installContainer" class="install-wrapper" style="display: none;">
+            <button id="installApp" class="install-btn-final">
+                <i class="fas fa-download"></i> Yükle
+            </button>
         </div>
     </div>
 
-    <div id="detailView" class="detail-view">
-        <div class="detail-container">
-            <div class="detail-header">
-                <button onclick="closeDetail()" class="back-btn"><i class="fas fa-arrow-left"></i></button>
-                <h2 id="detailTitle" class="detail-title">Başlık</h2>
+    <div id="mainView" class="main-container">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Sorun ara (Ses, USB, İnternet)..." onkeyup="filter(this.value)">
+        </div>
+
+        <div style="padding: 0 5px;">
+            <div class="ad-banner">
+                <span><i class="fas fa-ad"></i> İyi Dersler 🐆</span>
             </div>
-            
-            <div class="detail-content">
-                <div id="detailWindows" class="windows-badge"></div>
-                <div id="detailImageContainer" style="display:none; text-align:center; margin-bottom:20px;"></div>
-                <div id="detailStepsContainer"></div>
-            </div>
+        </div>
+
+        <div class="category-scroll">
+            <button class="cat-btn active" onclick="filterCategory('all')">Tümü</button>
+            <button class="cat-btn" onclick="filterCategory('donanim')"><i class="fas fa-microchip"></i> Donanım</button>
+            <button class="cat-btn" onclick="filterCategory('internet')"><i class="fas fa-wifi"></i> İnternet</button>
+            <button class="cat-btn" onclick="filterCategory('ofis')"><i class="fas fa-file-alt"></i> Ofis</button>
+            <button class="cat-btn" onclick="filterCategory('uygulama')"><i class="fas fa-cube"></i> Uygulama</button>
+            <button class="cat-btn" onclick="filterCategory('sistem')"><i class="fas fa-cog"></i> Sistem</button>
+            <button class="cat-btn" onclick="filterCategory('etap')"><i class="fas fa-chalkboard"></i> ETAP</button>
+        </div>
+
+        <div class="grid" id="menuGrid"></div>
+    </div>
+
+    <div id="detailView" class="detail-view main-container">
+        <div class="detail-header">
+            <button onclick="closeDetail()" class="back-btn"><i class="fas fa-arrow-left"></i></button>
+            <h2 id="detailTitle" class="detail-title">Başlık</h2>
+        </div>
+        
+        <div class="detail-content">
+            <div id="detailWindows" class="windows-badge"></div>
+            <div id="detailImageContainer" style="display:none; text-align:center; margin-bottom:20px;"></div>
+            <div id="detailStepsContainer"></div>
         </div>
     </div>
 
-    <div class="settings-container" id="settingsView">
-        <div class="settings-wrapper">
-            <h2 style="margin-top:0;">Uygulama Ayarları</h2>
-            <div class="setting-item">
-                <div>
-                    <div style="font-weight:bold;"><i class="fas fa-moon"></i> Gece Modu</div>
-                    <div style="font-size:0.8rem; opacity:0.7;">Göz yormayan koyu tema</div>
-                </div>
-                <label class="switch">
-                    <input type="checkbox" id="darkModeToggle" onchange="toggleTheme()">
-                    <span class="slider"></span>
-                </label>
+    <div class="settings-container main-container" id="settingsView">
+        <h2 style="margin-top:0;">Uygulama Ayarları</h2>
+        <div class="setting-item">
+            <div>
+                <div style="font-weight:bold;"><i class="fas fa-moon"></i> Gece Modu</div>
+                <div style="font-size:0.8rem; opacity:0.7;">Göz yormayan koyu tema</div>
             </div>
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle" onchange="toggleTheme()">
+                <span class="slider"></span>
+            </label>
+        </div>
 
-            <div style="text-align:center; margin-top:30px; opacity:0.5; font-size:0.8rem;">
-                <p>Pardus Asistan v6.0 (PC Edition)</p>
-                <p>Geliştirici: Hasbi Erdoğmuş</p>
-                <p>İletişim: <a href="mailto:herdogmus35@gmail.com">herdogmus35@gmail.com</a></p>
-            </div>
+        <div style="text-align:center; margin-top:30px; opacity:0.5; font-size:0.8rem;">
+            <p>Pardus Asistan v6.1</p>
+            <p>Geliştirici: Hasbi Erdoğmuş</p>
+            <p>İletişim: <a href="mailto:herdogmus35@gmail.com">herdogmus35@gmail.com</a></p>
+        </div>
 
-            <div style="margin-top: 25px; text-align: left; background: rgba(0,0,0,0.03); padding: 15px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05);">
-                <h4 style="margin: 0 0 10px 0; color: #f57f17; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
-                    <i class="fas fa-rocket"></i> Neden Pardus Asistan?
-                </h4>
-                <ul style="margin: 0; padding-left: 20px; font-size: 0.85rem; line-height: 1.6; opacity: 0.85; color: var(--text-main);">
-                    <li style="margin-bottom: 5px;"><strong>Anında Çözüm:</strong> Sınıf içinde karşılaştığınız sorunları saniyeler içinde çözmeniz için tasarlandı.</li>
-                    <li style="margin-bottom: 5px;"><strong>İnternet Gerekmez:</strong> İnternet bağlantınız kopsa bile çalışmaya devam eder.</li>
-                    <li style="margin-bottom: 5px;"><strong>Tam Uyumlu:</strong> Pardus ETAP sürümleriyle %100 uyumludur.</li>
-                    <li><strong>Güvenli:</strong> Veri toplamaz, tamamen ücretsizdir.</li>
-                </ul>
-            </div>
+        <div class="why-box">
+            <h4 style="margin: 0 0 10px 0; color: #f57f17; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-rocket"></i> Neden Pardus Asistan?
+            </h4>
+            <ul style="margin: 0; padding-left: 20px; font-size: 0.85rem; line-height: 1.6; opacity: 0.85; color: var(--text-main);">
+                <li style="margin-bottom: 5px;"><strong>Anında Çözüm:</strong> Sınıf içinde karşılaştığınız sorunları saniyeler içinde çözmeniz için tasarlandı.</li>
+                <li style="margin-bottom: 5px;"><strong>İnternet Gerekmez:</strong> İnternet bağlantınız kopsa bile çalışmaya devam eder.</li>
+                <li style="margin-bottom: 5px;"><strong>Tam Uyumlu:</strong> Pardus ETAP sürümleriyle %100 uyumludur.</li>
+                <li><strong>Güvenli:</strong> Veri toplamaz, tamamen ücretsizdir.</li>
+            </ul>
         </div>
     </div>
 
@@ -143,6 +137,6 @@
         </div>
     </nav>
 
-   <script src="script.js?v=6.0"></script>
+   <script src="script.js?v=6.1"></script>
 </body>
 </html>
