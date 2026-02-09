@@ -477,8 +477,21 @@
       "**Sonuç (Sera Etkisi):** Sürgü kapatıldığında tahta hava alamaz, sıcaklık içeride hapsolur. İşlemci kendini korumak için sistemi yavaşlatır veya kilitler.",
       "**Altın Kural:** Tahta açık olduğu sürece (ders işlerken veya teneffüste) sürgüyü **ASLA KAPATMAYIN**. Sürgüyü sadece okuldaki işiniz bitip tahtayı tamamen kapattıktan sonra çekin."
     ]
+  },
+{
+    "id": "cep-net-paylasim",
+    "category": "internet",
+    "title": "Cep Telefonu İnternetini Tahtaya Bağlama",
+    "windows_karsiligi": "Hotspot / Kişisel Erişim Noktası",
+    "icon": "fa-mobile-alt",
+    "steps": [
+      "**1. Telefonda:** Ayarlar > Bağlantılar > **Kişisel Erişim Noktası** (veya Hotspot) menüsünü açın ve aktif hale getirin.",
+      "**2. Şifre Belirleme:** Bağlantı şifresini basit bir şey yapın (Örn: 12345678) veya mevcut şifreyi not edin.",
+      "**3. Tahtada:** Sağ alt köşedeki **Ağ/Wi-Fi** simgesine tıklayın.",
+      "**4. Bağlanma:** Listede telefonunuzun adını (Örn: iPhone veya Galaxy) bulup tıklayın.",
+      "**5. Şifre:** Telefonunuzdaki şifreyi girip **Bağlan** deyin. İnternetiniz artık tahtada!"
+    ]
   }
-
 
 
 ]
