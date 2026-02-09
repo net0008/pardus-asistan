@@ -17,7 +17,7 @@ body.dark-mode {
     --shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* --- KUTU MODELİ DÜZELTMESİ (TAŞMALARI ENGELLER) --- */
+/* --- KUTU MODELİ DÜZELTMESİ --- */
 * { box-sizing: border-box; } 
 
 /* --- GENEL AYARLAR --- */
@@ -26,8 +26,8 @@ body {
     font-family: 'Roboto', sans-serif;
     background: var(--bg-gray);
     color: var(--text-main);
-    /* Menü çok yukarıda olduğu için alt boşluğu artırdık */
-    padding-bottom: 130px; 
+    /* Menü çok yukarıda olduğu için içeriğin altında kalmaması için ekstra boşluk */
+    padding-bottom: 150px; 
     min-height: 100vh;
     -webkit-font-smoothing: antialiased; 
 }
@@ -114,23 +114,23 @@ html { background-color: #202124; }
 .fav-btn.active { color: #f1c40f; }
 
 /* =======================================================
-   🚀 YENİ ALT MENÜ (DAHA YÜKSEK & KAPSÜL)
+   🚀 YENİ ALT MENÜ (DAHA DAR & DAHA YUKARIDA)
    ======================================================= */
 .bottom-nav {
     position: fixed; 
-    bottom: 35px; /* Daha yukarıda */
-    left: 35px;   /* Kenarlardan daha fazla boşluk */
-    right: 35px;  /* Kenarlardan daha fazla boşluk */
-    height: 65px;
+    bottom: 45px; /* Parmak hizası için yukarıda */
+    left: 50px;   /* Kenarlardan ciddi boşluk (Ada görünümü) */
+    right: 50px;  /* Kenarlardan ciddi boşluk (Ada görünümü) */
+    height: 60px; /* Biraz daha zarif yükseklik */
     
     background: var(--card-bg); 
     display: flex; justify-content: space-around; align-items: center;
     
-    /* Tam Kapsül Görünümü */
+    /* Tam Yuvarlak Kapsül */
     border-radius: 60px; 
     
-    /* Güçlü Gölge */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.18); 
+    /* Derinlik Hissi */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.20); 
     border: 1px solid rgba(0,0,0,0.05);
     
     z-index: 999;
