@@ -492,6 +492,19 @@
       "**4. Bağlanma:** Listede telefonunuzun adını (Örn: iPhone veya Galaxy) bulup tıklayın.",
       "**5. Şifre:** Telefonunuzdaki şifreyi girip **Bağlan** deyin. İnternetiniz artık tahtada!"
     ]
+  },
+  {
+    "id": "sys-eta-kayit",
+    "category": "sistem",
+    "title": "Sistem Kaydı **ETA Kayıt** (Lider Ahenk)",
+    "windows_karsiligi": "Domain / Active Directory Kaydı",
+    "icon": "fa-id-card-alt",
+    "steps": [
+      "Tahtanın internete bağlı olduğundan emin olun ve uygulama menüsünden **ETA Kayıt** yazılımını çalıştırın.",
+      "Kayıt ekranında **Okul Kodu ile** veya **Seçerek Kaydet** (İl/İlçe/Okul seçimi) yöntemlerinden birini belirleyin.",
+      "Okul bilgilerinizi girdikten sonra **Yetkili (Admin)** şifresini yazarak **Bu tahtayı kaydet** butonuna tıklayın.",
+      "İşlem tamamlandığında tahta, Lider Ahenk merkezi yönetim sistemine dahil edilmiş olacaktır."
+    ]
   }
 
 
