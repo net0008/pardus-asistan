@@ -505,7 +505,122 @@
       "Okul bilgilerinizi girdikten sonra **Yetkili (Admin)** şifresini yazarak **Bu tahtayı kaydet** butonuna tıklayın.",
       "İşlem tamamlandığında tahta, Lider Ahenk merkezi yönetim sistemine dahil edilmiş olacaktır."
     ]
+  },
+  
+  {
+    "id": "ipucu-dosya-sistemi-yapisi",
+    "category": "ipucu",
+    "title": "C: ve D: Sürücüleri Nerede? (**Dosya Sistemi**)",
+    "windows_karsiligi": "Bilgisayarım > Yerel Disk (C: / D:)",
+    "icon": "fa-folder-tree",
+    "steps": [
+      "Pardus'ta (Linux) C: veya D: gibi sürücü harfleri yoktur. Sistem tek bir **Kök Dizin (/)** ağacından başlar.",
+      "Windows'taki kullanıcı dosyalarınız (Masaüstü, Belgeler, İndirilenler) **'Ev' (Home)** klasörü altındadır.",
+      "**USB Bellekler:** E: veya F: harfi almazlar. Dosya Yöneticisi'nin sol panelinde **kendi isimleriyle** görünürler.",
+      "**Önemli Fark:** Dosya yolu yazarken Windows'taki ters eğik çizgi (\\) yerine, düz eğik çizgi (/) kullanılır."
+    ]
+  },
+  {
+    "id": "ipucu-gorev-yoneticisi",
+    "category": "ipucu",
+    "title": "Donan Programı Kapatma (**Sistem Gözlemcisi**)",
+    "windows_karsiligi": "Görev Yöneticisi (Ctrl+Alt+Del)",
+    "icon": "fa-heartbeat",
+    "steps": [
+      "Windows'taki Görev Yöneticisi'nin karşılığı **Sistem Gözlemcisi**dir.",
+      "Uygulama menüsünde 'Sistem Gözlemcisi'ni aratıp açın.",
+      "Yanıt vermeyen programı listeden bulup sağ tıklayın ve **'Sonlandır'** veya **'Öldür'** seçeneğini kullanın."
+    ]
+  },
+  {
+    "id": "ipucu-exe-calistirma",
+    "category": "ipucu",
+    "title": ".EXE Dosyaları Neden Açılmıyor?",
+    "windows_karsiligi": "Uygulama Yükleme (Setup.exe)",
+    "icon": "fa-ban",
+    "steps": [
+      "Pardus Linux tabanlıdır, bu yüzden Windows'a ait .exe dosyaları doğrudan çalışmaz.",
+      "Program yüklemek için **Pardus Mağaza** veya **Synaptic Paket Yöneticisi** kullanılır.",
+      "Mutlaka .exe çalıştırmanız gerekirse **Wine** uygulamasını kullanabilirsiniz, ancak her programın çalışacağı garanti edilemez."
+    ]
+  },
+  {
+    "id": "ipucu-denetim-masasi",
+    "category": "ipucu",
+    "title": "Ayarlar Nereden Yapılır?",
+    "windows_karsiligi": "Denetim Masası",
+    "icon": "fa-sliders-h",
+    "steps": [
+      "Windows'taki Denetim Masası'nın karşılığı **'Ayarlar'** veya **'Pardus Ayarları'** menüsüdür.",
+      "Ekran çözünürlüğü, duvar kağıdı, fare ayarları gibi işlemler buradan yapılır.",
+      "Yazıcı eklemek için ise ayrı bir **'Yazıcı Ayarları'** menüsü bulunur."
+    ]
+  },
+  {
+    "id": "ipucu-yenile",
+    "category": "ipucu",
+    "title": "Masaüstü Yenileme (F5)",
+    "windows_karsiligi": "Sağ Tık > Yenile",
+    "icon": "fa-sync-alt",
+    "steps": [
+      "Linux sistemlerde masaüstünü sürekli yenilemeye teknik olarak gerek yoktur.",
+      "Sistem kaynakları anlık yönetildiği için bilgisayar yavaşlamaz.",
+      "Yine de alışkanlık olarak yapmak isterseniz **F5** tuşu Pardus'ta da sayfayı veya masaüstünü yeniler."
+    ]
+  },
+  
+  {
+    "id": "ipucu-baslat-menu",
+    "category": "ipucu",
+    "title": "Başlat Menüsü Nerede? (**Arayüz Değiştirme**)",
+    "windows_karsiligi": "Görev Çubuğu ve Başlat Menüsü",
+    "icon": "fa-desktop",
+    "steps": [
+      "Pardus (GNOME) varsayılan olarak sol üstte 'Etkinlikler' menüsünü kullanır, altta sabit bir çubuk olmayabilir.",
+      "Windows benzeri (sol altta Başlat) bir görünüm için uygulama menüsünden **Pardus Karşılayıcı**'yı açın.",
+      "**Tasarım** sekmesine tıklayın.",
+      "Listeden **'Pardus Tarzı'** veya **'Klasik Tarz'** seçeneğini işaretleyerek alıştığınız Başlat Menüsü düzenine geçebilirsiniz."
+    ]
   }
-
-
+,
+  {
+    "id": "ipucu-calistirma-izni",
+    "category": "ipucu",
+    "title": "Uygulama Açılmıyor (**Çalıştırma İzni**)",
+    "windows_karsiligi": "Yönetici Olarak Çalıştır / Doğrudan Çalıştırma",
+    "icon": "fa-user-shield",
+    "steps": [
+      "Windows'ta uygulamalar doğrudan çalışır, ancak Pardus'ta güvenlik gereği dışarıdan gelen dosyalara **'Çalıştırma İzni'** verilmelidir.",
+      "Özellikle **Z-Kitap** gibi klasörden çalışan uygulamalar tepki vermiyorsa veya metin belgesi gibi açılıyorsa;",
+      "Dosyaya **Sağ Tıklayın** ve **Özellikler** menüsünü açın.",
+      "**İzinler** sekmesine gidin ve **'Dosyayı bir program gibi çalıştırmaya izin ver'** kutucuğunu işaretleyip kapatın."
+    ]
+  }
+  ,
+  {
+    "id": "ipucu-pencere-dugmeleri",
+    "category": "ipucu",
+    "title": "Pencere Düğmeleri Kayıp (**Simge Durumu / Büyüt**)",
+    "windows_karsiligi": "Pencere Kontrolleri (_ □ X)",
+    "icon": "fa-window-restore",
+    "steps": [
+      "Bazı Pardus temalarında pencereyi aşağı indirme veya tam ekran yapma düğmeleri varsayılan olarak gizli olabilir.",
+      "Bu ayar standart Ayarlar menüsünde değil, **'İnce Ayarlar' (Tweaks)** uygulamasındadır.",
+      "Uygulama menüsünden **İnce Ayarlar**'ı açın ve sol taraftan **'Pencere Başlık Çubukları'**nı seçin.",
+      "Buradaki **'Simge Durumuna Küçült'** ve **'Ekranı Kapla'** seçeneklerini aktif hale getirin."
+    ]
+  }
+,
+  {
+    "id": "ipucu-eta-klavye-p",
+    "category": "ipucu",
+    "title": "Klavye Parola Gizleme (**ETA Klavye**)",
+    "windows_karsiligi": "Parola Göster/Gizle Simgesi (Göz)",
+    "icon": "fa-keyboard",
+    "steps": [
+      "Pardus ETAP sanal klavyesinde şifre girerken karakterler açık veya gizli görünebilir.",
+      "Bunu değiştirmek için klavyenin **başlık çubuğundaki 'P' düğmesine** basmanız gerekir.",
+      "**'P' (Password)** düğmesi, yazdıklarınızın açık metin mi yoksa yıldız (*) şeklinde mi görüneceğini anlık olarak değiştirir."
+    ]
+  }
 ]
