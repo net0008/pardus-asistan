@@ -44,9 +44,10 @@
     "icon": "fa-wifi",
     "steps": [
       "Paneldeki (Sağ alt veya üst) **Ağ/Wi-Fi** simgesine tıklayın.",
-      "Listeden okul ağını seçip şifrenizi girin.",
+      "**Gereklilik** MEB ağına bağlanmak için bağlanmak istediğiniz telefon veya tablete MEB sertifikasının kurulmuş olması gerekir.Kurulu değilse önce 'sertifika.meb.gov.tr' adresinden sertifikayı indirip cihazınızın işletim sistemine uygun kurulumu yapınız. ",
+      "Listeden okul ağını (genellikle **F@tih**) seçip şifrenizi girin.",
       "**Gizli Ağ:** Ağ listesinde yoksa 'Gizli Ağa Bağlan' diyerek SSID ve şifreyi elle girin.",
-      "**MEB Sertifikası:** İnternet var ama siteler açılmıyorsa 'sertifika.meb.gov.tr' adresinden sertifikayı indirip çift tıklayarak kurun."
+      "**F@tih** ağına bağlandıysanız tarayıcınız sizi **eba.gov.tr**de oturum açmaya yönlendirecektir. Oturum açarak internete erişebilirsiniz."
     ]
   },
   {
