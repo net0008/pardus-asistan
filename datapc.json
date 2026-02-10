@@ -623,4 +623,146 @@
       "**'P' (Password)** düğmesi, yazdıklarınızın açık metin mi yoksa yıldız (*) şeklinde mi görüneceğini anlık olarak değiştirir."
     ]
   }
+  ,
+  {
+    "id": "ipucu-calistirma-izni-detayli",
+    "category": "ipucu",
+    "title": "Z-Kitap Açılmıyor (**Çalıştırma İzni**)",
+    "windows_karsiligi": "Doğrudan Çalıştırma (.exe)",
+    "icon": "fa-unlock-alt",
+    "steps": [
+      "Pardus'ta Z-Kitap gibi uygulamaların çalışması için **'Çalıştırma İzni'** verilmesi gerekebilir.",
+      "**Grafik Arayüz (Önerilen):** Dosyaya sağ tıklayın, **Özellikler > İzinler** sekmesine gidin ve **'Dosyayı program gibi çalıştırmaya izin ver'** kutucuğunu işaretleyin.",
+      "**Konsol Yöntemi:** Dosyanın olduğu klasörde sağ tıklayıp uçbirim açın ve `chmod +x dosya_adi` komutunu uygulayın.",
+      "**Bilgi:** Linux sistemlerinde güvenlik gereği bir dosyanın uygulama olarak çalışabilmesi için **'x' (execute/çalıştırma)** iznine sahip olması zorunludur."
+    ]
+    
+  }
+,
+  {
+    "id": "ipucu-pardus-23-arayuz",
+    "category": "ipucu",
+    "title": "Başlat Menüsü ve Görünüm (**Pardus 23**)",
+    "windows_karsiligi": "Görev Çubuğu / Temalar",
+    "icon": "fa-palette",
+    "steps": [
+      "Pardus 23 arayüzünü Windows alışkanlıklarına uygun hale getirmek için menüden **'Pardus Karşılayıcı'** uygulamasını açın.",
+      "Sol taraftaki menüden **'Tasarım'** sekmesine tıklayın.",
+      "Windows deneyimine en yakın olan **'XP Tarzı'**, **'10 Tarzı'** veya **'Klasik Tarz'** seçeneklerinden birini seçin.",
+      "Bu işlem; panelin konumunu, menü yapısını ve pencere dekorasyonlarını seçtiğiniz tarza göre otomatik olarak ayarlar."
+    ]
+  }
+,
+  {
+    "id": "ipucu-tema-ve-tasarim",
+    "category": "ipucu",
+    "title": "Tema ve Görünüm Değiştirme (**Pardus Karşılayıcı**)",
+    "windows_karsiligi": "Kişiselleştirme > Temalar",
+    "icon": "fa-paint-brush",
+    "steps": [
+      "Pardus Karşılayıcı ile sistemin görünümünü tek tıkla değiştirebilirsiniz.",
+      "**Tema Sekmesi:** Buradan **Açık** veya göz yormayan **Koyu** (Siyah) temayı seçebilirsiniz.",
+      "**Tasarım Sekmesi:** Windows (XP/10) dışında **macOS**, **Ubuntu** veya **Klasik** tarz gibi hazır arayüz düzenlerine geçiş yapabilirsiniz.",
+      "Ayrıca **Duvar Kağıdı**nı değiştirebilir veya mavi ışığı azaltan **Gece Işığı**nı buradan açabilirsiniz."
+    ]
+  }
+,
+  {
+    "id": "ipucu-uzanti-yonetimi",
+    "category": "ipucu",
+    "title": "Eklenti ve Uzantı Yönetimi (**GNOME**)",
+    "windows_karsiligi": "Masaüstü Araçları / Widget'lar",
+    "icon": "fa-puzzle-piece",
+    "steps": [
+      "**1. Pardus Karşılayıcı:** Sol menüden 'Uzantılar' sekmesine girerek **Caffeine** (Ekranı sürekli açık tutma) veya **AppIndicator** (Tepsi simgeleri) özelliklerini tek tıkla açabilirsiniz.",
+      "**2. Uzantılar Uygulaması:** Menüde 'Uzantılar' aratarak sistemdeki tüm eklentileri yönetebilir ve ayarlarını (Çark simgesi) yapabilirsiniz.",
+      "**3. Web Kurulumu:** `extensions.gnome.org` adresinden **Dash to Dock** (Panel özelleştirme) veya **ArcMenu** (Başlat menüsü) gibi binlerce yeni özellik indirebilirsiniz."
+    ]
+  }
+  ,
+  {
+    "id": "ipucu-windows-uzantilari",
+    "category": "ipucu",
+    "title": "Windows Gibi Yapma (**Kritik Uzantılar**)",
+    "windows_karsiligi": "Görev Çubuğu ve Başlat Menüsü",
+    "icon": "fa-magic",
+    "steps": [
+      "**1. Dash to Panel:** Üst paneli ve rıhtımı birleştirerek ekranın altına tek bir **Görev Çubuğu** koyar (En önemli uzantı).",
+      "**2. ArcMenu:** Tam ekran uygulama menüsü yerine, Windows 7/10 tarzı açılır bir **Başlat Menüsü** ekler.",
+      "**3. Desktop Icons NG:** Masaüstünde 'Bu Bilgisayar', 'Çöp Kutusu' ve dosyaların görünmesini sağlar.",
+      "**4. AppIndicator:** Saat yanında gizlenen arka plan uygulamalarını (Sistem Tepsisi) görünür kılar.",
+      "**Kolay Kurulum:** **Pardus Karşılayıcı > Tasarım** sekmesinden '10 Tarzı' seçilirse bunlar otomatik yüklenir."
+    ]
+  }
+  ,
+  {
+    "id": "ipucu-klasor-gorevleri",
+    "category": "ipucu",
+    "title": "Bu Klasörler Ne İşe Yarar? (**Linux Hiyerarşisi**)",
+    "windows_karsiligi": "C:\\Windows, Users, Program Files",
+    "icon": "fa-sitemap",
+    "steps": [
+      "**'/ (Kök Dizin)':** Dosya sisteminin başlangıç noktasıdır, diğer tüm klasörler bunun altına dallanır.",
+      "**'/home' (Ev):** Kullanıcıların kişisel dosyaları (Masaüstü, Belgeler) burada tutulur. (Windows'taki **Users**).",
+      "**'/etc':** Sistemin genel ayar ve yapılandırma dosyaları (Ağ, Kullanıcı vb.) buradadır.",
+      "**'/usr' ve '/bin':** Yüklü programlar ve temel sistem komutları burada yer alır. (Windows'taki **Program Files**).",
+      "**'/dev':** Donanımlar (Diskler, USB vb.) burada birer dosya gibi temsil edilir."
+    ]
+  }
+  ,
+  {
+    "id": "ipucu-kullanici-yonetimi",
+    "category": "ipucu",
+    "title": "Kullanıcı Ekleme ve Silme (**Ayarlar/Konsol**)",
+    "windows_karsiligi": "Denetim Masası > Kullanıcı Hesapları",
+    "icon": "fa-users-cog",
+    "steps": [
+      "**1. Grafik Arayüz:** **Ayarlar > Kullanıcılar** menüsünü açın. Sağ üstten **Kilidi Aç** butonuna tıklayıp yönetici şifrenizi girin.",
+      "**Kullanıcı Ekle:** Açılan ekranda **'Kullanıcı Ekle...'** diyerek Ad, Soyad ve Parola belirleyin. (Kullanıcı adında Türkçe karakter kullanmayın).",
+      "**2. Konsol Yöntemi:** Uçbirimde `sudo adduser kullanici_adi` komutuyla hızlıca kullanıcı ve ev dizini oluşturabilirsiniz.",
+      "**3. Yönetim:** Aynı menüden **Otomatik Giriş** açılabilir veya kullanıcı seçilip **'Kullanıcıyı Kaldır'** diyerek silinebilir."
+    ]
+  }
+  ,
+  {
+    "id": "ipucu-deb-kurulum",
+    "category": "ipucu",
+    "title": "İnternetten İndirilen Programı Kurma (**DEB Dosyası**)",
+    "windows_karsiligi": "Setup.exe / MSI Yükleme",
+    "icon": "fa-box-open",
+    "steps": [
+      "Pardus'ta harici programlar **.deb** uzantılı dosyalarla kurulur (Windows'taki .exe gibi).",
+      "**1. Grafik Arayüz:** İndirdiğiniz .deb dosyasına çift tıklayın, **Pardus Paket Kurucu** açılacaktır. **'Yükle'** butonuna basarak kurabilirsiniz.",
+      "**2. Konsol Yöntemi (Önerilen):** Dosyanın olduğu klasörde uçbirim açıp `sudo apt install ./dosya_adi.deb` komutunu kullanın.",
+      "**Önemli Not:** Resmi depolarda olmayan yazılımları kurarken güvenlik riski olabileceğini ve güncellemelerin (repo eklenmediyse) otomatik yapılmayacağını göz önünde bulundurmalısınız."
+]
+   }
+   ,
+  {
+    "id": "ipucu-program-kaldirma",
+    "category": "ipucu",
+    "title": "Program Nasıl Kaldırılır? (**3 Yöntem**)",
+    "windows_karsiligi": "Program Ekle / Kaldır",
+    "icon": "fa-trash-alt",
+    "steps": [
+      "**1. Pardus Yazılım Merkezi (Kolay):** 'Uygulamalarım' sekmesine gidin ve kaldırmak istediğiniz programın yanındaki **Kaldır (Çöp Kutusu)** simgesine tıklayın.",
+      "**2. Synaptic (Gelişmiş):** Paketi bulup sağ tıklayın, **'Kaldırmak için işaretle'** diyerek yukarıdaki **'Uygula'** butonuna basın.",
+      "**3. Konsol (Hızlı):** Uçbirimde `sudo apt remove paket_adi` komutunu kullanın. (Ayarları da silmek için `remove` yerine `purge` yazın).",
+      "**Temizlik:** Kaldırma işleminden sonra `sudo apt autoremove` komutuyla gereksiz kalıntıları temizleyebilirsiniz."
+    ]
+  }
+  ,
+  {
+    "id": "ipucu-libreoffice-uyumluluk",
+    "category": "ipucu",
+    "title": "Hangi Program Hangi Uzantı? (**LibreOffice**)",
+    "windows_karsiligi": "Word (.docx) / Excel (.xlsx) / PP (.pptx)",
+    "icon": "fa-file-word",
+    "steps": [
+      "**Varsayılan Uzantılar:** Writer (**odt**), Calc (**ods**), LibreOffice Impress (Sunu) (**odp**), LibreOffice Draw (Çizim) (**odg**), LibreOffice Math (Formül) (**odf**),  LibreOffice Base (Veritabanı) (**odb**).",
+      "LibreOffice, Microsoft Office (Word, Excel, PowerPoint) belgelerini sorunsuz açar ve düzenler.",
+      "Çalışmalarınızı kaydederken **'Farklı Kaydet'** diyerek Word için**.docx**, Excel **.xlsx** veya PowerPoint **.pptx** formatında saklayabilirsiniz.",
+      "Ayrıca PDF, HTML ve XML gibi birçok formatı destekler."
+    ]
+  }
 ]
