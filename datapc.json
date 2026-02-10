@@ -524,7 +524,7 @@
   {
     "id": "ipucu-dosya-sistemi-yapisi",
     "category": "ipucu",
-    "title": "C: ve D: Sürücüleri Nerede? (**Dosya Sistemi**)",
+    "title": "C: ve D: Sürücüleri Nerede? **Dosya Sistemi**",
     "windows_karsiligi": "Bilgisayarım > Yerel Disk (C: / D:)",
     "icon": "fa-folder-tree",
     "steps": [
@@ -537,7 +537,7 @@
   {
     "id": "ipucu-gorev-yoneticisi",
     "category": "ipucu",
-    "title": "Donan Programı Kapatma (**Sistem Gözlemcisi**)",
+    "title": "Donan Programı Kapatma **Sistem Gözlemcisi**",
     "windows_karsiligi": "Görev Yöneticisi (Ctrl+Alt+Del)",
     "icon": "fa-heartbeat",
     "steps": [
@@ -586,7 +586,7 @@
   {
     "id": "ipucu-baslat-menu",
     "category": "ipucu",
-    "title": "Başlat Menüsü Nerede? (**Arayüz Değiştirme**)",
+    "title": "Başlat Menüsü Nerede? **Arayüz Değiştirme**",
     "windows_karsiligi": "Görev Çubuğu ve Başlat Menüsü",
     "icon": "fa-desktop",
     "steps": [
@@ -600,7 +600,7 @@
   {
     "id": "ipucu-calistirma-izni",
     "category": "ipucu",
-    "title": "Uygulama Açılmıyor (**Çalıştırma İzni**)",
+    "title": "Uygulama Açılmıyor **Çalıştırma İzni**",
     "windows_karsiligi": "Yönetici Olarak Çalıştır / Doğrudan Çalıştırma",
     "icon": "fa-user-shield",
     "steps": [
@@ -614,7 +614,7 @@
   {
     "id": "ipucu-pencere-dugmeleri",
     "category": "ipucu",
-    "title": "Pencere Düğmeleri Kayıp (**Simge Durumu / Büyüt**)",
+    "title": "Pencere Düğmeleri Kayıp **Simge Durumu / Büyüt**",
     "windows_karsiligi": "Pencere Kontrolleri (_ □ X)",
     "icon": "fa-window-restore",
     "steps": [
@@ -628,7 +628,7 @@
   {
     "id": "ipucu-eta-klavye-p",
     "category": "ipucu",
-    "title": "Klavye Parola Gizleme (**ETA Klavye**)",
+    "title": "Klavye Parola Gizleme **ETA Klavye**",
     "windows_karsiligi": "Parola Göster/Gizle Simgesi (Göz)",
     "icon": "fa-keyboard",
     "steps": [
@@ -641,7 +641,7 @@
   {
     "id": "ipucu-calistirma-izni-detayli",
     "category": "ipucu",
-    "title": "Z-Kitap Açılmıyor (**Çalıştırma İzni**)",
+    "title": "Z-Kitap Açılmıyor **Çalıştırma İzni**",
     "windows_karsiligi": "Doğrudan Çalıştırma (.exe)",
     "icon": "fa-unlock-alt",
     "steps": [
@@ -656,7 +656,7 @@
   {
     "id": "ipucu-pardus-23-arayuz",
     "category": "ipucu",
-    "title": "Başlat Menüsü ve Görünüm (**Pardus 23**)",
+    "title": "Başlat Menüsü ve Görünüm **Pardus 23**",
     "windows_karsiligi": "Görev Çubuğu / Temalar",
     "icon": "fa-palette",
     "steps": [
@@ -670,7 +670,7 @@
   {
     "id": "ipucu-tema-ve-tasarim",
     "category": "ipucu",
-    "title": "Tema ve Görünüm Değiştirme (**Pardus Karşılayıcı**)",
+    "title": "Tema ve Görünüm Değiştirme **Pardus Karşılayıcı**",
     "windows_karsiligi": "Kişiselleştirme > Temalar",
     "icon": "fa-paint-brush",
     "steps": [
@@ -684,7 +684,7 @@
   {
     "id": "ipucu-uzanti-yonetimi",
     "category": "ipucu",
-    "title": "Eklenti ve Uzantı Yönetimi (**GNOME**)",
+    "title": "Eklenti ve Uzantı Yönetimi **GNOME**",
     "windows_karsiligi": "Masaüstü Araçları / Widget'lar",
     "icon": "fa-puzzle-piece",
     "steps": [
@@ -697,7 +697,7 @@
   {
     "id": "ipucu-windows-uzantilari",
     "category": "ipucu",
-    "title": "Windows Gibi Yapma (**Kritik Uzantılar**)",
+    "title": "Windows Gibi Yapma **Kritik Uzantılar**",
     "windows_karsiligi": "Görev Çubuğu ve Başlat Menüsü",
     "icon": "fa-magic",
     "steps": [
@@ -712,7 +712,7 @@
   {
     "id": "ipucu-klasor-gorevleri",
     "category": "ipucu",
-    "title": "Bu Klasörler Ne İşe Yarar? (**Linux Hiyerarşisi**)",
+    "title": "Bu Klasörler Ne İşe Yarar? **Linux Hiyerarşisi**",
     "windows_karsiligi": "C:\\Windows, Users, Program Files",
     "icon": "fa-sitemap",
     "steps": [
@@ -727,7 +727,7 @@
   {
     "id": "ipucu-kullanici-yonetimi",
     "category": "ipucu",
-    "title": "Kullanıcı Ekleme ve Silme (**Ayarlar/Konsol**)",
+    "title": "Kullanıcı Ekleme ve Silme **Ayarlar/Konsol**",
     "windows_karsiligi": "Denetim Masası > Kullanıcı Hesapları",
     "icon": "fa-users-cog",
     "steps": [
@@ -741,7 +741,7 @@
   {
     "id": "ipucu-deb-kurulum",
     "category": "ipucu",
-    "title": "İnternetten İndirilen Programı Kurma (**DEB Dosyası**)",
+    "title": "İnternetten İndirilen Programı Kurma **DEB Dosyası**",
     "windows_karsiligi": "Setup.exe / MSI Yükleme",
     "icon": "fa-box-open",
     "steps": [
@@ -755,7 +755,7 @@
   {
     "id": "ipucu-program-kaldirma",
     "category": "ipucu",
-    "title": "Program Nasıl Kaldırılır? (**3 Yöntem**)",
+    "title": "Program Nasıl Kaldırılır? **3 Yöntem**",
     "windows_karsiligi": "Program Ekle / Kaldır",
     "icon": "fa-trash-alt",
     "steps": [
@@ -769,7 +769,7 @@
    {
     "id": "ipucu-libreoffice-uyumluluk",
     "category": "ipucu",
-    "title": "Hangi Program Hangi Uzantı? (**LibreOffice**)",
+    "title": "Hangi Program Hangi Uzantı? **LibreOffice**",
     "windows_karsiligi": "Word (.docx) / Excel (.xlsx) / PP (.pptx)",
     "icon": "fa-file-word",
     "steps": [
@@ -783,7 +783,7 @@
   {
     "id": "ipucu-magaza-vs-synaptic",
     "category": "ipucu",
-    "title": "Mağaza mı Synaptic mi? (**Farklar**)",
+    "title": "Mağaza mı Synaptic mi? **Farklar**",
     "windows_karsiligi": "Microsoft Store vs Program Ekle/Kaldır",
     "icon": "fa-store",
     "steps": [
@@ -796,7 +796,7 @@
   {
     "id": "ipucu-bluetooth-kullanim",
     "category": "ipucu",
-    "title": "Bluetooth ve Dosya Transferi (**Eşleştirme**)",
+    "title": "Bluetooth ve Dosya Transferi **Eşleştirme**",
     "windows_karsiligi": "Bluetooth ve Cihazlar",
     "icon": "fa-bluetooth-b",
     "steps": [
