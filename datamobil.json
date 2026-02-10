@@ -1,5 +1,19 @@
 [
   {
+    "id": "ipucu-ozgur-yazilim-felsefesi",
+    "category": "ipucu",
+    "title": "Pardus Neden Ücretsiz? (**Özgür Yazılım Felsefesi**)",
+    "windows_karsiligi": "Lisanslı / Kapalı Kaynak Yazılım",
+    "icon": "fa-dove",
+    "steps": [
+      "**Pardus**’un özgür yazılım felsefesi, temelde Richard Stallman tarafından başlatılan **Özgür Yazılım Hareketi**ne ve GNU tasarısına dayanmaktadır. Pardus, **TÜBİTAK/ULAKBİM** tarafından geliştirilen **özgür ve ücretsiz** bir GNU/Linux dağıtımıdır. Bu felsefe, yazılımın sadece **ücretsiz** olmasını değil, kullanıcıların **özgürlüklerini** garanti altına almayı hedefler. Bu felsefenin temel taşları şunlardır:",
+      "**Dört Temel Özgürlük:** 1) Her amaç için kullanma, 2) Kodu inceleme ve değiştirme, 3) Dağıtma, 4) Geliştirmeleri paylaşma hakkıdır.",
+      "**Stratejik Amaç:** Kamuda dışa bağımlılığı azaltmak, güvenlik zafiyetlerini önlemek ve **üretici tekeline** girmeden **ulusal bir ekosistem** kurmaktır.",
+      "**GPL ve Copyleft:** Pardus, GPL lisansı ile korunur. Bu, yazılımın ve türevlerinin sahipli hale getirilemeyeceğini ve daima özgür kalacağını garanti eder."
+    ]
+  }
+   ,
+  {
     "id": "etap-panel-jestler",
     "category": "etap",
     "title": "ETA Panel ve Sihirli Dokunuşlar",
@@ -790,20 +804,6 @@
       "**2. Dosya Gönderme:** Eşleşen cihazın üzerine tıklayın, **'Dosya Gönder...'** butonunu seçip dosyayı yükleyin.",
       "**3. Dosya Alma:** Telefondan gönderdiğiniz dosyalar otomatik olarak **'İndirilenler'** klasörüne kaydedilir.",
       "**4. Bağlantı Kesme:** Cihazı kaldırmak için yine aynı menüden **'Aygıtı Kaldır'** butonunu kullanabilirsiniz."
-    ]
-  }
-  ,
-  {
-    "id": "ipucu-ozgur-yazilim-felsefesi",
-    "category": "ipucu",
-    "title": "Pardus Neden Ücretsiz? (**Özgür Yazılım Felsefesi**)",
-    "windows_karsiligi": "Lisanslı / Kapalı Kaynak Yazılım",
-    "icon": "fa-dove",
-    "steps": [
-      "**Pardus**’un özgür yazılım felsefesi, temelde Richard Stallman tarafından başlatılan **Özgür Yazılım Hareketi**ne ve GNU tasarısına dayanmaktadır. Pardus, **TÜBİTAK/ULAKBİM** tarafından geliştirilen **özgür ve ücretsiz** bir GNU/Linux dağıtımıdır. Bu felsefe, yazılımın sadece **ücretsiz** olmasını değil, kullanıcıların **özgürlüklerini** garanti altına almayı hedefler. Bu felsefenin temel taşları şunlardır:",
-      "**Dört Temel Özgürlük:** 1) Her amaç için kullanma, 2) Kodu inceleme ve değiştirme, 3) Dağıtma, 4) Geliştirmeleri paylaşma hakkıdır.",
-      "**Stratejik Amaç:** Kamuda dışa bağımlılığı azaltmak, güvenlik zafiyetlerini önlemek ve **üretici tekeline** girmeden **ulusal bir ekosistem** kurmaktır.",
-      "**GPL ve Copyleft:** Pardus, GPL lisansı ile korunur. Bu, yazılımın ve türevlerinin sahipli hale getirilemeyeceğini ve daima özgür kalacağını garanti eder."
     ]
   }
 ]
