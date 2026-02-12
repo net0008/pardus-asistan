@@ -112,6 +112,11 @@ html { background-color: #202124; }
     border-left: 5px solid #fbc02d; /* Sol Çizgi */
 }
 
+/* DÜZELTME BURADA: Sadece kalınlık kaldı, renk silindi */
+.step-box strong { 
+    font-weight: 800; 
+}
+
 /* AYARLAR KUTUSU */
 .settings-container { display: none; max-width: 800px; margin: 0 auto; padding: 20px; animation: fadeIn 0.3s; }
 .setting-item, .why-box {
@@ -169,7 +174,7 @@ html { background-color: #202124; }
 
 /* GECE MODU */
 body.dark-mode .step-box { background: #1e1e1e; border-left-color: #fbc02d; color: #eee; border-color: #333; }
-body.dark-mode .step-box strong { color: #fbc02d; }
+/* Gece modu için sarı renk kuralı buradan kaldırıldı */
 body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: #444; }
 body.dark-mode .setting-item, body.dark-mode .why-box { background: #1e1e1e; border-color: #333; }
 
