@@ -30,7 +30,7 @@ body {
 
 html { background-color: #202124; }
 
-/* --- HEADER AYARLARI (TERAZİ MANTIĞI) --- */
+/* --- HEADER AYARLARI (MUTLAK ORTALAMA) --- */
 .app-header {
     background-color: #ed800d;
     color: white;
@@ -38,39 +38,31 @@ html { background-color: #202124; }
     padding: 0 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* 3 Parçayı Eşit Dağıt */
+    justify-content: center; /* İçeriği merkeze al */
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-/* 1. SOL TARAFI DOLDUR (Logo) */
+/* Logo Sola Çivili */
 .header-left {
-    flex: 1; /* Boşluğu kapla */
-    display: flex;
-    justify-content: flex-start; /* Sola yasla */
-    align-items: center;
+    position: absolute; left: 20px; top: 0; bottom: 0;
+    display: flex; align-items: center;
 }
 
-/* 2. ORTA TARAFI DOLDUR (Menü) */
-.pc-nav { 
-    flex: 0 0 auto; /* Genişleme, olduğu kadar yer kapla */
-    display: flex; 
-    gap: 10px; 
-    align-items: center; 
-}
-
-/* 3. SAĞ TARAFI DOLDUR (Buton Alanı) */
-/* Burası Kritik: Buton gizlense bile bu kutu (spacer) yer kaplar */
-.header-right-spacer {
-    flex: 1; /* Boşluğu kapla (Sol tarafla eşitlenir) */
-    display: flex;
-    justify-content: flex-end; /* Sağa yasla */
-    align-items: center;
+/* Yükle Butonu Sağa Çivili */
+.header-right-wrapper {
+    position: absolute; right: 20px; top: 0; bottom: 0;
+    display: flex; align-items: center;
 }
 
 .new-header-logo { height: 45px; width: auto; object-fit: contain; }
+
+/* MENÜ (Ortada kalır) */
+.pc-nav { 
+    display: flex; gap: 10px; align-items: center; z-index: 2;
+}
 
 .pc-nav button {
     background: rgba(255, 255, 255, 0.2);
@@ -99,16 +91,12 @@ html { background-color: #202124; }
 /* GENEL STİLLER */
 .main-container { padding: 15px; max-width: 1000px; margin: 0 auto; }
 
-/* DETAY SAYFASI DÜZENLEMELERİ */
+/* DETAY SAYFASI */
 .detail-view { 
-    display: none; 
-    padding: 15px; 
-    max-width: 800px; /* Genişliği sınırla */
-    margin: 0 auto;   /* Ortala */
-    animation: fadeIn 0.3s; 
+    display: none; padding: 15px; max-width: 800px; margin: 0 auto; animation: fadeIn 0.3s; 
 }
 
-/* Adım Kutuları (Step Boxes) */
+/* --- ADIM KUTULARI (DÜZELTİLEN KISIM) --- */
 .step-box {
     background: #fff; 
     padding: 15px 20px; 
@@ -121,17 +109,18 @@ html { background-color: #202124; }
     border: 1px solid rgba(0,0,0,0.05); 
     border-left: 5px solid #fbc02d; 
 }
-.step-box strong { font-weight: 800; } /* Sarı renk kaldırıldı */
+
+/* Kalın Yazıları Turuncu Yap */
+.step-box strong { 
+    font-weight: 800; 
+    color: #f57f17; /* Pardus Turuncusu */
+}
 
 /* AYARLAR KUTUSU */
 .settings-container { display: none; max-width: 800px; margin: 0 auto; padding: 20px; animation: fadeIn 0.3s; }
 .setting-item, .why-box {
-    background: var(--card-bg); 
-    padding: 20px; 
-    border-radius: 12px; 
-    box-shadow: var(--shadow); 
-    margin-bottom: 20px;
-    border: 1px solid rgba(0,0,0,0.05);
+    background: var(--card-bg); padding: 20px; border-radius: 12px; 
+    box-shadow: var(--shadow); margin-bottom: 20px; border: 1px solid rgba(0,0,0,0.05);
 }
 .setting-item { display: flex; justify-content: space-between; align-items: center; }
 
@@ -180,10 +169,11 @@ html { background-color: #202124; }
 
 /* GECE MODU */
 body.dark-mode .step-box { background: #1e1e1e; border-left-color: #fbc02d; color: #eee; border-color: #333; }
+body.dark-mode .step-box strong { color: #fbc02d; } /* Gece modunda da açık sarı */
 body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: #444; }
 body.dark-mode .setting-item, body.dark-mode .why-box { background: #1e1e1e; border-color: #333; }
 
-/* MODAL (Şifre Ekranı) */
+/* MODAL */
 .modal-overlay { 
     display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
     background: rgba(0,0,0,0.8); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(3px);
@@ -201,11 +191,8 @@ body.dark-mode .setting-item, body.dark-mode .why-box { background: #1e1e1e; bor
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .pc-nav { display: none; }
-    /* Mobilde Header Yapısı Farklı */
     .app-header { justify-content: space-between; } 
-    .header-left { flex: 0 0 auto; } /* Mobilde logo sadece yer kaplasın */
-    .header-right-spacer { flex: 0 0 auto; } /* Mobilde sağ taraf */
-    
+    .header-left, .header-right-wrapper { position: static; } 
     .new-header-logo { height: 40px; }
     .bottom-nav { 
         position: fixed; bottom: 20px; left: 20px; right: 20px; height: 60px;
@@ -216,9 +203,11 @@ body.dark-mode .setting-item, body.dark-mode .why-box { background: #1e1e1e; bor
 
 @media (min-width: 992px) {
     .app-header { padding: 0 40px; }
+    .header-left { left: 40px; }
+    .header-right-wrapper { right: 40px; }
     .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
     .bottom-nav { display: none !important; }
     
-    /* PC'de Yükle Butonunu GİZLE (Ama Kutusunu Yok Etme ki denge bozulmasın) */
-    #installApp { display: none !important; }
+    /* PC'de Yükle Butonunu GİZLE (Yerini Koru) */
+    #installContainer { visibility: hidden !important; pointer-events: none; }
 }
