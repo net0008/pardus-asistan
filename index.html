@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#fbc02d"> 
+    <meta name="theme-color" content="#ed800d"> 
     
     <title>Pardus Asistan - ETAP Akıllı Tahta Çözüm Rehberi</title>
     <meta name="description" content="Pardus ETAP kullanan öğretmenler için internetsiz çalışan, hızlı sorun çözüm asistanı.">
@@ -24,27 +24,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css?v=7.1"> 
+    <link rel="stylesheet" href="style.css?v=7.6"> 
 </head>
 <body>
 
     <div class="app-header">
-        <div class="header-left" onclick="switchTab('home')" style="cursor: pointer; display: flex; align-items: center;">
+        <div class="header-left" onclick="switchTab('home')" style="cursor: pointer;">
             <img src="header-logo.png" alt="Pardus Asistan" class="new-header-logo">
         </div>
-
-        <div class="pc-nav">
-            <button onclick="switchTab('home')" id="pcBtnHome" class="active"><i class="fas fa-home"></i> Ana Sayfa</button>
-            <button onclick="switchTab('fav')" id="pcBtnFav"><i class="fas fa-star"></i> Favoriler</button>
-            <button onclick="switchTab('settings')" id="pcBtnSettings"><i class="fas fa-cog"></i> Ayarlar</button>
-        </div>
-
-        <div id="installContainer" class="install-wrapper" style="display: none;">
-            <button id="installApp" class="install-btn-final">
-                <i class="fas fa-download"></i> Yükle
-            </button>
-        </div>
-    </div>
 
         <div class="pc-nav">
             <button onclick="switchTab('home')" id="pcBtnHome" class="active"><i class="fas fa-home"></i> Ana Sayfa</button>
@@ -65,7 +52,7 @@
             <input type="text" placeholder="Sorun ara (Ses, USB, İnternet)..." onkeyup="filter(this.value)">
         </div>
 
-        <div class="announcement-box" style="margin: 10px; padding: 12px; background-color: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; color: #856404; display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
+        <div class="announcement-box" style="margin: 10px 0 20px 0; padding: 12px; background-color: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; color: #856404; display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
             <i class="fas fa-bullhorn" style="color: #f57f17; font-size: 1.2rem;"></i>
             <div>
                 <strong>Yeni Özellik:</strong> Pardus 23 ipuçları ve Windows karşılıkları eklendi! "İpuçları" menüsüne göz atın.
@@ -172,6 +159,6 @@
         </div>
     </nav>
 
-    <script src="script.js?v=7.5"></script>
+    <script src="script.js?v=7.6"></script>
 </body>
 </html>
