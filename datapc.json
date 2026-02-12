@@ -12,8 +12,7 @@
       "**Milli Strateji:** Amaç sadece tasarruf değil; **GNU** felsefesinden güç alarak, hiçbir üreticinin tekeline girmeden **tam bağımsız** bir bilişim altyapısı kurmaktır.",
       "**GPL Güvencesi:** Pardus, **GPL** lisansı ile korunur. Bu lisans, yazılımın sonsuza dek halka açık ve özgür kalacağının yasal teminatıdır."
     ]
-  }
-  ,
+  },
   {
     "id": "etap-panel-jestler",
     "category": "etap",
@@ -59,7 +58,7 @@
     "icon": "fa-wifi",
     "steps": [
       "Paneldeki (Sağ alt veya üst) **Ağ/Wi-Fi** simgesine tıklayın.",
-      "**Gereklilik** MEB ağına bağlanmak için bağlanmak istediğiniz telefon veya tablete MEB sertifikasının kurulmuş olması gerekir.Kurulu değilse önce 'sertifika.meb.gov.tr' adresinden sertifikayı indirip cihazınızın işletim sistemine uygun kurulumu yapınız. ",
+      "**Gereklilik** MEB ağına bağlanmak için bağlanmak istediğiniz telefon veya tablete MEB sertifikasının kurulmuş olması gerekir.Kurulu değilse önce 'sertifika.meb.gov.tr' adresinden sertifikayı indirip cihazınızın işletim sistemine uygun kurulumu yapınız.",
       "Listeden okul ağını (genellikle **F@tih**) seçip şifrenizi girin.",
       "**Gizli Ağ:** Ağ listesinde yoksa 'Gizli Ağa Bağlan' diyerek SSID ve şifreyi elle girin.",
       "**F@tih** ağına bağlandıysanız tarayıcınız sizi **www.eba.gov.tr **de oturum açmaya yönlendirecektir. Oturum açarak internete erişebilirsiniz."
@@ -251,7 +250,7 @@
       "**IPv4** sekmesinden yöntemi **Elle** yapın ve IP, Ağ Maskesi, Ağ Geçidi bilgilerini girin."
     ]
   },
-{
+  {
     "id": "app-veyon",
     "category": "etap",
     "title": "Program tanıtımı **Veyon** (Sınıf Yönetimi)",
@@ -354,10 +353,10 @@
     "windows_karsiligi": "Google Earth",
     "icon": "fa-globe-americas",
     "steps": [
-            "Coğrafya ve Sosyal Bilgiler derslerinin vazgeçilmezi olan 3 boyutlu dünya atlasıdır.",
+      "Coğrafya ve Sosyal Bilgiler derslerinin vazgeçilmezi olan 3 boyutlu dünya atlasıdır.",
       "**Sokak Görünümü (Street View):** Sarı adamı haritaya sürükleyip sokaklarda gezebilirsiniz.",
       "**Zaman Makinesi:** Geçmiş yıllara ait uydu görüntülerini (Örn: 2005 yılındaki İstanbul) inceleyebilirsiniz.",
-     "**Kurulum:** Pardus Mağaza'dan indirebilirsiniz. Mağzada yoksa, aşağıdaki adımları izleyiniz.",
+      "**Kurulum:** Pardus Mağaza'dan indirebilirsiniz. Mağzada yoksa, aşağıdaki adımları izleyiniz.",
       "**1. Adım (İndirme):** <a href='https://dl.google.com/dl/earth/client/current/google-earth-pro-stable_current_amd64.deb'>Buraya Tıklayarak</a> Pardus uyumlu dosyayı doğrudan indirin. (Siteyle uğraşmanıza gerek yok, direkt iner.)",
       "**2. Adım (Kurulum):** İndirilenler klasörüne gidin.",
       "**3. Adım:** İnen **.deb** uzantılı dosyaya çift tıklayın ve **'Kur'** butonuna basın. (Yönetici şifresi isterse girin. Bilmiyorsanız okulunuzdaki YEĞİTEK sorumlusundan veya İl/İlçe Bilişim Koordinatöründen öğrenebilirsiniz.)"
@@ -377,7 +376,6 @@
       "**Kullanım:** Kurulum bitince .exe dosyasına **Sağ Tık > Birlikte Aç > Wine** seçeneğini seçin."
     ]
   },
- 
   {
     "id": "wine-32-bit-kurulum",
     "category": "sistem",
@@ -402,7 +400,7 @@
       "**Şifreyi Bilmiyorsanız:** Okulunuzdaki **YEĞİTEK okul sorumlusundan**, **Okul Müdürü** veya **İl/İlçe Bilişim Koordinatöründen** öğrenebilirsiniz. Bu şifre sadece öğretmenler tarafından bilinmelidir, öğrencilerle kesinlikle paylaşılmamalıdır."
     ]
   },
-{
+  {
     "id": "wine-winetricks-ileri",
     "category": "sistem",
     "title": "Z-Kitap Hâlâ Açılmıyor 3 (İleri Düzey Çözüm)",
@@ -494,7 +492,7 @@
       "**Altın Kural:** Tahta açık olduğu sürece (ders işlerken veya teneffüste) sürgüyü **ASLA KAPATMAYIN**. Sürgüyü sadece okuldaki işiniz bitip tahtayı tamamen kapattıktan sonra çekin."
     ]
   },
-{
+  {
     "id": "cep-net-paylasim",
     "category": "internet",
     "title": "Cep Telefonu İnternetini Tahtaya Bağlama",
@@ -521,7 +519,6 @@
       "İşlem tamamlandığında tahta, Lider Ahenk merkezi yönetim sistemine dahil edilmiş olacaktır."
     ]
   },
-  
   {
     "id": "ipucu-dosya-sistemi-yapisi",
     "category": "ipucu",
@@ -583,7 +580,6 @@
       "Yine de alışkanlık olarak yapmak isterseniz **F5** tuşu Pardus'ta da sayfayı veya masaüstünü yeniler."
     ]
   },
-  
   {
     "id": "ipucu-baslat-menu",
     "category": "ipucu",
@@ -596,8 +592,7 @@
       "**Tasarım** sekmesine tıklayın.",
       "Listeden **'Pardus Tarzı'** veya **'Klasik Tarz'** seçeneğini işaretleyerek alıştığınız Başlat Menüsü düzenine geçebilirsiniz."
     ]
-  }
-,
+  },
   {
     "id": "ipucu-calistirma-izni",
     "category": "ipucu",
@@ -610,8 +605,7 @@
       "Dosyaya **Sağ Tıklayın** ve **Özellikler** menüsünü açın.",
       "**İzinler** sekmesine gidin ve **'Dosyayı bir program gibi çalıştırmaya izin ver'** kutucuğunu işaretleyip kapatın."
     ]
-  }
-  ,
+  },
   {
     "id": "ipucu-pencere-dugmeleri",
     "category": "ipucu",
@@ -624,8 +618,7 @@
       "Uygulama menüsünden **İnce Ayarlar**'ı açın ve sol taraftan **'Pencere Başlık Çubukları'**nı seçin.",
       "Buradaki **'Simge Durumuna Küçült'** ve **'Ekranı Kapla'** seçeneklerini aktif hale getirin."
     ]
-  }
-,
+  },
   {
     "id": "ipucu-eta-klavye-p",
     "category": "ipucu",
@@ -637,8 +630,7 @@
       "Bunu değiştirmek için klavyenin **başlık çubuğundaki 'P' düğmesine** basmanız gerekir.",
       "**'P' (Password)** düğmesi, yazdıklarınızın açık metin mi yoksa yıldız (*) şeklinde mi görüneceğini anlık olarak değiştirir."
     ]
-  }
-  ,
+  },
   {
     "id": "ipucu-calistirma-izni-detayli",
     "category": "ipucu",
@@ -651,9 +643,7 @@
       "**Konsol Yöntemi:** Dosyanın olduğu klasörde sağ tıklayıp uçbirim açın ve `chmod +x dosya_adi` komutunu uygulayın.",
       "**Bilgi:** Linux sistemlerinde güvenlik gereği bir dosyanın uygulama olarak çalışabilmesi için **'x' (execute/çalıştırma)** iznine sahip olması zorunludur."
     ]
-    
-  }
-,
+  },
   {
     "id": "ipucu-pardus-23-arayuz",
     "category": "ipucu",
@@ -666,8 +656,7 @@
       "Windows deneyimine en yakın olan **'XP Tarzı'**, **'10 Tarzı'** veya **'Klasik Tarz'** seçeneklerinden birini seçin.",
       "Bu işlem; panelin konumunu, menü yapısını ve pencere dekorasyonlarını seçtiğiniz tarza göre otomatik olarak ayarlar."
     ]
-  }
-,
+  },
   {
     "id": "ipucu-tema-ve-tasarim",
     "category": "ipucu",
@@ -680,8 +669,7 @@
       "**Tasarım Sekmesi:** Windows (XP/10) dışında **macOS**, **Ubuntu** veya **Klasik** tarz gibi hazır arayüz düzenlerine geçiş yapabilirsiniz.",
       "Ayrıca **Duvar Kağıdı**nı değiştirebilir veya mavi ışığı azaltan **Gece Işığı**nı buradan açabilirsiniz."
     ]
-  }
-,
+  },
   {
     "id": "ipucu-uzanti-yonetimi",
     "category": "ipucu",
@@ -693,8 +681,7 @@
       "**2. Uzantılar Uygulaması:** Menüde 'Uzantılar' aratarak sistemdeki tüm eklentileri yönetebilir ve ayarlarını (Çark simgesi) yapabilirsiniz.",
       "**3. Web Kurulumu:** `extensions.gnome.org` adresinden **Dash to Dock** (Panel özelleştirme) veya **ArcMenu** (Başlat menüsü) gibi binlerce yeni özellik indirebilirsiniz."
     ]
-  }
-  ,
+  },
   {
     "id": "ipucu-windows-uzantilari",
     "category": "ipucu",
@@ -708,8 +695,7 @@
       "**4. AppIndicator:** Saat yanında gizlenen arka plan uygulamalarını (Sistem Tepsisi) görünür kılar.",
       "**Kolay Kurulum:** **Pardus Karşılayıcı > Tasarım** sekmesinden '10 Tarzı' seçilirse bunlar otomatik yüklenir."
     ]
-  }
-  ,
+  },
   {
     "id": "ipucu-klasor-gorevleri",
     "category": "ipucu",
@@ -723,8 +709,7 @@
       "**'/usr' ve '/bin':** Yüklü programlar ve temel sistem komutları burada yer alır. (Windows'taki **Program Files**).",
       "**'/dev':** Donanımlar (Diskler, USB vb.) burada birer dosya gibi temsil edilir."
     ]
-  }
-  ,
+  },
   {
     "id": "ipucu-kullanici-yonetimi",
     "category": "ipucu",
@@ -737,8 +722,7 @@
       "**2. Konsol Yöntemi:** Uçbirimde `sudo adduser kullanici_adi` komutuyla hızlıca kullanıcı ve ev dizini oluşturabilirsiniz.",
       "**3. Yönetim:** Aynı menüden **Otomatik Giriş** açılabilir veya kullanıcı seçilip **'Kullanıcıyı Kaldır'** diyerek silinebilir."
     ]
-  }
-  ,
+  },
   {
     "id": "ipucu-deb-kurulum",
     "category": "ipucu",
@@ -750,9 +734,8 @@
       "**1. Grafik Arayüz:** İndirdiğiniz .deb dosyasına çift tıklayın, **Pardus Paket Kurucu** açılacaktır. **'Yükle'** butonuna basarak kurabilirsiniz.",
       "**2. Konsol Yöntemi (Önerilen):** Dosyanın olduğu klasörde uçbirim açıp `sudo apt install ./dosya_adi.deb` komutunu kullanın.",
       "**Önemli Not:** Resmi depolarda olmayan yazılımları kurarken güvenlik riski olabileceğini ve güncellemelerin (repo eklenmediyse) otomatik yapılmayacağını göz önünde bulundurmalısınız."
-]
-   }
-   ,
+    ]
+  },
   {
     "id": "ipucu-program-kaldirma",
     "category": "ipucu",
@@ -765,9 +748,8 @@
       "**3. Konsol (Hızlı):** Uçbirimde `sudo apt remove paket_adi` komutunu kullanın. (Ayarları da silmek için `remove` yerine `purge` yazın).",
       "**Temizlik:** Kaldırma işleminden sonra `sudo apt autoremove` komutuyla gereksiz kalıntıları temizleyebilirsiniz."
     ]
-  }
-  ,
-   {
+  },
+  {
     "id": "ipucu-libreoffice-uyumluluk",
     "category": "ipucu",
     "title": "Hangi Program Hangi Uzantı? **LibreOffice**",
@@ -779,8 +761,7 @@
       "Çalışmalarınızı kaydederken **'Farklı Kaydet'** diyerek Word için**.docx**, Excel **.xlsx** veya PowerPoint **.pptx** formatında saklayabilirsiniz.",
       "Ayrıca PDF, HTML ve XML gibi birçok formatı destekler."
     ]
-  }
-  ,
+  },
   {
     "id": "ipucu-magaza-vs-synaptic",
     "category": "ipucu",
@@ -792,8 +773,7 @@
       "**Synaptic Paket Yöneticisi:** İleri düzey kullanıcılar içindir. Tüm sistem paketlerini listeler, bağımlılıkları yönetir ve bozuk paketleri onarır.",
       "**Hangisi?:** Standart uygulamalar (Zoom, Chrome) için **Mağaza**yı; teknik işlemler veya hata düzeltmek için **Synaptic**i kullanın."
     ]
-  }
-  ,
+  },
   {
     "id": "ipucu-bluetooth-kullanim",
     "category": "ipucu",
@@ -806,10 +786,8 @@
       "**3. Dosya Alma:** Telefondan gönderdiğiniz dosyalar otomatik olarak **'İndirilenler'** klasörüne kaydedilir.",
       "**4. Bağlantı Kesme:** Cihazı kaldırmak için yine aynı menüden **'Aygıtı Kaldır'** butonunu kullanabilirsiniz."
     ]
-  }
-  ,
+  },
   {
-
     "id": "ipucu-vestel-faz2-dokunmatik",
     "category": "ipucu",
     "title": "Vestel Faz 2 Dokunmatik Sorunu **Kalibrasyon**",
@@ -823,6 +801,4 @@
       "**4. Kesin Çözüm: (Windows):** Sorun düzelmezse donanımsal kalibrasyon gerekir. Windows imajını kurup 'Optical Touch Device' ile kalibre edin, düzelince tekrar Pardus yükleyin."
     ]
   }
-
-    
 ]
