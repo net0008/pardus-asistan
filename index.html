@@ -63,7 +63,7 @@
 
         .header-left { display: flex; align-items: center; height: 100%; }
 
-        /* LOGO AYARI (DEVASA GÖRÜNMESİNİ ENGELLEYEN KOD) */
+        /* LOGO AYARI */
         .new-header-logo {
             height: 45px; /* Yükseklik sabitlendi */
             width: auto;  /* Genişlik orantılı */
@@ -114,8 +114,22 @@
         }
         .search-box i { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--pardus-blue-dark); }
 
-        /* KATEGORİLER */
-        .category-scroll { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; margin-bottom: 10px; }
+        /* KATEGORİ MENÜSÜ - ORTALANMIŞ */
+        .category-scroll { 
+            display: flex; 
+            gap: 8px; 
+            overflow-x: auto; 
+            padding-bottom: 10px; 
+            scrollbar-width: none; 
+            margin-bottom: 10px;
+            
+            /* MERKEZLEME SİHİRBAZLIĞI */
+            width: fit-content; /* İçerik kadar genişle */
+            max-width: 100%;    /* Ekranı taşma */
+            margin-left: auto;  /* Soldan it */
+            margin-right: auto; /* Sağdan it (Böylece ortalanır) */
+        }
+        
         .cat-btn {
             background: var(--card-bg); border: 1px solid rgba(0,0,0,0.15); color: var(--text-muted);
             padding: 9px 16px; border-radius: 20px; font-weight: 700; cursor: pointer; white-space: nowrap;
@@ -138,7 +152,7 @@
         /* --- MOBİL ALT MENÜ (YÜZEN) --- */
         .bottom-nav {
             position: fixed; 
-            bottom: 10px; /* TELEFON ALT ÇERÇEVESİNE YAKLAŞTIRILDI */
+            bottom: 10px; /* TELEFON ALT ÇERÇEVESİNE YAKIN */
             left: 15px; right: 15px; height: 60px;
             background: var(--card-bg); 
             display: flex; justify-content: space-around; align-items: center;
@@ -189,6 +203,9 @@
             .bottom-nav { display: none !important; } /* PC'de alt menüyü gizle */
             .pc-nav { display: flex; } /* PC'de üst menüyü göster */
             .detail-view, .settings-container { max-width: 800px; margin: 0 auto; }
+            
+            /* PC'de kategorileri sar ve tam ortala */
+            .category-scroll { justify-content: center; flex-wrap: wrap; overflow: visible; width: 100%; }
         }
     </style>
 </head>
@@ -277,32 +294,4 @@
         </div>
 
         <div style="text-align:center; margin-top:30px; opacity:0.8; font-size:0.85rem; color:#555; padding-bottom: 20px; line-height: 1.6;">
-            <p style="margin-bottom: 10px;">
-                Bu rehber hazırlanırken <a href="https://pardus.org.tr" target="_blank" style="color: #f57f17; font-weight: bold;">Pardus.org.tr</a> ve 
-                Sayın <strong>Şenol ALDIBAŞ</strong>'ın çalışmalarından faydalanılmıştır.<br>
-                <span style="font-size: 0.8rem; font-style: italic;">Katkılarından dolayı teşekkür ederiz.</span>
-            </p>
-            <div style="width: 40%; height: 1px; background-color: #e0e0e0; margin: 10px auto;"></div>
-            <p style="font-weight: bold; margin-bottom: 3px;">Pardus Asistan v7.8</p>
-            <p>Geliştirici: Hasbi Erdoğmuş</p>
-        </div>
-    </div>
-
-    <nav class="bottom-nav">
-        <div class="nav-item active" id="btnHome" onclick="switchTab('home')">
-            <i class="fas fa-home"></i>
-            <span>Ana Sayfa</span>
-        </div>
-        <div class="nav-item" id="btnFav" onclick="switchTab('fav')">
-            <i class="fas fa-star"></i>
-            <span>Favoriler</span>
-        </div>
-        <div class="nav-item" id="btnSettings" onclick="switchTab('settings')">
-            <i class="fas fa-cog"></i>
-            <span>Ayarlar</span>
-        </div>
-    </nav>
-
-    <script src="script.js?v=7.8"></script>
-</body>
-</html>
+            <p style="margin-bottom
