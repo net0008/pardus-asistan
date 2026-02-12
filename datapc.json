@@ -1,5 +1,19 @@
 [
   {
+    "id": "ipucu-ozgur-yazilim-felsefesi",
+    "category": "ipucu",
+    "title": "Pardus Neden Ücretsiz? **Özgür Yazılım Felsefesi**",
+    "windows_karsiligi": "Lisanslı / Kapalı Kaynak Yazılım",
+    "icon": "fa-dove",
+    "steps": [
+      "**Pardus**’un özgür yazılım felsefesi, temelde Richard Stallman tarafından başlatılan **Özgür Yazılım Hareketi**ne ve GNU tasarısına dayanmaktadır. Pardus, **TÜBİTAK/ULAKBİM** tarafından geliştirilen **özgür ve ücretsiz** bir GNU/Linux dağıtımıdır. Bu felsefe, yazılımın sadece **ücretsiz** olmasını değil, kullanıcıların **özgürlüklerini** garanti altına almayı hedefler. Bu felsefenin temel taşları şunlardır:",
+      "**Dört Temel Özgürlük:** 1) Her amaç için kullanma, 2) Kodu inceleme ve değiştirme, 3) Dağıtma, 4) Geliştirmeleri paylaşma hakkıdır.",
+      "**Stratejik Amaç:** Kamuda dışa bağımlılığı azaltmak, güvenlik zafiyetlerini önlemek ve **üretici tekeline** girmeden **ulusal bir ekosistem** kurmaktır.",
+      "**GPL ve Copyleft:** Pardus, GPL lisansı ile korunur. Bu, yazılımın ve türevlerinin sahipli hale getirilemeyeceğini ve daima özgür kalacağını garanti eder."
+    ]
+  }
+  ,
+  {
     "id": "etap-panel-jestler",
     "category": "etap",
     "title": "ETA Panel ve Sihirli Dokunuşlar",
@@ -492,21 +506,305 @@
       "**4. Bağlanma:** Listede telefonunuzun adını (Örn: iPhone veya Galaxy) bulup tıklayın.",
       "**5. Şifre:** Telefonunuzdaki şifreyi girip **Bağlan** deyin. İnternetiniz artık tahtada!"
     ]
+  },
+  {
+    "id": "sys-eta-kayit",
+    "category": "sistem",
+    "title": "Sistem Kaydı **ETA Kayıt** (Lider Ahenk)",
+    "windows_karsiligi": "Domain / Active Directory Kaydı",
+    "icon": "fa-id-card-alt",
+    "steps": [
+      "Tahtanın internete bağlı olduğundan emin olun ve uygulama menüsünden **ETA Kayıt** yazılımını çalıştırın.",
+      "Kayıt ekranında **Okul Kodu ile** veya **Seçerek Kaydet** (İl/İlçe/Okul seçimi) yöntemlerinden birini belirleyin.",
+      "Okul bilgilerinizi girdikten sonra **Yetkili (Admin)** şifresini yazarak **Bu tahtayı kaydet** butonuna tıklayın.",
+      "İşlem tamamlandığında tahta, Lider Ahenk merkezi yönetim sistemine dahil edilmiş olacaktır."
+    ]
+  },
+  
+  {
+    "id": "ipucu-dosya-sistemi-yapisi",
+    "category": "ipucu",
+    "title": "C: ve D: Sürücüleri Nerede? **Dosya Sistemi**",
+    "windows_karsiligi": "Bilgisayarım > Yerel Disk (C: / D:)",
+    "icon": "fa-folder-tree",
+    "steps": [
+      "Pardus'ta (Linux) C: veya D: gibi sürücü harfleri yoktur. Sistem tek bir **Kök Dizin (/)** ağacından başlar.",
+      "Windows'taki kullanıcı dosyalarınız (Masaüstü, Belgeler, İndirilenler) **'Ev' (Home)** klasörü altındadır.",
+      "**USB Bellekler:** E: veya F: harfi almazlar. Dosya Yöneticisi'nin sol panelinde **kendi isimleriyle** görünürler.",
+      "**Önemli Fark:** Dosya yolu yazarken Windows'taki ters eğik çizgi (\\) yerine, düz eğik çizgi (/) kullanılır."
+    ]
+  },
+  {
+    "id": "ipucu-gorev-yoneticisi",
+    "category": "ipucu",
+    "title": "Donan Programı Kapatma **Sistem Gözlemcisi**",
+    "windows_karsiligi": "Görev Yöneticisi (Ctrl+Alt+Del)",
+    "icon": "fa-heartbeat",
+    "steps": [
+      "Windows'taki Görev Yöneticisi'nin karşılığı **Sistem Gözlemcisi**dir.",
+      "Uygulama menüsünde 'Sistem Gözlemcisi'ni aratıp açın.",
+      "Yanıt vermeyen programı listeden bulup sağ tıklayın ve **'Sonlandır'** veya **'Öldür'** seçeneğini kullanın."
+    ]
+  },
+  {
+    "id": "ipucu-exe-calistirma",
+    "category": "ipucu",
+    "title": ".EXE Dosyaları Neden Açılmıyor?",
+    "windows_karsiligi": "Uygulama Yükleme (Setup.exe)",
+    "icon": "fa-ban",
+    "steps": [
+      "Pardus Linux tabanlıdır, bu yüzden Windows'a ait .exe dosyaları doğrudan çalışmaz.",
+      "Program yüklemek için **Pardus Mağaza** veya **Synaptic Paket Yöneticisi** kullanılır.",
+      "Mutlaka .exe çalıştırmanız gerekirse **Wine** uygulamasını kullanabilirsiniz, ancak her programın çalışacağı garanti edilemez."
+    ]
+  },
+  {
+    "id": "ipucu-denetim-masasi",
+    "category": "ipucu",
+    "title": "Ayarlar Nereden Yapılır?",
+    "windows_karsiligi": "Denetim Masası",
+    "icon": "fa-sliders-h",
+    "steps": [
+      "Windows'taki Denetim Masası'nın karşılığı **'Ayarlar'** veya **'Pardus Ayarları'** menüsüdür.",
+      "Ekran çözünürlüğü, duvar kağıdı, fare ayarları gibi işlemler buradan yapılır.",
+      "Yazıcı eklemek için ise ayrı bir **'Yazıcı Ayarları'** menüsü bulunur."
+    ]
+  },
+  {
+    "id": "ipucu-yenile",
+    "category": "ipucu",
+    "title": "Masaüstü Yenileme (F5)",
+    "windows_karsiligi": "Sağ Tık > Yenile",
+    "icon": "fa-sync-alt",
+    "steps": [
+      "Linux sistemlerde masaüstünü sürekli yenilemeye teknik olarak gerek yoktur.",
+      "Sistem kaynakları anlık yönetildiği için bilgisayar yavaşlamaz.",
+      "Yine de alışkanlık olarak yapmak isterseniz **F5** tuşu Pardus'ta da sayfayı veya masaüstünü yeniler."
+    ]
+  },
+  
+  {
+    "id": "ipucu-baslat-menu",
+    "category": "ipucu",
+    "title": "Başlat Menüsü Nerede? **Arayüz Değiştirme**",
+    "windows_karsiligi": "Görev Çubuğu ve Başlat Menüsü",
+    "icon": "fa-desktop",
+    "steps": [
+      "Pardus (GNOME) varsayılan olarak sol üstte 'Etkinlikler' menüsünü kullanır, altta sabit bir çubuk olmayabilir.",
+      "Windows benzeri (sol altta Başlat) bir görünüm için uygulama menüsünden **Pardus Karşılayıcı**'yı açın.",
+      "**Tasarım** sekmesine tıklayın.",
+      "Listeden **'Pardus Tarzı'** veya **'Klasik Tarz'** seçeneğini işaretleyerek alıştığınız Başlat Menüsü düzenine geçebilirsiniz."
+    ]
   }
 ,
   {
-    "id": "ipucu-vestel-faz2-dokunmatik",
+    "id": "ipucu-calistirma-izni",
     "category": "ipucu",
-    "title": "Vestel Faz 2 Dokunmatik Sorunu (**Kalibrasyon**)",
-    "windows_karsiligi": "Tablet PC Ayarları / Kalibrasyon",
-    "icon": "fa-hand-pointer",
+    "title": "Uygulama Açılmıyor **Çalıştırma İzni**",
+    "windows_karsiligi": "Yönetici Olarak Çalıştır / Doğrudan Çalıştırma",
+    "icon": "fa-user-shield",
     "steps": [
-      "**1. İndir:** <a href='https://bulut.pardus.org.tr/s/MSSsLqRc2aY560m' target='_blank'>Pardus ETAP 23 Sürümünü</a> kullanın.",
-      "**1. Temizlik:** Dokunmatik sorunları (kendi kendine basma, algılamama) genellikle sensörlerdeki tozdan kaynaklanır. Öncelikle ekranı ve köşelerdeki sensörleri temizleyin.",
-      "**2. Pardus ile Çözüm:** `etapyetkili` hesabında uç birimi (konsol) açın. `sudo apt-get install xinput-calibrator` komutu ile aracı yükleyin.",
-      "**3. Uygulama:** Kurulumdan sonra konsola `xinput_calibrator` yazın. Ekranda çıkan 4 noktaya sırasıyla dokunarak kalibrasyonu tamamlayın.",
-      "**4. Kesin Çözüm: (Windows): Sorun düzelmezse donanımsal kalibrasyon gerekir. <a href='https://drive.google.com/drive/folders/1NJFFn12am8SF3_uGblz06WPLYZPoe1Xq?usp=drive_link' target='_blank'>meb.ai/UJhLG4z</a> Windows imajını kurup 'Optical Touch Device' ile kalibre edin, düzelince tekrar Pardus yükleyin."
+      "Windows'ta uygulamalar doğrudan çalışır, ancak Pardus'ta güvenlik gereği dışarıdan gelen dosyalara **'Çalıştırma İzni'** verilmelidir.",
+      "Özellikle **Z-Kitap** gibi klasörden çalışan uygulamalar tepki vermiyorsa veya metin belgesi gibi açılıyorsa;",
+      "Dosyaya **Sağ Tıklayın** ve **Özellikler** menüsünü açın.",
+      "**İzinler** sekmesine gidin ve **'Dosyayı bir program gibi çalıştırmaya izin ver'** kutucuğunu işaretleyip kapatın."
     ]
   }
-
+  ,
+  {
+    "id": "ipucu-pencere-dugmeleri",
+    "category": "ipucu",
+    "title": "Pencere Düğmeleri Kayıp **Simge Durumu / Büyüt**",
+    "windows_karsiligi": "Pencere Kontrolleri (_ □ X)",
+    "icon": "fa-window-restore",
+    "steps": [
+      "Bazı Pardus temalarında pencereyi aşağı indirme veya tam ekran yapma düğmeleri varsayılan olarak gizli olabilir.",
+      "Bu ayar standart Ayarlar menüsünde değil, **'İnce Ayarlar' (Tweaks)** uygulamasındadır.",
+      "Uygulama menüsünden **İnce Ayarlar**'ı açın ve sol taraftan **'Pencere Başlık Çubukları'**nı seçin.",
+      "Buradaki **'Simge Durumuna Küçült'** ve **'Ekranı Kapla'** seçeneklerini aktif hale getirin."
+    ]
+  }
+,
+  {
+    "id": "ipucu-eta-klavye-p",
+    "category": "ipucu",
+    "title": "Klavye Parola Gizleme **ETA Klavye**",
+    "windows_karsiligi": "Parola Göster/Gizle Simgesi (Göz)",
+    "icon": "fa-keyboard",
+    "steps": [
+      "Pardus ETAP sanal klavyesinde şifre girerken karakterler açık veya gizli görünebilir.",
+      "Bunu değiştirmek için klavyenin **başlık çubuğundaki 'P' düğmesine** basmanız gerekir.",
+      "**'P' (Password)** düğmesi, yazdıklarınızın açık metin mi yoksa yıldız (*) şeklinde mi görüneceğini anlık olarak değiştirir."
+    ]
+  }
+  ,
+  {
+    "id": "ipucu-calistirma-izni-detayli",
+    "category": "ipucu",
+    "title": "Z-Kitap Açılmıyor **Çalıştırma İzni**",
+    "windows_karsiligi": "Doğrudan Çalıştırma (.exe)",
+    "icon": "fa-unlock-alt",
+    "steps": [
+      "Pardus'ta Z-Kitap gibi uygulamaların çalışması için **'Çalıştırma İzni'** verilmesi gerekebilir.",
+      "**Grafik Arayüz (Önerilen):** Dosyaya sağ tıklayın, **Özellikler > İzinler** sekmesine gidin ve **'Dosyayı program gibi çalıştırmaya izin ver'** kutucuğunu işaretleyin.",
+      "**Konsol Yöntemi:** Dosyanın olduğu klasörde sağ tıklayıp uçbirim açın ve `chmod +x dosya_adi` komutunu uygulayın.",
+      "**Bilgi:** Linux sistemlerinde güvenlik gereği bir dosyanın uygulama olarak çalışabilmesi için **'x' (execute/çalıştırma)** iznine sahip olması zorunludur."
+    ]
+    
+  }
+,
+  {
+    "id": "ipucu-pardus-23-arayuz",
+    "category": "ipucu",
+    "title": "Başlat Menüsü ve Görünüm **Pardus 23**",
+    "windows_karsiligi": "Görev Çubuğu / Temalar",
+    "icon": "fa-palette",
+    "steps": [
+      "Pardus 23 arayüzünü Windows alışkanlıklarına uygun hale getirmek için menüden **'Pardus Karşılayıcı'** uygulamasını açın.",
+      "Sol taraftaki menüden **'Tasarım'** sekmesine tıklayın.",
+      "Windows deneyimine en yakın olan **'XP Tarzı'**, **'10 Tarzı'** veya **'Klasik Tarz'** seçeneklerinden birini seçin.",
+      "Bu işlem; panelin konumunu, menü yapısını ve pencere dekorasyonlarını seçtiğiniz tarza göre otomatik olarak ayarlar."
+    ]
+  }
+,
+  {
+    "id": "ipucu-tema-ve-tasarim",
+    "category": "ipucu",
+    "title": "Tema ve Görünüm Değiştirme **Pardus Karşılayıcı**",
+    "windows_karsiligi": "Kişiselleştirme > Temalar",
+    "icon": "fa-paint-brush",
+    "steps": [
+      "Pardus Karşılayıcı ile sistemin görünümünü tek tıkla değiştirebilirsiniz.",
+      "**Tema Sekmesi:** Buradan **Açık** veya göz yormayan **Koyu** (Siyah) temayı seçebilirsiniz.",
+      "**Tasarım Sekmesi:** Windows (XP/10) dışında **macOS**, **Ubuntu** veya **Klasik** tarz gibi hazır arayüz düzenlerine geçiş yapabilirsiniz.",
+      "Ayrıca **Duvar Kağıdı**nı değiştirebilir veya mavi ışığı azaltan **Gece Işığı**nı buradan açabilirsiniz."
+    ]
+  }
+,
+  {
+    "id": "ipucu-uzanti-yonetimi",
+    "category": "ipucu",
+    "title": "Eklenti ve Uzantı Yönetimi **GNOME**",
+    "windows_karsiligi": "Masaüstü Araçları / Widget'lar",
+    "icon": "fa-puzzle-piece",
+    "steps": [
+      "**1. Pardus Karşılayıcı:** Sol menüden 'Uzantılar' sekmesine girerek **Caffeine** (Ekranı sürekli açık tutma) veya **AppIndicator** (Tepsi simgeleri) özelliklerini tek tıkla açabilirsiniz.",
+      "**2. Uzantılar Uygulaması:** Menüde 'Uzantılar' aratarak sistemdeki tüm eklentileri yönetebilir ve ayarlarını (Çark simgesi) yapabilirsiniz.",
+      "**3. Web Kurulumu:** `extensions.gnome.org` adresinden **Dash to Dock** (Panel özelleştirme) veya **ArcMenu** (Başlat menüsü) gibi binlerce yeni özellik indirebilirsiniz."
+    ]
+  }
+  ,
+  {
+    "id": "ipucu-windows-uzantilari",
+    "category": "ipucu",
+    "title": "Windows Gibi Yapma **Kritik Uzantılar**",
+    "windows_karsiligi": "Görev Çubuğu ve Başlat Menüsü",
+    "icon": "fa-magic",
+    "steps": [
+      "**1. Dash to Panel:** Üst paneli ve rıhtımı birleştirerek ekranın altına tek bir **Görev Çubuğu** koyar (En önemli uzantı).",
+      "**2. ArcMenu:** Tam ekran uygulama menüsü yerine, Windows 7/10 tarzı açılır bir **Başlat Menüsü** ekler.",
+      "**3. Desktop Icons NG:** Masaüstünde 'Bu Bilgisayar', 'Çöp Kutusu' ve dosyaların görünmesini sağlar.",
+      "**4. AppIndicator:** Saat yanında gizlenen arka plan uygulamalarını (Sistem Tepsisi) görünür kılar.",
+      "**Kolay Kurulum:** **Pardus Karşılayıcı > Tasarım** sekmesinden '10 Tarzı' seçilirse bunlar otomatik yüklenir."
+    ]
+  }
+  ,
+  {
+    "id": "ipucu-klasor-gorevleri",
+    "category": "ipucu",
+    "title": "Bu Klasörler Ne İşe Yarar? **Linux Hiyerarşisi**",
+    "windows_karsiligi": "C:\\Windows, Users, Program Files",
+    "icon": "fa-sitemap",
+    "steps": [
+      "**'/ (Kök Dizin)':** Dosya sisteminin başlangıç noktasıdır, diğer tüm klasörler bunun altına dallanır.",
+      "**'/home' (Ev):** Kullanıcıların kişisel dosyaları (Masaüstü, Belgeler) burada tutulur. (Windows'taki **Users**).",
+      "**'/etc':** Sistemin genel ayar ve yapılandırma dosyaları (Ağ, Kullanıcı vb.) buradadır.",
+      "**'/usr' ve '/bin':** Yüklü programlar ve temel sistem komutları burada yer alır. (Windows'taki **Program Files**).",
+      "**'/dev':** Donanımlar (Diskler, USB vb.) burada birer dosya gibi temsil edilir."
+    ]
+  }
+  ,
+  {
+    "id": "ipucu-kullanici-yonetimi",
+    "category": "ipucu",
+    "title": "Kullanıcı Ekleme ve Silme **Ayarlar/Konsol**",
+    "windows_karsiligi": "Denetim Masası > Kullanıcı Hesapları",
+    "icon": "fa-users-cog",
+    "steps": [
+      "**1. Grafik Arayüz:** **Ayarlar > Kullanıcılar** menüsünü açın. Sağ üstten **Kilidi Aç** butonuna tıklayıp yönetici şifrenizi girin.",
+      "**Kullanıcı Ekle:** Açılan ekranda **'Kullanıcı Ekle...'** diyerek Ad, Soyad ve Parola belirleyin. (Kullanıcı adında Türkçe karakter kullanmayın).",
+      "**2. Konsol Yöntemi:** Uçbirimde `sudo adduser kullanici_adi` komutuyla hızlıca kullanıcı ve ev dizini oluşturabilirsiniz.",
+      "**3. Yönetim:** Aynı menüden **Otomatik Giriş** açılabilir veya kullanıcı seçilip **'Kullanıcıyı Kaldır'** diyerek silinebilir."
+    ]
+  }
+  ,
+  {
+    "id": "ipucu-deb-kurulum",
+    "category": "ipucu",
+    "title": "İnternetten İndirilen Programı Kurma **DEB Dosyası**",
+    "windows_karsiligi": "Setup.exe / MSI Yükleme",
+    "icon": "fa-box-open",
+    "steps": [
+      "Pardus'ta harici programlar **.deb** uzantılı dosyalarla kurulur (Windows'taki .exe gibi).",
+      "**1. Grafik Arayüz:** İndirdiğiniz .deb dosyasına çift tıklayın, **Pardus Paket Kurucu** açılacaktır. **'Yükle'** butonuna basarak kurabilirsiniz.",
+      "**2. Konsol Yöntemi (Önerilen):** Dosyanın olduğu klasörde uçbirim açıp `sudo apt install ./dosya_adi.deb` komutunu kullanın.",
+      "**Önemli Not:** Resmi depolarda olmayan yazılımları kurarken güvenlik riski olabileceğini ve güncellemelerin (repo eklenmediyse) otomatik yapılmayacağını göz önünde bulundurmalısınız."
+]
+   }
+   ,
+  {
+    "id": "ipucu-program-kaldirma",
+    "category": "ipucu",
+    "title": "Program Nasıl Kaldırılır? **3 Yöntem**",
+    "windows_karsiligi": "Program Ekle / Kaldır",
+    "icon": "fa-trash-alt",
+    "steps": [
+      "**1. Pardus Yazılım Merkezi (Kolay):** 'Uygulamalarım' sekmesine gidin ve kaldırmak istediğiniz programın yanındaki **Kaldır (Çöp Kutusu)** simgesine tıklayın.",
+      "**2. Synaptic (Gelişmiş):** Paketi bulup sağ tıklayın, **'Kaldırmak için işaretle'** diyerek yukarıdaki **'Uygula'** butonuna basın.",
+      "**3. Konsol (Hızlı):** Uçbirimde `sudo apt remove paket_adi` komutunu kullanın. (Ayarları da silmek için `remove` yerine `purge` yazın).",
+      "**Temizlik:** Kaldırma işleminden sonra `sudo apt autoremove` komutuyla gereksiz kalıntıları temizleyebilirsiniz."
+    ]
+  }
+  ,
+   {
+    "id": "ipucu-libreoffice-uyumluluk",
+    "category": "ipucu",
+    "title": "Hangi Program Hangi Uzantı? **LibreOffice**",
+    "windows_karsiligi": "Word (.docx) / Excel (.xlsx) / PP (.pptx)",
+    "icon": "fa-file-word",
+    "steps": [
+      "**Varsayılan Uzantılar:** LibreOffice Writer (Kelime İşlemci) (**odt**), LibreOffice Calc (Hesap Tablosu) Calc (**ods**), LibreOffice Impress (Sunu) (**odp**), LibreOffice Draw (Çizim) (**odg**), LibreOffice Math (Formül) (**odf**),  LibreOffice Base (Veritabanı) (**odb**).",
+      "LibreOffice, Microsoft Office (Word, Excel, PowerPoint) belgelerini sorunsuz açar ve düzenler.",
+      "Çalışmalarınızı kaydederken **'Farklı Kaydet'** diyerek Word için**.docx**, Excel **.xlsx** veya PowerPoint **.pptx** formatında saklayabilirsiniz.",
+      "Ayrıca PDF, HTML ve XML gibi birçok formatı destekler."
+    ]
+  }
+  ,
+  {
+    "id": "ipucu-magaza-vs-synaptic",
+    "category": "ipucu",
+    "title": "Mağaza mı Synaptic mi? **Farklar**",
+    "windows_karsiligi": "Microsoft Store vs Program Ekle/Kaldır",
+    "icon": "fa-store",
+    "steps": [
+      "**Pardus Yazılım Merkezi:** Son kullanıcılar içindir (Microsoft Store gibi). Görseldir, kategoriler vardır, yorum/puanlama yapılabilir.",
+      "**Synaptic Paket Yöneticisi:** İleri düzey kullanıcılar içindir. Tüm sistem paketlerini listeler, bağımlılıkları yönetir ve bozuk paketleri onarır.",
+      "**Hangisi?:** Standart uygulamalar (Zoom, Chrome) için **Mağaza**yı; teknik işlemler veya hata düzeltmek için **Synaptic**i kullanın."
+    ]
+  }
+  ,
+  {
+    "id": "ipucu-bluetooth-kullanim",
+    "category": "ipucu",
+    "title": "Bluetooth ve Dosya Transferi **Eşleştirme**",
+    "windows_karsiligi": "Bluetooth ve Cihazlar",
+    "icon": "fa-bluetooth-b",
+    "steps": [
+      "**1. Eşleştirme:** **Ayarlar > Bluetooth** menüsünü açın. Cihazı seçip her iki ekranda çıkan **PIN kodunu** onaylayın.",
+      "**2. Dosya Gönderme:** Eşleşen cihazın üzerine tıklayın, **'Dosya Gönder...'** butonunu seçip dosyayı yükleyin.",
+      "**3. Dosya Alma:** Telefondan gönderdiğiniz dosyalar otomatik olarak **'İndirilenler'** klasörüne kaydedilir.",
+      "**4. Bağlantı Kesme:** Cihazı kaldırmak için yine aynı menüden **'Aygıtı Kaldır'** butonunu kullanabilirsiniz."
+    ]
+  }
+    
 ]
