@@ -30,12 +30,21 @@
 
     <div class="app-header">
         <div class="header-left" onclick="switchTab('home')" style="cursor: pointer;">
-            <img src="icon.png" alt="Pardus Logo">
-            <div class="header-text">
-                <h1>Pardus Asistan</h1>
-                <p>Hızlı çözüm rehberi</p>
-            </div>
+            <img src="header-logo.png" alt="Pardus Asistan" class="new-header-logo">
         </div>
+
+        <div class="pc-nav">
+            <button onclick="switchTab('home')" id="pcBtnHome" class="active"><i class="fas fa-home"></i> Ana Sayfa</button>
+            <button onclick="switchTab('fav')" id="pcBtnFav"><i class="fas fa-star"></i> Favoriler</button>
+            <button onclick="switchTab('settings')" id="pcBtnSettings"><i class="fas fa-cog"></i> Ayarlar</button>
+        </div>
+
+        <div id="installContainer" class="install-wrapper" style="display: none;">
+            <button id="installApp" class="install-btn-final">
+                <i class="fas fa-download"></i> Yükle
+            </button>
+        </div>
+    </div>
 
         <div class="pc-nav">
             <button onclick="switchTab('home')" id="pcBtnHome" class="active"><i class="fas fa-home"></i> Ana Sayfa</button>

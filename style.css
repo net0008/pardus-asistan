@@ -37,21 +37,38 @@ body {
 
 html { background-color: #202124; }
 
-/* --- HEADER --- */
+/* Header Arka Planını Logoyla Uyumlu Yap */
 .app-header {
-    background: linear-gradient(135deg, var(--pardus-blue), var(--pardus-blue-dark));
-    color: #333;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(251, 192, 45, 0.25);
-    display: flex; align-items: center; justify-content: space-between;
-    position: sticky; top: 0; z-index: 1000;
+    background-color: #ed800d; /* Bu kodu logonun turuncusuna göre ayarladık */
+    color: white; /* İkonlar beyaz olsun */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* Gölgeyi biraz artırdık */
 }
 
-.header-left { display: flex; align-items: center; gap: 12px; }
-.header-left img { height: 45px; width: 45px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
-.header-text h1 { margin: 0; font-size: 1.3rem; font-weight: 800; color: #222; }
-.header-text p { margin: 0; opacity: 1; font-size: 0.85rem; font-weight: 600; color: #333; }
+/* Yeni Logo Ayarları */
+.new-header-logo {
+    height: 55px; /* Yüksekliği header'a sığacak şekilde ayarladık */
+    width: auto;  /* Genişlik orantılı olsun */
+    display: block;
+}
 
+/* PC Navigasyon Butonlarının Rengini Güncelle (Turuncu üstünde görünsünler) */
+.pc-nav button {
+    background: rgba(255, 255, 255, 0.2); /* Hafif şeffaf beyaz */
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.pc-nav button:hover, .pc-nav button.active {
+    background: white;
+    color: #ed800d; /* Aktif olunca turuncu yazı */
+}
 /* PC MENU */
 .pc-nav { display: none; gap: 10px; }
 .pc-nav button {
