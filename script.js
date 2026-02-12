@@ -1,10 +1,6 @@
 let ALL_DATA = [];
 let isMobile = window.innerWidth <= 768;
 
-// --- GİZLİ MENÜ DEĞİŞKENLERİ ---
-let secretClickCount = 0;
-let secretTimer;
-
 document.addEventListener("DOMContentLoaded", () => {
     loadData();
     setupEventListeners();
@@ -19,12 +15,12 @@ async function loadData() {
     const dataFile = isMobile ? 'datamobil.json' : 'datapc.json';
     try {
         const response = await fetch(dataFile);
-        if (!response.ok) throw new Error("Veri dosyası bulunamadı");
+        if (!response.ok) throw new Error("Dosya bulunamadı");
         ALL_DATA = await response.json();
         renderMenu(ALL_DATA);
     } catch (error) {
-        console.error("Hata:", error);
-        document.getElementById("menuGrid").innerHTML = `<p style="color:red; text-align:center;">Veri yüklenemedi! (JSON Hatası)</p>`;
+        console.error(error);
+        document.getElementById("menuGrid").innerHTML = `<p style="text-align:center;">Veriler yükleniyor...</p>`;
     }
 }
 
@@ -51,40 +47,64 @@ function renderMenu(data) {
     });
 }
 
+// --- SİHİRLİ ARAMA KUTUSU ---
+function filter(keyword) {
+    const lower = keyword.toLowerCase().trim();
+    
+    // ŞİFRE KONTROLÜ: Arama kutusuna 1234 yazılırsa
+    if (lower === "1234" || lower === "yonetici") {
+        document.querySelector('.search-box input').value = ""; // Kutuyu temizle
+        document.getElementById('secretModal').style.display = 'flex'; // Şifre ekranını aç
+        document.getElementById('secretPass').focus();
+        renderMenu(ALL_DATA); // Listeyi geri getir
+        return;
+    }
+
+    const filtered = ALL_DATA.filter(item => 
+        item.title.toLowerCase().includes(lower) || 
+        (item.windows_karsiligi && item.windows_karsiligi.toLowerCase().includes(lower))
+    );
+    renderMenu(filtered);
+}
+
+function checkPassword() {
+    const pass = document.getElementById('secretPass').value;
+    if (pass === "1234") {
+        document.getElementById('secretModal').style.display = 'none';
+        document.getElementById('secretView').style.display = 'block';
+        // Rapor URL'si (Embed modunda)
+        document.getElementById('reportFrame').src = "https://lookerstudio.google.com/embed/reporting/de43a593-5a89-4ed2-ab3d-10f8a55e7ebd/page/p_1";
+    } else {
+        alert("Hatalı Şifre!");
+    }
+}
+
+function closeSecretModal() {
+    document.getElementById('secretModal').style.display = 'none';
+}
+
+function closeSecretView() {
+    document.getElementById('secretView').style.display = 'none';
+    document.getElementById('reportFrame').src = ""; // Kapatınca iframe'i boşalt (RAM tasarrufu)
+}
+
 function filterCategory(category) {
     document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
     renderMenu(category === 'all' ? ALL_DATA : ALL_DATA.filter(item => item.category === category));
 }
 
-// --- SİHİRLİ ARAMA KUTUSU ---
-function filter(keyword) {
-    const lower = keyword.toLowerCase().trim();
-    
-    // EĞER ARAMA KUTUSUNA "yonetici" VEYA "1234" YAZILIRSA GİZLİ MENÜYÜ AÇ
-    if (lower === "yonetici" || lower === "1234") {
-        document.getElementById('secretModal').style.display = 'flex';
-        document.getElementById('secretPass').focus();
-        document.querySelector('.search-box input').value = ""; // Kutuyu temizle
-        renderMenu(ALL_DATA); // Menüyü eski haline getir
-        return;
-    }
-
-    renderMenu(ALL_DATA.filter(item => item.title.toLowerCase().includes(lower) || (item.windows_karsiligi && item.windows_karsiligi.toLowerCase().includes(lower))));
-}
-
 function openDetail(item) {
     document.getElementById("mainView").style.display = "none";
     document.getElementById("detailView").style.display = "block";
     document.getElementById("detailTitle").innerHTML = item.title;
-    document.getElementById("detailWindows").innerText = "Windows: " + (item.windows_karsiligi || "Benzeri Yok");
+    document.getElementById("detailWindows").innerText = "Windows: " + (item.windows_karsiligi || "Yok");
     const container = document.getElementById("detailStepsContainer");
     container.innerHTML = "";
     item.steps.forEach((step, index) => {
         let formatted = step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color:#f57f17; text-decoration:underline;">$1</a>')
-                            .replace(/`(.*?)`/g, '<code style="background:#eee; padding:2px 4px; border-radius:4px;">$1</code>');
-        container.innerHTML += `<div class="step-box"><strong style="color:#f57f17;">${index + 1}.</strong> ${formatted}</div>`;
+                            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
+        container.innerHTML += `<div class="step-box"><strong>${index + 1}.</strong> ${formatted}</div>`;
     });
     window.scrollTo(0,0);
 }
@@ -104,7 +124,6 @@ function switchTab(tab) {
     if (tab === 'home') {
         document.getElementById("mainView").style.display = "block";
         highlightBtn('btnHome', 'pcBtnHome');
-        renderMenu(ALL_DATA);
     } else if (tab === 'fav') {
         document.getElementById("mainView").style.display = "block";
         highlightBtn('btnFav', 'pcBtnFav');
@@ -123,8 +142,13 @@ function highlightBtn(mobileId, pcId) {
 
 function toggleFav(id, btn) {
     let favs = JSON.parse(localStorage.getItem('favorites')) || [];
-    if (favs.includes(id)) { favs = favs.filter(f => f !== id); btn.className = "far fa-star fav-btn"; }
-    else { favs.push(id); btn.className = "fas fa-star fav-btn active"; }
+    if (favs.includes(id)) {
+        favs = favs.filter(f => f !== id);
+        btn.className = "far fa-star fav-btn";
+    } else {
+        favs.push(id);
+        btn.className = "fas fa-star fav-btn active";
+    }
     localStorage.setItem('favorites', JSON.stringify(favs));
 }
 
@@ -133,43 +157,7 @@ function toggleTheme() {
     localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
 }
 
-// --- GİZLİ MENÜ MANTIĞI (TIKLAMA) ---
-function triggerSecret(element) {
-    secretClickCount++;
-    element.style.transform = "scale(0.9)";
-    setTimeout(() => element.style.transform = "scale(1)", 100);
-    clearTimeout(secretTimer);
-    secretTimer = setTimeout(() => { secretClickCount = 0; }, 2000);
-
-    if (secretClickCount >= 5) {
-        document.getElementById('secretModal').style.display = 'flex';
-        document.getElementById('secretPass').focus();
-        secretClickCount = 0;
-    }
-}
-
-function checkPassword() {
-    const input = document.getElementById('secretPass').value;
-    if (input === "1234") {
-        document.getElementById('secretModal').style.display = 'none';
-        document.getElementById('secretView').style.display = 'block';
-        document.getElementById('secretPass').value = ''; 
-        document.getElementById('loginError').style.display = 'none';
-    } else {
-        document.getElementById('loginError').style.display = 'block';
-    }
-}
-
-function closeSecretModal() {
-    document.getElementById('secretModal').style.display = 'none';
-    document.getElementById('loginError').style.display = 'none';
-    document.getElementById('secretPass').value = '';
-}
-
-function closeSecretView() {
-    document.getElementById('secretView').style.display = 'none';
-}
-
+// PWA
 let deferredPrompt;
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();

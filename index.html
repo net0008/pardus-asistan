@@ -10,28 +10,23 @@
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=8.2"> 
+    <link rel="stylesheet" href="style.css?v=8.3"> 
 </head>
 <body>
 
     <div id="secretModal" class="modal-overlay">
         <div class="modal-content">
             <h3 style="margin-top:0; color:#ed800d;"><i class="fas fa-user-shield"></i> Yönetici Girişi</h3>
-            <p style="font-size:0.9rem; color:#666;">Lütfen erişim şifresini giriniz:</p>
+            <p style="font-size:0.9rem; color:#666;">Erişim şifresi:</p>
             <input type="password" id="secretPass" placeholder="Şifre" onkeyup="if(event.keyCode===13) checkPassword()">
-            <div class="modal-buttons">
-                <button onclick="closeSecretModal()" class="cancel-btn">İptal</button>
-                <button onclick="checkPassword()" class="confirm-btn">Giriş</button>
-            </div>
-            <p id="loginError" style="color:red; display:none; font-size:0.85rem; margin-top:10px; font-weight:bold;">
-                <i class="fas fa-exclamation-circle"></i> Hatalı şifre!
-            </p>
+            <button onclick="checkPassword()" class="confirm-btn">Giriş Yap</button>
+            <p style="margin-top:10px; cursor:pointer; color:#888;" onclick="closeSecretModal()">Kapat</p>
         </div>
     </div>
 
     <div id="secretView" class="secret-container">
         <button onclick="closeSecretView()" class="close-secret-btn"><i class="fas fa-times"></i> Kapat</button>
-        <iframe src="https://lookerstudio.google.com/embed/reporting/de43a593-5a89-4ed2-ab3d-10f8a55e7ebd" allowfullscreen></iframe>
+        <iframe id="reportFrame" src="" allowfullscreen></iframe>
     </div>
 
     <div class="app-header">
@@ -43,20 +38,23 @@
             <button onclick="switchTab('fav')" id="pcBtnFav"><i class="fas fa-star"></i> Favoriler</button>
             <button onclick="switchTab('settings')" id="pcBtnSettings"><i class="fas fa-cog"></i> Ayarlar</button>
         </div>
+        
         <div id="installContainer" class="install-wrapper" style="display: none;">
-            <button id="installApp" class="install-btn-final"><i class="fas fa-download"></i> Yükle</button>
+            <button id="installApp" class="install-btn-final">
+                <i class="fas fa-download"></i> Yükle
+            </button>
         </div>
     </div>
 
     <div id="mainView" class="main-container">
         <div class="search-box">
             <i class="fas fa-search"></i>
-            <input type="text" placeholder="Sorun ara (Ses, USB)... veya 'yonetici' yazın" onkeyup="filter(this.value)">
+            <input type="text" placeholder="Sorun ara... veya '1234' yazın" onkeyup="filter(this.value)">
         </div>
 
         <div class="announcement-box" style="margin: 10px 0 20px 0; padding: 12px; background-color: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; color: #856404; display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
             <i class="fas fa-bullhorn" style="color: #f57f17; font-size: 1.2rem;"></i>
-            <div><strong>Yeni Özellik:</strong> Pardus 23 ipuçları ve Windows karşılıkları eklendi!</div>
+            <div><strong>Yeni Özellik:</strong> Yönetici girişi için arama kutusuna '1234' yazabilirsiniz.</div>
         </div>
 
         <div class="category-scroll">
@@ -79,34 +77,41 @@
             <h2 id="detailTitle" style="margin:0; font-size:1.2rem;">Başlık</h2>
         </div>
         <div class="detail-content">
-            <div id="detailWindows" style="background: #fffde7; color:#222; padding: 15px; border-radius: 10px; margin-bottom: 20px; font-weight: 700; border: 1px solid #fbc02d;"></div>
+            <div id="detailWindows" class="windows-badge"></div>
             <div id="detailStepsContainer"></div>
         </div>
     </div>
 
     <div class="settings-container" id="settingsView">
         <h2 style="margin-top:0;">Uygulama Ayarları</h2>
+        
         <div class="setting-item">
-            <div><div style="font-weight:bold;"><i class="fas fa-moon"></i> Gece Modu</div></div>
-            <label class="switch"><input type="checkbox" id="darkModeToggle" onchange="toggleTheme()"></label>
+            <div>
+                <div style="font-weight:bold;"><i class="fas fa-moon"></i> Gece Modu</div>
+                <div style="font-size:0.8rem; opacity:0.7;">Göz yormayan koyu tema</div>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle" onchange="toggleTheme()">
+                <span class="slider"></span>
+            </label>
         </div>
 
-        <div class="why-box" style="margin-top: 20px;">
-            <h4 style="margin: 0 0 10px 0; color: #f57f17; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+        <div class="why-box">
+            <h4 style="margin: 0 0 10px 0; color: #f57f17;">
                 <i class="fas fa-rocket"></i> Neden Pardus Asistan?
             </h4>
-            <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-main);">
+            <ul style="margin: 0; padding-left: 20px; color: var(--text-main);">
                 <li><strong>Anında Çözüm:</strong> Hızlı sorun çözümü.</li>
                 <li><strong>İnternet Gerekmez:</strong> Çevrimdışı çalışır.</li>
                 <li><strong>Güvenli:</strong> Veri toplamaz.</li>
             </ul>
         </div>
 
-        <div class="why-box" style="margin-top: 20px;">
-            <h4 style="margin: 0 0 10px 0; color: #f57f17; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+        <div class="why-box">
+            <h4 style="margin: 0 0 10px 0; color: #f57f17;">
                 <i class="fas fa-paw"></i> Pardus’u Tercih Edin Çünkü:
             </h4>
-            <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-main);">
+            <ul style="margin: 0; padding-left: 20px; color: var(--text-main);">
                 <li>Özgürdür ve ücretsizdir</li>
                 <li>Hızlıdır ve güvenlidir</li>
                 <li>Virüs derdi yoktur</li>
@@ -114,9 +119,7 @@
         </div>
 
         <div style="text-align:center; margin-top:30px; opacity:0.8; font-size:0.85rem; color:#555; padding-bottom:20px;">
-            <p id="secretTrigger" onclick="triggerSecret(this)" style="cursor:pointer; user-select:none; display:inline-block; padding:5px;">
-                <strong>Pardus Asistan v8.2</strong>
-            </p>
+            <p><strong>Pardus Asistan v8.3</strong></p>
             <p>Geliştirici: Hasbi Erdoğmuş</p>
         </div>
     </div>
@@ -127,6 +130,6 @@
         <div class="nav-item" id="btnSettings" onclick="switchTab('settings')"><i class="fas fa-cog"></i><span>Ayarlar</span></div>
     </nav>
 
-    <script src="script.js?v=8.2"></script>
+    <script src="script.js?v=8.3"></script>
 </body>
 </html>
