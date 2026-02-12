@@ -1,7 +1,7 @@
 /* --- TEMEL DEĞİŞKENLER --- */
 :root { 
     --pardus-blue: #fbc02d;
-    --pardus-blue-dark: #f57f17;
+    --pardus-blue-dark: #f57f17; /* İstenen Turuncu Tonu */
     --bg-gray: #f4f6f8;
     --card-bg: #ffffff;
     --text-main: #222222; 
@@ -30,7 +30,7 @@ body {
 
 html { background-color: #202124; }
 
-/* --- HEADER AYARLARI (MUTLAK ORTALAMA) --- */
+/* --- HEADER AYARLARI (MENÜ KAYMAMASI İÇİN KESİN ÇÖZÜM) --- */
 .app-header {
     background-color: #ed800d;
     color: white;
@@ -38,20 +38,20 @@ html { background-color: #202124; }
     padding: 0 20px;
     display: flex;
     align-items: center;
-    justify-content: center; /* İçeriği merkeze al */
+    justify-content: center; /* İÇERİĞİ (MENÜYÜ) MERKEZE ALIR */
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-/* Logo Sola Çivili */
+/* LOGO: Sola Çivilendi (Diğerlerinden bağımsız) */
 .header-left {
     position: absolute; left: 20px; top: 0; bottom: 0;
     display: flex; align-items: center;
 }
 
-/* Yükle Butonu Sağa Çivili */
+/* YÜKLE BUTONU: Sağa Çivilendi (Diğerlerinden bağımsız) */
 .header-right-wrapper {
     position: absolute; right: 20px; top: 0; bottom: 0;
     display: flex; align-items: center;
@@ -59,7 +59,7 @@ html { background-color: #202124; }
 
 .new-header-logo { height: 45px; width: auto; object-fit: contain; }
 
-/* MENÜ (Ortada kalır) */
+/* MENÜ (Header justify-center olduğu için otomatik ortada durur) */
 .pc-nav { 
     display: flex; gap: 10px; align-items: center; z-index: 2;
 }
@@ -96,7 +96,7 @@ html { background-color: #202124; }
     display: none; padding: 15px; max-width: 800px; margin: 0 auto; animation: fadeIn 0.3s; 
 }
 
-/* --- ADIM KUTULARI (DÜZELTİLEN KISIM) --- */
+/* --- ADIM KUTULARI VE RENK AYARI --- */
 .step-box {
     background: #fff; 
     padding: 15px 20px; 
@@ -110,10 +110,10 @@ html { background-color: #202124; }
     border-left: 5px solid #fbc02d; 
 }
 
-/* Kalın Yazıları Turuncu Yap */
+/* BURASI DÜZELTİLDİ: Kalın yazılar Pardus Turuncusu */
 .step-box strong { 
     font-weight: 800; 
-    color: #f57f17; /* Pardus Turuncusu */
+    color: #f57f17; 
 }
 
 /* AYARLAR KUTUSU */
@@ -169,7 +169,7 @@ html { background-color: #202124; }
 
 /* GECE MODU */
 body.dark-mode .step-box { background: #1e1e1e; border-left-color: #fbc02d; color: #eee; border-color: #333; }
-body.dark-mode .step-box strong { color: #fbc02d; } /* Gece modunda da açık sarı */
+body.dark-mode .step-box strong { color: #fbc02d; } /* Gece modunda da açık turuncu/sarı */
 body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: #444; }
 body.dark-mode .setting-item, body.dark-mode .why-box { background: #1e1e1e; border-color: #333; }
 
@@ -191,6 +191,7 @@ body.dark-mode .setting-item, body.dark-mode .why-box { background: #1e1e1e; bor
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .pc-nav { display: none; }
+    /* Mobilde Absolute Yerine Flex Space-Between Kullanıyoruz */
     .app-header { justify-content: space-between; } 
     .header-left, .header-right-wrapper { position: static; } 
     .new-header-logo { height: 40px; }
