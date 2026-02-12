@@ -2,12 +2,12 @@
   {
     "id": "ipucu-ozgur-yazilim-felsefesi",
     "category": "ipucu",
-    "title": "Pardus'un Mantığı Nedir? **Özgür Yazılım**",
+    "title": "Pardus ve **Özgür Yazılım** Mantığı",
     "windows_karsiligi": "Sahipli (Kapalı) Yazılım",
     "icon": "fa-dove",
     "steps": [
       "Pardus, **Richard Stallman**'ın başlattığı **GNU** projesi ve **Özgür Yazılım** kültürünün ülkemizdeki temsilcisidir. TÜBİTAK, bu evrensel mirası milli ihtiyaçlarla harmanlamıştır.",
-      "**Özgürlük Kavramı:** Buradaki 'Özgürlük', fiyattan ziyade hürriyeti temsil eder. Stallman'ın tabiriyle; 'Bedava bira gibi değil, konuşma özgürlüğü gibi' düşünülmelidir.",
+      "**Özgürlük Kavramı:** Buradaki 'Özgürlük', fiyattan ziyade hürriyeti temsil eder. Stallman'ın yaklaşımıyla; mesele **'bedava'** olması değil, **'ifade özgürlüğü'** gibi haklara sahip olunmasıdır.",
       "**Kullanıcı Hakları:** Kapalı kutu sistemlerin aksine; yazılımın kodlarını **görme**, **değiştirme** ve bilgiyi **paylaşma** hakkınız anayasal bir hak gibi korunur.",
       "**Milli Strateji:** Amaç sadece tasarruf değil; **GNU** felsefesinden güç alarak, hiçbir üreticinin tekeline girmeden **tam bağımsız** bir bilişim altyapısı kurmaktır.",
       "**GPL Güvencesi:** Pardus, **GPL** lisansı ile korunur. Bu lisans, yazılımın sonsuza dek halka açık ve özgür kalacağının yasal teminatıdır."
