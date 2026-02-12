@@ -119,6 +119,10 @@ html { background-color: #202124; }
     border-left: 5px solid #fbc02d; 
 }
 
+.card span strong {
+    color: #f57f17;
+}
+
 /* AYARLAR KUTUSU */
 .settings-container { display: none; max-width: 800px; margin: 0 auto; padding: 20px; animation: fadeIn 0.3s; }
 .setting-item, .why-box {

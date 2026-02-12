@@ -36,13 +36,14 @@ function renderMenu(data) {
     data.forEach(item => {
         const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         const isFav = favorites.includes(item.id);
+        const formattedCardTitle = item.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         const card = document.createElement("div");
         card.className = "card";
         card.onclick = (e) => { if(!e.target.classList.contains('fav-btn')) openDetail(item); };
         card.innerHTML = `
             <i class="${isFav ? "fas fa-star active" : "far fa-star"} fav-btn" onclick="toggleFav('${item.id}', this)"></i>
             <i class="fas ${item.icon} main-icon"></i>
-            <span>${item.title}</span>
+            <span>${formattedCardTitle}</span>
             <small>${item.windows_karsiligi || ''}</small>
         `;
         grid.appendChild(card);
