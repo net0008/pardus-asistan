@@ -2,7 +2,7 @@
   {
     "id": "ipucu-ozgur-yazilim-felsefesi",
     "category": "ipucu",
-    "title": "Pardus'un Mantığı Nedir? (**Özgür Yazılım**)",
+    "title": "Pardus'un Mantığı Nedir? **Özgür Yazılım**",
     "windows_karsiligi": "Sahipli (Kapalı) Yazılım",
     "icon": "fa-dove",
     "steps": [
@@ -812,7 +812,7 @@
 
     "id": "ipucu-vestel-faz2-dokunmatik",
     "category": "ipucu",
-    "title": "Vestel Faz 2 Dokunmatik Sorunu (**Kalibrasyon**)",
+    "title": "Vestel Faz 2 Dokunmatik Sorunu **Kalibrasyon**",
     "windows_karsiligi": "Tablet PC Ayarları / Kalibrasyon",
     "icon": "fa-hand-pointer",
     "steps": [
