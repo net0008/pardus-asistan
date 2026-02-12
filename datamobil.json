@@ -2,14 +2,15 @@
   {
     "id": "ipucu-ozgur-yazilim-felsefesi",
     "category": "ipucu",
-    "title": "Pardus Neden Ücretsiz? **Özgür Yazılım Felsefesi**",
-    "windows_karsiligi": "Lisanslı / Kapalı Kaynak Yazılım",
+    "title": "Pardus'un Mantığı Nedir? (**Özgür Yazılım**)",
+    "windows_karsiligi": "Sahipli (Kapalı) Yazılım",
     "icon": "fa-dove",
     "steps": [
-      "**Pardus**’un özgür yazılım felsefesi, temelde Richard Stallman tarafından başlatılan **Özgür Yazılım Hareketi**ne ve GNU tasarısına dayanmaktadır. Pardus, **TÜBİTAK/ULAKBİM** tarafından geliştirilen **özgür ve ücretsiz** bir GNU/Linux dağıtımıdır. Bu felsefe, yazılımın sadece **ücretsiz** olmasını değil, kullanıcıların **özgürlüklerini** garanti altına almayı hedefler. Bu felsefenin temel taşları şunlardır:",
-      "**Dört Temel Özgürlük:** 1) Her amaç için kullanma, 2) Kodu inceleme ve değiştirme, 3) Dağıtma, 4) Geliştirmeleri paylaşma hakkıdır.",
-      "**Stratejik Amaç:** Kamuda dışa bağımlılığı azaltmak, güvenlik zafiyetlerini önlemek ve **üretici tekeline** girmeden **ulusal bir ekosistem** kurmaktır.",
-      "**GPL ve Copyleft:** Pardus, GPL lisansı ile korunur. Bu, yazılımın ve türevlerinin sahipli hale getirilemeyeceğini ve daima özgür kalacağını garanti eder."
+      "Pardus, **Richard Stallman**'ın başlattığı **GNU** projesi ve **Özgür Yazılım** kültürünün ülkemizdeki temsilcisidir. TÜBİTAK, bu evrensel mirası milli ihtiyaçlarla harmanlamıştır.",
+      "**Özgürlük Kavramı:** Buradaki 'Özgürlük', fiyattan ziyade hürriyeti temsil eder. Stallman'ın tabiriyle; 'Bedava bira gibi değil, konuşma özgürlüğü gibi' düşünülmelidir.",
+      "**Kullanıcı Hakları:** Kapalı kutu sistemlerin aksine; yazılımın kodlarını **görme**, **değiştirme** ve bilgiyi **paylaşma** hakkınız anayasal bir hak gibi korunur.",
+      "**Milli Strateji:** Amaç sadece tasarruf değil; **GNU** felsefesinden güç alarak, hiçbir üreticinin tekeline girmeden **tam bağımsız** bir bilişim altyapısı kurmaktır.",
+      "**GPL Güvencesi:** Pardus, **GPL** lisansı ile korunur. Bu lisans, yazılımın sonsuza dek halka açık ve özgür kalacağının yasal teminatıdır."
     ]
   }
    ,
@@ -806,5 +807,22 @@
       "**4. Bağlantı Kesme:** Cihazı kaldırmak için yine aynı menüden **'Aygıtı Kaldır'** butonunu kullanabilirsiniz."
     ]
   }
+  ,
+  {
+
+    "id": "ipucu-vestel-faz2-dokunmatik",
+    "category": "ipucu",
+    "title": "Vestel Faz 2 Dokunmatik Sorunu (**Kalibrasyon**)",
+    "windows_karsiligi": "Tablet PC Ayarları / Kalibrasyon",
+    "icon": "fa-hand-pointer",
+    "steps": [
+      "**1. İndir:** <a href='https://bulut.pardus.org.tr/s/MSSsLqRc2aY560m' target='_blank'>Pardus ETAP 23 Sürümünü</a> kullanın.",
+      "**1. Temizlik:** Dokunmatik sorunları (kendi kendine basma, algılamama) genellikle sensörlerdeki tozdan kaynaklanır. Öncelikle ekranı ve köşelerdeki sensörleri temizleyin.",
+      "**2. Pardus ile Çözüm:** `etapyetkili` hesabında uç birimi (konsol) açın. `sudo apt-get install xinput-calibrator` komutu ile aracı yükleyin.",
+      "**3. Uygulama:** Kurulumdan sonra konsola `xinput_calibrator` yazın. Ekranda çıkan 4 noktaya sırasıyla dokunarak kalibrasyonu tamamlayın.",
+      "**4. Kesin Çözüm: (Windows): Sorun düzelmezse donanımsal kalibrasyon gerekir. <a href='https://drive.google.com/drive/folders/1NJFFn12am8SF3_uGblz06WPLYZPoe1Xq?usp=drive_link' target='_blank'>meb.ai/UJhLG4z</a> Windows imajını kurup 'Optical Touch Device' ile kalibre edin, düzelince tekrar Pardus yükleyin."
+    ]
+  }
+
 ]
   
