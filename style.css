@@ -7,6 +7,7 @@
     --text-main: #222222; 
     --text-muted: #555555; 
     --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    --box-bg-unified: rgba(0,0,0,0.04); /* Tüm kutular için ortak renk */
 }
 
 body.dark-mode {
@@ -15,6 +16,7 @@ body.dark-mode {
     --text-main: #f1f1f1;
     --text-muted: #bbbbbb;
     --shadow: 0 4px 12px rgba(0,0,0,0.3);
+    --box-bg-unified: rgba(255,255,255,0.05); /* Gece modu kutu rengi */
 }
 
 * { box-sizing: border-box; } 
@@ -130,10 +132,16 @@ html { background-color: #202124; }
 .detail-view, .settings-container { display: none; animation: fadeIn 0.3s; }
 .settings-container { max-width: 800px; margin: 0 auto; padding: 15px; }
 .detail-view { max-width: 800px; margin: 0 auto; padding: 15px; }
-.setting-item {
-    background: var(--card-bg); padding: 18px; border-radius: 12px;
-    display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; box-shadow: var(--shadow);
+
+/* --- DÜZELTİLEN KUTU RENKLERİ --- */
+.setting-item, .why-box {
+    background: var(--box-bg-unified); /* İkisi de aynı renk yapıldı */
+    padding: 18px; border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.08); /* Çerçeveler de aynı */
+    margin-bottom: 20px;
 }
+.setting-item { display: flex; justify-content: space-between; align-items: center; box-shadow: none; }
+
 .detail-header { padding: 15px 0; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid rgba(0,0,0,0.1); margin-bottom: 15px; }
 .back-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-main); }
 .detail-title { margin: 0; font-size: 1.2rem; font-weight: 800; }
@@ -141,10 +149,7 @@ html { background-color: #202124; }
     background: #fffde7; color: #222; padding: 15px; border-radius: 10px; 
     font-size: 0.95rem; font-weight: 700; margin-bottom: 20px; border: 1px solid rgba(251, 192, 45, 0.3);
 }
-.why-box { 
-    margin-top: 15px; text-align: left; background: rgba(0,0,0,0.04); padding: 18px; 
-    border-radius: 12px; border: 1px solid rgba(0,0,0,0.08); 
-}
+
 .step-box {
     background: #fff; padding: 18px; margin-bottom: 12px; border-radius: 8px; color: #000;
     font-size: 1.05rem; line-height: 1.6; box-shadow: 0 2px 5px rgba(0,0,0,0.08);
@@ -152,12 +157,15 @@ html { background-color: #202124; }
 }
 .step-box strong { color: #f57f17; font-weight: 800; }
 
-/* GECE MODU */
+/* GECE MODU AYARLARI */
 body.dark-mode .step-box { background: #252525; border-left-color: #fbc02d; color: #fff; border-color: #444; }
 body.dark-mode .step-box strong { color: #fbc02d; }
 body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: #444; }
 body.dark-mode .bottom-nav { border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-body.dark-mode .why-box { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
+body.dark-mode .setting-item, body.dark-mode .why-box { 
+    background: rgba(255,255,255,0.05); 
+    border-color: rgba(255,255,255,0.1); 
+}
 
 /* --- GİZLİ ALAN STİLLERİ --- */
 .modal-overlay { 
@@ -171,6 +179,7 @@ body.dark-mode .why-box { background: rgba(255,255,255,0.05); border-color: rgba
 .modal-content input { 
     width: 100%; padding: 14px; margin: 15px 0; border: 2px solid #ddd; border-radius: 12px; 
     font-size: 1.1rem; text-align: center; outline: none; transition: 0.3s;
+    background: var(--bg-gray); color: var(--text-main);
 }
 .modal-content input:focus { border-color: #ed800d; }
 .modal-buttons { display: flex; gap: 10px; justify-content: center; }
@@ -206,10 +215,9 @@ body.dark-mode .why-box { background: rgba(255,255,255,0.05); border-color: rgba
     .cat-btn { padding: 10px 20px; font-size: 1rem; }
     .search-box input { padding: 18px 25px 18px 55px; font-size: 1.15rem; }
     
-    /* MENÜ HİZASINI DÜZELTEN KOD BURADA */
+    /* PC'de YÜKLE BUTONUNU GİZLE (YERİNİ KORU) */
     #installContainer { 
-        display: block !important;  /* Önce var olduğunu belirt */
-        visibility: hidden !important; /* Sonra görünmez yap (Yerini korur) */
+        visibility: hidden !important; 
         pointer-events: none; 
     }
 }

@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#ed800d"> 
-    
     <title>Pardus Asistan - ETAP Akıllı Tahta Çözüm Rehberi</title>
-    <meta name="description" content="Pardus ETAP kullanan öğretmenler için internetsiz çalışan, hızlı sorun çözüm asistanı.">
     
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css?v=8.1"> 
+    <link rel="stylesheet" href="style.css?v=8.2"> 
 </head>
 <body>
 
@@ -33,9 +30,7 @@
     </div>
 
     <div id="secretView" class="secret-container">
-        <button onclick="closeSecretView()" class="close-secret-btn">
-            <i class="fas fa-times"></i> Kapat
-        </button>
+        <button onclick="closeSecretView()" class="close-secret-btn"><i class="fas fa-times"></i> Kapat</button>
         <iframe src="https://lookerstudio.google.com/embed/reporting/de43a593-5a89-4ed2-ab3d-10f8a55e7ebd" allowfullscreen></iframe>
     </div>
 
@@ -48,18 +43,15 @@
             <button onclick="switchTab('fav')" id="pcBtnFav"><i class="fas fa-star"></i> Favoriler</button>
             <button onclick="switchTab('settings')" id="pcBtnSettings"><i class="fas fa-cog"></i> Ayarlar</button>
         </div>
-        
         <div id="installContainer" class="install-wrapper" style="display: none;">
-            <button id="installApp" class="install-btn-final">
-                <i class="fas fa-download"></i> Yükle
-            </button>
+            <button id="installApp" class="install-btn-final"><i class="fas fa-download"></i> Yükle</button>
         </div>
     </div>
 
     <div id="mainView" class="main-container">
         <div class="search-box">
             <i class="fas fa-search"></i>
-            <input type="text" placeholder="Sorun ara (Ses, USB, İnternet)..." onkeyup="filter(this.value)">
+            <input type="text" placeholder="Sorun ara (Ses, USB)... veya 'yonetici' yazın" onkeyup="filter(this.value)">
         </div>
 
         <div class="announcement-box" style="margin: 10px 0 20px 0; padding: 12px; background-color: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; color: #856404; display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
@@ -94,16 +86,9 @@
 
     <div class="settings-container" id="settingsView">
         <h2 style="margin-top:0;">Uygulama Ayarları</h2>
-        
         <div class="setting-item">
-            <div>
-                <div style="font-weight:bold;"><i class="fas fa-moon"></i> Gece Modu</div>
-                <div style="font-size:0.8rem; opacity:0.7;">Göz yormayan koyu tema</div>
-            </div>
-            <label class="switch">
-                <input type="checkbox" id="darkModeToggle" onchange="toggleTheme()">
-                <span class="slider"></span>
-            </label>
+            <div><div style="font-weight:bold;"><i class="fas fa-moon"></i> Gece Modu</div></div>
+            <label class="switch"><input type="checkbox" id="darkModeToggle" onchange="toggleTheme()"></label>
         </div>
 
         <div class="why-box" style="margin-top: 20px;">
@@ -111,43 +96,28 @@
                 <i class="fas fa-rocket"></i> Neden Pardus Asistan?
             </h4>
             <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-main);">
-                <li style="margin-bottom: 5px;"><strong>Anında Çözüm:</strong> Sınıf içinde karşılaştığınız sorunları saniyeler içinde çözmeniz için tasarlandı.</li>
-                <li style="margin-bottom: 5px;"><strong>İnternet Gerekmez:</strong> İnternet bağlantınız kopsa bile çalışmaya devam eder.</li>
-                <li style="margin-bottom: 5px;"><strong>Tam Uyumlu:</strong> Pardus ETAP sürümleriyle %100 uyumludur.</li>
-                <li><strong>Güvenli:</strong> Veri toplamaz, tamamen ücretsizdir.</li>
+                <li><strong>Anında Çözüm:</strong> Hızlı sorun çözümü.</li>
+                <li><strong>İnternet Gerekmez:</strong> Çevrimdışı çalışır.</li>
+                <li><strong>Güvenli:</strong> Veri toplamaz.</li>
             </ul>
         </div>
 
         <div class="why-box" style="margin-top: 20px;">
             <h4 style="margin: 0 0 10px 0; color: #f57f17; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-paw"></i> 
-                <a href="https://pardus.org.tr" target="_blank" style="color:inherit; text-decoration:underline;">Pardus</a>’u Tercih Edin Çünkü:
+                <i class="fas fa-paw"></i> Pardus’u Tercih Edin Çünkü:
             </h4>
             <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-main);">
-                <li style="margin-bottom: 5px;">Özgürdür ve ücretsizdir</li>
-                <li style="margin-bottom: 5px;">Hızlıdır ve güvenlidir</li>
-                <li style="margin-bottom: 5px;">Kolay kullanılır, özelleştirilebilir</li>
-                <li style="margin-bottom: 5px;">Kurulmadan dahi çalışabilir, hızlı kurulur</li>
-                <li style="margin-bottom: 5px;">Birçok ücretsiz paket program içerir</li>
-                <li style="margin-bottom: 5px;">Şeffaftır</li>
-                <li>Türkçe dışında pek çok dile desteği vardır</li>
+                <li>Özgürdür ve ücretsizdir</li>
+                <li>Hızlıdır ve güvenlidir</li>
+                <li>Virüs derdi yoktur</li>
             </ul>
         </div>
 
-        <div style="text-align:center; margin-top:30px; opacity:0.8; font-size:0.85rem; color:#555; padding-bottom:20px; line-height: 1.6;">
-            <p style="margin-bottom: 10px;">
-                Bu rehber hazırlanırken <a href="https://pardus.org.tr" target="_blank" rel="noopener noreferrer" style="color: #f57f17; font-weight: bold; text-decoration: none;">Pardus.org.tr</a> ve 
-                Sayın <strong>Şenol ALDIBAŞ</strong>'ın çalışmalarından faydalanılmıştır.<br>
-                <span style="font-size: 0.8rem; font-style: italic;">Katkılarından dolayı kendilerine teşekkür ederiz.</span>
+        <div style="text-align:center; margin-top:30px; opacity:0.8; font-size:0.85rem; color:#555; padding-bottom:20px;">
+            <p id="secretTrigger" onclick="triggerSecret(this)" style="cursor:pointer; user-select:none; display:inline-block; padding:5px;">
+                <strong>Pardus Asistan v8.2</strong>
             </p>
-
-            <div style="width: 40%; height: 1px; background-color: #e0e0e0; margin: 10px auto;"></div>
-
-            <p id="secretTrigger" onclick="triggerSecret(this)" style="cursor:pointer; user-select:none; display:inline-block; padding:5px; margin-top: 10px;">
-                <strong>Pardus Asistan v8.1</strong>
-            </p>
-            <p style="margin-bottom: 3px;">Geliştirici: Hasbi Erdoğmuş</p>
-            <p>İletişim: <a href="mailto:herdogmus35@gmail.com" style="color: #f57f17; font-weight: bold; text-decoration: none;">herdogmus35@gmail.com</a></p>
+            <p>Geliştirici: Hasbi Erdoğmuş</p>
         </div>
     </div>
 
@@ -157,6 +127,6 @@
         <div class="nav-item" id="btnSettings" onclick="switchTab('settings')"><i class="fas fa-cog"></i><span>Ayarlar</span></div>
     </nav>
 
-    <script src="script.js?v=8.1"></script>
+    <script src="script.js?v=8.2"></script>
 </body>
 </html>

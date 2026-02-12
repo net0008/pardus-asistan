@@ -57,8 +57,19 @@ function filterCategory(category) {
     renderMenu(category === 'all' ? ALL_DATA : ALL_DATA.filter(item => item.category === category));
 }
 
+// --- SİHİRLİ ARAMA KUTUSU ---
 function filter(keyword) {
-    const lower = keyword.toLowerCase();
+    const lower = keyword.toLowerCase().trim();
+    
+    // EĞER ARAMA KUTUSUNA "yonetici" VEYA "1234" YAZILIRSA GİZLİ MENÜYÜ AÇ
+    if (lower === "yonetici" || lower === "1234") {
+        document.getElementById('secretModal').style.display = 'flex';
+        document.getElementById('secretPass').focus();
+        document.querySelector('.search-box input').value = ""; // Kutuyu temizle
+        renderMenu(ALL_DATA); // Menüyü eski haline getir
+        return;
+    }
+
     renderMenu(ALL_DATA.filter(item => item.title.toLowerCase().includes(lower) || (item.windows_karsiligi && item.windows_karsiligi.toLowerCase().includes(lower))));
 }
 
@@ -122,19 +133,14 @@ function toggleTheme() {
     localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
 }
 
-// --- GİZLİ MENÜ MANTIĞI (BASİTLEŞTİRİLDİ) ---
+// --- GİZLİ MENÜ MANTIĞI (TIKLAMA) ---
 function triggerSecret(element) {
     secretClickCount++;
-    
-    // Tıklama efekti
     element.style.transform = "scale(0.9)";
     setTimeout(() => element.style.transform = "scale(1)", 100);
-
-    // Süre sıfırlama (2 saniye içinde tekrar basmazsa sıfırla)
     clearTimeout(secretTimer);
     secretTimer = setTimeout(() => { secretClickCount = 0; }, 2000);
 
-    // 5 Kere tıklandıysa
     if (secretClickCount >= 5) {
         document.getElementById('secretModal').style.display = 'flex';
         document.getElementById('secretPass').focus();
@@ -144,21 +150,13 @@ function triggerSecret(element) {
 
 function checkPassword() {
     const input = document.getElementById('secretPass').value;
-    
-    // BASİT ŞİFRE KONTROLÜ (Her ortamda çalışır)
     if (input === "1234") {
-        // Başarılı
         document.getElementById('secretModal').style.display = 'none';
         document.getElementById('secretView').style.display = 'block';
         document.getElementById('secretPass').value = ''; 
         document.getElementById('loginError').style.display = 'none';
     } else {
-        // Hatalı
         document.getElementById('loginError').style.display = 'block';
-        // Giriş kutusunu salla
-        const modalContent = document.querySelector('.modal-content');
-        modalContent.style.animation = "shake 0.3s";
-        setTimeout(() => modalContent.style.animation = "", 300);
     }
 }
 
@@ -171,18 +169,6 @@ function closeSecretModal() {
 function closeSecretView() {
     document.getElementById('secretView').style.display = 'none';
 }
-
-// CSS Shake Animasyonu için
-const style = document.createElement('style');
-style.innerHTML = `
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
-}`;
-document.head.appendChild(style);
 
 let deferredPrompt;
 window.addEventListener('beforeinstallprompt', (e) => {
