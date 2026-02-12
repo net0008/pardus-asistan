@@ -6,11 +6,10 @@
     "windows_karsiligi": "Sahipli (Kapalı) Yazılım",
     "icon": "fa-dove",
     "steps": [
-      "Pardus, **Richard Stallman**'ın başlattığı **GNU** projesi ve **Özgür Yazılım** kültürünün ülkemizdeki temsilcisidir. TÜBİTAK, bu evrensel mirası milli ihtiyaçlarla harmanlamıştır.",
-      "**Özgürlük Kavramı:** Buradaki 'Özgürlük', fiyattan ziyade hürriyeti temsil eder. Stallman'ın yaklaşımıyla; mesele **'bedava'** olması değil, **'ifade özgürlüğü'** gibi haklara sahip olunmasıdır.",
-      "**Kullanıcı Hakları:** Kapalı kutu sistemlerin aksine; yazılımın kodlarını **görme**, **değiştirme** ve bilgiyi **paylaşma** hakkınız anayasal bir hak gibi korunur.",
-      "**Milli Strateji:** Amaç sadece tasarruf değil; **GNU** felsefesinden güç alarak, hiçbir üreticinin tekeline girmeden **tam bağımsız** bir bilişim altyapısı kurmaktır.",
-      "**GPL Güvencesi:** Pardus, **GPL** lisansı ile korunur. Bu lisans, yazılımın sonsuza dek halka açık ve özgür kalacağının yasal teminatıdır."
+      "Pardus, **Richard Stallman**'ın başlattığı **GNU** projesi ve **Özgür Yazılım** kültürünün ülkemizdeki temsilcisidir.",
+      "**Özgürlük Kavramı:** Mesele yazılımın **'bedava'** olması değil, kullanıcının **'ifade özgürlüğü'** gibi haklara sahip olmasıdır.",
+      "**Kullanıcı Hakları:** Kodları **görme**, **değiştirme** ve bilgiyi **paylaşma** hakkınız vardır.",
+      "**GPL Güvencesi:** Pardus, GPL lisansı ile korunur; daima halka açık kalır."
     ]
   },
   {
@@ -46,8 +45,7 @@
     "steps": [
       "**Öğretmen Hesabı:** Kullanıcı: **ogretmen** | Şifre: **ogretmen**",
       "**Öğrenci Hesabı:** Kullanıcı: **ogrenci** | Şifre: **1**",
-      "**Yönetici (Etap Yetkili):** Program kurmak için gereklidir.",
-      "**Önemli:** Etap Yetkili şifresini **okulunuzdaki  YEĞİTEK okul sorumlusundan** veya yoksa **İl/İlçe Bilişim Koordinatöründen** öğrenmelisiniz. Bu şifreyi sadece öğretmenler bilmelidir, öğrencilerle kesinlikle paylaşılmamalıdır."
+      "**Yönetici (Etap Yetkili):** Okulunuzdaki **YEĞİTEK sorumlusundan** veya **Bilişim Koordinatöründen** öğrenmelisiniz."
     ]
   },
   {
@@ -58,10 +56,9 @@
     "icon": "fa-wifi",
     "steps": [
       "Paneldeki (Sağ alt veya üst) **Ağ/Wi-Fi** simgesine tıklayın.",
-      "**Gereklilik** MEB ağına bağlanmak için bağlanmak istediğiniz telefon veya tablete MEB sertifikasının kurulmuş olması gerekir.Kurulu değilse önce 'sertifika.meb.gov.tr' adresinden sertifikayı indirip cihazınızın işletim sistemine uygun kurulumu yapınız.",
+      "**Gereklilik:** MEB ağına bağlanmak için sertifika yüklü olmalıdır.",
       "Listeden okul ağını (genellikle **F@tih**) seçip şifrenizi girin.",
-      "**Gizli Ağ:** Ağ listesinde yoksa 'Gizli Ağa Bağlan' diyerek SSID ve şifreyi elle girin.",
-      "**F@tih** ağına bağlandıysanız tarayıcınız sizi **www.eba.gov.tr **de oturum açmaya yönlendirecektir. Oturum açarak internete erişebilirsiniz."
+      "**Gizli Ağ:** Ağ listesinde yoksa 'Gizli Ağa Bağlan' diyerek bilgileri elle girin."
     ]
   },
   {
@@ -71,10 +68,9 @@
     "windows_karsiligi": "Yazıcı Ekle",
     "icon": "fa-print",
     "steps": [
-      "**Ayarlar > Yazıcılar** (veya Yazıcı Ayarları) menüsünü açın ve kilit simgesinden şifreyi girin.",
-      "**Ekle (+)** butonuna basın. USB yazıcılar listede direkt görünür.",
-      "**Ağ Yazıcısı:** 'Ağ Yazıcısı Bul' diyerek IP adresini girin (Genelde AppSocket/HP JetDirect seçilir).",
-      "**Sürücü:** Modeliniz listede yoksa marka olarak 'Generic', model olarak **'PCL 6/PCL XL'** seçin. Çoğu okul yazıcısını çalıştırır."
+      "**Ayarlar > Yazıcılar** menüsünü açın.",
+      "**Ekle (+)** butonuna basın. USB yazıcılar direkt görünür.",
+      "**Sürücü:** Modeliniz listede yoksa marka olarak 'Generic', model olarak **'PCL 6/PCL XL'** seçin."
     ]
   },
   {
@@ -84,10 +80,9 @@
     "windows_karsiligi": "Microsoft Store / Setup.exe",
     "icon": "fa-shopping-bag",
     "steps": [
-      "**Pardus Mağaza** (veya Yazılımlar) uygulamasını açın.",
+      "**Pardus Mağaza** uygulamasını açın.",
       "Arama kutusuna program adını yazın (Örn: Chrome, VLC, Zoom).",
-      "**Kur** butonuna basıp şifrenizi girin.",
-      "Mağazada olmayan **.deb** uzantılı dosyaları (Örn: Z-Kitaplar) indirdikten sonra çift tıklayarak kurabilirsiniz."
+      "**Kur** butonuna basıp şifrenizi girin."
     ]
   },
   {
@@ -97,7 +92,7 @@
     "windows_karsiligi": "Akıl Oyunları",
     "icon": "fa-puzzle-piece",
     "steps": [
-      "Pardus ETAP ile yüklü gelen, 2-10 yaş arası çocuklar için 100'den fazla eğitici oyun paketidir.",
+      "2-10 yaş arası çocuklar için 100'den fazla eğitici oyun paketidir.",
       "Matematik, Coğrafya, Okuma ve Mantık oyunları içerir.",
       "**Menü > Eğitim > GCompris** yolunu izleyerek açabilirsiniz."
     ]
@@ -121,8 +116,7 @@
     "windows_karsiligi": "Güç ve Uyku",
     "icon": "fa-power-off",
     "steps": [
-      "Ders anlatırken ekranın kararmasını istemiyorsanız:",
-      "**Ayarlar > Güç Yöneticisi** (veya Güç) menüsüne gidin.",
+      "**Ayarlar > Güç Yöneticisi** menüsüne gidin.",
       "**Ekran** sekmesindeki 'Şu kadar süre sonra ekranı kapat' ayarını **Asla** konumuna getirin.",
       "Güvenlik sekmesindeki 'Uyku moduna geçince kilitle' seçeneğini kapatın."
     ]
@@ -135,8 +129,8 @@
     "icon": "fa-image",
     "steps": [
       "Masaüstünde boş bir yere **Sağ Tık** yapın.",
-      "**Masaüstü Ayarları** (veya Arkaplan Değiştir) seçeneğine girin.",
-      "Mevcut resimlerden birini seçin veya **(+) / Resim Ekle** butonuyla kendi fotoğrafınızı yükleyin."
+      "**Masaüstü Ayarları** seçeneğine girin.",
+      "Mevcut resimlerden birini seçin veya **(+)** butonuyla kendi fotoğrafınızı yükleyin."
     ]
   },
   {
@@ -146,9 +140,8 @@
     "windows_karsiligi": "Ses Düzeyi Karıştırıcısı",
     "icon": "fa-volume-up",
     "steps": [
-      "Sağ üst veya alt köşedeki ses simgesinden sesin açık olduğunu kontrol edin.",
       "**Ayarlar > Ses** menüsüne gidin.",
-      "**Çıkış Cihazı** kısmından 'HDMI', 'Line Out' veya 'Speakers' seçeneklerini deneyerek doğru olanı bulun. ('Dummy Output' yazıyorsa sürücü sorunu olabilir)."
+      "**Çıkış Cihazı** kısmından 'HDMI', 'Line Out' veya 'Speakers' seçeneklerini deneyerek doğru olanı bulun."
     ]
   },
   {
@@ -167,13 +160,13 @@
   {
     "id": "format-usb-hazirlama",
     "category": "sistem",
-    "title": "Format Atma 1 (Yüklenebilir USB Hazırlama)",
+    "title": "Format Atma 1 (USB Hazırlama)",
     "windows_karsiligi": "Rufus / Format",
     "icon": "fa-hdd",
     "steps": [
-      "**1. İndir:** <a href='https://bulut.pardus.org.tr/s/MSSsLqRc2aY560m' target='_blank'>Pardus ETAP 23 ISO</a> dosyasını indirin.",
-      "**2 a. USB'yi Windows işletim sistemine sahip bilgisayardan yapyorsanız **Rufus** programını <a href='https://rufus.ie/tr/' target='_blank'>buradan indirin</a>. Ardından, Rufus programını açın, ISO'yu seçin. Başlat'a basınca çıkan uyarıda mutlaka **DD Yansısı (DD Image)** modunu seçin.",
-      "**2 b. USB'yi Pardus kurulu bir bilgisayardan yapıyorsanız. Pardus Disk Yazıcı:**Pardus Disk Kalıbı Yazıcı** programı ile ISO'yu belleğe yazdırabilirsiniz."
+      "**1. İndir:** Pardus ETAP 23 ISO dosyasını indirin.",
+      "**2.** **Rufus** programını açın, ISO'yu seçin.",
+      "**3.** Başlat'a basınca çıkan uyarıda mutlaka **DD Yansısı (DD Image)** modunu seçin."
     ]
   },
   {
@@ -183,10 +176,9 @@
     "windows_karsiligi": "BIOS Boot",
     "icon": "fa-cog",
     "steps": [
-      "Hazırladığınız USB'yi tahtaya takın.",
-      "Tahtayı açarken sürekli; **Vestel/Aidata** için **F7**, **Arçelik** için **F12** tuşuna basıp çekin.",
-      "Açılan listeden USB belleğinizi seçin.",
-      "Gelen ekranda **'Pardus ETAP Yükle'** seçeneğini seçin. Kurulum otomatiktir, tüm veriler silinir."
+      "USB'yi takın. Açılırken **F7** (Vestel) veya **F12** (Arçelik) tuşuna sürekli basın.",
+      "Listeden USB'yi seçin.",
+      "**'Pardus ETAP Yükle'** seçeneğini seçin. Kurulum otomatiktir."
     ]
   },
   {
@@ -196,9 +188,9 @@
     "windows_karsiligi": "Epic Pen",
     "icon": "fa-pen-fancy",
     "steps": [
-      "Program kurmanıza gerek yoktur, ETA Panel'deki **Kalem** simgesine tıklayın.",
+      "ETA Panel'deki **Kalem** simgesine tıklayın.",
       "Ekran donar ve üzerine çizim yapabilirsiniz.",
-      "PDF üzerine yazmak için dosyaya **Sağ Tık > Birlikte Aç > Xournal++** uygulamasını kullanın."
+      "PDF üzerine yazmak için dosyaya **Sağ Tık > Birlikte Aç > Xournal++** kullanın."
     ]
   },
   {
@@ -210,7 +202,7 @@
     "steps": [
       "**Power:** Ekranı kapatıp açar.",
       "**Source:** HDMI/VGA girişleri arasında geçiş yapar.",
-      "**Dokunmatik İptal (El Simgesi):** Teneffüste veya tahtayı silerken dokunmatiği geçici kapatır. Tekrar basınca açılır."
+      "**Dokunmatik İptal (El Simgesi):** Teneffüste veya tahtayı silerken dokunmatiği geçici kapatır."
     ]
   },
   {
@@ -222,7 +214,7 @@
     "steps": [
       "Dokunmatik algılamasında kayma varsa:",
       "Ayarlar > **Pardus Kalibrasyon** aracını çalıştırın.",
-      "Gri ekranda çıkan kırmızı hedeflere parmağınızla sırayla ve hassasça dokunun."
+      "Gri ekranda çıkan kırmızı hedeflere parmağınızla sırayla dokunun."
     ]
   },
   {
@@ -232,10 +224,10 @@
     "windows_karsiligi": "Microsoft Office",
     "icon": "fa-file-word",
     "steps": [
-      "**Word:** LibreOffice Writer (.docx destekler).",
-      "**Excel:** LibreOffice Calc (.xlsx destekler).",
-      "**Sunum:** LibreOffice Impress (.pptx destekler). F5 ile sunumu başlatabilirsiniz.",
-      "**PDF:** Atril ile görüntüleyebilir, Xournal++ ile üzerine yazı yazabilirsiniz."
+      "**Word:** LibreOffice Writer",
+      "**Excel:** LibreOffice Calc",
+      "**Sunum:** LibreOffice Impress",
+      "**PDF:** Atril ile görüntülenir."
     ]
   },
   {
@@ -245,93 +237,85 @@
     "windows_karsiligi": "IPv4 Ayarları",
     "icon": "fa-network-wired",
     "steps": [
-      "Ağ simgesine sağ tıklayıp **Bağlantıları Düzenle** (veya Ayarlar > Ağ) deyin.",
-      "Kablolu bağlantının yanındaki Çark simgesine basın.",
-      "**IPv4** sekmesinden yöntemi **Elle** yapın ve IP, Ağ Maskesi, Ağ Geçidi bilgilerini girin."
+      "Ağ simgesine sağ tıklayıp **Bağlantıları Düzenle** deyin.",
+      "Kablolu bağlantının ayarlarına girin.",
+      "**IPv4** sekmesinden yöntemi **Elle** yapın ve bilgileri girin."
     ]
   },
   {
     "id": "app-veyon",
     "category": "etap",
-    "title": "Program tanıtımı **Veyon** (Sınıf Yönetimi)",
+    "title": "Veyon (Sınıf Yönetimi)",
     "windows_karsiligi": "NetSupport School",
     "icon": "fa-chalkboard-teacher",
     "steps": [
-      "Laboratuvar sınıfları için ücretsiz ve açık kaynaklı sınıf yönetim programıdır.",
-      "Öğretmen bilgisayarından öğrenci ekranlarını izleyebilir, kilitleyebilir veya kontrol edebilirsiniz.",
-      "Tüm sınıfa aynı anda ekranınızı yansıtabilirsiniz."
+      "Laboratuvar sınıfları için sınıf yönetim programıdır.",
+      "Öğretmen bilgisayarından öğrenci ekranlarını izleyebilir ve kilitleyebilirsiniz."
     ]
   },
   {
     "id": "app-geogebra",
     "category": "uygulama",
-    "title": "Program tanıtımı **GeoGebra** (Matematik)",
+    "title": "GeoGebra (Matematik)",
     "windows_karsiligi": "GeoGebra",
     "icon": "fa-calculator",
     "steps": [
       "Matematik ve Geometri öğretmenleri için vazgeçilmez bir araçtır.",
-      "Fonksiyon grafikleri çizebilir, dinamik geometrik şekiller oluşturabilirsiniz.",
-      "İnternet olmasa bile çalışır, akıllı tahtada dokunmatik uyumludur."
+      "Fonksiyon grafikleri çizebilir, dinamik geometrik şekiller oluşturabilirsiniz."
     ]
   },
   {
     "id": "app-stellarium",
     "category": "uygulama",
-    "title": "Program tanıtımı **Stellarium** (Sanal Gökyüzü)",
+    "title": "Stellarium (Sanal Gökyüzü)",
     "windows_karsiligi": "Starry Night",
     "icon": "fa-star",
     "steps": [
-      "Fen Bilgisi ve Coğrafya dersleri için 3D gökyüzü simülasyonudur.",
-      "Sınıfı karanlık yapıp tahtadan yıldızları, gezegenleri ve takımyıldızlarını gösterebilirsiniz.",
+      "3D gökyüzü simülasyonudur.",
       "Konumunuzu seçerek o anki gökyüzünü birebir simüle eder."
     ]
   },
   {
     "id": "app-vokoscreen",
     "category": "uygulama",
-    "title": "Program tanıtımı **Vokoscreen** (Ders Kaydı)",
+    "title": "Vokoscreen (Ders Kaydı)",
     "windows_karsiligi": "Camtasia / Bandicam",
     "icon": "fa-video",
     "steps": [
-      "Ekranda yaptıklarınızı ve sesinizi kaydederek ders videosu hazırlamanızı sağlar.",
-      "Kullanımı çok basittir, 'Başlat' ve 'Durdur' diyerek kaydı alırsınız.",
-      "Uzaktan eğitim veya tekrar videoları hazırlamak için idealdir."
+      "Ekranda yaptıklarınızı ve sesinizi kaydederek ders videosu hazırlamanızı sağlar."
     ]
   },
   {
     "id": "app-ezil",
     "category": "etap",
-    "title": "Program tanıtımı **E-Zil** (Okul Zil Programı)",
-    "windows_karsiligi": "Supertone / Zil Programları",
+    "title": "E-Zil (Okul Zil Programı)",
+    "windows_karsiligi": "Supertone",
     "icon": "fa-bell",
     "steps": [
       "Okulun giriş-çıkış saatlerini ve zil melodilerini ayarlayabileceğiniz yerli yazılımdır.",
-      "Teneffüslerde müzik yayını yapabilir.",
-      "Pardus ETAP yüklü bir bilgisayarı okulun ses sistemine bağlayarak kullanabilirsiniz."
+      "Teneffüslerde müzik yayını yapabilir."
     ]
   },
   {
     "id": "app-calibre",
     "category": "ofis",
-    "title": "Program tanıtımı **Calibre** (E-Kitap Kütüphanesi)",
+    "title": "Calibre (E-Kitap Kütüphanesi)",
     "windows_karsiligi": "Calibre",
     "icon": "fa-book",
     "steps": [
-      "PDF, EPUB ve diğer e-kitap formatlarını düzenlemek ve dönüştürmek için kullanılır.",
-      "Kendi dijital kütüphanenizi oluşturabilir, kitapların formatını değiştirebilirsiniz.",
+      "PDF, EPUB ve diğer e-kitap formatlarını düzenlemek için kullanılır.",
       "Z-Kitaplarınızı arşivlemek için harika bir araçtır."
     ]
   },
   {
     "id": "app-zotero",
     "category": "ofis",
-    "title": "Program tanıtımı **Zotero** (Akademik Araştırma)",
+    "title": "Zotero (Akademik Araştırma)",
     "windows_karsiligi": "EndNote",
     "icon": "fa-graduation-cap",
     "steps": [
-      "Yüksek lisans veya doktora yapan öğretmenler için kaynakça yönetim aracıdır.",
-      "Makaleleri, kitapları ve web sitelerini tek tıkla kaydeder.",
-      "Otomatik olarak APA veya diğer formatlarda kaynakça oluşturur."
+      "Akademik kaynakça yönetim aracıdır.",
+      "Makaleleri ve kitapları tek tıkla kaydeder."
     ]
   },
   {
@@ -341,39 +325,30 @@
     "windows_karsiligi": "Java Runtime",
     "icon": "fa-coffee",
     "steps": [
-      "Eski MEB uygulamaları (Örn: DYS, bazı e-İmza uygulamaları) Java gerektirebilir.",
-      "Bu araç ile tek tıkla sisteminize en uygun Java sürümünü kurabilirsiniz.",
+      "Eski MEB uygulamaları (DYS vb.) Java gerektirebilir.",
       "Pardus Mağaza'da 'Java Kurucu' diye aratarak bulabilirsiniz."
     ]
   },
   {
     "id": "app-google-earth",
     "category": "uygulama",
-    "title": "Program tanıtımı **Google Earth Pro** (Dünya Turu)",
+    "title": "Google Earth Pro (Dünya Turu)",
     "windows_karsiligi": "Google Earth",
     "icon": "fa-globe-americas",
     "steps": [
-      "Coğrafya ve Sosyal Bilgiler derslerinin vazgeçilmezi olan 3 boyutlu dünya atlasıdır.",
-      "**Sokak Görünümü (Street View):** Sarı adamı haritaya sürükleyip sokaklarda gezebilirsiniz.",
-      "**Zaman Makinesi:** Geçmiş yıllara ait uydu görüntülerini (Örn: 2005 yılındaki İstanbul) inceleyebilirsiniz.",
-      "**Kurulum:** Pardus Mağaza'dan indirebilirsiniz. Mağzada yoksa, aşağıdaki adımları izleyiniz.",
-      "**1. Adım (İndirme):** <a href='https://dl.google.com/dl/earth/client/current/google-earth-pro-stable_current_amd64.deb'>Buraya Tıklayarak</a> Pardus uyumlu dosyayı doğrudan indirin. (Siteyle uğraşmanıza gerek yok, direkt iner.)",
-      "**2. Adım (Kurulum):** İndirilenler klasörüne gidin.",
-      "**3. Adım:** İnen **.deb** uzantılı dosyaya çift tıklayın ve **'Kur'** butonuna basın. (Yönetici şifresi isterse girin. Bilmiyorsanız okulunuzdaki YEĞİTEK sorumlusundan veya İl/İlçe Bilişim Koordinatöründen öğrenebilirsiniz.)"
+      "3 boyutlu dünya atlasıdır.",
+      "Pardus Mağaza'dan veya Google sitesinden indirebilirsiniz."
     ]
   },
   {
     "id": "uygulama-wine-kurulum",
     "category": "uygulama",
-    "title": "Program tanıtımı **Wine Kurulumu** (Exe Çalıştırma)",
+    "title": "Wine Kurulumu (Exe Çalıştırma)",
     "windows_karsiligi": "Uyumluluk Modu",
     "icon": "fa-wine-glass-alt",
     "steps": [
       "Windows programlarını (.exe) Pardus'ta çalıştırmak için **Wine** gereklidir.",
-      "**1. Adım:** Pardus Mağaza uygulamasını açın.",
-      "**2. Adım:** Arama çubuğuna **Wine** yazın. (Veya <a href='https://apps.pardus.org.tr/app/wine' target='_blank'>bu linke tıklayıp</a> 'Kur' butonuna basın).",
-      "**3. Adım:** 'Kur' butonuna basın ve şifrenizi girin.",
-      "**Kullanım:** Kurulum bitince .exe dosyasına **Sağ Tık > Birlikte Aç > Wine** seçeneğini seçin."
+      "Pardus Mağaza'dan **Wine** yazarak kurabilirsiniz."
     ]
   },
   {
@@ -383,189 +358,143 @@
     "windows_karsiligi": "Exe Çalıştırma Sorunu",
     "icon": "fa-windows",
     "steps": [
-      "Z-Kitapları açmak için 32-bit desteği şarttır. Aşağıdaki yöntemlerden birini seçin.",
-      "**1. Adım:** Başlat menüsünden **Uçbirim (Terminal)** uygulamasını açın.",
-      "--- **YÖNTEM A: Kopyala / Yapıştır (Kolay)** ---",
-      "1. Tarayıcıdan **meb.ai/UZccBuP** adresine girin.",
-      "*(**Önemli:** Bu adresi Google'da aramayın, tarayıcının en tepesindeki adres çubuğuna yazıp Enter'a basın.)*",
-      "2. Sayfadaki kodu kopyalayın.",
-      "3. Uçbirim penceresine gelin, boş bir yere **Sağ Tıklayın** ve **'Yapıştır'** seçeneğini seçin.",
-      "*(Not: Pardus Terminalinde Ctrl+V çalışmaz. Ya Sağ Tık > Yapıştır yapın ya da Ctrl+Shift+V kullanın.)*",
-      "--- **YÖNTEM B: Elle Yazma (İnternet Yoksa)** ---",
-      "Eğer siteye giremiyorsanız şu 3 komutu sırasıyla yazıp Enter'a basın:",
-      "**1. Komut:** <br><code style='font-size:1.3em; font-weight:bold; color:#d63384; background-color:#f8f9fa; padding:10px; display:block; border: 1px solid #d63384; border-radius: 8px; margin-top:5px;'>sudo dpkg --add-architecture i386</code>",
-      "**2. Komut:** <br><code style='font-size:1.3em; font-weight:bold; color:#d63384; background-color:#f8f9fa; padding:10px; display:block; border: 1px solid #d63384; border-radius: 8px; margin-top:5px;'>sudo apt update</code>",
-      "**3. Komut:** <br><code style='font-size:1.3em; font-weight:bold; color:#d63384; background-color:#f8f9fa; padding:10px; display:block; border: 1px solid #d63384; border-radius: 8px; margin-top:5px;'>sudo apt install wine wine32 wine64</code>",
-      "**Şifre Hakkında:** Komutları uygularken yönetici şifresi istenir (Yazarken ekranda görünmez, yazıp Enter'a basın).",
-      "**Şifreyi Bilmiyorsanız:** Okulunuzdaki **YEĞİTEK okul sorumlusundan**, **Okul Müdürü** veya **İl/İlçe Bilişim Koordinatöründen** öğrenebilirsiniz. Bu şifre sadece öğretmenler tarafından bilinmelidir, öğrencilerle kesinlikle paylaşılmamalıdır."
+      "Z-Kitapları açmak için 32-bit desteği şarttır.",
+      "Uçbirimde sırasıyla:",
+      "`sudo dpkg --add-architecture i386`",
+      "`sudo apt update`",
+      "`sudo apt install wine wine32 wine64` komutlarını uygulayın."
     ]
   },
   {
     "id": "wine-winetricks-ileri",
     "category": "sistem",
-    "title": "Z-Kitap Hâlâ Açılmıyor 3 (İleri Düzey Çözüm)",
+    "title": "Z-Kitap Hâlâ Açılmıyor (İleri Düzey)",
     "windows_karsiligi": "DirectX / DLL Hatası",
     "icon": "fa-tools",
     "steps": [
-      "Eğer 32-bit desteğini kurmanıza rağmen program açılmıyorsa, eksik parçaları (DirectX, Fontlar) tamamlamanız gerekir.",
-      "**1. Adım (Kurulum):** Uçbirim'i açın ve şu komutu yapıştırıp Enter'a basın:",
-      "<code style='font-size:1.3em; font-weight:bold; color:#d63384; background-color:#f8f9fa; padding:10px; display:block; border: 1px solid #d63384; border-radius: 8px; margin-top:5px;'>sudo apt install winetricks</code>",
-      "**2. Adım (Açma):** Kurulum bitince Uçbirim'e şu komutu yazıp Enter'a basın:",
-      "<code style='font-size:1.3em; font-weight:bold; color:#d63384; background-color:#f8f9fa; padding:10px; display:block; border: 1px solid #d63384; border-radius: 8px; margin-top:5px;'>winetricks --gui</code>",
-      "**3. Adım (Yükleme):** Karşınıza çıkan pencerede şunları yapın:",
-      "1. **Select the default wineprefix** seçeneğini seçin.",
-      "2. **Install a Windows DLL or component** seçeneğine tıklayın.",
-      "3. Listeden **d3dx9**, **mfc42** ve **vcrun2015** kutucuklarını işaretleyip 'OK' butonuna basın."
+      "Açılmayan uygulamalar için eksik bileşenleri yükleyin.",
+      "`sudo apt install winetricks` komutuyla aracı kurun.",
+      "Açılan pencereden `d3dx9`, `mfc42` ve `vcrun2015` bileşenlerini yükleyin."
     ]
   },
   {
     "id": "etap-usb-anahtar-olusturma",
     "category": "etap",
-    "title": "ETA USB Anahtar Oluşturma 1",
-    "windows_karsiligi": "Windows Hello / USB Key",
+    "title": "ETA USB Anahtar Oluşturma",
+    "windows_karsiligi": "USB Key",
     "icon": "fa-key",
     "steps": [
-      "**Önemli:** Teneffüse çıkarken tahtanın kilitlenmesi için her öğretmen kendi USB belleğini bir kez anahtara dönüştürmelidir.",
-      "**Uygulama:** Tahta üzerinde veya Pardus yüklü sistemde **Eta USB Kayıt** uygulamasını açın.",
-      "**Hazırlık:** USB belleğinizi takın. (Daha önce anahtar olarak kullanılmamış, boş bir bellek önerilir).",
-      "**Bilgi Girişi:** TC Kimlik Numarası, EBA üzerinden belirlediğiniz USB Parolası ve Etap bilgilerini eksiksiz doldurun.",
-      "**Oluşturma:** Listeden taktığınız USB belleği seçin ve **Oluştur** butonuna tıklayın.",
-      "**Kullanım:** Belleği kilitli tahtaya taktığınızda sistem otomatik açılır. Ayrıca EBA'ya da şifresiz girmenizi sağlar.",
-      "**Güvenlik (Kaybolursa):** Belleği kaybederseniz hemen 2. bir anahtar oluşturun. Yeni anahtar yapıldığı an, eski (kayıp) anahtar otomatik olarak iptal olur.",
-      "**Video Anlatım:** İşlemin yapılışını izlemek için <a href='https://www.youtube.com/watch?v=-l29VMP-H80' target='_blank'>buraya tıklayarak</a> videoyu açabilirsiniz."
+      "**Eta USB Kayıt** uygulamasını açın.",
+      "Bilgilerinizi girip boş bir USB belleği anahtara dönüştürün."
     ]
   },
   {
     "id": "etap-usb-kilit",
     "category": "etap",
-    "title": "Tahtaları Sadece USB Anahtar ile Açma 2",
-    "windows_karsiligi": "Otomatik Kilitleme Ayarı",
+    "title": "Tahtaları Sadece USB ile Açma",
+    "windows_karsiligi": "Otomatik Kilitleme",
     "icon": "fa-user-lock",
     "steps": [
-      "**Gereklilik:** Aşağıdaki adımları gerçekleştirebilmek için Etap Yetkili şifresini idareden, YEĞİTEK okul sorumlusundan veya İl/İlçe Bilişim Koordinatöründen öğrenmelisiniz.",
-      "**Amaç:** Tahtaların sadece USB anahtarla açılmasını sağlamak için, şifresi herkesçe bilinen 'öğrenci' hesabının silinmesi ve 'öğretmen' hesabının şifresinin değiştirilmesi gerekir.",
-      "**1. Adım:** **Etap Yetkili** hesabıyla giriş yapın. Başlat menüsüne tıklayıp arama kutusuna **Kullanıcılar** yazın.",
-      "**2. Adım:** **'Kullanıcılar ve Gruplar'** menüsüne tıklayın. Sistem tekrar şifre isteyecektir; Etap Yetkili şifresini girin.",
-      "**3. Adım (Temizlik):** Listeden **'ogrenci'** hesabını seçip **Sil** butonuna basın. **'ogretmen'** hesabını seçip şifresini makul bir şifreyle değiştirin. Şifreyi not alıp idareye bildirin. (Bu şifreyi öğrencilerle paylaşmayın).",
-      "**4. Adım (Yetkili Şifresi):**Etap Yetkili şifresini **sadece** şifrenin öğrenciler tarafından öğrenildiğini düşünüyorsanız, bu şifreyi de değiştirin. Yeni şifreyi mutlaka not edip okul idaresine bildirin.",
-      "**Video Anlatım:** İşlemin yapılışını izlemek için <a href='https://www.youtube.com/watch?v=Q2VLZrqy7_U' target='_blank'>buraya tıklayarak</a> videoyu açabilirsiniz.",
-      "**Not:** Bu güvenlik ayarlarını okuldaki **tüm tahtalarda tek tek** uygulamanız gerekmektedir."
+      "Güvenlik için 'öğrenci' hesabını silin ve 'öğretmen' şifresini değiştirin.",
+      "Böylece sadece USB anahtarı olanlar tahtayı açabilir."
     ]
   },
   {
     "id": "sorun-donma-cozum",
     "category": "donanim",
     "title": "Tahta Dondu! (Fişi Çekmeyin)",
-    "windows_karsiligi": "Görev Yöneticisi / Reset",
+    "windows_karsiligi": "Reset",
     "icon": "fa-snowflake",
     "steps": [
-      "Tahta kilitlendiğinde fişi çekmek sisteme kalıcı hasar verir. Bunun yerine şu güvenli yöntemleri uygulayın:",
-      "**Yöntem 1 (Klavye Varsa):** Klavyeden **Ctrl + Alt + Backspace (Silme Tuşu)** kombinasyonuna aynı anda basın. Bu işlem sadece ekranı yeniden başlatır.",
-      "**Yöntem 2 (Garanti Çözüm):** Tahtanın çerçevesindeki veya yan panelindeki **Güç (Power)** düğmesine parmağınızı basılı tutun.",
-      "**Süre:** Yaklaşık **10-15 saniye** hiç çekmeden bekleyin. Tahta 'tık' sesiyle güvenli şekilde kapanacaktır.",
-      "**Önemli:** Fişi çekmek 'beyin kanaması' gibidir, Güç tuşuna basılı tutmak ise 'uyutmak'tır. Her zaman tuşu kullanın."
+      "**Fişi Çekmeyin!**",
+      "Güç (Power) düğmesine **10-15 saniye** basılı tutarak güvenli kapatma yapın."
     ]
   },
   {
     "id": "sorun-donma-onleme",
     "category": "donanim",
-    "title": "Donmayı Engelleme 1 (Hafıza Tüyosu)",
+    "title": "Donmayı Engelleme (Hafıza)",
     "windows_karsiligi": "RAM Temizleme",
     "icon": "fa-memory",
     "steps": [
-      "Z-Kitaplar çok fazla hafıza (RAM) kullanır ve tahtayı dondurabilir. Bunu önlemek için:",
-      "**1. Kural:** Derse başlarken tarayıcıda (Chrome/Firefox) çok fazla sekme açık bırakmayın.",
-      "**2. Kural:** Aynı anda 2-3 farklı yayınevinin Z-Kitabını açmayın. İşiniz biteni kapatın.",
-      "**3. İpucu:** Teneffüslerde tahtayı sadece kilitlemek yerine, gün ortasında bir kez **Yeniden Başlat** yapmak hafızayı sıfırlar ve performansı artırır."
+      "Çok fazla sekme veya Z-Kitap açmayın.",
+      "Gün ortasında tahtayı bir kez yeniden başlatın."
     ]
   },
   {
     "id": "sorun-isinma-onleme",
     "category": "donanim",
-    "title": "Donmayı Engelleme 2 (Tahtanın Isınması)",
-    "windows_karsiligi": "Aşırı Isınma / Fan Sesi",
+    "title": "Isınma Sorunu (Kapak)",
+    "windows_karsiligi": "Fan Sesi",
     "icon": "fa-thermometer-three-quarters",
     "steps": [
-      "Özellikle yaz aylarında yaşanan donmaların en büyük sebebi 'Aşırı Isınma'dır.",
-      "**Hatalı Davranış:** Tahta çalışırken veya teneffüste kilitliyken önündeki **Sürgülü Kapağı (Beyaz Tahtayı)** kapatmak.",
-      "**Sonuç (Sera Etkisi):** Sürgü kapatıldığında tahta hava alamaz, sıcaklık içeride hapsolur. İşlemci kendini korumak için sistemi yavaşlatır veya kilitler.",
-      "**Altın Kural:** Tahta açık olduğu sürece (ders işlerken veya teneffüste) sürgüyü **ASLA KAPATMAYIN**. Sürgüyü sadece okuldaki işiniz bitip tahtayı tamamen kapattıktan sonra çekin."
+      "Tahta açıkken sürgülü beyaz kapağı **ASLA KAPATMAYIN**.",
+      "Kapatırsanız ısı içeride hapsolur ve tahta donar."
     ]
   },
   {
     "id": "cep-net-paylasim",
     "category": "internet",
-    "title": "Cep Telefonu İnternetini Tahtaya Bağlama",
-    "windows_karsiligi": "Hotspot / Kişisel Erişim Noktası",
+    "title": "Cep Netini Tahtaya Bağlama",
+    "windows_karsiligi": "Hotspot",
     "icon": "fa-mobile-alt",
     "steps": [
-      "**1. Telefonda:** Ayarlar > Bağlantılar > **Kişisel Erişim Noktası** (veya Hotspot) menüsünü açın ve aktif hale getirin.",
-      "**2. Şifre Belirleme:** Bağlantı şifresini basit bir şey yapın (Örn: 12345678) veya mevcut şifreyi not edin.",
-      "**3. Tahtada:** Sağ alt köşedeki **Ağ/Wi-Fi** simgesine tıklayın.",
-      "**4. Bağlanma:** Listede telefonunuzun adını (Örn: iPhone veya Galaxy) bulup tıklayın.",
-      "**5. Şifre:** Telefonunuzdaki şifreyi girip **Bağlan** deyin. İnternetiniz artık tahtada!"
+      "Telefonda **Kişisel Erişim Noktası**nı açın.",
+      "Tahtada Wi-Fi listesinden telefonunuzu bulup bağlanın."
     ]
   },
   {
     "id": "sys-eta-kayit",
     "category": "sistem",
-    "title": "Sistem Kaydı **ETA Kayıt** (Lider Ahenk)",
-    "windows_karsiligi": "Domain / Active Directory Kaydı",
+    "title": "Sistem Kaydı (ETA Kayıt)",
+    "windows_karsiligi": "Domain Kaydı",
     "icon": "fa-id-card-alt",
     "steps": [
-      "Tahtanın internete bağlı olduğundan emin olun ve uygulama menüsünden **ETA Kayıt** yazılımını çalıştırın.",
-      "Kayıt ekranında **Okul Kodu ile** veya **Seçerek Kaydet** (İl/İlçe/Okul seçimi) yöntemlerinden birini belirleyin.",
-      "Okul bilgilerinizi girdikten sonra **Yetkili (Admin)** şifresini yazarak **Bu tahtayı kaydet** butonuna tıklayın.",
-      "İşlem tamamlandığında tahta, Lider Ahenk merkezi yönetim sistemine dahil edilmiş olacaktır."
+      "**ETA Kayıt** uygulamasını açın.",
+      "Kurum kodunu girerek tahtayı sisteme kaydedin."
     ]
   },
   {
     "id": "ipucu-dosya-sistemi-yapisi",
     "category": "ipucu",
-    "title": "C: ve D: Sürücüleri Nerede? **Dosya Sistemi**",
-    "windows_karsiligi": "Bilgisayarım > Yerel Disk (C: / D:)",
+    "title": "C: ve D: Nerede?",
+    "windows_karsiligi": "Bilgisayarım",
     "icon": "fa-folder-tree",
     "steps": [
-      "Pardus'ta (Linux) C: veya D: gibi sürücü harfleri yoktur. Sistem tek bir **Kök Dizin (/)** ağacından başlar.",
-      "Windows'taki kullanıcı dosyalarınız (Masaüstü, Belgeler, İndirilenler) **'Ev' (Home)** klasörü altındadır.",
-      "**USB Bellekler:** E: veya F: harfi almazlar. Dosya Yöneticisi'nin sol panelinde **kendi isimleriyle** görünürler.",
-      "**Önemli Fark:** Dosya yolu yazarken Windows'taki ters eğik çizgi (\\) yerine, düz eğik çizgi (/) kullanılır."
+      "Pardus'ta C: sürücüsü yoktur, her şey **/** (Kök Dizin) altındadır.",
+      "Dosyalarınız **/home (Ev)** klasöründedir."
     ]
   },
   {
     "id": "ipucu-gorev-yoneticisi",
     "category": "ipucu",
-    "title": "Donan Programı Kapatma **Sistem Gözlemcisi**",
-    "windows_karsiligi": "Görev Yöneticisi (Ctrl+Alt+Del)",
+    "title": "Donan Programı Kapatma",
+    "windows_karsiligi": "Görev Yöneticisi",
     "icon": "fa-heartbeat",
     "steps": [
-      "Windows'taki Görev Yöneticisi'nin karşılığı **Sistem Gözlemcisi**dir.",
-      "Uygulama menüsünde 'Sistem Gözlemcisi'ni aratıp açın.",
-      "Yanıt vermeyen programı listeden bulup sağ tıklayın ve **'Sonlandır'** veya **'Öldür'** seçeneğini kullanın."
+      "**Sistem Gözlemcisi** uygulamasını açın.",
+      "Programı bulup sağ tıklayarak **Sonlandır** deyin."
     ]
   },
   {
     "id": "ipucu-exe-calistirma",
     "category": "ipucu",
-    "title": ".EXE Dosyaları Neden Açılmıyor?",
-    "windows_karsiligi": "Uygulama Yükleme (Setup.exe)",
+    "title": ".EXE Dosyaları",
+    "windows_karsiligi": "Setup.exe",
     "icon": "fa-ban",
     "steps": [
-      "Pardus Linux tabanlıdır, bu yüzden Windows'a ait .exe dosyaları doğrudan çalışmaz.",
-      "Program yüklemek için **Pardus Mağaza** veya **Synaptic Paket Yöneticisi** kullanılır.",
-      "Mutlaka .exe çalıştırmanız gerekirse **Wine** uygulamasını kullanabilirsiniz, ancak her programın çalışacağı garanti edilemez."
+      "Windows .exe dosyaları Pardus'ta doğrudan çalışmaz.",
+      "Pardus Mağaza'dan Linux uyumlu alternatiflerini kurmalısınız."
     ]
   },
   {
     "id": "ipucu-denetim-masasi",
     "category": "ipucu",
-    "title": "Ayarlar Nereden Yapılır?",
+    "title": "Ayarlar Nerede?",
     "windows_karsiligi": "Denetim Masası",
     "icon": "fa-sliders-h",
     "steps": [
-      "Windows'taki Denetim Masası'nın karşılığı **'Ayarlar'** veya **'Pardus Ayarları'** menüsüdür.",
-      "Ekran çözünürlüğü, duvar kağıdı, fare ayarları gibi işlemler buradan yapılır.",
-      "Yazıcı eklemek için ise ayrı bir **'Yazıcı Ayarları'** menüsü bulunur."
+      "**Ayarlar** menüsünden tüm sistem ayarlarını yapabilirsiniz."
     ]
   },
   {
@@ -575,230 +504,180 @@
     "windows_karsiligi": "Sağ Tık > Yenile",
     "icon": "fa-sync-alt",
     "steps": [
-      "Linux sistemlerde masaüstünü sürekli yenilemeye teknik olarak gerek yoktur.",
-      "Sistem kaynakları anlık yönetildiği için bilgisayar yavaşlamaz.",
-      "Yine de alışkanlık olarak yapmak isterseniz **F5** tuşu Pardus'ta da sayfayı veya masaüstünü yeniler."
+      "Linux'ta yenilemeye gerek yoktur ama **F5** tuşu ile yapabilirsiniz."
     ]
   },
   {
     "id": "ipucu-baslat-menu",
     "category": "ipucu",
-    "title": "Başlat Menüsü Nerede? **Arayüz Değiştirme**",
-    "windows_karsiligi": "Görev Çubuğu ve Başlat Menüsü",
+    "title": "Başlat Menüsü Görünümü",
+    "windows_karsiligi": "Görev Çubuğu",
     "icon": "fa-desktop",
     "steps": [
-      "Pardus (GNOME) varsayılan olarak sol üstte 'Etkinlikler' menüsünü kullanır, altta sabit bir çubuk olmayabilir.",
-      "Windows benzeri (sol altta Başlat) bir görünüm için uygulama menüsünden **Pardus Karşılayıcı**'yı açın.",
-      "**Tasarım** sekmesine tıklayın.",
-      "Listeden **'Pardus Tarzı'** veya **'Klasik Tarz'** seçeneğini işaretleyerek alıştığınız Başlat Menüsü düzenine geçebilirsiniz."
+      "**Pardus Karşılayıcı > Tasarım** sekmesinden Windows benzeri görünüme geçebilirsiniz."
     ]
   },
   {
     "id": "ipucu-calistirma-izni",
     "category": "ipucu",
-    "title": "Uygulama Açılmıyor **Çalıştırma İzni**",
-    "windows_karsiligi": "Yönetici Olarak Çalıştır / Doğrudan Çalıştırma",
+    "title": "Uygulama Açılmıyor (İzin)",
+    "windows_karsiligi": "Yönetici İzni",
     "icon": "fa-user-shield",
     "steps": [
-      "Windows'ta uygulamalar doğrudan çalışır, ancak Pardus'ta güvenlik gereği dışarıdan gelen dosyalara **'Çalıştırma İzni'** verilmelidir.",
-      "Özellikle **Z-Kitap** gibi klasörden çalışan uygulamalar tepki vermiyorsa veya metin belgesi gibi açılıyorsa;",
-      "Dosyaya **Sağ Tıklayın** ve **Özellikler** menüsünü açın.",
-      "**İzinler** sekmesine gidin ve **'Dosyayı bir program gibi çalıştırmaya izin ver'** kutucuğunu işaretleyip kapatın."
+      "Z-Kitap açılmıyorsa dosyaya **Sağ Tık > Özellikler > İzinler** deyip **'Çalıştırma izni ver'** kutusunu işaretleyin."
     ]
   },
   {
     "id": "ipucu-pencere-dugmeleri",
     "category": "ipucu",
-    "title": "Pencere Düğmeleri Kayıp **Simge Durumu / Büyüt**",
-    "windows_karsiligi": "Pencere Kontrolleri (_ □ X)",
+    "title": "Pencere Düğmeleri Kayıp",
+    "windows_karsiligi": "Pencere Kontrolü",
     "icon": "fa-window-restore",
     "steps": [
-      "Bazı Pardus temalarında pencereyi aşağı indirme veya tam ekran yapma düğmeleri varsayılan olarak gizli olabilir.",
-      "Bu ayar standart Ayarlar menüsünde değil, **'İnce Ayarlar' (Tweaks)** uygulamasındadır.",
-      "Uygulama menüsünden **İnce Ayarlar**'ı açın ve sol taraftan **'Pencere Başlık Çubukları'**nı seçin.",
-      "Buradaki **'Simge Durumuna Küçült'** ve **'Ekranı Kapla'** seçeneklerini aktif hale getirin."
+      "**İnce Ayarlar** uygulamasını açıp **Pencere Başlık Çubukları** ayarından düğmeleri açabilirsiniz."
     ]
   },
   {
     "id": "ipucu-eta-klavye-p",
     "category": "ipucu",
-    "title": "Klavye Parola Gizleme **ETA Klavye**",
-    "windows_karsiligi": "Parola Göster/Gizle Simgesi (Göz)",
+    "title": "Klavye Parola Gizleme",
+    "windows_karsiligi": "Parola Gözü",
     "icon": "fa-keyboard",
     "steps": [
-      "Pardus ETAP sanal klavyesinde şifre girerken karakterler açık veya gizli görünebilir.",
-      "Bunu değiştirmek için klavyenin **başlık çubuğundaki 'P' düğmesine** basmanız gerekir.",
-      "**'P' (Password)** düğmesi, yazdıklarınızın açık metin mi yoksa yıldız (*) şeklinde mi görüneceğini anlık olarak değiştirir."
+      "Sanal klavyedeki **'P'** tuşu şifrenin görünüp görünmemesini sağlar."
     ]
   },
   {
     "id": "ipucu-calistirma-izni-detayli",
     "category": "ipucu",
-    "title": "Z-Kitap Açılmıyor **Çalıştırma İzni**",
-    "windows_karsiligi": "Doğrudan Çalıştırma (.exe)",
+    "title": "Z-Kitap İzinleri (Detaylı)",
+    "windows_karsiligi": "Yönetici Olarak Çalıştır",
     "icon": "fa-unlock-alt",
     "steps": [
-      "Pardus'ta Z-Kitap gibi uygulamaların çalışması için **'Çalıştırma İzni'** verilmesi gerekebilir.",
-      "**Grafik Arayüz (Önerilen):** Dosyaya sağ tıklayın, **Özellikler > İzinler** sekmesine gidin ve **'Dosyayı program gibi çalıştırmaya izin ver'** kutucuğunu işaretleyin.",
-      "**Konsol Yöntemi:** Dosyanın olduğu klasörde sağ tıklayıp uçbirim açın ve `chmod +x dosya_adi` komutunu uygulayın.",
-      "**Bilgi:** Linux sistemlerinde güvenlik gereği bir dosyanın uygulama olarak çalışabilmesi için **'x' (execute/çalıştırma)** iznine sahip olması zorunludur."
+      "Dosyaya sağ tıklayıp izinler sekmesinden 'çalıştırılabilir' yapın."
     ]
   },
   {
     "id": "ipucu-pardus-23-arayuz",
     "category": "ipucu",
-    "title": "Başlat Menüsü ve Görünüm **Pardus 23**",
-    "windows_karsiligi": "Görev Çubuğu / Temalar",
+    "title": "Pardus 23 Arayüz Ayarı",
+    "windows_karsiligi": "Tema Ayarları",
     "icon": "fa-palette",
     "steps": [
-      "Pardus 23 arayüzünü Windows alışkanlıklarına uygun hale getirmek için menüden **'Pardus Karşılayıcı'** uygulamasını açın.",
-      "Sol taraftaki menüden **'Tasarım'** sekmesine tıklayın.",
-      "Windows deneyimine en yakın olan **'XP Tarzı'**, **'10 Tarzı'** veya **'Klasik Tarz'** seçeneklerinden birini seçin.",
-      "Bu işlem; panelin konumunu, menü yapısını ve pencere dekorasyonlarını seçtiğiniz tarza göre otomatik olarak ayarlar."
+      "Pardus Karşılayıcı'dan 'Klasik Tarz' veya '10 Tarzı'nı seçin."
     ]
   },
   {
     "id": "ipucu-tema-ve-tasarim",
     "category": "ipucu",
-    "title": "Tema ve Görünüm Değiştirme **Pardus Karşılayıcı**",
-    "windows_karsiligi": "Kişiselleştirme > Temalar",
+    "title": "Tema Değiştirme",
+    "windows_karsiligi": "Kişiselleştirme",
     "icon": "fa-paint-brush",
     "steps": [
-      "Pardus Karşılayıcı ile sistemin görünümünü tek tıkla değiştirebilirsiniz.",
-      "**Tema Sekmesi:** Buradan **Açık** veya göz yormayan **Koyu** (Siyah) temayı seçebilirsiniz.",
-      "**Tasarım Sekmesi:** Windows (XP/10) dışında **macOS**, **Ubuntu** veya **Klasik** tarz gibi hazır arayüz düzenlerine geçiş yapabilirsiniz.",
-      "Ayrıca **Duvar Kağıdı**nı değiştirebilir veya mavi ışığı azaltan **Gece Işığı**nı buradan açabilirsiniz."
+      "Pardus Karşılayıcı üzerinden koyu/açık tema seçimi yapabilirsiniz."
     ]
   },
   {
     "id": "ipucu-uzanti-yonetimi",
     "category": "ipucu",
-    "title": "Eklenti ve Uzantı Yönetimi **GNOME**",
-    "windows_karsiligi": "Masaüstü Araçları / Widget'lar",
+    "title": "Eklenti Yönetimi",
+    "windows_karsiligi": "Widgetlar",
     "icon": "fa-puzzle-piece",
     "steps": [
-      "**1. Pardus Karşılayıcı:** Sol menüden 'Uzantılar' sekmesine girerek **Caffeine** (Ekranı sürekli açık tutma) veya **AppIndicator** (Tepsi simgeleri) özelliklerini tek tıkla açabilirsiniz.",
-      "**2. Uzantılar Uygulaması:** Menüde 'Uzantılar' aratarak sistemdeki tüm eklentileri yönetebilir ve ayarlarını (Çark simgesi) yapabilirsiniz.",
-      "**3. Web Kurulumu:** `extensions.gnome.org` adresinden **Dash to Dock** (Panel özelleştirme) veya **ArcMenu** (Başlat menüsü) gibi binlerce yeni özellik indirebilirsiniz."
+      "Pardus Karşılayıcı > Uzantılar sekmesinden masaüstü eklentilerini yönetebilirsiniz."
     ]
   },
   {
     "id": "ipucu-windows-uzantilari",
     "category": "ipucu",
-    "title": "Windows Gibi Yapma **Kritik Uzantılar**",
-    "windows_karsiligi": "Görev Çubuğu ve Başlat Menüsü",
+    "title": "Windows Gibi Yapma",
+    "windows_karsiligi": "Görev Çubuğu",
     "icon": "fa-magic",
     "steps": [
-      "**1. Dash to Panel:** Üst paneli ve rıhtımı birleştirerek ekranın altına tek bir **Görev Çubuğu** koyar (En önemli uzantı).",
-      "**2. ArcMenu:** Tam ekran uygulama menüsü yerine, Windows 7/10 tarzı açılır bir **Başlat Menüsü** ekler.",
-      "**3. Desktop Icons NG:** Masaüstünde 'Bu Bilgisayar', 'Çöp Kutusu' ve dosyaların görünmesini sağlar.",
-      "**4. AppIndicator:** Saat yanında gizlenen arka plan uygulamalarını (Sistem Tepsisi) görünür kılar.",
-      "**Kolay Kurulum:** **Pardus Karşılayıcı > Tasarım** sekmesinden '10 Tarzı' seçilirse bunlar otomatik yüklenir."
+      "'Dash to Panel' ve 'ArcMenu' eklentileri ile Windows benzeri bir kullanım sağlayabilirsiniz."
     ]
   },
   {
     "id": "ipucu-klasor-gorevleri",
     "category": "ipucu",
-    "title": "Bu Klasörler Ne İşe Yarar? **Linux Hiyerarşisi**",
-    "windows_karsiligi": "C:\\Windows, Users, Program Files",
+    "title": "Klasör Yapısı",
+    "windows_karsiligi": "Dosya Gezgini",
     "icon": "fa-sitemap",
     "steps": [
-      "**'/ (Kök Dizin)':** Dosya sisteminin başlangıç noktasıdır, diğer tüm klasörler bunun altına dallanır.",
-      "**'/home' (Ev):** Kullanıcıların kişisel dosyaları (Masaüstü, Belgeler) burada tutulur. (Windows'taki **Users**).",
-      "**'/etc':** Sistemin genel ayar ve yapılandırma dosyaları (Ağ, Kullanıcı vb.) buradadır.",
-      "**'/usr' ve '/bin':** Yüklü programlar ve temel sistem komutları burada yer alır. (Windows'taki **Program Files**).",
-      "**'/dev':** Donanımlar (Diskler, USB vb.) burada birer dosya gibi temsil edilir."
+      "**/etc:** Ayarlar, **/usr:** Programlar, **/home:** Kişisel dosyalar."
     ]
   },
   {
     "id": "ipucu-kullanici-yonetimi",
     "category": "ipucu",
-    "title": "Kullanıcı Ekleme ve Silme **Ayarlar/Konsol**",
-    "windows_karsiligi": "Denetim Masası > Kullanıcı Hesapları",
+    "title": "Kullanıcı Ekleme",
+    "windows_karsiligi": "Hesaplar",
     "icon": "fa-users-cog",
     "steps": [
-      "**1. Grafik Arayüz:** **Ayarlar > Kullanıcılar** menüsünü açın. Sağ üstten **Kilidi Aç** butonuna tıklayıp yönetici şifrenizi girin.",
-      "**Kullanıcı Ekle:** Açılan ekranda **'Kullanıcı Ekle...'** diyerek Ad, Soyad ve Parola belirleyin. (Kullanıcı adında Türkçe karakter kullanmayın).",
-      "**2. Konsol Yöntemi:** Uçbirimde `sudo adduser kullanici_adi` komutuyla hızlıca kullanıcı ve ev dizini oluşturabilirsiniz.",
-      "**3. Yönetim:** Aynı menüden **Otomatik Giriş** açılabilir veya kullanıcı seçilip **'Kullanıcıyı Kaldır'** diyerek silinebilir."
+      "Ayarlar > Kullanıcılar menüsünden yeni kullanıcı ekleyebilirsiniz."
     ]
   },
   {
     "id": "ipucu-deb-kurulum",
     "category": "ipucu",
-    "title": "İnternetten İndirilen Programı Kurma **DEB Dosyası**",
-    "windows_karsiligi": "Setup.exe / MSI Yükleme",
+    "title": ".DEB Dosyası Kurma",
+    "windows_karsiligi": "Setup.exe",
     "icon": "fa-box-open",
     "steps": [
-      "Pardus'ta harici programlar **.deb** uzantılı dosyalarla kurulur (Windows'taki .exe gibi).",
-      "**1. Grafik Arayüz:** İndirdiğiniz .deb dosyasına çift tıklayın, **Pardus Paket Kurucu** açılacaktır. **'Yükle'** butonuna basarak kurabilirsiniz.",
-      "**2. Konsol Yöntemi (Önerilen):** Dosyanın olduğu klasörde uçbirim açıp `sudo apt install ./dosya_adi.deb` komutunu kullanın.",
-      "**Önemli Not:** Resmi depolarda olmayan yazılımları kurarken güvenlik riski olabileceğini ve güncellemelerin (repo eklenmediyse) otomatik yapılmayacağını göz önünde bulundurmalısınız."
+      ".deb dosyasına çift tıklayarak veya konsoldan `sudo apt install ./dosya.deb` komutuyla kurabilirsiniz."
     ]
   },
   {
     "id": "ipucu-program-kaldirma",
     "category": "ipucu",
-    "title": "Program Nasıl Kaldırılır? **3 Yöntem**",
-    "windows_karsiligi": "Program Ekle / Kaldır",
+    "title": "Program Kaldırma",
+    "windows_karsiligi": "Program Ekle/Kaldır",
     "icon": "fa-trash-alt",
     "steps": [
-      "**1. Pardus Yazılım Merkezi (Kolay):** 'Uygulamalarım' sekmesine gidin ve kaldırmak istediğiniz programın yanındaki **Kaldır (Çöp Kutusu)** simgesine tıklayın.",
-      "**2. Synaptic (Gelişmiş):** Paketi bulup sağ tıklayın, **'Kaldırmak için işaretle'** diyerek yukarıdaki **'Uygula'** butonuna basın.",
-      "**3. Konsol (Hızlı):** Uçbirimde `sudo apt remove paket_adi` komutunu kullanın. (Ayarları da silmek için `remove` yerine `purge` yazın).",
-      "**Temizlik:** Kaldırma işleminden sonra `sudo apt autoremove` komutuyla gereksiz kalıntıları temizleyebilirsiniz."
+      "Pardus Mağaza'dan veya Synaptic'ten programı bulup kaldırabilirsiniz."
     ]
   },
   {
     "id": "ipucu-libreoffice-uyumluluk",
     "category": "ipucu",
-    "title": "Hangi Program Hangi Uzantı? **LibreOffice**",
-    "windows_karsiligi": "Word (.docx) / Excel (.xlsx) / PP (.pptx)",
+    "title": "LibreOffice Uzantıları",
+    "windows_karsiligi": "Office Formatları",
     "icon": "fa-file-word",
     "steps": [
-      "**Varsayılan Uzantılar:** LibreOffice Writer (Kelime İşlemci) (**odt**), LibreOffice Calc (Hesap Tablosu) Calc (**ods**), LibreOffice Impress (Sunu) (**odp**), LibreOffice Draw (Çizim) (**odg**), LibreOffice Math (Formül) (**odf**),  LibreOffice Base (Veritabanı) (**odb**).",
-      "LibreOffice, Microsoft Office (Word, Excel, PowerPoint) belgelerini sorunsuz açar ve düzenler.",
-      "Çalışmalarınızı kaydederken **'Farklı Kaydet'** diyerek Word için**.docx**, Excel **.xlsx** veya PowerPoint **.pptx** formatında saklayabilirsiniz.",
-      "Ayrıca PDF, HTML ve XML gibi birçok formatı destekler."
+      "Dosyaları farklı kaydet diyerek .docx veya .xlsx formatında kaydedebilirsiniz."
     ]
   },
   {
     "id": "ipucu-magaza-vs-synaptic",
     "category": "ipucu",
-    "title": "Mağaza mı Synaptic mi? **Farklar**",
-    "windows_karsiligi": "Microsoft Store vs Program Ekle/Kaldır",
+    "title": "Mağaza vs Synaptic",
+    "windows_karsiligi": "Store",
     "icon": "fa-store",
     "steps": [
-      "**Pardus Yazılım Merkezi:** Son kullanıcılar içindir (Microsoft Store gibi). Görseldir, kategoriler vardır, yorum/puanlama yapılabilir.",
-      "**Synaptic Paket Yöneticisi:** İleri düzey kullanıcılar içindir. Tüm sistem paketlerini listeler, bağımlılıkları yönetir ve bozuk paketleri onarır.",
-      "**Hangisi?:** Standart uygulamalar (Zoom, Chrome) için **Mağaza**yı; teknik işlemler veya hata düzeltmek için **Synaptic**i kullanın."
+      "Kolay kullanım için **Mağaza**, detaylı işlemler için **Synaptic** kullanın."
     ]
   },
   {
     "id": "ipucu-bluetooth-kullanim",
     "category": "ipucu",
-    "title": "Bluetooth ve Dosya Transferi **Eşleştirme**",
-    "windows_karsiligi": "Bluetooth ve Cihazlar",
+    "title": "Bluetooth Kullanımı",
+    "windows_karsiligi": "Bluetooth",
     "icon": "fa-bluetooth-b",
     "steps": [
-      "**1. Eşleştirme:** **Ayarlar > Bluetooth** menüsünü açın. Cihazı seçip her iki ekranda çıkan **PIN kodunu** onaylayın.",
-      "**2. Dosya Gönderme:** Eşleşen cihazın üzerine tıklayın, **'Dosya Gönder...'** butonunu seçip dosyayı yükleyin.",
-      "**3. Dosya Alma:** Telefondan gönderdiğiniz dosyalar otomatik olarak **'İndirilenler'** klasörüne kaydedilir.",
-      "**4. Bağlantı Kesme:** Cihazı kaldırmak için yine aynı menüden **'Aygıtı Kaldır'** butonunu kullanabilirsiniz."
+      "Ayarlar > Bluetooth menüsünden cihaz eşleştirip dosya gönderebilirsiniz."
     ]
   },
   {
     "id": "ipucu-vestel-faz2-dokunmatik",
     "category": "ipucu",
-    "title": "Vestel Faz 2 Dokunmatik Sorunu **Kalibrasyon**",
+    "title": "Vestel Faz 2 Dokunmatik Sorunu (**Kalibrasyon**)",
     "windows_karsiligi": "Tablet PC Ayarları / Kalibrasyon",
     "icon": "fa-hand-pointer",
     "steps": [
-      "**1. İndir:** <a href='https://bulut.pardus.org.tr/s/MSSsLqRc2aY560m' target='_blank'>Pardus ETAP 23 Sürümünü</a> kullanın.",
       "**1. Temizlik:** Dokunmatik sorunları (kendi kendine basma, algılamama) genellikle sensörlerdeki tozdan kaynaklanır. Öncelikle ekranı ve köşelerdeki sensörleri temizleyin.",
       "**2. Pardus ile Çözüm:** `etapyetkili` hesabında uç birimi (konsol) açın. `sudo apt-get install xinput-calibrator` komutu ile aracı yükleyin.",
       "**3. Uygulama:** Kurulumdan sonra konsola `xinput_calibrator` yazın. Ekranda çıkan 4 noktaya sırasıyla dokunarak kalibrasyonu tamamlayın.",
-      "**4. Kesin Çözüm: (Windows):** Sorun düzelmezse donanımsal kalibrasyon gerekir. Windows imajını kurup 'Optical Touch Device' ile kalibre edin, düzelince tekrar Pardus yükleyin."
+      "**4. Kesin Çözüm (Windows):** Sorun düzelmezse donanımsal kalibrasyon gerekir. [Buradaki Drive Linkinden](https://drive.google.com/drive/folders/1NJFFn12am8SF3_uGblz06WPLYZPoe1Xq?usp=drive_link) Windows imajını kurup 'Optical Touch Device' ile kalibre edin, düzelince tekrar Pardus yükleyin."
     ]
   }
 ]

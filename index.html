@@ -10,204 +10,11 @@
     
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="manifest" href="manifest.json">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <style>
-        /* --- TEMEL DEĞİŞKENLER --- */
-        :root { 
-            --pardus-blue: #fbc02d;
-            --pardus-blue-dark: #f57f17;
-            --bg-gray: #f4f6f8;
-            --card-bg: #ffffff;
-            --text-main: #222222; 
-            --text-muted: #555555; 
-            --shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        body.dark-mode {
-            --bg-gray: #121212;
-            --card-bg: #1e1e1e;
-            --text-main: #f1f1f1;
-            --text-muted: #bbbbbb;
-            --shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        /* --- GENEL AYARLAR --- */
-        * { box-sizing: border-box; } 
-        body { 
-            margin: 0; padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background: var(--bg-gray);
-            color: var(--text-main);
-            padding-bottom: 100px; /* Mobilde alt menü payı */
-            min-height: 100vh;
-            -webkit-font-smoothing: antialiased; 
-            line-height: 1.5;
-        }
-
-        /* --- HEADER AYARLARI --- */
-        .app-header {
-            background-color: #ed800d; /* Pardus Turuncusu */
-            color: white;
-            height: 65px;
-            padding: 0 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Logo Sola, Menü/Buton Sağa */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .header-left { display: flex; align-items: center; height: 100%; }
-
-        /* LOGO AYARI */
-        .new-header-logo {
-            height: 45px; /* Yükseklik sabitlendi */
-            width: auto;  /* Genişlik orantılı */
-            object-fit: contain;
-        }
-
-        /* PC MENÜSÜ */
-        .pc-nav { display: flex; gap: 10px; align-items: center; }
-
-        .pc-nav button {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            display: flex; align-items: center; gap: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .pc-nav button.active {
-            background: white; color: #ed800d; font-weight: bold;
-        }
-
-        /* YÜKLEME BUTONU */
-        .install-btn-final {
-            background: #fff; color: var(--pardus-blue-dark); 
-            border: none; padding: 6px 12px; border-radius: 20px;
-            font-size: 0.8rem; font-weight: 800; cursor: pointer; 
-            display: flex; align-items: center; gap: 6px;
-            animation: pulseBtn 3s infinite;
-        }
-        @keyframes pulseBtn {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-        }
-
-        /* --- İÇERİK --- */
-        .main-container { padding: 15px; }
-
-        .search-box { position: relative; margin-bottom: 15px; }
-        .search-box input {
-            width: 100%; padding: 14px 20px 14px 45px; border: none; border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); font-size: 1.05rem; font-weight: 500;
-            outline: none; background: var(--card-bg); color: var(--text-main);
-        }
-        .search-box i { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--pardus-blue-dark); }
-
-        /* KATEGORİ MENÜSÜ - ORTALANMIŞ */
-        .category-scroll { 
-            display: flex; 
-            gap: 8px; 
-            overflow-x: auto; 
-            padding-bottom: 10px; 
-            scrollbar-width: none; 
-            margin-bottom: 10px;
-            
-            /* MERKEZLEME SİHİRBAZLIĞI */
-            width: fit-content; /* İçerik kadar genişle */
-            max-width: 100%;    /* Ekranı taşma */
-            margin-left: auto;  /* Soldan it */
-            margin-right: auto; /* Sağdan it (Böylece ortalanır) */
-        }
-        
-        .cat-btn {
-            background: var(--card-bg); border: 1px solid rgba(0,0,0,0.15); color: var(--text-muted);
-            padding: 9px 16px; border-radius: 20px; font-weight: 700; cursor: pointer; white-space: nowrap;
-            display: flex; align-items: center; gap: 6px; font-size: 0.9rem;
-        }
-        .cat-btn.active { background: var(--pardus-blue); color: #222; border-color: var(--pardus-blue); }
-
-        /* KARTLAR */
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .card {
-            background: var(--card-bg); padding: 20px 10px; border-radius: 12px; text-align: center;
-            box-shadow: var(--shadow); cursor: pointer; position: relative; border: 1px solid rgba(0,0,0,0.08);
-        }
-        .card i.main-icon { font-size: 2.2rem; color: var(--pardus-blue); margin-bottom: 10px; display: inline-block; }
-        .card span { display: block; font-weight: 800; font-size: 1rem; margin-bottom: 4px; line-height: 1.2; }
-        .card small { display: block; font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
-        .fav-btn { position: absolute; top: 8px; right: 8px; font-size: 1.2rem; color: #ccc; padding: 5px; z-index: 5; }
-        .fav-btn.active { color: #f1c40f; }
-
-        /* --- MOBİL ALT MENÜ (YÜZEN) --- */
-        .bottom-nav {
-            position: fixed; 
-            bottom: 10px; /* TELEFON ALT ÇERÇEVESİNE YAKIN */
-            left: 15px; right: 15px; height: 60px;
-            background: var(--card-bg); 
-            display: flex; justify-content: space-around; align-items: center;
-            border-radius: 60px; 
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15); 
-            border: 1px solid rgba(0,0,0,0.05);
-            z-index: 999;
-        }
-        .nav-item { text-align: center; color: #888; cursor: pointer; flex: 1; }
-        .nav-item.active { color: var(--pardus-blue-dark); transform: translateY(-2px); }
-        .nav-item i { font-size: 1.4rem; margin-bottom: 3px; display: block; }
-        .nav-item span { font-size: 0.75rem; font-weight: 700; display: block; }
-
-        /* DETAY SAYFASI */
-        .detail-view, .settings-container { display: none; animation: fadeIn 0.3s; }
-        .setting-item {
-            background: var(--card-bg); padding: 18px; border-radius: 12px;
-            display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; box-shadow: var(--shadow);
-        }
-        .detail-header { padding: 15px 0; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid rgba(0,0,0,0.1); margin-bottom: 15px; }
-        .back-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-main); }
-        .detail-title { margin: 0; font-size: 1.2rem; font-weight: 800; }
-        
-        .step-box {
-            background: #fff; padding: 18px; margin-bottom: 12px; border-radius: 8px; color: #000;
-            font-size: 1.05rem; line-height: 1.6; box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-            border: 1px solid rgba(0,0,0,0.1); border-left: 6px solid #fbc02d;
-        }
-        .step-box strong { color: #f57f17; font-weight: 800; }
-        
-        /* GECE MODU DÜZELTMELERİ */
-        body.dark-mode .step-box { background: #252525; border-left-color: #fbc02d; color: #fff; border-color: #444; }
-        body.dark-mode .step-box strong { color: #fbc02d; }
-
-        /* --- RESPONSIVE AYARLAR --- */
-        @media (max-width: 768px) {
-            .pc-nav { display: none; } /* Mobilde PC menüsünü gizle */
-            .app-header { justify-content: space-between; } /* Logo Solda, Buton Sağda */
-            .new-header-logo { height: 40px; } /* Mobilde logo biraz daha kibar */
-        }
-
-        @media (min-width: 992px) {
-            body { padding-bottom: 0; } 
-            .main-container { max-width: 1200px; margin: 0 auto; padding: 30px; }
-            .app-header { padding: 0 40px; height: 75px; }
-            .new-header-logo { height: 50px; }
-            .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
-            .bottom-nav { display: none !important; } /* PC'de alt menüyü gizle */
-            .pc-nav { display: flex; } /* PC'de üst menüyü göster */
-            .detail-view, .settings-container { max-width: 800px; margin: 0 auto; }
-            
-            /* PC'de kategorileri sar ve tam ortala */
-            .category-scroll { justify-content: center; flex-wrap: wrap; overflow: visible; width: 100%; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css?v=7.9"> 
 </head>
 <body>
 
@@ -261,8 +68,9 @@
             <button onclick="closeDetail()" class="back-btn"><i class="fas fa-arrow-left"></i></button>
             <h2 id="detailTitle" class="detail-title">Başlık</h2>
         </div>
+        
         <div class="detail-content">
-            <div id="detailWindows" class="windows-badge" style="background: #fffde7; padding: 15px; border-radius: 10px; margin-bottom: 20px; font-weight: 700;"></div>
+            <div id="detailWindows" class="windows-badge"></div>
             <div id="detailImageContainer" style="display:none; text-align:center; margin-bottom:20px;"></div>
             <div id="detailStepsContainer"></div>
         </div>
@@ -282,16 +90,49 @@
             </label>
         </div>
 
-        <div class="why-box" style="margin-top: 15px; background: rgba(0,0,0,0.04); padding: 18px; border-radius: 12px;">
-            <h4 style="margin: 0 0 10px 0; color: #f57f17;">
+        <div class="why-box">
+            <h4 style="margin: 0 0 10px 0; color: #f57f17; font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
                 <i class="fas fa-rocket"></i> Neden Pardus Asistan?
             </h4>
-            <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
-                <li><strong>Anında Çözüm:</strong> Sınıf içinde hızlı kullanım.</li>
-                <li><strong>İnternet Gerekmez:</strong> Çevrimdışı çalışır.</li>
-                <li><strong>Güvenli:</strong> Veri toplamaz, ücretsizdir.</li>
+            <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.6; color: var(--text-main);">
+                <li style="margin-bottom: 5px;"><strong>Anında Çözüm:</strong> Sınıf içinde karşılaştığınız sorunları saniyeler içinde çözmeniz için tasarlandı.</li>
+                <li style="margin-bottom: 5px;"><strong>İnternet Gerekmez:</strong> İnternet bağlantınız kopsa bile çalışmaya devam eder.</li>
+                <li style="margin-bottom: 5px;"><strong>Tam Uyumlu:</strong> Pardus ETAP sürümleriyle %100 uyumludur.</li>
+                <li><strong>Güvenli:</strong> Veri toplamaz, tamamen ücretsizdir.</li>
             </ul>
         </div>
 
         <div style="text-align:center; margin-top:30px; opacity:0.8; font-size:0.85rem; color:#555; padding-bottom: 20px; line-height: 1.6;">
-            <p style="margin-bottom
+            
+            <p style="margin-bottom: 10px;">
+                Bu rehber hazırlanırken <a href="https://pardus.org.tr" target="_blank" rel="noopener noreferrer" style="color: #f57f17; font-weight: bold; text-decoration: none;">Pardus.org.tr</a> ve 
+                Sayın <strong>Şenol ALDIBAŞ</strong>'ın çalışmalarından faydalanılmıştır.<br>
+                <span style="font-size: 0.8rem; font-style: italic;">Katkılarından dolayı kendilerine teşekkür ederiz.</span>
+            </p>
+
+            <div style="width: 40%; height: 1px; background-color: #e0e0e0; margin: 10px auto;"></div>
+
+            <p style="font-weight: bold; margin-bottom: 3px; margin-top: 10px; color: #333;">Pardus Asistan v7.9</p>
+            <p style="margin-bottom: 3px;">Geliştirici: Hasbi Erdoğmuş</p>
+            <p>İletişim: <a href="mailto:herdogmus35@gmail.com" style="color: #f57f17; font-weight: bold; text-decoration: none;">herdogmus35@gmail.com</a></p>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <div class="nav-item active" id="btnHome" onclick="switchTab('home')">
+            <i class="fas fa-home"></i>
+            <span>Ana Sayfa</span>
+        </div>
+        <div class="nav-item" id="btnFav" onclick="switchTab('fav')">
+            <i class="fas fa-star"></i>
+            <span>Favoriler</span>
+        </div>
+        <div class="nav-item" id="btnSettings" onclick="switchTab('settings')">
+            <i class="fas fa-cog"></i>
+            <span>Ayarlar</span>
+        </div>
+    </nav>
+
+    <script src="script.js?v=7.9"></script>
+</body>
+</html>
