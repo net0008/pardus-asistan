@@ -30,7 +30,7 @@ body {
 
 html { background-color: #202124; }
 
-/* --- HEADER AYARLARI (MUTLAK ORTALAMA) --- */
+/* HEADER - GARANTİ ORTALAMA */
 .app-header {
     background-color: #ed800d;
     color: white;
@@ -45,13 +45,11 @@ html { background-color: #202124; }
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-/* Logo Sola Çivili */
+/* Logo ve Yükle Butonu Bağımsız (Absolute) */
 .header-left {
     position: absolute; left: 20px; top: 0; bottom: 0;
     display: flex; align-items: center;
 }
-
-/* Yükle Butonu Sağa Çivili */
 .header-right-wrapper {
     position: absolute; right: 20px; top: 0; bottom: 0;
     display: flex; align-items: center;
@@ -59,37 +57,24 @@ html { background-color: #202124; }
 
 .new-header-logo { height: 45px; width: auto; object-fit: contain; }
 
-/* --- MENÜ TASARIMI (ESKİ HALİNE DÖNDÜRÜLDÜ) --- */
+/* MENÜNÜN KENDİSİ (ORTADA) */
 .pc-nav { 
     display: flex; gap: 10px; align-items: center; z-index: 2;
 }
 
 .pc-nav button {
-    /* Pasif Durum */
-    background: rgba(255, 255, 255, 0.15); 
+    background: rgba(255, 255, 255, 0.2);
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 8px 18px;
-    border-radius: 50px; /* Yuvarlak hatlar */
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 15px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 0.9rem;
-    font-weight: 500;
-    display: flex; align-items: center; gap: 6px;
+    display: flex; align-items: center; gap: 5px;
     transition: all 0.3s ease;
 }
-
-.pc-nav button:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-/* AKTİF DURUM: İÇİ DOLU TURUNCU (İstediğin Gibi) */
-.pc-nav button.active {
-    background: #e65100; /* Koyu Turuncu */
-    color: white;         /* Beyaz Yazı */
-    border-color: #e65100;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
+.pc-nav button:hover { background: rgba(255, 255, 255, 0.4); }
+.pc-nav button.active { background: white; color: #ed800d; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 
 /* YÜKLE BUTONU */
 .install-btn-final {
@@ -97,34 +82,56 @@ html { background-color: #202124; }
     font-size: 0.8rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 6px;
     animation: pulseBtn 3s infinite;
 }
-@keyframes pulseBtn { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+@keyframes pulseBtn {
+    0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); }
+}
 
 /* GENEL STİLLER */
 .main-container { padding: 15px; max-width: 1000px; margin: 0 auto; }
 
-/* DETAY SAYFASI */
+/* DETAY SAYFASI DÜZENLEMELERİ */
 .detail-view { 
-    display: none; padding: 15px; max-width: 800px; margin: 0 auto; animation: fadeIn 0.3s; 
+    display: none; 
+    padding: 15px; 
+    max-width: 800px; 
+    margin: 0 auto; /* Ortala */
+    animation: fadeIn 0.3s; 
 }
 
-/* --- KALIN YAZILAR TURUNCU (Hem Kartlarda Hem Detayda) --- */
-.detail-view strong, .card span strong {
-    color: #f57f17 !important; /* Pardus Turuncusu */
+/* --- KRİTİK DÜZELTME BURADA --- */
+/* Detay sayfasındaki TÜM kalın yazıları (Başlık dahil) Turuncu yap */
+.detail-view strong {
+    color: #f57f17 !important;
     font-weight: 800;
 }
 
-/* Adım Kutuları */
+/* Adım Kutuları (Step Boxes) */
 .step-box {
-    background: #fff; padding: 15px 20px; margin-bottom: 15px; border-radius: 10px; 
-    color: #333; font-size: 1.05rem; line-height: 1.6; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); border-left: 5px solid #fbc02d;
+    background: #fff; 
+    padding: 15px 20px; 
+    margin-bottom: 15px; 
+    border-radius: 10px; 
+    color: #333;
+    font-size: 1.05rem; 
+    line-height: 1.6; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05); 
+    border-left: 5px solid #fbc02d; 
+}
+
+.card span strong {
+    color: #f57f17;
 }
 
 /* AYARLAR KUTUSU */
 .settings-container { display: none; max-width: 800px; margin: 0 auto; padding: 20px; animation: fadeIn 0.3s; }
 .setting-item, .why-box {
-    background: var(--card-bg); padding: 20px; border-radius: 12px; 
-    box-shadow: var(--shadow); margin-bottom: 20px; border: 1px solid rgba(0,0,0,0.05);
+    background: var(--card-bg); 
+    padding: 20px; 
+    border-radius: 12px; 
+    box-shadow: var(--shadow); 
+    margin-bottom: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 .setting-item { display: flex; justify-content: space-between; align-items: center; }
 
@@ -142,7 +149,7 @@ html { background-color: #202124; }
 .fav-btn { position: absolute; top: 10px; right: 10px; font-size: 1.2rem; color: #ccc; padding: 5px; z-index: 5; }
 .fav-btn.active { color: #f1c40f; }
 
-/* DİĞER */
+/* DİĞERLERİ */
 .search-box { position: relative; margin-bottom: 20px; }
 .search-box input {
     width: 100%; padding: 16px 20px 16px 50px; border: none; border-radius: 12px;
@@ -191,6 +198,33 @@ body.dark-mode .setting-item, body.dark-mode .why-box { background: #1e1e1e; bor
 }
 .confirm-btn { background: #ed800d; color: white; border: none; padding: 12px 0; width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1rem; }
 
+.bottom-nav {
+    display: none;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    color: #999;
+    cursor: pointer;
+}
+
+.nav-item i {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.nav-item span {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.nav-item.active {
+    color: var(--pardus-blue-dark);
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .pc-nav { display: none; }
@@ -210,7 +244,5 @@ body.dark-mode .setting-item, body.dark-mode .why-box { background: #1e1e1e; bor
     .header-right-wrapper { right: 40px; }
     .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
     .bottom-nav { display: none !important; }
-    
-    /* PC'de Yükle Butonunu GİZLE (Yerini Koru) */
     #installContainer { visibility: hidden !important; pointer-events: none; }
 }
