@@ -205,13 +205,14 @@ body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: 
 body.dark-mode .bottom-nav { border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 body.dark-mode .why-box { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
 
-/* RESPONSIVE */
+/* --- RESPONSIVE AYARLAR (MOBİL) --- */
 @media (max-width: 768px) {
     .pc-nav { display: none; }
     .app-header { justify-content: space-between; padding: 0 15px; }
     .new-header-logo { height: 40px; }
 }
 
+/* --- PC GÖRÜNÜMÜ --- */
 @media (min-width: 992px) {
     body { padding-bottom: 0; } 
     .main-container { max-width: 1200px; margin: 0 auto; padding: 30px; }
@@ -223,4 +224,7 @@ body.dark-mode .why-box { background: rgba(255,255,255,0.05); border-color: rgba
     .cat-btn { padding: 10px 20px; font-size: 1rem; }
     .search-box input { padding: 18px 25px 18px 55px; font-size: 1.15rem; }
     .detail-view, .settings-container { max-width: 800px; margin: 0 auto; }
+    
+    /* PC'de YÜKLE BUTONUNU ZORLA GİZLE */
+    #installContainer { display: none !important; }
 }
