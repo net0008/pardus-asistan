@@ -159,7 +159,7 @@ body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: 
 body.dark-mode .bottom-nav { border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 body.dark-mode .why-box { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
 
-/* --- GİZLİ ALAN STİLLERİ (YENİ) --- */
+/* --- GİZLİ ALAN STİLLERİ --- */
 .modal-overlay { 
     display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
     background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(5px);
@@ -206,6 +206,10 @@ body.dark-mode .why-box { background: rgba(255,255,255,0.05); border-color: rgba
     .cat-btn { padding: 10px 20px; font-size: 1rem; }
     .search-box input { padding: 18px 25px 18px 55px; font-size: 1.15rem; }
     
-    /* PC'de YÜKLE BUTONUNU GİZLE */
-    #installContainer { visibility: hidden !important; pointer-events: none; }
+    /* PC'de YÜKLE BUTONUNU GÖRÜNMEZ YAP (YERİNİ KORU) */
+    /* Bu sayede menü sağa kaymaz */
+    #installContainer { 
+        visibility: hidden !important; 
+        pointer-events: none; 
+    }
 }
