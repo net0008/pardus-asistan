@@ -58,23 +58,43 @@ html { background-color: #202124; }
 .new-header-logo { height: 45px; width: auto; object-fit: contain; }
 
 /* MENÜNÜN KENDİSİ (ORTADA) */
+/* --- MENÜ (ORTADA) --- */
 .pc-nav { 
-    display: flex; gap: 10px; align-items: center; z-index: 2;
+    display: flex; 
+    gap: 10px; 
+    align-items: center; 
+    z-index: 2;
 }
 
 .pc-nav button {
-    background: rgba(255, 255, 255, 0.2);
+    /* Pasif Durum: Şeffaf zemin, Beyaz yazı */
+    background: rgba(255, 255, 255, 0.1); 
     color: white;
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 8px 15px;
-    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 8px 18px;
+    border-radius: 50px; /* Tam yuvarlak köşeler (Eski tarz) */
     cursor: pointer;
-    font-size: 0.9rem;
-    display: flex; align-items: center; gap: 5px;
-    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex; 
+    align-items: center; 
+    gap: 6px;
+    transition: all 0.2s ease;
 }
-.pc-nav button:hover { background: rgba(255, 255, 255, 0.4); }
-.pc-nav button.active { background: white; color: #ed800d; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+.pc-nav button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: white;
+}
+
+/* AKTİF DURUM: İÇİ DOLU TURUNCU (İstediğin Hali) */
+.pc-nav button.active {
+    background: #e65100; /* Koyu Pardus Turuncusu / Kiremit Rengi */
+    color: white;         /* Yazı Beyaz */
+    border-color: #e65100;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
 
 /* YÜKLE BUTONU */
 .install-btn-final {
