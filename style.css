@@ -225,6 +225,9 @@ body.dark-mode .why-box { background: rgba(255,255,255,0.05); border-color: rgba
     .search-box input { padding: 18px 25px 18px 55px; font-size: 1.15rem; }
     .detail-view, .settings-container { max-width: 800px; margin: 0 auto; }
     
-    /* PC'de YÜKLE BUTONUNU ZORLA GİZLE */
-    #installContainer { display: none !important; }
+    /* PC'de YÜKLE BUTONUNU GÖRÜNMEZ YAP (Ama yerini koru) */
+    #installContainer { 
+        visibility: hidden !important; 
+        pointer-events: none; /* Tıklanmasını da engelle */
+    }
 }
