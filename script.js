@@ -1,246 +1,196 @@
-// --- DEĞİŞKENLER ---
-let allData = [];
-let favorites = JSON.parse(localStorage.getItem('pardusFavs')) || [];
-let currentTab = 'home';
-let deferredPrompt; // PWA yükleme değişkeni
+let ALL_DATA = [];
+let isMobile = window.innerWidth <= 768;
+let secretClickCount = 0;
+let secretTimer;
 
-const mainView = document.getElementById('mainView');
-const detailView = document.getElementById('detailView');
-const settingsView = document.getElementById('settingsView');
-const grid = document.getElementById('menuGrid');
+document.addEventListener("DOMContentLoaded", () => {
+    loadData();
+    setupEventListeners();
+    checkInstallPrompt();
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+        document.getElementById('darkModeToggle').checked = true;
+    }
+});
 
-// --- BAŞLANGIÇ AYARLARI ---
-if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    const toggle = document.getElementById('darkModeToggle');
-    if (toggle) toggle.checked = true;
+async function loadData() {
+    const dataFile = isMobile ? 'datamobil.json' : 'datapc.json';
+    try {
+        const response = await fetch(dataFile);
+        if (!response.ok) throw new Error("Veri dosyası bulunamadı");
+        ALL_DATA = await response.json();
+        renderMenu(ALL_DATA);
+    } catch (error) {
+        console.error("Hata:", error);
+        document.getElementById("menuGrid").innerHTML = `<p style="color:red; text-align:center;">Veri yüklenemedi!</p>`;
+    }
 }
 
-// --- CİHAZ TESPİTİ VE VERİ ÇEKME ---
-const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-const dataFile = isMobile ? 'datamobil.json' : 'datapc.json';
-
-console.log(`Cihaz Algılandı: ${isMobile ? 'Mobil' : 'Bilgisayar/Tahta'} - Yüklenen Dosya: ${dataFile}`);
-
-// Veriyi Çek
-fetch(dataFile)
-    .then(res => {
-        if (!res.ok) throw new Error("Dosya bulunamadı");
-        return res.json();
-    })
-    .then(data => {
-        allData = data;
-        renderMenu(allData);
-    })
-    .catch(err => {
-        console.error("Veri yükleme hatası:", err);
-        if(grid) grid.innerHTML = `<p style="text-align:center; color:red;">Veri yüklenemedi!<br>(${dataFile} dosyası eksik olabilir)</p>`;
-    });
-
-// --- MENÜ ÇİZME ---
-function renderMenu(items) {
-    if(!grid) return;
-    grid.innerHTML = '';
-    
-    if (items.length === 0) {
-        grid.innerHTML = '<div style="text-align:center; width:100%; grid-column:1/-1; padding:40px; color:#999;">Sonuç bulunamadı.</div>';
+function renderMenu(data) {
+    const grid = document.getElementById("menuGrid");
+    grid.innerHTML = "";
+    if (data.length === 0) {
+        grid.innerHTML = "<p style='text-align:center; width:100%; grid-column:1/-1;'>Sonuç bulunamadı.</p>";
         return;
     }
-
-    items.forEach(item => {
+    data.forEach(item => {
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         const isFav = favorites.includes(item.id);
-        const starClass = isFav ? 'fas fa-star active' : 'far fa-star';
-        
-        // Başlıktaki ** işaretlerini temizle ve renklendir
-        const displayTitle = item.title.replace(/\*\*(.*?)\*\*/g, '<span style="color: #f57f17;">$1</span>');
-
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.onclick = () => openDetail(item.id);
-
+        const card = document.createElement("div");
+        card.className = "card";
+        card.onclick = (e) => { if(!e.target.classList.contains('fav-btn')) openDetail(item); };
         card.innerHTML = `
-            <i class="${starClass} fav-btn" onclick="toggleFav(event, '${item.id}')"></i>
+            <i class="${isFav ? "fas fa-star active" : "far fa-star"} fav-btn" onclick="toggleFav('${item.id}', this)"></i>
             <i class="fas ${item.icon} main-icon"></i>
-            <span>${displayTitle}</span>
-            <small style="display:block; opacity:0.7; font-size:0.7rem; margin-top:5px;">${item.windows_karsiligi.split('/')[0]}</small>
+            <span>${item.title}</span>
+            <small>${item.windows_karsiligi || ''}</small>
         `;
         grid.appendChild(card);
     });
 }
 
-// --- DETAY SAYFASI AÇ ---
-function openDetail(id) {
-    const item = allData.find(x => x.id === id);
-    if (!item) return;
-
-    // Sayfa Geçişi
-    mainView.style.display = 'none';
-    if(settingsView) settingsView.style.display = 'none';
-    detailView.style.display = 'block';
-    
-    // Başlık ve İkon (Yıldızları temizle)
-    const cleanTitle = item.title.replace(/\*\*(.*?)\*\*/g, '$1');
-    document.getElementById('detailTitle').innerText = cleanTitle;
-    
-    // Windows Karşılığı
-    document.getElementById('detailWindows').innerHTML = `<i class="fab fa-windows"></i> <strong>Windows'ta:</strong> ${item.windows_karsiligi}`;
-
-    // Resim Varsa Göster
-    const imgContainer = document.getElementById('detailImageContainer');
-    if(imgContainer) {
-        if(item.image) {
-            imgContainer.style.display = 'block';
-            imgContainer.innerHTML = `<img src="${item.image}" style="max-width:100%; border-radius:8px; border:1px solid #ddd;">`;
-        } else {
-            imgContainer.style.display = 'none';
-        }
-    }
-
-    // --- ADIMLARI LİSTELE ---
-    const container = document.getElementById('detailStepsContainer');
-    if(container) {
-        container.innerHTML = ''; // Temizle
-        
-        item.steps.forEach(step => {
-            const div = document.createElement('div');
-            div.className = 'step-box'; 
-            // Metin içindeki **bold** kısımları HTML <b> tagine çevir
-            let formattedStep = step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            div.innerHTML = formattedStep;
-            container.appendChild(div);
-        });
-    }
-
-    window.scrollTo(0, 0); 
+function filterCategory(category) {
+    document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    renderMenu(category === 'all' ? ALL_DATA : ALL_DATA.filter(item => item.category === category));
 }
 
-// --- GERİ DÖN ---
-function closeDetail() {
-    detailView.style.display = 'none';
-    if(currentTab === 'settings') {
-        if(settingsView) settingsView.style.display = 'block';
-    } else {
-        mainView.style.display = 'block';
-    }
-}
-
-// --- FAVORİ EKLE/ÇIKAR ---
-function toggleFav(e, id) {
-    e.stopPropagation(); // Kartın tıklanmasını engelle
-    if(favorites.includes(id)) {
-        favorites = favorites.filter(x => x !== id);
-    } else {
-        favorites.push(id);
-    }
-    localStorage.setItem('pardusFavs', JSON.stringify(favorites));
+// --- ARAMA MOTORU & GİZLİ TETİK ---
+function filter(keyword) {
+    const lower = keyword.toLowerCase().trim();
     
-    // Eğer favoriler sekmesindeysek listeyi güncelle, değilse tümünü göster ama ikon değişsin
-    if(currentTab === 'fav') {
-        renderMenu(allData.filter(x => favorites.includes(x.id)));
-    } else {
-        renderMenu(allData); // Tüm listeyi yenile ki yıldızın durumu değişsin
-    }
-}
-
-// --- SEKME DEĞİŞTİRME ---
-function switchTab(tab) {
-    currentTab = tab;
-    closeDetail();
-    
-    // Alt menü aktiflik durumu
-    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-    
-    // PC menü aktiflik durumu
-    if(document.getElementById('pcBtnHome')) document.getElementById('pcBtnHome').classList.remove('active');
-    if(document.getElementById('pcBtnFav')) document.getElementById('pcBtnFav').classList.remove('active');
-    if(document.getElementById('pcBtnSettings')) document.getElementById('pcBtnSettings').classList.remove('active');
-
-    // İlgili butonu aktif yap
-    if(tab === 'home') {
-        if(document.getElementById('btnHome')) document.getElementById('btnHome').classList.add('active');
-        if(document.getElementById('pcBtnHome')) document.getElementById('pcBtnHome').classList.add('active');
-    }
-    if(tab === 'fav') {
-        if(document.getElementById('btnFav')) document.getElementById('btnFav').classList.add('active');
-        if(document.getElementById('pcBtnFav')) document.getElementById('pcBtnFav').classList.add('active');
-    }
-    if(tab === 'settings') {
-        if(document.getElementById('btnSettings')) document.getElementById('btnSettings').classList.add('active');
-        if(document.getElementById('pcBtnSettings')) document.getElementById('pcBtnSettings').classList.add('active');
+    // Sadece "yonetici" yazılırsa şifre sor (1234 Kaldırıldı)
+    if (lower === "yonetici") {
+        document.querySelector('.search-box input').value = "";
+        document.getElementById('secretModal').style.display = 'flex';
+        document.getElementById('secretPass').focus();
+        renderMenu(ALL_DATA); 
+        return;
     }
 
-    mainView.style.display = 'none';
-    if(settingsView) settingsView.style.display = 'none';
-
-    if(tab === 'settings') {
-        if(settingsView) settingsView.style.display = 'block';
-    } else if (tab === 'fav') {
-        mainView.style.display = 'block';
-        renderMenu(allData.filter(x => favorites.includes(x.id)));
-    } else {
-        mainView.style.display = 'block';
-        renderMenu(allData);
-    }
-}
-
-// --- KATEGORİ FİLTRELEME ---
-function filterCategory(cat) {
-    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-    if(event) event.currentTarget.classList.add('active');
-    
-    if (cat === 'all') {
-        renderMenu(allData);
-    } else {
-        renderMenu(allData.filter(x => x.category === cat));
-    }
-}
-
-// --- ARAMA ---
-function filter(val) {
-    const term = val.toLowerCase();
-    const filtered = allData.filter(x => 
-        x.title.toLowerCase().includes(term) || 
-        x.windows_karsiligi.toLowerCase().includes(term) ||
-        (x.steps && x.steps.join(' ').toLowerCase().includes(term)) // İçerikte de ara
+    const filtered = ALL_DATA.filter(item => 
+        item.title.toLowerCase().includes(lower) || 
+        (item.windows_karsiligi && item.windows_karsiligi.toLowerCase().includes(lower))
     );
     renderMenu(filtered);
 }
 
-// --- TEMA ---
+function openDetail(item) {
+    document.getElementById("mainView").style.display = "none";
+    document.getElementById("detailView").style.display = "block";
+    document.getElementById("detailTitle").innerHTML = item.title;
+    document.getElementById("detailWindows").innerText = "Windows: " + (item.windows_karsiligi || "Yok");
+    const container = document.getElementById("detailStepsContainer");
+    container.innerHTML = "";
+    item.steps.forEach((step, index) => {
+        let formatted = step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color:#f57f17; text-decoration:underline;">$1</a>')
+                            .replace(/`(.*?)`/g, '<code style="background:#eee; padding:2px 4px; border-radius:4px;">$1</code>');
+        container.innerHTML += `<div class="step-box"><strong style="color:#f57f17;">${index + 1}.</strong> ${formatted}</div>`;
+    });
+    window.scrollTo(0,0);
+}
+
+function closeDetail() {
+    document.getElementById("detailView").style.display = "none";
+    document.getElementById("settingsView").style.display = "none";
+    document.getElementById("mainView").style.display = "block";
+}
+
+function switchTab(tab) {
+    document.getElementById("mainView").style.display = "none";
+    document.getElementById("detailView").style.display = "none";
+    document.getElementById("settingsView").style.display = "none";
+    document.querySelectorAll('.nav-item, .pc-nav button').forEach(el => el.classList.remove('active'));
+
+    if (tab === 'home') {
+        document.getElementById("mainView").style.display = "block";
+        highlightBtn('btnHome', 'pcBtnHome');
+        renderMenu(ALL_DATA);
+    } else if (tab === 'fav') {
+        document.getElementById("mainView").style.display = "block";
+        highlightBtn('btnFav', 'pcBtnFav');
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        renderMenu(ALL_DATA.filter(item => favorites.includes(item.id)));
+    } else if (tab === 'settings') {
+        document.getElementById("settingsView").style.display = "block";
+        highlightBtn('btnSettings', 'pcBtnSettings');
+    }
+}
+
+function highlightBtn(mobileId, pcId) {
+    if(document.getElementById(mobileId)) document.getElementById(mobileId).classList.add('active');
+    if(document.getElementById(pcId)) document.getElementById(pcId).classList.add('active');
+}
+
+function toggleFav(id, btn) {
+    let favs = JSON.parse(localStorage.getItem('favorites')) || [];
+    if (favs.includes(id)) { favs = favs.filter(f => f !== id); btn.className = "far fa-star fav-btn"; }
+    else { favs.push(id); btn.className = "fas fa-star fav-btn active"; }
+    localStorage.setItem('favorites', JSON.stringify(favs));
+}
+
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
-    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
 }
 
-// --- SERVICE WORKER (PWA) ---
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-    .then(() => console.log('Service Worker Kayıtlı'))
-    .catch(err => console.log('SW Hatası:', err));
+// --- GİZLİ MENÜ MANTIĞI ---
+function triggerSecret(element) {
+    secretClickCount++;
+    element.style.transform = "scale(0.9)";
+    setTimeout(() => element.style.transform = "scale(1)", 100);
+    clearTimeout(secretTimer);
+    secretTimer = setTimeout(() => { secretClickCount = 0; }, 2000);
+
+    if (secretClickCount >= 5) {
+        document.getElementById('secretModal').style.display = 'flex';
+        document.getElementById('secretPass').focus();
+        secretClickCount = 0;
+    }
 }
 
-// --- UYGULAMA YÜKLEME (MOBİL İÇİN) ---
-const installBtn = document.getElementById('installApp');
-const installContainer = document.getElementById('installContainer');
+function checkPassword() {
+    const input = document.getElementById('secretPass').value;
+    if (input === "1234") {
+        // BAŞARILI: RAPOR SAYFASINA GİT
+        window.location.href = "rapor.html";
+    } else {
+        document.getElementById('loginError').style.display = 'block';
+    }
+}
 
+function closeSecretModal() {
+    document.getElementById('secretModal').style.display = 'none';
+    document.getElementById('loginError').style.display = 'none';
+    document.getElementById('secretPass').value = '';
+}
+
+// PWA
+let deferredPrompt;
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    // Sadece mobilde göster
-    if (installContainer && isMobile) {
-        installContainer.style.display = 'flex';
+    if (window.innerWidth <= 768) {
+        const installContainer = document.getElementById('installContainer');
+        if(installContainer) installContainer.style.display = 'block';
     }
 });
 
-if (installBtn) {
-    installBtn.addEventListener('click', async () => {
-        if (deferredPrompt) {
-            deferredPrompt.prompt();
-            const { outcome } = await deferredPrompt.userChoice;
-            deferredPrompt = null;
-            if (outcome === 'accepted') {
-                if (installContainer) installContainer.style.display = 'none';
+function checkInstallPrompt() {
+    const installBtn = document.getElementById('installApp');
+    if(installBtn) {
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    document.getElementById('installContainer').style.display = 'none';
+                }
+                deferredPrompt = null;
             }
-        }
-    });
+        });
+    }
 }
+
+function setupEventListeners() { checkInstallPrompt(); }

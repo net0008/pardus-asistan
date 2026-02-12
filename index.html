@@ -2,42 +2,127 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pardus Asistan - Bakımda</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: #333;
-            text-align: center;
-        }
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 90%;
-            width: 400px;
-        }
-        h1 { color: #f57f17; margin-bottom: 10px; }
-        p { line-height: 1.6; color: #666; }
-        .icon { font-size: 3rem; color: #f57f17; margin-bottom: 20px; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ed800d"> 
+    <title>Pardus Asistan - ETAP Akıllı Tahta Çözüm Rehberi</title>
+    
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=8.4"> 
 </head>
 <body>
-    <div class="container">
-        <div class="icon"><i class="fas fa-tools"></i></div>
-        <h1>Kısa Bir Mola</h1>
-        <p>Pardus Asistan, daha iyi hizmet verebilmek için <strong>güncelleme ve bakım</strong> çalışmasındadır.</p>
-        <p>En kısa sürede tekrar yayında olacağız.</p>
-        <p style="font-size: 0.8rem; margin-top: 20px; color: #999;">Anlayışınız için teşekkürler.</p>
+
+    <div id="secretModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 style="margin-top:0; color:#ed800d;"><i class="fas fa-user-shield"></i> Yönetici Girişi</h3>
+            <p style="font-size:0.9rem; color:#666;">Erişim şifresi:</p>
+            <input type="password" id="secretPass" placeholder="Şifre" onkeyup="if(event.keyCode===13) checkPassword()">
+            <button onclick="checkPassword()" class="confirm-btn">Giriş Yap</button>
+            <p style="margin-top:10px; cursor:pointer; color:#888;" onclick="closeSecretModal()">Kapat</p>
+            <p id="loginError" style="color:red; display:none; font-size:0.85rem; margin-top:10px; font-weight:bold;">Hatalı şifre!</p>
+        </div>
     </div>
+
+    <div class="app-header">
+        <div class="header-left" onclick="switchTab('home')" style="cursor: pointer;">
+            <img src="header-logo.png" alt="Pardus Asistan" class="new-header-logo">
+        </div>
+        <div class="pc-nav">
+            <button onclick="switchTab('home')" id="pcBtnHome" class="active"><i class="fas fa-home"></i> Ana Sayfa</button>
+            <button onclick="switchTab('fav')" id="pcBtnFav"><i class="fas fa-star"></i> Favoriler</button>
+            <button onclick="switchTab('settings')" id="pcBtnSettings"><i class="fas fa-cog"></i> Ayarlar</button>
+        </div>
+        <div id="installContainer" class="install-wrapper" style="display: none;">
+            <button id="installApp" class="install-btn-final"><i class="fas fa-download"></i> Yükle</button>
+        </div>
+    </div>
+
+    <div id="mainView" class="main-container">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Sorun ara (Ses, USB)... veya 'yonetici' yazın" onkeyup="filter(this.value)">
+        </div>
+
+        <div class="announcement-box" style="margin: 10px 0 20px 0; padding: 12px; background-color: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; color: #856404; display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
+            <i class="fas fa-bullhorn" style="color: #f57f17; font-size: 1.2rem;"></i>
+            <div><strong>Yeni Özellik:</strong> Pardus 23 ipuçları ve Windows karşılıkları eklendi!</div>
+        </div>
+
+        <div class="category-scroll">
+            <button class="cat-btn active" onclick="filterCategory('all')">Tümü</button>
+            <button class="cat-btn" onclick="filterCategory('donanim')"><i class="fas fa-microchip"></i> Donanım</button>
+            <button class="cat-btn" onclick="filterCategory('internet')"><i class="fas fa-wifi"></i> İnternet</button>
+            <button class="cat-btn" onclick="filterCategory('ofis')"><i class="fas fa-file-alt"></i> Ofis</button>
+            <button class="cat-btn" onclick="filterCategory('uygulama')"><i class="fas fa-cube"></i> Uygulama</button>
+            <button class="cat-btn" onclick="filterCategory('sistem')"><i class="fas fa-cog"></i> Sistem</button>
+            <button class="cat-btn" onclick="filterCategory('etap')"><i class="fas fa-chalkboard"></i> ETAP</button>
+            <button class="cat-btn" onclick="filterCategory('ipucu')"><i class="fas fa-lightbulb"></i> İpuçları</button>
+        </div>
+
+        <div class="grid" id="menuGrid"></div>
+    </div>
+
+    <div id="detailView" class="detail-view">
+        <div class="detail-header">
+            <button onclick="closeDetail()" class="back-btn"><i class="fas fa-arrow-left"></i></button>
+            <h2 id="detailTitle" class="detail-title">Başlık</h2>
+        </div>
+        <div class="detail-content">
+            <div id="detailWindows" class="windows-badge"></div>
+            <div id="detailStepsContainer"></div>
+        </div>
+    </div>
+
+    <div class="settings-container" id="settingsView">
+        <h2 style="margin-top:0;">Uygulama Ayarları</h2>
+        <div class="setting-item">
+            <div>
+                <div style="font-weight:bold;"><i class="fas fa-moon"></i> Gece Modu</div>
+                <div style="font-size:0.8rem; opacity:0.7;">Göz yormayan koyu tema</div>
+            </div>
+            <label class="switch"><input type="checkbox" id="darkModeToggle" onchange="toggleTheme()"></label>
+        </div>
+
+        <div class="why-box">
+            <h4 style="margin: 0 0 10px 0; color: #f57f17;"><i class="fas fa-rocket"></i> Neden Pardus Asistan?</h4>
+            <ul style="margin: 0; padding-left: 20px; color: var(--text-main);">
+                <li><strong>Anında Çözüm:</strong> Hızlı sorun çözümü.</li>
+                <li><strong>İnternet Gerekmez:</strong> Çevrimdışı çalışır.</li>
+                <li><strong>Güvenli:</strong> Veri toplamaz.</li>
+            </ul>
+        </div>
+
+        <div class="why-box">
+            <h4 style="margin: 0 0 10px 0; color: #f57f17;"><i class="fas fa-paw"></i> Pardus’u Tercih Edin Çünkü:</h4>
+            <ul style="margin: 0; padding-left: 20px; color: var(--text-main);">
+                <li>Özgürdür ve ücretsizdir</li>
+                <li>Hızlıdır ve güvenlidir</li>
+                <li>Virüs derdi yoktur</li>
+            </ul>
+        </div>
+
+        <div style="text-align:center; margin-top:30px; opacity:0.8; font-size:0.85rem; color:#555; padding-bottom:20px;">
+            <p style="margin-bottom: 10px;">
+                Bu rehber hazırlanırken <a href="https://pardus.org.tr" target="_blank" style="color: #f57f17; font-weight: bold; text-decoration: none;">Pardus.org.tr</a> ve 
+                Sayın <strong>Şenol ALDIBAŞ</strong>'ın çalışmalarından faydalanılmıştır.<br>
+                <span>Katkılarından dolayı teşekkür ederiz.</span>
+            </p>
+            <div style="width: 40%; height: 1px; background-color: #e0e0e0; margin: 10px auto;"></div>
+            <p id="secretTrigger" onclick="triggerSecret(this)" style="cursor:pointer; user-select:none; display:inline-block; padding:5px;">
+                <strong>Pardus Asistan v8.4</strong>
+            </p>
+            <p>Geliştirici: Hasbi Erdoğmuş</p>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <div class="nav-item active" id="btnHome" onclick="switchTab('home')"><i class="fas fa-home"></i><span>Ana Sayfa</span></div>
+        <div class="nav-item" id="btnFav" onclick="switchTab('fav')"><i class="fas fa-star"></i><span>Favoriler</span></div>
+        <div class="nav-item" id="btnSettings" onclick="switchTab('settings')"><i class="fas fa-cog"></i><span>Ayarlar</span></div>
+    </nav>
+
+    <script src="script.js?v=8.4"></script>
 </body>
 </html>
