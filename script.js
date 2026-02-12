@@ -86,12 +86,13 @@ function closeSecretModal() {
     document.getElementById('secretPass').value = '';
 }
 
-// --- DETAY SAYFASI VE RENKLENDİRME ---
+// --- DETAY SAYFASI ---
 function openDetail(item) {
     document.getElementById("mainView").style.display = "none";
     document.getElementById("detailView").style.display = "block";
     
-    // BAŞLIKTAKİ KALIN YAZILARI DA RENKLENDİR (YENİ EKLENEN KISIM)
+    // --- BAŞLIKTAKİ ** ** İŞARETLERİNİ STRONG ETİKETİNE ÇEVİRİR ---
+    // Bu sayede CSS'deki .detail-view strong kuralı çalışır ve renk turuncu olur.
     let formattedTitle = item.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     document.getElementById("detailTitle").innerHTML = formattedTitle;
     
