@@ -670,7 +670,7 @@
   {
     "id": "ipucu-vestel-faz2-dokunmatik",
     "category": "ipucu",
-    "title": "Vestel Faz 2 Dokunmatik Sorunu (**Kalibrasyon**)",
+    "title": "Vestel Faz 2 Dokunmatik Sorunu **Kalibrasyon**",
     "windows_karsiligi": "Tablet PC Ayarları / Kalibrasyon",
     "icon": "fa-hand-pointer",
     "steps": [
