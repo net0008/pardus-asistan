@@ -24,7 +24,7 @@ async function loadData() {
         renderMenu(ALL_DATA);
     } catch (error) {
         console.error("Hata:", error);
-        document.getElementById("menuGrid").innerHTML = `<p style="color:red; text-align:center;">Veri yüklenemedi!</p>`;
+        document.getElementById("menuGrid").innerHTML = `<p style="color:red; text-align:center;">Veri yüklenemedi! (JSON Hatası)</p>`;
     }
 }
 
@@ -122,7 +122,7 @@ function toggleTheme() {
     localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
 }
 
-// --- GİZLİ MENÜ MANTIĞI ---
+// --- GİZLİ MENÜ MANTIĞI (BASİTLEŞTİRİLDİ) ---
 function triggerSecret(element) {
     secretClickCount++;
     
@@ -130,10 +130,11 @@ function triggerSecret(element) {
     element.style.transform = "scale(0.9)";
     setTimeout(() => element.style.transform = "scale(1)", 100);
 
-    // Süre sıfırlama (2 saniye içinde basmalı)
+    // Süre sıfırlama (2 saniye içinde tekrar basmazsa sıfırla)
     clearTimeout(secretTimer);
     secretTimer = setTimeout(() => { secretClickCount = 0; }, 2000);
 
+    // 5 Kere tıklandıysa
     if (secretClickCount >= 5) {
         document.getElementById('secretModal').style.display = 'flex';
         document.getElementById('secretPass').focus();
@@ -141,16 +142,11 @@ function triggerSecret(element) {
     }
 }
 
-async function checkPassword() {
+function checkPassword() {
     const input = document.getElementById('secretPass').value;
     
-    // Şifreyi Hashle (SHA-256)
-    const hash = await sha256(input);
-    
-    // "1234" şifresinin hash değeri:
-    const correctHash = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"; 
-
-    if (hash === correctHash) {
+    // BASİT ŞİFRE KONTROLÜ (Her ortamda çalışır)
+    if (input === "1234") {
         // Başarılı
         document.getElementById('secretModal').style.display = 'none';
         document.getElementById('secretView').style.display = 'block';
@@ -176,15 +172,7 @@ function closeSecretView() {
     document.getElementById('secretView').style.display = 'none';
 }
 
-// SHA-256 Şifreleme Yardımcısı
-async function sha256(message) {
-    const msgBuffer = new TextEncoder().encode(message);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-// CSS Shake Animasyonu için ekleme
+// CSS Shake Animasyonu için
 const style = document.createElement('style');
 style.innerHTML = `
 @keyframes shake {

@@ -206,10 +206,10 @@ body.dark-mode .why-box { background: rgba(255,255,255,0.05); border-color: rgba
     .cat-btn { padding: 10px 20px; font-size: 1rem; }
     .search-box input { padding: 18px 25px 18px 55px; font-size: 1.15rem; }
     
-    /* PC'de YÜKLE BUTONUNU GÖRÜNMEZ YAP (YERİNİ KORU) */
-    /* Bu sayede menü sağa kaymaz */
+    /* MENÜ HİZASINI DÜZELTEN KOD BURADA */
     #installContainer { 
-        visibility: hidden !important; 
+        display: block !important;  /* Önce var olduğunu belirt */
+        visibility: hidden !important; /* Sonra görünmez yap (Yerini korur) */
         pointer-events: none; 
     }
 }
