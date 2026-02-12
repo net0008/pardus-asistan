@@ -493,6 +493,20 @@
       "**5. Şifre:** Telefonunuzdaki şifreyi girip **Bağlan** deyin. İnternetiniz artık tahtada!"
     ]
   }
-
+,
+  {
+    "id": "ipucu-vestel-faz2-dokunmatik",
+    "category": "ipucu",
+    "title": "Vestel Faz 2 Dokunmatik Sorunu (**Kalibrasyon**)",
+    "windows_karsiligi": "Tablet PC Ayarları / Kalibrasyon",
+    "icon": "fa-hand-pointer",
+    "steps": [
+      "**1. İndir:** <a href='https://bulut.pardus.org.tr/s/MSSsLqRc2aY560m' target='_blank'>Pardus ETAP 23 Sürümünü</a> kullanın.",
+      "**1. Temizlik:** Dokunmatik sorunları (kendi kendine basma, algılamama) genellikle sensörlerdeki tozdan kaynaklanır. Öncelikle ekranı ve köşelerdeki sensörleri temizleyin.",
+      "**2. Pardus ile Çözüm:** `etapyetkili` hesabında uç birimi (konsol) açın. `sudo apt-get install xinput-calibrator` komutu ile aracı yükleyin.",
+      "**3. Uygulama:** Kurulumdan sonra konsola `xinput_calibrator` yazın. Ekranda çıkan 4 noktaya sırasıyla dokunarak kalibrasyonu tamamlayın.",
+      "**4. Kesin Çözüm: (Windows): Sorun düzelmezse donanımsal kalibrasyon gerekir. <a href='https://drive.google.com/drive/folders/1NJFFn12am8SF3_uGblz06WPLYZPoe1Xq?usp=drive_link' target='_blank'>meb.ai/UJhLG4z</a> Windows imajını kurup 'Optical Touch Device' ile kalibre edin, düzelince tekrar Pardus yükleyin."
+    ]
+  }
 
 ]

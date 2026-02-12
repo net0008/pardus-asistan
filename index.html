@@ -17,8 +17,6 @@
     <meta property="og:url" content="https://pardusasistan.org.tr">
     <meta property="og:type" content="website">
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6758861594512508" crossorigin="anonymous"></script>
-    
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="apple-touch-icon" href="icon.png">
     <link rel="manifest" href="manifest.json">
@@ -35,7 +33,7 @@
             <img src="icon.png" alt="Pardus Logo">
             <div class="header-text">
                 <h1>Pardus Asistan</h1>
-                <p>Sınıf içi hızlı çözüm rehberi</p>
+                <p>Hızlı çözüm rehberi</p>
             </div>
         </div>
 
@@ -58,9 +56,10 @@
             <input type="text" placeholder="Sorun ara (Ses, USB, İnternet)..." onkeyup="filter(this.value)">
         </div>
 
-        <div style="padding: 0 5px;">
-            <div class="ad-banner">
-                <span><i class="fas fa-ad"></i> İyi Dersler 🐆</span>
+        <div class="announcement-box" style="margin: 10px; padding: 12px; background-color: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; color: #856404; display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
+            <i class="fas fa-bullhorn" style="color: #f57f17; font-size: 1.2rem;"></i>
+            <div>
+                <strong>Yeni Özellik:</strong> Pardus 23 ipuçları ve Windows karşılıkları eklendi! "İpuçları" menüsüne göz atın.
             </div>
         </div>
 
@@ -72,6 +71,7 @@
             <button class="cat-btn" onclick="filterCategory('uygulama')"><i class="fas fa-cube"></i> Uygulama</button>
             <button class="cat-btn" onclick="filterCategory('sistem')"><i class="fas fa-cog"></i> Sistem</button>
             <button class="cat-btn" onclick="filterCategory('etap')"><i class="fas fa-chalkboard"></i> ETAP</button>
+            <button class="cat-btn" onclick="filterCategory('ipucu')"><i class="fas fa-lightbulb"></i> İpuçları</button>
         </div>
 
         <div class="grid" id="menuGrid"></div>
@@ -132,9 +132,18 @@
             </ul>
         </div>
 
-        <div style="text-align:center; margin-top:30px; opacity:0.8; font-size:0.9rem; padding-bottom: 20px;">
-            <p style="font-weight: bold; margin-bottom: 5px;">Pardus Asistan v7.0</p>
-            <p style="margin-bottom: 5px;">Geliştirici: Hasbi Erdoğmuş</p>
+        <div style="text-align:center; margin-top:30px; opacity:0.8; font-size:0.85rem; color:#555; padding-bottom: 20px; line-height: 1.6;">
+            
+            <p style="margin-bottom: 10px;">
+                Bu rehber hazırlanırken <a href="https://pardus.org.tr" target="_blank" rel="noopener noreferrer" style="color: #f57f17; font-weight: bold; text-decoration: none;">Pardus.org.tr</a> ve 
+                Sayın <strong>Şenol ALDIBAŞ</strong>'ın çalışmalarından faydalanılmıştır.<br>
+                <span style="font-size: 0.8rem; font-style: italic;">Katkılarından dolayı kendilerine teşekkür ederiz.</span>
+            </p>
+
+            <div style="width: 40%; height: 1px; background-color: #e0e0e0; margin: 10px auto;"></div>
+
+            <p style="font-weight: bold; margin-bottom: 3px; margin-top: 10px; color: #333;">Pardus Asistan v7.5</p>
+            <p style="margin-bottom: 3px;">Geliştirici: Hasbi Erdoğmuş</p>
             <p>İletişim: <a href="mailto:herdogmus35@gmail.com" style="color: #f57f17; font-weight: bold; text-decoration: none;">herdogmus35@gmail.com</a></p>
         </div>
     </div>
@@ -154,6 +163,6 @@
         </div>
     </nav>
 
-   <script src="script.js?v=7.2"></script>
+    <script src="script.js?v=7.5"></script>
 </body>
 </html>
