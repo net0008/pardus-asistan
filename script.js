@@ -17,12 +17,12 @@ async function loadData() {
     const dataFile = isMobile ? 'datamobil.json' : 'datapc.json';
     try {
         const response = await fetch(dataFile);
-        if (!response.ok) throw new Error("Veri dosyası bulunamadı");
+        if (!response.ok) throw new Error("Dosya bulunamadı");
         ALL_DATA = await response.json();
         renderMenu(ALL_DATA);
     } catch (error) {
-        console.error("Hata:", error);
-        document.getElementById("menuGrid").innerHTML = `<p style="color:red; text-align:center;">Veri yüklenemedi!</p>`;
+        console.error(error);
+        document.getElementById("menuGrid").innerHTML = `<p style="text-align:center;">Veriler yükleniyor...</p>`;
     }
 }
 
@@ -49,22 +49,16 @@ function renderMenu(data) {
     });
 }
 
-function filterCategory(category) {
-    document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-    renderMenu(category === 'all' ? ALL_DATA : ALL_DATA.filter(item => item.category === category));
-}
-
-// --- ARAMA MOTORU & GİZLİ TETİK ---
+// --- SİHİRLİ ARAMA KUTUSU ---
 function filter(keyword) {
     const lower = keyword.toLowerCase().trim();
     
-    // Sadece "yonetici" yazılırsa şifre sor (1234 Kaldırıldı)
+    // ŞİFRE TETİKLEYİCİ: Sadece "yonetici" yazınca
     if (lower === "yonetici") {
-        document.querySelector('.search-box input').value = "";
-        document.getElementById('secretModal').style.display = 'flex';
+        document.querySelector('.search-box input').value = ""; // Temizle
+        document.getElementById('secretModal').style.display = 'flex'; // Modal aç
         document.getElementById('secretPass').focus();
-        renderMenu(ALL_DATA); 
+        renderMenu(ALL_DATA); // Listeyi düzelt
         return;
     }
 
@@ -73,6 +67,29 @@ function filter(keyword) {
         (item.windows_karsiligi && item.windows_karsiligi.toLowerCase().includes(lower))
     );
     renderMenu(filtered);
+}
+
+// ŞİFRE KONTROL VE YÖNLENDİRME
+function checkPassword() {
+    const pass = document.getElementById('secretPass').value;
+    if (pass === "1234") {
+        // BAŞARILI İSE YENİ SAYFAYA GİT
+        window.location.href = "rapor.html";
+    } else {
+        document.getElementById('loginError').style.display = 'block';
+    }
+}
+
+function closeSecretModal() {
+    document.getElementById('secretModal').style.display = 'none';
+    document.getElementById('loginError').style.display = 'none';
+    document.getElementById('secretPass').value = '';
+}
+
+function filterCategory(category) {
+    document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    renderMenu(category === 'all' ? ALL_DATA : ALL_DATA.filter(item => item.category === category));
 }
 
 function openDetail(item) {
@@ -84,9 +101,8 @@ function openDetail(item) {
     container.innerHTML = "";
     item.steps.forEach((step, index) => {
         let formatted = step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" style="color:#f57f17; text-decoration:underline;">$1</a>')
-                            .replace(/`(.*?)`/g, '<code style="background:#eee; padding:2px 4px; border-radius:4px;">$1</code>');
-        container.innerHTML += `<div class="step-box"><strong style="color:#f57f17;">${index + 1}.</strong> ${formatted}</div>`;
+                            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
+        container.innerHTML += `<div class="step-box"><strong>${index + 1}.</strong> ${formatted}</div>`;
     });
     window.scrollTo(0,0);
 }
@@ -106,7 +122,6 @@ function switchTab(tab) {
     if (tab === 'home') {
         document.getElementById("mainView").style.display = "block";
         highlightBtn('btnHome', 'pcBtnHome');
-        renderMenu(ALL_DATA);
     } else if (tab === 'fav') {
         document.getElementById("mainView").style.display = "block";
         highlightBtn('btnFav', 'pcBtnFav');
@@ -125,8 +140,13 @@ function highlightBtn(mobileId, pcId) {
 
 function toggleFav(id, btn) {
     let favs = JSON.parse(localStorage.getItem('favorites')) || [];
-    if (favs.includes(id)) { favs = favs.filter(f => f !== id); btn.className = "far fa-star fav-btn"; }
-    else { favs.push(id); btn.className = "fas fa-star fav-btn active"; }
+    if (favs.includes(id)) {
+        favs = favs.filter(f => f !== id);
+        btn.className = "far fa-star fav-btn";
+    } else {
+        favs.push(id);
+        btn.className = "fas fa-star fav-btn active";
+    }
     localStorage.setItem('favorites', JSON.stringify(favs));
 }
 
@@ -135,7 +155,6 @@ function toggleTheme() {
     localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
 }
 
-// --- GİZLİ MENÜ MANTIĞI ---
 function triggerSecret(element) {
     secretClickCount++;
     element.style.transform = "scale(0.9)";
@@ -148,22 +167,6 @@ function triggerSecret(element) {
         document.getElementById('secretPass').focus();
         secretClickCount = 0;
     }
-}
-
-function checkPassword() {
-    const input = document.getElementById('secretPass').value;
-    if (input === "1234") {
-        // BAŞARILI: RAPOR SAYFASINA GİT
-        window.location.href = "rapor.html";
-    } else {
-        document.getElementById('loginError').style.display = 'block';
-    }
-}
-
-function closeSecretModal() {
-    document.getElementById('secretModal').style.display = 'none';
-    document.getElementById('loginError').style.display = 'none';
-    document.getElementById('secretPass').value = '';
 }
 
 // PWA
