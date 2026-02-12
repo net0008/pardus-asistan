@@ -49,19 +49,21 @@ function renderMenu(data) {
     });
 }
 
-// --- SİHİRLİ ARAMA KUTUSU ---
+function filterCategory(category) {
+    document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    renderMenu(category === 'all' ? ALL_DATA : ALL_DATA.filter(item => item.category === category));
+}
+
 function filter(keyword) {
     const lower = keyword.toLowerCase().trim();
-    
-    // ŞİFRE TETİKLEYİCİ: Sadece "yonetici" yazınca
     if (lower === "yonetici") {
-        document.querySelector('.search-box input').value = ""; // Temizle
-        document.getElementById('secretModal').style.display = 'flex'; // Modal aç
+        document.querySelector('.search-box input').value = "";
+        document.getElementById('secretModal').style.display = 'flex';
         document.getElementById('secretPass').focus();
-        renderMenu(ALL_DATA); // Listeyi düzelt
+        renderMenu(ALL_DATA); 
         return;
     }
-
     const filtered = ALL_DATA.filter(item => 
         item.title.toLowerCase().includes(lower) || 
         (item.windows_karsiligi && item.windows_karsiligi.toLowerCase().includes(lower))
@@ -69,11 +71,9 @@ function filter(keyword) {
     renderMenu(filtered);
 }
 
-// ŞİFRE KONTROL VE YÖNLENDİRME
 function checkPassword() {
     const pass = document.getElementById('secretPass').value;
     if (pass === "1234") {
-        // BAŞARILI İSE YENİ SAYFAYA GİT
         window.location.href = "rapor.html";
     } else {
         document.getElementById('loginError').style.display = 'block';
@@ -86,16 +86,15 @@ function closeSecretModal() {
     document.getElementById('secretPass').value = '';
 }
 
-function filterCategory(category) {
-    document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-    renderMenu(category === 'all' ? ALL_DATA : ALL_DATA.filter(item => item.category === category));
-}
-
+// --- DETAY SAYFASI VE RENKLENDİRME ---
 function openDetail(item) {
     document.getElementById("mainView").style.display = "none";
     document.getElementById("detailView").style.display = "block";
-    document.getElementById("detailTitle").innerHTML = item.title;
+    
+    // BAŞLIKTAKİ KALIN YAZILARI DA RENKLENDİR (YENİ EKLENEN KISIM)
+    let formattedTitle = item.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    document.getElementById("detailTitle").innerHTML = formattedTitle;
+    
     document.getElementById("detailWindows").innerText = "Windows: " + (item.windows_karsiligi || "Yok");
     const container = document.getElementById("detailStepsContainer");
     container.innerHTML = "";
@@ -122,6 +121,7 @@ function switchTab(tab) {
     if (tab === 'home') {
         document.getElementById("mainView").style.display = "block";
         highlightBtn('btnHome', 'pcBtnHome');
+        renderMenu(ALL_DATA);
     } else if (tab === 'fav') {
         document.getElementById("mainView").style.display = "block";
         highlightBtn('btnFav', 'pcBtnFav');
@@ -169,7 +169,6 @@ function triggerSecret(element) {
     }
 }
 
-// PWA
 let deferredPrompt;
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();

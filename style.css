@@ -1,7 +1,7 @@
 /* --- TEMEL DEĞİŞKENLER --- */
 :root { 
     --pardus-blue: #fbc02d;
-    --pardus-blue-dark: #f57f17; /* İstenen Turuncu Tonu */
+    --pardus-blue-dark: #f57f17; /* Turuncu */
     --bg-gray: #f4f6f8;
     --card-bg: #ffffff;
     --text-main: #222222; 
@@ -30,7 +30,7 @@ body {
 
 html { background-color: #202124; }
 
-/* --- HEADER AYARLARI (MENÜ KAYMAMASI İÇİN KESİN ÇÖZÜM) --- */
+/* HEADER */
 .app-header {
     background-color: #ed800d;
     color: white;
@@ -38,66 +38,51 @@ html { background-color: #202124; }
     padding: 0 20px;
     display: flex;
     align-items: center;
-    justify-content: center; /* İÇERİĞİ (MENÜYÜ) MERKEZE ALIR */
+    justify-content: center;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-/* LOGO: Sola Çivilendi (Diğerlerinden bağımsız) */
-.header-left {
-    position: absolute; left: 20px; top: 0; bottom: 0;
-    display: flex; align-items: center;
-}
-
-/* YÜKLE BUTONU: Sağa Çivilendi (Diğerlerinden bağımsız) */
-.header-right-wrapper {
-    position: absolute; right: 20px; top: 0; bottom: 0;
-    display: flex; align-items: center;
-}
-
+.header-left { position: absolute; left: 20px; top: 0; bottom: 0; display: flex; align-items: center; }
+.header-right-wrapper { position: absolute; right: 20px; top: 0; bottom: 0; display: flex; align-items: center; }
 .new-header-logo { height: 45px; width: auto; object-fit: contain; }
 
-/* MENÜ (Header justify-center olduğu için otomatik ortada durur) */
-.pc-nav { 
-    display: flex; gap: 10px; align-items: center; z-index: 2;
-}
-
+.pc-nav { display: flex; gap: 10px; align-items: center; z-index: 2; }
 .pc-nav button {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 8px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    display: flex; align-items: center; gap: 5px;
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.2); color: white; border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.9rem;
+    display: flex; align-items: center; gap: 5px; transition: all 0.3s ease;
 }
 .pc-nav button:hover { background: rgba(255, 255, 255, 0.4); }
 .pc-nav button.active { background: white; color: #ed800d; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 
-/* YÜKLE BUTONU */
 .install-btn-final {
     background: #fff; color: var(--pardus-blue-dark); border: none; padding: 6px 12px; border-radius: 20px;
-    font-size: 0.8rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 6px;
-    animation: pulseBtn 3s infinite;
+    font-size: 0.8rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 6px; animation: pulseBtn 3s infinite;
 }
-@keyframes pulseBtn {
-    0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); }
-}
+@keyframes pulseBtn { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
 
-/* GENEL STİLLER */
+/* ANA YAPI */
 .main-container { padding: 15px; max-width: 1000px; margin: 0 auto; }
+.detail-view { display: none; padding: 15px; max-width: 800px; margin: 0 auto; animation: fadeIn 0.3s; }
 
-/* DETAY SAYFASI */
-.detail-view { 
-    display: none; padding: 15px; max-width: 800px; margin: 0 auto; animation: fadeIn 0.3s; 
+/* --- İŞTE SİHİRLİ KOD BURADA --- */
+/* Detay sayfasındaki TÜM kalın yazıları (Başlık dahil) Turuncu yap */
+.detail-view strong {
+    color: #f57f17 !important; /* Pardus Turuncusu */
+    font-weight: 800;
 }
 
+/* Adım Kutuları */
+.step-box {
+    background: #fff; padding: 15px 20px; margin-bottom: 15px; border-radius: 10px; 
+    color: #333; font-size: 1.05rem; line-height: 1.6; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); border-left: 5px solid #fbc02d;
+}
 
-/* AYARLAR KUTUSU */
+/* AYARLAR */
 .settings-container { display: none; max-width: 800px; margin: 0 auto; padding: 20px; animation: fadeIn 0.3s; }
 .setting-item, .why-box {
     background: var(--card-bg); padding: 20px; border-radius: 12px; 
@@ -109,8 +94,7 @@ html { background-color: #202124; }
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 .card {
     background: var(--card-bg); padding: 25px 15px; border-radius: 15px; text-align: center;
-    box-shadow: var(--shadow); cursor: pointer; position: relative; border: 1px solid rgba(0,0,0,0.05);
-    transition: transform 0.2s;
+    box-shadow: var(--shadow); cursor: pointer; position: relative; border: 1px solid rgba(0,0,0,0.05); transition: transform 0.2s;
 }
 .card:active { transform: scale(0.98); }
 .card i.main-icon { font-size: 2.2rem; color: var(--pardus-blue); margin-bottom: 10px; display: inline-block; }
@@ -119,7 +103,7 @@ html { background-color: #202124; }
 .fav-btn { position: absolute; top: 10px; right: 10px; font-size: 1.2rem; color: #ccc; padding: 5px; z-index: 5; }
 .fav-btn.active { color: #f1c40f; }
 
-/* DİĞERLERİ */
+/* DİĞER */
 .search-box { position: relative; margin-bottom: 20px; }
 .search-box input {
     width: 100%; padding: 16px 20px 16px 50px; border: none; border-radius: 12px;
@@ -150,7 +134,6 @@ html { background-color: #202124; }
 
 /* GECE MODU */
 body.dark-mode .step-box { background: #1e1e1e; border-left-color: #fbc02d; color: #eee; border-color: #333; }
-body.dark-mode .step-box strong { color: #fbc02d; } /* Gece modunda da açık turuncu/sarı */
 body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: #444; }
 body.dark-mode .setting-item, body.dark-mode .why-box { background: #1e1e1e; border-color: #333; }
 
@@ -172,7 +155,6 @@ body.dark-mode .setting-item, body.dark-mode .why-box { background: #1e1e1e; bor
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .pc-nav { display: none; }
-    /* Mobilde Absolute Yerine Flex Space-Between Kullanıyoruz */
     .app-header { justify-content: space-between; } 
     .header-left, .header-right-wrapper { position: static; } 
     .new-header-logo { height: 40px; }
@@ -189,26 +171,5 @@ body.dark-mode .setting-item, body.dark-mode .why-box { background: #1e1e1e; bor
     .header-right-wrapper { right: 40px; }
     .grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
     .bottom-nav { display: none !important; }
-    
-    /* PC'de Yükle Butonunu GİZLE (Yerini Koru) */
     #installContainer { visibility: hidden !important; pointer-events: none; }
-}
-/* --- ADIM KUTULARI VE RENK AYARI --- */
-.step-box {
-    background: #fff; 
-    padding: 15px 20px; 
-    margin-bottom: 15px; 
-    border-radius: 10px; 
-    color: #333;
-    font-size: 1.05rem; 
-    line-height: 1.6; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.05); 
-    border-left: 5px solid #fbc02d; 
-}
-
-/* BURASI DÜZELTİLDİ: Kalın yazılar Pardus Turuncusu */
-.step-box strong { 
-    font-weight: 800; 
-    color: #f57f17; 
 }
