@@ -72,14 +72,8 @@ function filter(keyword) {
     renderMenu(filtered);
 }
 
-function checkPassword() {
-    const pass = document.getElementById('secretPass').value;
-    if (pass === "1234") {
-        window.location.href = "rapor.html";
-    } else {
-        document.getElementById('loginError').style.display = 'block';
-    }
-}
+
+function checkPassword(){var _0x1c9d=['\x76\x61\x6C\x75\x65','\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64','\x73\x65\x63\x72\x65\x74\x50\x61\x73\x73','\x31\x32\x33\x34','\x68\x72\x65\x66','\x6C\x6F\x63\x61\x74\x69\x6F\x6E','\x72\x61\x70\x6F\x72\x2E\x68\x74\x6D\x6C','\x6C\x6F\x67\x69\x6E\x45\x72\x72\x6F\x72','\x73\x74\x79\x6C\x65','\x64\x69\x73\x70\x6C\x61\x79','\x62\x6C\x6F\x63\x6B'];var _0x3b2a=document[_0x1c9d[1]](_0x1c9d[2])[_0x1c9d[0]];if(_0x3b2a===_0x1c9d[3]){window[_0x1c9d[5]][_0x1c9d[4]]=_0x1c9d[6];}else{document[_0x1c9d[1]](_0x1c9d[7])[_0x1c9d[8]][_0x1c9d[9]]=_0x1c9d[10];}}
 
 function closeSecretModal() {
     document.getElementById('secretModal').style.display = 'none';
