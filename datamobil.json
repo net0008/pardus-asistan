@@ -383,14 +383,14 @@
   {
     "id": "wine-32-bit-kurulum",
     "category": "sistem",
-    "title": "Z-Kitap Açılmıyor2 (Wine 32-Bit)",
+    "title": "Z-Kitap Açılmıyor 2 (Wine 32-Bit)",
     "windows_karsiligi": "Exe Çalıştırma Sorunu",
     "icon": "fa-windows",
     "steps": [
       "Z-Kitapları açmak için 32-bit desteği şarttır. Aşağıdaki yöntemlerden birini seçin.",
       "**1. Adım:** Başlat menüsünden **Uçbirim (Terminal)** uygulamasını açın.",
       "--- **YÖNTEM A: Kopyala / Yapıştır (Kolay)** ---",
-      "1. Tarayıcıdan **meb.ai/UZccBuP** adresine girin.",
+      "1. Tarayıcıdan **<a href='https://meb.ai/UZccBuP' target='_blank'>https://meb.ai/UZccBuP</a>** adresine girin.",
       "*(**Önemli:** Bu adresi Google'da aramayın, tarayıcının en tepesindeki adres çubuğuna yazıp Enter'a basın.)*",
       "2. Sayfadaki kodu kopyalayın.",
       "3. Uçbirim penceresine gelin, boş bir yere **Sağ Tıklayın** ve **'Yapıştır'** seçeneğini seçin.",
@@ -417,9 +417,9 @@
       "**2. Adım (Açma):** Kurulum bitince Uçbirim'e şu komutu yazıp Enter'a basın:",
       "<code style='font-size:1.3em; font-weight:bold; color:#d63384; background-color:#f8f9fa; padding:10px; display:block; border: 1px solid #d63384; border-radius: 8px; margin-top:5px;'>winetricks --gui</code>",
       "**3. Adım (Yükleme):** Karşınıza çıkan pencerede şunları yapın:",
-      "1. **Select the default wineprefix** seçeneğini seçin.",
-      "2. **Install a Windows DLL or component** seçeneğine tıklayın.",
-      "3. Listeden **d3dx9**, **mfc42** ve **vcrun2015** kutucuklarını işaretleyip 'OK' butonuna basın."
+      "a. **Select the default wineprefix** seçeneğini seçin.",
+      "b. **Install a Windows DLL or component** seçeneğine tıklayın.",
+      "c. Listeden **d3dx9**, **mfc42** ve **vcrun2015** kutucuklarını işaretleyip 'OK' butonuna basın."
     ]
   },
   {
