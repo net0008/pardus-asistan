@@ -39,16 +39,18 @@
     ]
   },
   {
-    "id": "etap-kullanici-rolleri",
-    "category": "sistem",
-    "title": "Kullanıcı Adı ve Şifreler",
-    "windows_karsiligi": "Yönetici Şifresi",
-    "icon": "fa-users-cog",
+    "id": "etap-hesap-kiyaslamasi",
+    "category": "etap",
+    "title": "Öğrenci ve Öğretmen Hesabı Farkları",
+    "windows_karsiligi": "Standart Kullanıcı / Yönetici (Administrator)",
+    "icon": "fa-user-shield",
     "steps": [
-      "**Öğretmen Hesabı:** Kullanıcı: **ogretmen** | Şifre: **ogretmen**",
-      "**Öğrenci Hesabı:** Kullanıcı: **ogrenci** | Şifre: **1**",
-      "**Yönetici (Etap Yetkili):** Program kurmak için gereklidir.",
-      "**Önemli:** Etap Yetkili şifresini **okulunuzdaki  YEĞİTEK okul sorumlusundan** veya yoksa **İl/İlçe Bilişim Koordinatöründen** öğrenmelisiniz. Bu şifreyi sadece öğretmenler bilmelidir, öğrencilerle kesinlikle paylaşılmamalıdır."
+      "Pardus ETAP sisteminde güvenlik ve düzeni sağlamak amacıyla iki temel kullanıcı tipi bulunur: **etapkullanici** (Öğrenci/Sınırlı) ve **etapyetkili** (Öğretmen/Yönetici).",
+      "**Öğrenci Hesabı (Sınırlı Erişim):** Sadece eğitim için gerekli olan ve önceden izin verilmiş uygulamaları (EBA, Z-Kitaplar, tarayıcı vb.) çalıştırabilir.",
+      "**Öğrenci Kısıtlamaları:** Sisteme yeni bir program kuramaz veya silemez. Ağ (Wi-Fi), saat, duvar kağıdı gibi sistem ayarlarını değiştiremez. ETAP 23 sürümü ile birlikte bu oturumda yetkisiz USB kullanımı da engellenmiştir.",
+      "**Öğretmen Hesabı (etapyetkili):** Etkileşimli tahtanın tam yöneticisidir. Yönetici şifresini girerek tahtadaki tüm kısıtlamaları kaldırabilir.",
+      "**Öğretmen Yetkileri:** Pardus Mağaza'dan veya terminalden yeni uygulamalar kurabilir, sistemi güncelleyebilir, ağ şifrelerini girebilir ve tahtanın teknik bakımlarını (kalibrasyon, USB formatlama vb.) yapabilir.",
+      "**Güvenlik İpucu:** Tahtanın güvenliği, ayarlarının bozulmaması ve zararlı yazılımlardan korunması için ders bitiminde **etapyetkili** oturumu kapatılmalı veya tahta kilitlenmelidir."
     ]
   },
   {
@@ -272,7 +274,7 @@
     "steps": [
       "Matematik ve Geometri öğretmenleri için vazgeçilmez bir araçtır.",
       "Fonksiyon grafikleri çizebilir, dinamik geometrik şekiller oluşturabilirsiniz.",
-      "İnternet olmasa bile çalışır, akıllı tahtada dokunmatik uyumludur."
+      "İnternet olmasa bile çalışır, Etkileşimli tahtada dokunmatik uyumludur."
     ]
   },
   {
