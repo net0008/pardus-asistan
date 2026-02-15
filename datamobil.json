@@ -368,7 +368,7 @@
     "category": "uygulama",
     "title": "Program tanıtımı **Wine Kurulumu** (Exe Çalıştırma)",
     "windows_karsiligi": "Uyumluluk Modu",
-    "icon": "fa-wine-glass-alt",
+    "icon": "fa-puzzle-piece",
     "steps": [
       "Windows programlarını (.exe) Pardus'ta çalıştırmak için **Wine** gereklidir.",
       "**1. Adım:** Pardus Mağaza uygulamasını açın.",
