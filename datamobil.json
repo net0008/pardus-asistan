@@ -174,9 +174,9 @@
     "windows_karsiligi": "Rufus / Format",
     "icon": "fa-hdd",
     "steps": [
-      "1. İndir:**meb.ai/UtS8sWG** bu adreste bulunan **Pardus ETAP 23.4 ISO** dosyasını indirin.",
-      "2 a. USB'yi Windows işletim sistemine sahip bilgisayardan yapyorsanız **Rufus** programını https://rufus.ie/tr/ adresinden indirin. Ardından, Rufus programını açın, ISO'yu seçin. Başlat'a basınca çıkan uyarıda mutlaka **DD Yansısı (DD Image)** modunu seçin.",
-      "2 b. USB'yi Pardus kurulu bir bilgisayardan yapıyorsanız. Pardus Disk Yazıcı:**Pardus Disk Kalıbı Yazıcı** programı ile ISO'yu belleğe yazdırabilirsiniz."
+      " İndir:**meb.ai/UtS8sWG** bu adreste bulunan **Pardus ETAP 23.4 ISO** dosyasını indirin.",
+      "a. USB'yi Windows işletim sistemine sahip bilgisayardan yapyorsanız **Rufus** programını https://rufus.ie/tr/ adresinden indirin. Ardından, Rufus programını açın, ISO'yu seçin. Başlat'a basınca çıkan uyarıda mutlaka **DD Yansısı (DD Image)** modunu seçin.",
+      "b. USB'yi Pardus kurulu bir bilgisayardan yapıyorsanız. Pardus Disk Yazıcı:**Pardus Disk Kalıbı Yazıcı** programı ile ISO'yu belleğe yazdırabilirsiniz."
     ]
   },
   {
