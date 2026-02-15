@@ -119,6 +119,23 @@ html { background-color: #202124; }
     border-left: 5px solid #fbc02d; 
 }
 
+/* TERMINAL KODU İÇİN YENİ TASARIM (Açık Tema) */
+.terminal-kodu {
+    font-family: 'Courier New', Courier, monospace; /* Kod fontu olması önemli */
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #d63384; /* Açık temada canlı pembe/kırmızı */
+    background-color: #f8f9fa; /* Açık gri arkaplan */
+    padding: 12px;
+    display: block;
+    border: 1px solid #d63384;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    overflow-x: auto; /* Çok uzun kodlar için alt kaydırma çubuğu */
+    white-space: nowrap; /* Kodun kırılıp çirkin durmasını önler, kaydırmaya zorlar */
+}
+
 .card span strong {
     color: #f57f17;
 }
@@ -182,6 +199,13 @@ html { background-color: #202124; }
 body.dark-mode .step-box { background: #1e1e1e; border-left-color: #fbc02d; color: #eee; border-color: #333; }
 body.dark-mode .windows-badge { background: #252525; color: #eee; border-color: #444; }
 body.dark-mode .setting-item, body.dark-mode .why-box { background: #1e1e1e; border-color: #333; }
+
+/* GECE MODU İÇİN TERMİNAL KODU STİLİ */
+body.dark-mode .terminal-kodu {
+    background-color: #2a2a2a; /* Göz yormayan koyu gri arkaplan */
+    color: #ff79c6; /* Koyu temada okunabilirliği yüksek pastel pembe */
+    border-color: #ff79c6;
+}
 
 /* MODAL */
 .modal-overlay { 
