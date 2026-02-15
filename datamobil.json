@@ -46,7 +46,7 @@
     "icon": "fa-user-shield",
     "steps": [
       "Pardus ETAP sisteminde güvenlik ve düzeni sağlamak amacıyla iki temel kullanıcı tipi bulunur: **etapkullanici** (Öğrenci/Sınırlı) ve **etapyetkili** (Öğretmen/Yönetici).",
-      "**Öğrenci Hesabı (Sınırlı Erişim):** Sadece eğitim için gerekli olan ve önceden izin verilmiş uygulamaları (EBA, ZKitaplar, tarayıcı vb.) çalıştırabilir.",
+      "**Öğrenci Hesabı (Sınırlı Erişim):** Sadece eğitim için gerekli olan ve önceden izin verilmiş uygulamaları (EBA, Z Kitaplar, tarayıcı vb.) çalıştırabilir.",
       "**Öğrenci Kısıtlamaları:** Sisteme yeni bir program kuramaz veya silemez. Ağ (Wi-Fi), saat, duvar kağıdı gibi sistem ayarlarını değiştiremez. ETAP 23 sürümü ile birlikte bu oturumda yetkisiz USB kullanımı da engellenmiştir.",
       "**Öğretmen Hesabı (etapyetkili):** Etkileşimli tahtanın tam yöneticisidir. Yönetici şifresini girerek tahtadaki tüm kısıtlamaları kaldırabilir.",
       "**Öğretmen Yetkileri:** Pardus Mağaza'dan veya terminalden yeni uygulamalar kurabilir, sistemi güncelleyebilir, ağ şifrelerini girebilir ve tahtanın teknik bakımlarını (kalibrasyon, USB formatlama vb.) yapabilir.",
@@ -407,7 +407,7 @@
 {
     "id": "wine-winetricks-ileri",
     "category": "sistem",
-    "title": "ZKitap Hâlâ Açılmıyor 3 (İleri Düzey Çözüm)",
+    "title": "Z Kitap Hâlâ Açılmıyor 3 (İleri Düzey Çözüm)",
     "windows_karsiligi": "DirectX / DLL Hatası",
     "icon": "fa-tools",
     "steps": [
@@ -479,7 +479,7 @@
     "steps": [
       "Z Kitaplar çok fazla hafıza (RAM) kullanır ve tahtayı dondurabilir. Bunu önlemek için:",
       "**1. Kural:** Derse başlarken tarayıcıda (Chrome/Firefox) çok fazla sekme açık bırakmayın.",
-      "**2. Kural:** Aynı anda 2-3 farklı yayınevinin Z-Kitabını açmayın. İşiniz biteni kapatın.",
+      "**2. Kural:** Aynı anda 2-3 farklı yayınevinin Z Kitabını açmayın. İşiniz biteni kapatın.",
       "**3. İpucu:** Teneffüslerde tahtayı sadece kilitlemek yerine, gün ortasında bir kez **Yeniden Başlat** yapmak hafızayı sıfırlar ve performansı artırır."
     ]
   },
