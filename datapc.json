@@ -679,5 +679,21 @@
       "** Uygulama:** Kurulumdan sonra konsola `xinput_calibrator` yazın. Ekranda çıkan 4 noktaya sırasıyla dokunarak kalibrasyonu tamamlayın.",
       "** Kesin Çözüm (Windows):** Sorun düzelmezse donanımsal kalibrasyon gerekir. [Buradaki Drive Linkinden](https://drive.google.com/drive/folders/1NJFFn12am8SF3_uGblz06WPLYZPoe1Xq?usp=drive_link) Windows imajını kurup 'Optical Touch Device' ile kalibre edin, düzelince tekrar Pardus yükleyin."
     ]
+  },
+  {
+    "id": "etap-23-yenilikler",
+    "category": "etap",
+    "title": "Pardus **ETAP 23** Yeni Özellikleri",
+    "windows_karsiligi": "Sürüm Güncelleme Notları / Yenilikler",
+    "icon": "fa-rocket",
+    "steps": [
+      "**Sınırlı Erişim Modu Geliştirmeleri:** Öğrencilerin USB açamaması sağlandı, duvar kağıdı değiştirme engellendi, desteklenen uygulamalar hakkında bilgi eklendi ve izinli uygulamaların seçme penceresinde sönük gözükmesi sağlandı.",
+      "**Giriş, Oturum ve Güvenlik:** Tahtaları çevrimdışı açabilmek için **Pin ile Giriş** özelliği getirildi. USB ile girişteki şapka (^) işareti sorunu ve otomatik girişteki buton kilitlenme hataları giderildi.",
+      "**Güç Yönetimi ve Kapatma Ayarları:** Tahtaları belli bir saatte otomatik uykuya alan/kapatan **Kapatma Ayarları** getirildi. Farklı fazlar için *Kapat* ve *Zorla Kapat* butonları oluşturuldu.",
+      "**Pardus Kalem Güncellemeleri:** Varsayılan 4 renk değiştirilebilir hale geldi. Seçilen bir bölgenin otomatik olarak beyaz tahta moduna yansıtılması eklendi ve Kalem'in sebep olduğu disk doldurma sorunu çözüldü.",
+      "**Kayıt, Kurulum ve Sistem Bakımı:** Tanınan cihazların ETA Kayıt yapabilmesi sağlandı. USB-C ethernet adaptörü sorunu çözüldü. ETAP indirme dosyaları için **etap.org.tr/iso** kolay erişim linki oluşturuldu.",
+      "**Arayüz ve Kullanıcı Deneyimi:** **Maarif Modeli** yazı fontları ve Türkçe F klavye desteği sisteme eklendi. Göz yormayan koyu renkli yeni bir varsayılan duvar kağıdına geçildi.",
+      "**Yardım ve Destek:** ETA Yardım’daki Sık Sorulan Sorular dokümanı, arama kutucuğu olan dinamik bir Wiki sayfasına dönüştürüldü."
+    ]
   }
 ]
