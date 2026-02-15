@@ -248,7 +248,12 @@ body.dark-mode .terminal-kodu {
 .nav-item.active {
     color: var(--pardus-blue-dark);
 }
-
+body.dark-mode .modal-content h3 {
+    color: #fbc02d !important;
+}
+body.dark-mode .modal-content p {
+    color: #ccc !important;
+}
 /* RESPONSIVE */
 @media (max-width: 768px) {
     .pc-nav { display: none; }

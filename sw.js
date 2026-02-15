@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pardus-asistan-v7.5';
+const CACHE_NAME = 'pardus-asistan-v8.7';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -6,7 +6,8 @@ const ASSETS_TO_CACHE = [
   './script.js',
   './manifest.json',
   './icon.png',
-  './datamobil.json', // datapc.json satırı buradan kaldırıldı
+  './datamobil.json',
+  './header-logo.png' 
 ];
 
 // 1. Kurulum (Dosyaları Önbelleğe Al)
