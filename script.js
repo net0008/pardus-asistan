@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function loadData() {
-    const dataFile = isMobile ? 'datamobil.json' : 'datapc.json';
+    const dataFile = 'datamobil.json'; // Ayrım kaldırıldı, sadece datamobil.json kullanılacak
     try {
         const response = await fetch(dataFile);
         if (!response.ok) throw new Error("Dosya bulunamadı");
@@ -103,7 +103,8 @@ function openDetail(item) {
     item.steps.forEach((step, index) => {
         let formatted = step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                             .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
-        container.innerHTML += `<div class="step-box"><strong>${index + 1}.</strong> ${formatted}</div>`;
+        // Aşağıdaki satırdan "<strong>${index + 1}.</strong>" kodu kaldırıldı
+        container.innerHTML += `<div class="step-box">${formatted}</div>`; 
     });
     window.scrollTo(0,0);
 }

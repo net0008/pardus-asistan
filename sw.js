@@ -6,10 +6,7 @@ const ASSETS_TO_CACHE = [
   './script.js',
   './manifest.json',
   './icon.png',
-  './datapc.json',
-  './datamobil.json',
-  // Eğer share-image.png kullandıysan onu da ekle, yoksa bu satırı sil:
-  // './share-image.png' 
+  './datamobil.json', // datapc.json satırı buradan kaldırıldı
 ];
 
 // 1. Kurulum (Dosyaları Önbelleğe Al)
