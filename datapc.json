@@ -674,10 +674,10 @@
     "windows_karsiligi": "Tablet PC Ayarları / Kalibrasyon",
     "icon": "fa-hand-pointer",
     "steps": [
-      "**1. Temizlik:** Dokunmatik sorunları (kendi kendine basma, algılamama) genellikle sensörlerdeki tozdan kaynaklanır. Öncelikle ekranı ve köşelerdeki sensörleri temizleyin.",
-      "**2. Pardus ile Çözüm:** `etapyetkili` hesabında uç birimi (konsol) açın. `sudo apt-get install xinput-calibrator` komutu ile aracı yükleyin.",
-      "**3. Uygulama:** Kurulumdan sonra konsola `xinput_calibrator` yazın. Ekranda çıkan 4 noktaya sırasıyla dokunarak kalibrasyonu tamamlayın.",
-      "**4. Kesin Çözüm (Windows):** Sorun düzelmezse donanımsal kalibrasyon gerekir. [Buradaki Drive Linkinden](https://drive.google.com/drive/folders/1NJFFn12am8SF3_uGblz06WPLYZPoe1Xq?usp=drive_link) Windows imajını kurup 'Optical Touch Device' ile kalibre edin, düzelince tekrar Pardus yükleyin."
+      "** Temizlik:** Dokunmatik sorunları (kendi kendine basma, algılamama) genellikle sensörlerdeki tozdan kaynaklanır. Öncelikle ekranı ve köşelerdeki sensörleri temizleyin.",
+      "** Pardus ile Çözüm:** `etapyetkili` hesabında uç birimi (konsol) açın. `sudo apt-get install xinput-calibrator` komutu ile aracı yükleyin.",
+      "** Uygulama:** Kurulumdan sonra konsola `xinput_calibrator` yazın. Ekranda çıkan 4 noktaya sırasıyla dokunarak kalibrasyonu tamamlayın.",
+      "** Kesin Çözüm (Windows):** Sorun düzelmezse donanımsal kalibrasyon gerekir. [Buradaki Drive Linkinden](https://drive.google.com/drive/folders/1NJFFn12am8SF3_uGblz06WPLYZPoe1Xq?usp=drive_link) Windows imajını kurup 'Optical Touch Device' ile kalibre edin, düzelince tekrar Pardus yükleyin."
     ]
   }
 ]
