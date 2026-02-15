@@ -174,7 +174,7 @@
     "windows_karsiligi": "Rufus / Format",
     "icon": "fa-hdd",
     "steps": [
-      " İndir:**meb.ai/UtS8sWG** bu adreste bulunan **Pardus ETAP 23.4 ISO** dosyasını indirin.",
+      " İndir:**<a href='https://meb.ai/UtS8sWG' target='_blank'>meb.ai/UtS8sWG</a>** bu adreste bulunan **Pardus ETAP 23.4 ISO** dosyasını indirin.",
       "a. USB'yi Windows işletim sistemine sahip bilgisayardan yapyorsanız **Rufus** programını https://rufus.ie/tr/ adresinden indirin. Ardından, Rufus programını açın, ISO'yu seçin. Başlat'a basınca çıkan uyarıda mutlaka **DD Yansısı (DD Image)** modunu seçin.",
       "b. USB'yi Pardus kurulu bir bilgisayardan yapıyorsanız. Pardus Disk Yazıcı:**Pardus Disk Kalıbı Yazıcı** programı ile ISO'yu belleğe yazdırabilirsiniz."
     ]
@@ -360,7 +360,7 @@
       "**Sokak Görünümü** (Street View):**Sarı adamı** haritaya sürükleyip sokaklarda gezebilirsiniz.",
       "**Zaman Makinesi:** Geçmiş yıllara ait uydu görüntülerini (Örn: 2005 yılındaki İstanbul) inceleyebilirsiniz.",
      "**Kurulum:** Pardus Mağaza'dan indirebilirsiniz. Mağzada yoksa, aşağıdaki adımları izleyiniz.",
-      "**1. Adım:** (İndirme): Tarayıcınızın (Chrome vb) adres çubuğuna **meb.ai/UZwkAeH** yazın ve bu linkten indirin. Pardus uyumlu dosyayı doğrudan indirin. (.deb uzantılı dosya gelecektir.)",
+      "**1. Adım:** (İndirme): Tarayıcınızın (Chrome vb) adres çubuğuna **<a href='https://meb.ai/UZwkAeH' target='_blank'>meb.ai/UZwkAeH</a>** yazın ve bu linkten indirin. Pardus uyumlu dosyayı doğrudan indirin. (.deb uzantılı dosya gelecektir.)",
       "**2. Adım:**(Kurulum): İndirilenler klasörüne gidin.",
       "**3. Adım:**(Kurulum): İnen **.deb** uzantılı dosyaya çift tıklayın ve **'Kur'** butonuna basın. (Yönetici şifresi isterse girin. Bilmiyorsanız idareden, okulunuzdaki YEĞİTEK sorumlusundan veya İl/İlçe Bilişim Koordinatöründen öğrenebilirsiniz.)"
     ]
@@ -374,7 +374,7 @@
     "steps": [
       "Windows programlarını (.exe) Pardus'ta çalıştırmak için **Wine** gereklidir.",
       "**1. Adım:** Pardus Mağaza uygulamasını açın.",
-      "**2. Adım:** Arama çubuğuna **Wine** yazın. Veya Tarayıcınızın (Chrome vb)adres çubuğuna **meb.ai/adwpbY** yazın ve bu linkten indirin.",
+      "**2. Adım:** Arama çubuğuna **Wine** yazın. Veya Tarayıcınızın (Chrome vb)adres çubuğuna **<a href='https://meb.ai/adwpbY' target='_blank'>meb.ai/adwpbY</a>** yazın ve bu linkten indirin.",
       "**3. Adım:** 'Kur' butonuna basın ve şifrenizi girin.",
       "**Kullanım:** Kurulum bitince .exe dosyasına **Sağ Tık > Birlikte Aç > Wine** seçeneğini seçin."
     ]
