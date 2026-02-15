@@ -46,7 +46,7 @@
     "icon": "fa-user-shield",
     "steps": [
       "Pardus ETAP sisteminde güvenlik ve düzeni sağlamak amacıyla iki temel kullanıcı tipi bulunur: **etapkullanici** (Öğrenci/Sınırlı) ve **etapyetkili** (Öğretmen/Yönetici).",
-      "**Öğrenci Hesabı (Sınırlı Erişim):** Sadece eğitim için gerekli olan ve önceden izin verilmiş uygulamaları (EBA, Z-Kitaplar, tarayıcı vb.) çalıştırabilir.",
+      "**Öğrenci Hesabı (Sınırlı Erişim):** Sadece eğitim için gerekli olan ve önceden izin verilmiş uygulamaları (EBA, ZKitaplar, tarayıcı vb.) çalıştırabilir.",
       "**Öğrenci Kısıtlamaları:** Sisteme yeni bir program kuramaz veya silemez. Ağ (Wi-Fi), saat, duvar kağıdı gibi sistem ayarlarını değiştiremez. ETAP 23 sürümü ile birlikte bu oturumda yetkisiz USB kullanımı da engellenmiştir.",
       "**Öğretmen Hesabı (etapyetkili):** Etkileşimli tahtanın tam yöneticisidir. Yönetici şifresini girerek tahtadaki tüm kısıtlamaları kaldırabilir.",
       "**Öğretmen Yetkileri:** Pardus Mağaza'dan veya terminalden yeni uygulamalar kurabilir, sistemi güncelleyebilir, ağ şifrelerini girebilir ve tahtanın teknik bakımlarını (kalibrasyon, USB formatlama vb.) yapabilir.",
@@ -90,7 +90,7 @@
       "**Pardus Mağaza** (veya Yazılımlar) uygulamasını açın.",
       "Arama kutusuna program adını yazın (Örn: Chrome, VLC, Zoom).",
       "**Kur** butonuna basıp şifrenizi girin.",
-      "Mağazada olmayan **.deb** uzantılı dosyaları (Örn: Z-Kitaplar) indirdikten sonra çift tıklayarak kurabilirsiniz."
+      "Mağazada olmayan **.deb** uzantılı dosyaları (Örn: Z Kitaplar) indirdikten sonra çift tıklayarak kurabilirsiniz."
     ]
   },
   {
@@ -322,7 +322,7 @@
     "steps": [
       "PDF, EPUB ve diğer e-kitap formatlarını düzenlemek ve dönüştürmek için kullanılır.",
       "Kendi dijital kütüphanenizi oluşturabilir, kitapların formatını değiştirebilirsiniz.",
-      "Z-Kitaplarınızı arşivlemek için harika bir araçtır."
+      "Z Kitaplarınızı arşivlemek için harika bir araçtır."
     ]
   },
   {
@@ -383,11 +383,11 @@
   {
     "id": "wine-32-bit-kurulum",
     "category": "sistem",
-    "title": "Z-Kitap Açılmıyor 2 (Wine 32-Bit)",
+    "title": "Z Kitap Açılmıyor 2 (Wine 32-Bit)",
     "windows_karsiligi": "Exe Çalıştırma Sorunu",
     "icon": "fa-windows",
     "steps": [
-      "Z-Kitapları açmak için 32-bit desteği şarttır. Aşağıdaki yöntemlerden birini seçin.",
+      "Z Kitapları açmak için 32-bit desteği şarttır. Aşağıdaki yöntemlerden birini seçin.",
       "**1. Adım:** Başlat menüsünden **Uçbirim (Terminal)** uygulamasını açın.",
       "--- **YÖNTEM A: Kopyala / Yapıştır (Kolay)** ---",
       "1. Tarayıcıdan **<a href='https://meb.ai/UZccBuP' target='_blank'>https://meb.ai/UZccBuP</a>** adresine girin.",
@@ -407,7 +407,7 @@
 {
     "id": "wine-winetricks-ileri",
     "category": "sistem",
-    "title": "Z-Kitap Hâlâ Açılmıyor 3 (İleri Düzey Çözüm)",
+    "title": "ZKitap Hâlâ Açılmıyor 3 (İleri Düzey Çözüm)",
     "windows_karsiligi": "DirectX / DLL Hatası",
     "icon": "fa-tools",
     "steps": [
@@ -477,7 +477,7 @@
     "windows_karsiligi": "RAM Temizleme",
     "icon": "fa-memory",
     "steps": [
-      "Z-Kitaplar çok fazla hafıza (RAM) kullanır ve tahtayı dondurabilir. Bunu önlemek için:",
+      "Z Kitaplar çok fazla hafıza (RAM) kullanır ve tahtayı dondurabilir. Bunu önlemek için:",
       "**1. Kural:** Derse başlarken tarayıcıda (Chrome/Firefox) çok fazla sekme açık bırakmayın.",
       "**2. Kural:** Aynı anda 2-3 farklı yayınevinin Z-Kitabını açmayın. İşiniz biteni kapatın.",
       "**3. İpucu:** Teneffüslerde tahtayı sadece kilitlemek yerine, gün ortasında bir kez **Yeniden Başlat** yapmak hafızayı sıfırlar ve performansı artırır."
@@ -609,7 +609,7 @@
     "icon": "fa-user-shield",
     "steps": [
       "Windows'ta uygulamalar doğrudan çalışır, ancak Pardus'ta güvenlik gereği dışarıdan gelen dosyalara **'Çalıştırma İzni'** verilmelidir.",
-      "Özellikle **Z-Kitap** gibi klasörden çalışan uygulamalar tepki vermiyorsa veya metin belgesi gibi açılıyorsa;",
+      "Özellikle **Z Kitap** gibi klasörden çalışan uygulamalar tepki vermiyorsa veya metin belgesi gibi açılıyorsa;",
       "Dosyaya **Sağ Tıklayın** ve **Özellikler** menüsünü açın.",
       "**İzinler** sekmesine gidin ve **'Dosyayı bir program gibi çalıştırmaya izin ver'** kutucuğunu işaretleyip kapatın."
     ]
@@ -645,11 +645,11 @@
   {
     "id": "ipucu-calistirma-izni-detayli",
     "category": "ipucu",
-    "title": "Z-Kitap Açılmıyor **Çalıştırma İzni**",
+    "title": "Z Kitap Açılmıyor **Çalıştırma İzni**",
     "windows_karsiligi": "Doğrudan Çalıştırma (.exe)",
     "icon": "fa-unlock-alt",
     "steps": [
-      "Pardus'ta Z-Kitap gibi uygulamaların çalışması için **'Çalıştırma İzni'** verilmesi gerekebilir.",
+      "Pardus'ta Z Kitap gibi uygulamaların çalışması için **'Çalıştırma İzni'** verilmesi gerekebilir.",
       "**Grafik Arayüz (Önerilen):** Dosyaya sağ tıklayın, **Özellikler > İzinler** sekmesine gidin ve **'Dosyayı program gibi çalıştırmaya izin ver'** kutucuğunu işaretleyin.",
       "**Konsol Yöntemi:** Dosyanın olduğu klasörde sağ tıklayıp uçbirim açın ve `chmod +x dosya_adi` komutunu uygulayın.",
       "**Bilgi:** Linux sistemlerinde güvenlik gereği bir dosyanın uygulama olarak çalışabilmesi için **'x' (execute/çalıştırma)** iznine sahip olması zorunludur."
