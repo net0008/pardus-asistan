@@ -1,9 +1,10 @@
-const CACHE_NAME = 'pardus-asistan-v8.7';
+const CACHE_NAME = 'pardus-asistan-v8.8';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './style.css',
   './script.js',
+  './mesaj.js',
   './manifest.json',
   './icon.png',
   './datamobil.json',
