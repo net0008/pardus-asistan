@@ -66,9 +66,10 @@ function filter(keyword) {
         return;
     }
     const filtered = ALL_DATA.filter(item => 
-        item.title.toLowerCase().includes(lower) || 
-        (item.windows_karsiligi && item.windows_karsiligi.toLowerCase().includes(lower))
-    );
+    item.title.toLowerCase().includes(lower) || 
+    (item.windows_karsiligi && item.windows_karsiligi.toLowerCase().includes(lower)) ||
+    (item.steps && item.steps.some(step => step.toLowerCase().includes(lower)))
+);
     renderMenu(filtered);
 }
 
