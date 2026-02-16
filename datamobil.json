@@ -935,4 +935,21 @@
       "**Topluluk Forumu:** Diğer bilişim öğretmenlerinin de bulunduğu **forum.pardus.org.tr** adresinden hazır çözümlere ulaşabilir veya soru sorabilirsiniz."
     ]
   }
+  ,
+  {
+    "id": "uygulama-pardus-kalem-arkaplan",
+    "category": "ipucu",
+    "title": "Pardus Kalem **Arka Plan** ve Şablonlar",
+    "windows_karsiligi": "Beyaz Tahta / Smart Notebook",
+    "icon": "fa-images",
+    "steps": [
+      "Pardus Kalem, derslerinizi görsel olarak zenginleştirmek ve tahtayı daha verimli kullanmak için çeşitli hazır arka planlar sunar.",
+      "**Nasıl Açılır?:** Pardus Kalem araç çubuğunda yer alan **'Arka Plan'** (veya sayfa düzeni) simgesine tıklayın.",
+      "**Eğitim Şablonları:** Müzik öğretmenleri için **nota defteri**, matematik için **kareli/milimetrik kağıt**, ilkokul öğretmenleri için **güzel yazı/kılavuz çizgileri** ve coğrafya için **Türkiye/Dünya haritası** gibi hazır şablonları tek tıkla tahtaya yansıtabilirsiniz.",
+      "**Şeffaf Arka Plan:** Arka planı **'Şeffaf'** olarak seçtiğinizde masaüstünüz görünür. Bu sayede açık olan bir PDF, Z-Kitap veya web sitesi üzerine doğrudan çizim yapabilir ve not alabilirsiniz.",
+      "**Özel Görsel Ekleme:** Kendi bilgisayarınızda (veya USB belleğinizde) bulunan herhangi bir görseli de (örneğin bir sınav sorusu veya ders afişi) arka plan olarak ekleyip üzerinde işlem yapabilirsiniz."
+    ]
+  }
 ]
+
+
