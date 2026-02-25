@@ -950,6 +950,139 @@
       "**Özel Görsel Ekleme:** Kendi bilgisayarınızda (veya USB belleğinizde) bulunan herhangi bir görseli de (örneğin bir sınav sorusu veya ders afişi) arka plan olarak ekleyip üzerinde işlem yapabilirsiniz."
     ]
   }
+  ,
+  {
+    "id": "uygulama-pardus-kalem-detay",
+    "category": "uygulama",
+    "title": "Pardus Kalem İpuçları (PDF Çizim, Arkaplan)",
+    "windows_karsiligi": "Epic Pen / Beyaz Tahta",
+    "icon": "fa-pen",
+    "steps": [
+      "PDF'ler veya web sayfaları üzerinde doğrudan çizim yapmak için Pardus Kalem'i açıp ekran arka planını 'şeffaf' olarak ayarlayabilirsiniz.",
+      "**Hazır Şablonlar:** Pardus Kalem içinde yer alan harita, element tablosu, müzik notası gibi hazır arka planları kullanarak ders materyallerinizi zenginleştirebilirsiniz.",
+      "**Geometrik Şekiller:** 'Serbest çizim ve şekil' butonunu kullanarak kusursuz düz çizgi, dikdörtgen ve daireler çizebilirsiniz.",
+      "**Kaydetme:** Sağ kısımdaki butonları kullanarak çizimli tahta notlarınızı anında **.pdf** veya **.pen** formatında kaydedip arşivleyebilirsiniz."
+    ]
+  },
+  {
+    "id": "arayuz-kisayol-olusturma",
+    "category": "ipucu",
+    "title": "Masaüstü ve Panele Kısayol Ekleme",
+    "windows_karsiligi": "Sağ Tık > Gönder > Masaüstü",
+    "icon": "fa-share-square",
+    "steps": [
+      "Sık kullandığınız uygulamaları (Z-Kitap, Tarayıcı vb.) el altında tutmak oldukça kolaydır.",
+      "Uygulama menüsünden istediğiniz programı bulun.",
+      "Simgesinin üzerine gelip **Sağ Tıklayın** (Etkileşimli tahtada iki parmağınızla aynı anda dokunun veya parmağınızı basılı tutun).",
+      "Çıkan menüden **'Masaüstüne Ekle'**, **'Panele Ekle'** (Alt görev çubuğu) veya menüde en üstte çıkması için **'Favorilere Ekle'** seçeneğini tıklayın."
+    ]
+  },
+  {
+    "id": "ofis-pdf-duzenleme",
+    "category": "ofis",
+    "title": "PDF Düzenleme ve Form Doldurma",
+    "windows_karsiligi": "Acrobat Reader / Foxit",
+    "icon": "fa-file-pdf",
+    "steps": [
+      "Pardus'ta PDF dosyalarının içindeki metinleri değiştirmek veya evrak (form) doldurmak için PDF dosyasına **Sağ Tıklayıp > Birlikte Aç > LibreOffice Draw** seçeneğini kullanabilirsiniz.",
+      "LibreOffice Draw, PDF'yi bir çizim belgesi gibi açar ve orijinal yazıları silip yerine yenilerini yazmanıza olanak tanır.",
+      "Alternatif olarak Pardus Yazılım Merkezi'ne girip arama kutusuna **'Master PDF Editor'** yazarak profesyonel bir PDF düzenleme programı kurabilirsiniz."
+    ]
+  },
+  {
+    "id": "ipucu-sifre-yazimi",
+    "category": "ipucu",
+    "title": "Terminalde Şifre Yazarken Görünmüyor?",
+    "windows_karsiligi": "Parola Gizliliği (* işareti)",
+    "icon": "fa-user-secret",
+    "steps": [
+      "Pardus'ta (ve tüm Linux sistemlerde) Uçbirim (Terminal) ekranında komut girerken sizden şifre istendiğinde, siz klavyeden bastıkça ekranda **hiçbir şey (yıldız dahil) görünmez.**",
+      "Klavye bozuldu veya ekran dondu sanmayın; bu durum Linux'un standart **güvenlik (omuz sörfü engelleme)** önlemidir.",
+      "Şifrenizi normal bir şekilde klavyeden (veya ETA sanal klavyeden) tuşlayın ve bittiğinde doğrudan **Enter** tuşuna basın. İşleminiz onaylanacaktır."
+    ]
+  },
+  {
+    "id": "sorun-bozuk-paket-onarma",
+    "category": "sistem",
+    "title": "Uygulama Kurulum Hatası (Bozuk Paket)",
+    "windows_karsiligi": "Eksik Dosya / Kurulum Hatası",
+    "icon": "fa-medkit",
+    "steps": [
+      "Pardus Mağaza'dan veya internetten indirdiğiniz bir uygulamayı kurarken hata alıyorsanız, sistemde yarıda kesilmiş veya bozulmuş paketler olabilir.",
+      "Bu durumu çözmek için **Uçbirim (Terminal)** uygulamasını açın ve sırasıyla şu komutları uygulayın:",
+      "Bozuk paketleri tespit edip otomatik onarmak için: <br><code class='terminal-kodu'>sudo apt-get install -f</code>",
+      "Yarım kalan kurulumları yapılandırmak için: <br><code class='terminal-kodu'>sudo dpkg --configure -a</code>",
+      "Son olarak depoları güncelleyip kurulumu tekrar deneyin: <br><code class='terminal-kodu'>sudo apt-get update</code>"
+    ]
+  },
+  {
+    "id": "sistem-baslangic-uygulamalari",
+    "category": "sistem",
+    "title": "Açılışta Başlayan Programları Ayarlama",
+    "windows_karsiligi": "Görev Yöneticisi > Başlangıç",
+    "icon": "fa-hourglass-start",
+    "steps": [
+      "Tahta veya bilgisayar açıldığında bazı uygulamaların (Veyon, e-Zil, Chrome vb.) otomatik çalışmasını istiyorsanız veya arka planda çalışmasını istemediğiniz programları kapatmak istiyorsanız:",
+      "Uygulama menüsünden **Sistem Ayarları** uygulamasını açın.",
+      "Listeden **'Başlangıç Uygulamaları'** (Startup Applications) seçeneğine tıklayın.",
+      "Açılan listede gereksiz gördüklerinizin yanındaki anahtarı kapatabilir, veya alttaki **(+)** butonuna basarak yeni bir uygulamanın açılışta otomatik başlamasını sağlayabilirsiniz."
+    ]
+  },
+  {
+    "id": "ipucu-arsiv-dosyalari",
+    "category": "ipucu",
+    "title": "Zip, Rar veya Tar.gz Dosyası Çıkarma",
+    "windows_karsiligi": "WinRAR / WinZip",
+    "icon": "fa-file-archive",
+    "steps": [
+      "Pardus'ta sıkıştırılmış arşiv dosyalarını açmak için ek bir program kurmanıza gerek yoktur, sistemin kendi **Arşiv Yöneticisi** bunu halleder.",
+      "İndirdiğiniz `.zip`, `.rar` veya Linux'a özgü `.tar.gz` uzantılı dosyaya **Sağ Tıklayın**.",
+      "Menüden anında bulunduğu klasöre çıkartmak için **'Buraya Çıkart'** veya hedef bir klasör seçmek için **'Çıkart...'** seçeneğini tıklamanız yeterlidir."
+    ]
+  },
+  {
+    "id": "arayuz-calisma-alanlari",
+    "category": "ipucu",
+    "title": "Çoklu Çalışma Alanları (Sanal Masaüstü)",
+    "windows_karsiligi": "Görev Görünümü (Win+Tab)",
+    "icon": "fa-th-large",
+    "steps": [
+      "Ekranda çok fazla pencere (Z-Kitaplar, tarayıcı, PDF, klasörler) açıldığında karmaşayı önlemek için **Çalışma Alanları** (Sanal Masaüstü) kullanabilirsiniz.",
+      "Klavyeden **Ctrl + Alt + Sağ/Sol Yön Tuşlarına** basarak pencerelerin olmadığı farklı ve temiz masaüstleri arasında hızlıca geçiş yapabilirsiniz.",
+      "Alt paneldeki **'Sergi'** simgesine tıklayarak tüm çalışma alanlarını aynı anda görebilir, açık olan bir uygulamayı fareyle tutup diğer çalışma alanlarına sürükleyerek düzenleyebilirsiniz."
+    ]
+  },
+  {
+    "id": "genel-yardim-kanallari",
+    "category": "etap",
+    "title": "Pardus Resmi Destek ve Yardım Kanalları",
+    "windows_karsiligi": "Müşteri Hizmetleri / Yardım",
+    "icon": "fa-life-ring",
+    "steps": [
+      "Tahtalarda veya bilgisayarlarda içinden çıkamadığınız donanımsal ya da yazılımsal sorunlar için doğrudan TÜBİTAK/Pardus ekibinden destek alabilirsiniz.",
+      "**Çağrı Merkezi:** Mesai saatleri (09:00 - 18:00) içinde **444 5 773** numaralı hattı arayabilirsiniz.",
+      "**E-Posta:** Sorunlarınızı, hata veren uygulamanın ekran görüntüleriyle birlikte **bilgi@pardus.org.tr** adresine iletebilirsiniz.",
+      "**Topluluk Forumu:** Diğer bilişim öğretmenlerinin de bulunduğu **forum.pardus.org.tr** adresinden hazır çözümlere ulaşabilir veya soru sorabilirsiniz."
+    ]
+  }
+  ,
+  {
+    "id": "sistem-liderahenk-baglanti-cozumu",
+    "category": "sistem",
+    "title": "LiderAhenk'te Görünmeyen Tahta Çözümü",
+    "windows_karsiligi": "Uzaktan Yönetim / Merkezi Kontrol Sorunu",
+    "icon": "fa-network-wired",
+    "steps": [
+      "Etkileşimli tahtanız merkezi yönetim sisteminde (LiderAhenk) görünmüyorsa, istemci servisini tazeleyerek bağlantıyı yeniden kurabilirsiniz.",
+      "**1. Adım:** Uygulama menüsünden **Uçbirim (Terminal)** uygulamasını açın.",
+      "**2. Adım:** Mevcut ahenk paketini sistemden tamamen kaldırmak için aşağıdaki komutu yazıp Enter'a basın (Şifre yazarken görünmeyecektir):",
+      "<code class='terminal-kodu'>sudo apt purge ahenk</code>",
+      "**3. Adım:** Kaldırma işlemi bittikten sonra servisi temiz bir şekilde yeniden kurmak için şu komutu çalıştırın:",
+      "<code class='terminal-kodu'>sudo apt install ahenk</code>",
+      "**4. Adım:** Kurulum tamamlandığında uygulama menüsünden **ETA Kayıt** uygulamasını açın ve tahtayı bilgilerini girerek sisteme tekrar kaydedin."
+    ]
+  }
+  
 ]
 
 

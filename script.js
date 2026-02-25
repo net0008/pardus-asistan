@@ -194,3 +194,20 @@ function checkInstallPrompt() {
 }
 
 function setupEventListeners() { checkInstallPrompt(); }
+// Tarih fonksiyonu
+function setAutomaticDate() {
+    const dateElement = document.getElementById('lastUpdateDate');
+    if (dateElement) {
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        // Örn: "25 Şubat 2026" şeklinde yazdırır
+        const formattedDate = today.toLocaleDateString('tr-TR', options);
+        dateElement.innerText = "Son Güncelleme: " + formattedDate;
+    }
+}
+
+// Sayfa yüklendiğinde otomatik olarak tarihi göstermek için fonksiyonu çağırıyoruz
+document.addEventListener("DOMContentLoaded", () => {
+    // ... diğer fonksiyonlar ...
+    setAutomaticDate(); // Tarih fonksiyonunu çağırıyoruz
+});
