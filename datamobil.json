@@ -1133,7 +1133,7 @@
     "icon": "fa-desktop",
     "steps": [
       "Hazırladığınız USB'yi tahta kapalı iken tahtaya takın, ayrıca tahtaya klavye bağlayınnız ardından tahtayı açınız.",
-      "**Tahta açılırken klavyeden Vestel/Aidata marka ise:** F7 | **Arçelik marka ise** F12 tuşlarına menü gelene kadar seri bir şekilde basıp bırakınız.",
+      "Tahta açılırken klavyeden Vestel/Aidata marka ise:** F7 **| Arçelik marka ise** F12** tuşlarına menü gelene kadar seri bir şekilde basıp bırakınız.",
       "Gelen menüden (USB Markası olarak görünür. Toshiba, Kinsgton vb) USB belleğinizi seçin, ardından gelen ekranda 'Pardus ETAP Yükle' seçeneği ile devam edin.",
       "**Dikkat:** Kurulum başladığında tahtadaki tüm bilgiler silinir ve disk otomatik olarak yapılandırılır."
     ]
