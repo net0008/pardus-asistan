@@ -1107,9 +1107,9 @@
     "icon": "fa-calendar-check",
     "steps": [
       "Pardus ETAP 23'e geçiş süreci 2026 yılı Mart ayı sonuna kadar tamamlanmalıdır. ",
-      "**Gereksinimler:** En az 8 GB kapasiteli bir flash bellek ve güncel Pardus ETAP 23 ISO dosyası gereklidir. [cite: 39, 40]",
-      "**İndirme:** Güncel ISO dosyasını (Pardus-23.4-ETAP...iso) etap.org.tr/iso adresinden temin edebilirsiniz. [cite: 10]",
-      "**Sorumluluk:** Kurulum ve imaj yükleme işlemleri okul müdürlüğünün sorumluluğundadır. [cite: 7]"
+      "**Gereksinimler:** En az 8 GB kapasiteli bir flash bellek ve güncel Pardus ETAP 23 ISO dosyası gereklidir.",
+      "**İndirme:** Güncel ISO dosyasını (Pardus-23.4-ETAP...iso) etap.org.tr/iso adresinden temin edebilirsiniz.",
+      "**Sorumluluk:** Kurulum ve imaj yükleme işlemleri okul müdürlüğünün sorumluluğundadır."
     ]
   },
   {
@@ -1119,10 +1119,10 @@
     "windows_karsiligi": "Bootable USB Hazırlama / Rufus",
     "icon": "fa-usb",
     "steps": [
-      "Ventoy uygulamasını ventoy.net adresinden indirip klasöre çıkartın. [cite: 43, 81]",
-      "**Kurulum:** Ventoy2Disk uygulamasını çalıştırın, flash belleğinizi seçin ve 'Install' butonuna basın. [cite: 86, 109]",
-      "**Onay:** İlk kurulumda veri kaybını onaylamak için kutucuğa büyük harflerle 'YES' yazıp 'OK' butonuna tıklayın. [cite: 127]",
-      "**ISO Transferi:** Flash bellek 'Ventoy' adını aldığında, indirdiğiniz ISO dosyasını doğrudan belleğin içine kopyalayın. [cite: 150]"
+      "Ventoy uygulamasını <a href='https://www.ventoy.net/en/download.html' target='_blank'>ventoy.net</a> adresinden indirip klasöre çıkartın.",
+      "**Kurulum:** Ventoy2Disk uygulamasını çalıştırın, flash belleğinizi seçin ve 'Install' butonuna basın.",
+      "**Onay:** İlk kurulumda veri kaybını onaylamak için kutucuğa büyük harflerle 'YES' yazıp 'OK' butonuna tıklayın.",
+      "**ISO Transferi:** Flash bellek 'Ventoy' adını aldığında, indirdiğiniz ISO dosyasını doğrudan belleğin içine kopyalayın."
     ]
   },
   {
@@ -1145,10 +1145,10 @@
     "windows_karsiligi": "Windows Update / İlk Ayarlar",
     "icon": "fa-sync-alt",
     "steps": [
-      "Kurulum bittikten sonra internet bağlantısını sağlayın. [cite: 184]",
-      "**Güncelleyici:** Paneldeki kalkan simgesine tıklayarak 'Pardus Güncelleyici'yi açın ve tüm paketleri yükleyin. [cite: 351, 355]",
-      "**Parola:** Yetki istendiğinde yönetici parolası olarak 'etapadmin' (veya belirlenen parola) girilmelidir. [cite: 369]",
-      "**ETA Karşılayıcı:** İlk açılışta gelen ekrandan çözünürlük (4K/Full HD), ses ve tema (Açık/Koyu) ayarlarını yapın. [cite: 197, 205, 234]"
+      "Kurulum bittikten sonra internet bağlantısını sağlayın.]",
+      "**Güncelleyici:** Paneldeki kalkan simgesine tıklayarak 'Pardus Güncelleyici'yi açın ve tüm paketleri yükleyin.",
+      "**Parola:** Yetki istendiğinde yönetici parolası olarak 'etapadmin' (veya belirlenen parola) girilmelidir.",
+      "**ETA Karşılayıcı:** İlk açılışta gelen ekrandan çözünürlük (4K/Full HD), ses ve tema (Açık/Koyu) ayarlarını yapın."
     ]
   },
   {
@@ -1158,10 +1158,10 @@
     "windows_karsiligi": "Sistem Kaydı / Domain Katılımı",
     "icon": "fa-id-card",
     "steps": [
-      "Güncellemelerden sonra 'ETA Kayıt' uygulamasını açın. [cite: 192]",
-      "**Kayıt:** Okul kodunuzu girin veya 'İl, İlçe ve Okul Seç' butonunu kullanarak okulunuzu bulun. [cite: 494, 517]",
-      "**Konum:** Tahtanın bulunduğu sınıf/şube adını (Örn: 10-A, Öğretmenler Odası) girip kaydedin. [cite: 508, 543]",
-      "**Ahenk:** Kayıt başarılı olduktan sonra 'Ahenk' (merkezi yönetim) servisi otomatik kurulacaktır; bu ekranı kapatmadan kurulumun bitmesini bekleyin. [cite: 550, 568]"
+      "Güncellemelerden sonra 'ETA Kayıt' uygulamasını açın.",
+      "**Kayıt:** Okul kodunuzu girin veya 'İl, İlçe ve Okul Seç' butonunu kullanarak okulunuzu bulun.",
+      "**Konum:** Tahtanın bulunduğu sınıf/şube adını (Örn: 10-A, Öğretmenler Odası) girip kaydedin.",
+      "**Ahenk:** Kayıt başarılı olduktan sonra 'Ahenk' (merkezi yönetim) servisi otomatik kurulacaktır; bu ekranı kapatmadan kurulumun bitmesini bekleyin."
     ]
   }
   ,
