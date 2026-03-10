@@ -1098,7 +1098,89 @@
       "<code class='terminal-kodu'>cat /etc/pardus-release</code>"
     ]
   }
-  
+  ,
+  {
+    "id": "goc-hazirlik-ve-takvim",
+    "category": "Göç",
+    "title": "1. Hazırlık ve Geçiş Takvimi",
+    "windows_karsiligi": "Sistem Hazırlığı / Upgrade Planı",
+    "icon": "fa-calendar-check",
+    "steps": [
+      "Pardus ETAP 23'e geçiş süreci 2026 yılı Mart ayı sonuna kadar tamamlanmalıdır. ",
+      "**Gereksinimler:** En az 8 GB kapasiteli bir flash bellek ve güncel Pardus ETAP 23 ISO dosyası gereklidir. [cite: 39, 40]",
+      "**İndirme:** Güncel ISO dosyasını (Pardus-23.4-ETAP...iso) etap.org.tr/iso adresinden temin edebilirsiniz. [cite: 10]",
+      "**Sorumluluk:** Kurulum ve imaj yükleme işlemleri okul müdürlüğünün sorumluluğundadır. [cite: 7]"
+    ]
+  },
+  {
+    "id": "goc-usb-hazirlama",
+    "category": "Göç",
+    "title": "2. Kurulum USB'si Hazırlama (Ventoy)",
+    "windows_karsiligi": "Bootable USB Hazırlama / Rufus",
+    "icon": "fa-usb",
+    "steps": [
+      "Ventoy uygulamasını ventoy.net adresinden indirip klasöre çıkartın. [cite: 43, 81]",
+      "**Kurulum:** Ventoy2Disk uygulamasını çalıştırın, flash belleğinizi seçin ve 'Install' butonuna basın. [cite: 86, 109]",
+      "**Onay:** İlk kurulumda veri kaybını onaylamak için kutucuğa büyük harflerle 'YES' yazıp 'OK' butonuna tıklayın. [cite: 127]",
+      "**ISO Transferi:** Flash bellek 'Ventoy' adını aldığında, indirdiğiniz ISO dosyasını doğrudan belleğin içine kopyalayın. [cite: 150]"
+    ]
+  },
+  {
+    "id": "goc-kurulum-asamasi",
+    "category": "Göç",
+    "title": "3. Tahtaya Kurulum (Format)",
+    "windows_karsiligi": "Windows Kurulumu / Format Atma",
+    "icon": "fa-desktop",
+    "steps": [
+      "Hazırladığınız USB'yi tahtaya takın ve tahtayı açarken Boot menüsüne girmek için şu tuşlara basın: [cite: 155, 156]",
+      "**Vestel/Aidata:** F7 | **Arçelik:** F12 tuşlarına seri şekilde basın. [cite: 157, 158]",
+      "Menüden USB belleğinizi seçin, ardından gelen ekranda 'Pardus ETAP Yükle' seçeneği ile devam edin. [cite: 165, 167]",
+      "**Dikkat:** Kurulum başladığında tahtadaki tüm bilgiler silinir ve disk otomatik olarak yapılandırılır. [cite: 169]"
+    ]
+  },
+  {
+    "id": "goc-guncelleme-ve-ayar",
+    "category": "Göç",
+    "title": "4. İlk Güncelleme ve Kişiselleştirme",
+    "windows_karsiligi": "Windows Update / İlk Ayarlar",
+    "icon": "fa-sync-alt",
+    "steps": [
+      "Kurulum bittikten sonra internet bağlantısını sağlayın. [cite: 184]",
+      "**Güncelleyici:** Paneldeki kalkan simgesine tıklayarak 'Pardus Güncelleyici'yi açın ve tüm paketleri yükleyin. [cite: 351, 355]",
+      "**Parola:** Yetki istendiğinde yönetici parolası olarak 'etapadmin' (veya belirlenen parola) girilmelidir. [cite: 369]",
+      "**ETA Karşılayıcı:** İlk açılışta gelen ekrandan çözünürlük (4K/Full HD), ses ve tema (Açık/Koyu) ayarlarını yapın. [cite: 197, 205, 234]"
+    ]
+  },
+  {
+    "id": "goc-eta-kayit-islemi",
+    "category": "Göç",
+    "title": "5. ETA Kayıt ve LiderAhenk",
+    "windows_karsiligi": "Sistem Kaydı / Domain Katılımı",
+    "icon": "fa-id-card",
+    "steps": [
+      "Güncellemelerden sonra 'ETA Kayıt' uygulamasını açın. [cite: 192]",
+      "**Kayıt:** Okul kodunuzu girin veya 'İl, İlçe ve Okul Seç' butonunu kullanarak okulunuzu bulun. [cite: 494, 517]",
+      "**Konum:** Tahtanın bulunduğu sınıf/şube adını (Örn: 10-A, Öğretmenler Odası) girip kaydedin. [cite: 508, 543]",
+      "**Ahenk:** Kayıt başarılı olduktan sonra 'Ahenk' (merkezi yönetim) servisi otomatik kurulacaktır; bu ekranı kapatmadan kurulumun bitmesini bekleyin. [cite: 550, 568]"
+    ]
+  }
+  ,
+  {
+    "id": "sistem-versiyon-sorgulama",
+    "category": "Göç",
+    "title": "Pardus Versiyonu Nasıl Öğrenilir?",
+    "windows_karsiligi": "Sistem Hakkında / winver",
+    "icon": "fa-info-circle",
+    "steps": [
+      "Tahtanızın hangi Pardus sürümünü (Örn: ETAP 19, ETAP 23) kullandığını iki farklı yolla öğrenebilirsiniz.",
+      "**1. Yöntem (Görsel):** Uygulama menüsünden **Sistem Ayarları**'na girin ve en alttaki **'Hakkında'** veya **'Sistem Bilgisi'** sekmesine tıklayın. Burada Pardus sürümü ve çekirdek (kernel) numarası yazacaktır.",
+      "**2. Yöntem (Hızlı Komut):** Uçbirim (Terminal) uygulamasını açın ve aşağıdaki komutu yazıp Enter'a basın:",
+      "<code class='terminal-kodu'>hostnamectl</code>",
+      "Bu komut; işletim sistemi sürümünü (Operating System), çekirdek yapısını (Kernel) ve mimariyi (Architecture) detaylıca listeleyecektir.",
+      "**Alternatif Komut:** Sadece Pardus sürüm adını görmek isterseniz şu komutu kullanabilirsiniz:",
+      "<code class='terminal-kodu'>cat /etc/pardus-release</code>"
+    ]
+  }
 ]
 
 
