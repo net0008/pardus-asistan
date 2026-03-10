@@ -1101,7 +1101,7 @@
   ,
   {
     "id": "goc-hazirlik-ve-takvim",
-    "category": "Göç",
+    "category": "goc",
     "title": "1. Hazırlık ve Geçiş Takvimi",
     "windows_karsiligi": "Sistem Hazırlığı / Upgrade Planı",
     "icon": "fa-calendar-check",
@@ -1114,7 +1114,7 @@
   },
   {
     "id": "goc-usb-hazirlama",
-    "category": "Göç",
+    "category": "goc",
     "title": "2. Kurulum USB'si Hazırlama (Ventoy)",
     "windows_karsiligi": "Bootable USB Hazırlama / Rufus",
     "icon": "fa-usb",
@@ -1127,7 +1127,7 @@
   },
   {
     "id": "goc-kurulum-asamasi",
-    "category": "Göç",
+    "category": "goc",
     "title": "3. Tahtaya Kurulum (Format)",
     "windows_karsiligi": "Windows Kurulumu / Format Atma",
     "icon": "fa-desktop",
@@ -1140,7 +1140,7 @@
   },
   {
     "id": "goc-guncelleme-ve-ayar",
-    "category": "Göç",
+    "category": "goc",
     "title": "4. İlk Güncelleme ve Kişiselleştirme",
     "windows_karsiligi": "Windows Update / İlk Ayarlar",
     "icon": "fa-sync-alt",
@@ -1153,7 +1153,7 @@
   },
   {
     "id": "goc-eta-kayit-islemi",
-    "category": "Göç",
+    "category": "goc",
     "title": "5. ETA Kayıt ve LiderAhenk",
     "windows_karsiligi": "Sistem Kaydı / Domain Katılımı",
     "icon": "fa-id-card",
@@ -1167,7 +1167,7 @@
   ,
   {
     "id": "sistem-versiyon-sorgulama",
-    "category": "Göç",
+    "category": "goc",
     "title": "Pardus Versiyonu Nasıl Öğrenilir?",
     "windows_karsiligi": "Sistem Hakkında / winver",
     "icon": "fa-info-circle",
@@ -1182,5 +1182,3 @@
     ]
   }
 ]
-
-

@@ -19,7 +19,8 @@ async function loadData() {
         const response = await fetch(dataFile);
         if (!response.ok) throw new Error("Dosya bulunamadı");
         ALL_DATA = await response.json();
-        renderMenu(ALL_DATA);
+        // Sayfa ilk yüklendiğinde varsayılan olarak 'Göç' kategorisini seçili getir.
+        document.querySelector('button[onclick="filterCategory(\'goc\')"]').click();
     } catch (error) {
         console.error(error);
         document.getElementById("menuGrid").innerHTML = `<p style="text-align:center;">Veriler yükleniyor...</p>`;
