@@ -1108,7 +1108,7 @@
     "steps": [
       "Pardus ETAP 23'e geçiş süreci 2026 yılı Mart ayı sonuna kadar tamamlanmalıdır. ",
       "**Gereksinimler:** En az 8 GB kapasiteli bir flash bellek ve güncel Pardus ETAP 23 ISO dosyası gereklidir.",
-      "**İndirme:** Güncel ISO dosyasını (Pardus-23.4-ETAP...iso) <a href='https://bulut.pardus.org.tr/s/MSSsLqRc2aY56om' target='_blank'>etap.org.tr/iso</a> adresinden temin edebilirsiniz.",
+      "**İndirme:** Güncel ISO dosyasını (Pardus-23.4-ETAP-20260216-1444-amd64.iso) <a href='https://bulut.pardus.org.tr/s/MSSsLqRc2aY56om' target='_blank'>etap.org.tr/iso</a> adresinden temin edebilirsiniz.",
       "**Sorumluluk:** Kurulum ve imaj yükleme işlemleri okul müdürlüğünün sorumluluğundadır."
     ]
   },
