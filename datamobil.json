@@ -1108,7 +1108,7 @@
     "steps": [
       "Pardus ETAP 23'e geçiş süreci 2026 yılı Mart ayı sonuna kadar tamamlanmalıdır. ",
       "**Gereksinimler:** En az 8 GB kapasiteli bir flash bellek ve güncel Pardus ETAP 23 ISO dosyası gereklidir.",
-      "**İndirme:** Güncel ISO dosyasını (Pardus-23.4-ETAP...iso) etap.org.tr/iso adresinden temin edebilirsiniz.",
+      "**İndirme:** Güncel ISO dosyasını (Pardus-23.4-ETAP...iso) <a href='https://bulut.pardus.org.tr/s/MSSsLqRc2aY56om' target='_blank'>etap.org.tr/iso</a> adresinden temin edebilirsiniz.",
       "**Sorumluluk:** Kurulum ve imaj yükleme işlemleri okul müdürlüğünün sorumluluğundadır."
     ]
   },
@@ -1132,10 +1132,10 @@
     "windows_karsiligi": "Windows Kurulumu / Format Atma",
     "icon": "fa-desktop",
     "steps": [
-      "Hazırladığınız USB'yi tahtaya takın ve tahtayı açarken Boot menüsüne girmek için şu tuşlara basın: [cite: 155, 156]",
-      "**Vestel/Aidata:** F7 | **Arçelik:** F12 tuşlarına seri şekilde basın. [cite: 157, 158]",
-      "Menüden USB belleğinizi seçin, ardından gelen ekranda 'Pardus ETAP Yükle' seçeneği ile devam edin. [cite: 165, 167]",
-      "**Dikkat:** Kurulum başladığında tahtadaki tüm bilgiler silinir ve disk otomatik olarak yapılandırılır. [cite: 169]"
+      "Hazırladığınız USB'yi tahtaya takın ve tahtayı açarken Boot menüsüne girmek için şu tuşlara basın:",
+      "**Vestel/Aidata:** F7 | **Arçelik:** F12 tuşlarına seri şekilde basın.",
+      "Menüden USB belleğinizi seçin, ardından gelen ekranda 'Pardus ETAP Yükle' seçeneği ile devam edin.",
+      "**Dikkat:** Kurulum başladığında tahtadaki tüm bilgiler silinir ve disk otomatik olarak yapılandırılır."
     ]
   },
   {
