@@ -1081,6 +1081,22 @@
       "<code class='terminal-kodu'>sudo apt install ahenk</code>",
       "**4. Adım:** Kurulum tamamlandığında uygulama menüsünden **ETA Kayıt** uygulamasını açın ve tahtayı bilgilerini girerek sisteme tekrar kaydedin."
     ]
+  },
+  {
+    "id": "sistem-versiyon-sorgulama",
+    "category": "sistem",
+    "title": "Pardus Versiyonu Nasıl Öğrenilir?",
+    "windows_karsiligi": "Sistem Hakkında / winver",
+    "icon": "fa-info-circle",
+    "steps": [
+      "Tahtanızın hangi Pardus sürümünü (Örn: ETAP 19, ETAP 23) kullandığını iki farklı yolla öğrenebilirsiniz.",
+      "**1. Yöntem (Görsel):** Uygulama menüsünden **Sistem Ayarları**'na girin ve en alttaki **'Hakkında'** veya **'Sistem Bilgisi'** sekmesine tıklayın. Burada Pardus sürümü ve çekirdek (kernel) numarası yazacaktır.",
+      "**2. Yöntem (Hızlı Komut):** Uçbirim (Terminal) uygulamasını açın ve aşağıdaki komutu yazıp Enter'a basın:",
+      "<code class='terminal-kodu'>hostnamectl</code>",
+      "Bu komut; işletim sistemi sürümünü (Operating System), çekirdek yapısını (Kernel) ve mimariyi (Architecture) detaylıca listeleyecektir.",
+      "**Alternatif Komut:** Sadece Pardus sürüm adını görmek isterseniz şu komutu kullanabilirsiniz:",
+      "<code class='terminal-kodu'>cat /etc/pardus-release</code>"
+    ]
   }
   
 ]
