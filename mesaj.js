@@ -1,6 +1,7 @@
 // mesaj.js - Dinamik Duyuru ve İpucu Yönetimi
 
 const announcements = [
+    '<strong>Hatırlatma:</strong> İzmir İl MEM takvimine göre Pardus ETAP 23 geçiş işlemleri 1 Nisan 2026'ya kadar tamamlanmalıdır.'
     `<strong>Yeni Özellik:</strong> Pardus ETAP 23 ile gelen muazzam yenilikleri "ETAP" kategorisinde inceleyebilirsiniz!`,
     `<strong>İpucu:</strong> Arama kutusuna Windows'taki adını (Örn: Görev Yöneticisi) yazarak Pardus karşılığını bulabilirsiniz.`,
     `<strong>Önemli:</strong> Tahtanız donduğunda fişi çekmeyin, güç düğmesine 10-15 saniye basılı tutarak güvenle kapatın.`,
