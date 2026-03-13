@@ -1147,7 +1147,7 @@
     "steps": [
       "Kurulum bittikten sonra internet bağlantısını sağlayın.]",
       "**Güncelleyici:** Paneldeki kalkan simgesine tıklayarak 'Pardus Güncelleyici'yi açın ve tüm paketleri yükleyin.",
-      "**Parola:** Yetki istendiğinde yönetici parolası olarak 'etapadmin' (veya belirlenen parola) girilmelidir.",
+      "**Parola:** Yetki istendiğinde yönetici parolasını giriniz. Yönetici parolasını YEĞİTEK Okul sorumlusu, okul müdürü veya YEĞİTEK İlçe Bilişim Koordinatöründen öğrenebilirsiniz.",
       "**ETA Karşılayıcı:** İlk açılışta gelen ekrandan çözünürlük (4K/Full HD), ses ve tema (Açık/Koyu) ayarlarını yapın."
     ]
   },
