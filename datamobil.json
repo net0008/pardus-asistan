@@ -1120,7 +1120,7 @@
     "icon": "fa-usb",
     "steps": [
       "Ventoy uygulamasını <a href='https://www.ventoy.net/en/download.html' target='_blank'>ventoy.net</a> adresinden indirip klasöre çıkartın.",
-      "**Kurulum:** Ventoy2Disk uygulamasını çalıştırın, flash belleğinizi seçin ve 'Install' butonuna basın.",
+      "**Kurulum:** Ventoy2Disk uygulamasını çalıştırın, seçenek menüsünden bölüm yapılandırmasının **NTFS** olarak ayarlayınız ve flash belleğinizi seçin ve 'Install' butonuna basın.",
       "**Onay:** İlk kurulumda veri kaybını onaylamak için kutucuğa büyük harflerle 'YES' yazıp 'OK' butonuna tıklayın.",
       "**ISO Transferi:** Flash bellek 'Ventoy' adını aldığında, indirdiğiniz ISO dosyasını doğrudan belleğin içine kopyalayın."
     ]
