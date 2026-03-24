@@ -1180,5 +1180,22 @@
       "**Alternatif Komut:** Sadece Pardus sürüm adını görmek isterseniz şu komutu kullanabilirsiniz:",
       "<code class='terminal-kodu'>cat /etc/pardus-release</code>"
     ]
-  }
+  },
+{
+  "id": "sorun-dokunmatik-guncelleme-cozumu",
+  "category": "goc",
+  "title": "Güncelleme Sonrası Dokunmatik Sorunu",
+  "windows_karsiligi": "Dokunmatik Ekran Sürücüsü Onarma / Touchscreen Fix",
+  "icon": "fa-hand-point-up",
+  "steps": [
+    "Bazı etkileşimli tahtalarda güncelleme sonrası dokunmatik özelliğinin çalışmaması, sistemde kalan eski beta sürücülerinden kaynaklanabilir.",
+    "Bu sorunu çözmek için öncelikle **Uçbirim (Terminal)** uygulamasını açın.",
+    "**1. Adım:** Paket listesini güncellemek için şu komutu çalıştırın: <br><code class='terminal-kodu'>sudo apt update</code>",
+    "**2. Adım:** Test aşamasından kalan eski beta paketini sistemden tamamen kaldırmak için: <br><code class='terminal-kodu'>sudo apt purge eta-touchdrv</code>",
+    "**3. Adım:** Güncel ve stabil dokunmatik sürücüsünü yeniden kurmak için şu komutu girin: <br><code class='terminal-kodu'>sudo apt install eta-touchdrv</code>",
+    "Kurulum bittikten sonra sürücünün devreye girmesi için tahtayı yeniden başlatmanız önerilir."
+  ]
+}
+
+
 ]
