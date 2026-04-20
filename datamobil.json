@@ -1195,7 +1195,21 @@
     "**3. Adım:** Güncel ve stabil dokunmatik sürücüsünü yeniden kurmak için şu komutu girin: <br><code class='terminal-kodu'>sudo apt install eta-touchdrv</code>",
     "Kurulum bittikten sonra sürücünün devreye girmesi için tahtayı yeniden başlatmanız önerilir."
   ]
+},
+{
+  "id": "sorun-usb-disk-acilmiyor",
+  "category": "sistem",
+  "title": "USB Bellekler Neden Tahtada Açılmıyor?",
+  "windows_karsiligi": "USB Sürücü Hatası / Disk Onarma",
+  "icon": "fa-usb",
+  "steps": [
+    "USB belleğinizin tahtada açılmamasının iki temel sebebi vardır: Yanlış çıkarılma ve Windows'un diski 'meşgul' bırakması.",
+    "**1. Güvenli Kaldır Mevzusu:** Pardus veriyi diske yazarken tampon bellek kullanır. Kopyalama bitti görünse de arka planda işlem sürebilir. 'Güvenli kaldır' demeden çekmek 'dirty bit' (kirli bit) hatasına sebep olur.",
+    "**2. Windows Hızlı Başlatma:** Windows 8 ve üzeri sistemler tam kapanmaz, diskleri 'hazırda bekletme' modunda kilitli bırakır. Bu durumda Pardus, USB'yi 'meşgul' görüp erişimi engeller.",
+    "**3. Dosya Sistemi:** FAT32 bozulmaya meyillidir, NTFS daha dayanıklıdır ancak Windows kilitlemesi durumunda her ikisi de Pardus'ta sorun çıkarabilir.",
+    "**Çözüm A (Önlem):** Windows cihazlarda USB'yi çekmeden önce mutlaka sağ alt köşeden **'Donanımı Güvenle Kaldır'** seçeneğini kullanın.",
+    "**Çözüm B (Onarım):** USB'yi tahtaya taktığınızda açılmıyorsa, Pardus uygulama menüsünden **'ETA USB Onarıcı'** yazılımını çalıştırarak diski saniyeler içinde düzeltebilirsiniz."
+  ]
 }
-
 
 ]
