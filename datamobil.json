@@ -1199,16 +1199,16 @@
 {
   "id": "sorun-usb-disk-acilmiyor",
   "category": "sistem",
-  "title": "USB Bellekler Neden Tahtada Açılmıyor?",
-  "windows_karsiligi": "USB Sürücü Hatası / Disk Onarma",
+  "title": "USB Bellek Neden Okunmuyor?",
+  "windows_karsiligi": "Sürücü Hataları / Disk Yönetimi",
   "icon": "fa-usb",
   "steps": [
-    "USB belleğinizin tahtada açılmamasının iki temel sebebi vardır: Yanlış çıkarılma ve Windows'un diski 'meşgul' bırakması.",
-    "**1. Güvenli Kaldır Mevzusu:** Pardus veriyi diske yazarken tampon bellek kullanır. Kopyalama bitti görünse de arka planda işlem sürebilir. 'Güvenli kaldır' demeden çekmek 'dirty bit' (kirli bit) hatasına sebep olur.",
-    "**2. Windows Hızlı Başlatma:** Windows 8 ve üzeri sistemler tam kapanmaz, diskleri 'hazırda bekletme' modunda kilitli bırakır. Bu durumda Pardus, USB'yi 'meşgul' görüp erişimi engeller.",
-    "**3. Dosya Sistemi:** FAT32 bozulmaya meyillidir, NTFS daha dayanıklıdır ancak Windows kilitlemesi durumunda her ikisi de Pardus'ta sorun çıkarabilir.",
-    "**Çözüm A (Önlem):** Windows cihazlarda USB'yi çekmeden önce mutlaka sağ alt köşeden **'Donanımı Güvenle Kaldır'** seçeneğini kullanın.",
-    "**Çözüm B (Onarım):** USB'yi tahtaya taktığınızda açılmıyorsa, Pardus uygulama menüsünden **'ETA USB Onarıcı'** yazılımını çalıştırarak diski saniyeler içinde düzeltebilirsiniz."
+    "Belleklerin tahtada görünmemesi genellikle donanımsal bir arıza değil, işletim sistemleri arasındaki 'dosya yazma' ve 'güvenlik' protokolü farklarından kaynaklanır.",
+    "**Yazma Tamponu ve Ani Çıkarma:** Pardus verileri doğrudan değil, bir ara bellek üzerinden diske yazar. İşlem bitti görünse de arka planda veri akışı sürebilir. 'Donanımı Çıkar' demeden çekmek, disk haritasında (MFT/FAT) hatalara yol açar.",
+    "**Windows'un Disk Kilidi (Hibernation):** Windows 8 ve üzeri sistemler hızlı açılmak için diskleri 'hazırda bekletme' modunda kilitli bırakır. Pardus, verileri korumak adına bu 'meşgul' disklere erişimi varsayılan olarak reddeder.",
+    "**Dosya Sistemi Dayanıklılığı:** FAT32 dosya sistemleri günlüğe kaydetme (journaling) yapmadığı için bu hatalardan çok çabuk etkilenir; NTFS ise daha dirençli olmasına rağmen 'kilit' sorunundan muaf değildir.",
+    "**Önleyici Yaklaşım:** Sorun yaşamamak için Windows bilgisayarlarda USB'yi çekmeden önce sağ alt panelden mutlaka 'Sürücüyü Çıkar' komutunu uygulayın.",
+    "**Pratik Çözüm:** Eğer USB takıldığında hata uyarısı alıyorsanız veya boş görünüyorsa, Pardus uygulama menüsündeki **'ETA USB Onarıcı'** aracını çalıştırarak diskteki kilitleri saniyeler içinde temizleyebilirsiniz."
   ]
 }
 
