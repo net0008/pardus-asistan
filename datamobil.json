@@ -1210,6 +1210,19 @@
     "**Önleyici Yaklaşım:** Sorun yaşamamak için Windows bilgisayarlarda USB'yi çekmeden önce sağ alt panelden mutlaka 'Sürücüyü Çıkar' komutunu uygulayın.",
     "**Pratik Çözüm:** Eğer USB takıldığında hata uyarısı alıyorsanız veya boş görünüyorsa, Pardus uygulama menüsündeki **'ETA USB Onarıcı'** aracını çalıştırarak diskteki kilitleri saniyeler içinde temizleyebilirsiniz."
   ]
+},
+{
+  "id": "sistem-etap-yetkili-sifre-degistirme",
+  "category": "sistem",
+  "title": "Etap Yetkili Şifresini Değiştirme",
+  "windows_karsiligi": "Kullanıcı Şifresi Değiştirme / Parola Güncelleme",
+  "icon": "fa-key",
+  "steps": [
+    "Sistem güvenliği için varsayılan yönetici şifresini değiştirmeniz önerilir. Bu işlemi iki farklı yöntemle gerçekleştirebilirsiniz:",
+    "**1. Grafik Arayüzden (En Kolay):** Etap Yetkili kullanıcısı ile oturum açtıktan sonra **Ayarlar → Kullanıcılar** menüsüne girin. Listeden **Etap Yetkili** kullanıcısını seçin ve **'Parola Değiştir'** seçeneğine tıklayarak yeni şifrenizi tanımlayın.",
+    "**2. Terminal Üzerinden:** Uçbirim (Terminal) uygulamasını açın ve aşağıdaki komutu girin:",
+    "<code class='terminal-kodu'>sudo passwd etapadmin</code>",
+    "Komutu çalıştırdıktan sonra önce mevcut parolanızı, ardından yeni belirlediğiniz şifreyi iki kez tuşlayın. Şifreyi yazarken ekranda hiçbir karakter (yıldız dahil) görünmeyecektir; yazıp Enter'a basmanız yeterlidir."
+  ]
 }
-
 ]
