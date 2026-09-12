@@ -1,5 +1,21 @@
 [
   {
+    "id": "etap-yazici-kurulumu-eta-printer-manager",
+    "category": "etap",
+    "title": "ETA Yazıcı Yöneticisi ile **Yazıcı Kurulumu** (BETA)",
+    "windows_karsiligi": "Yazıcı ve Tarayıcı Ekleme / Aygıtlar",
+    "icon": "fa-print",
+    "steps": [
+      "**Yeni ETA Yazıcı Yöneticisi:** Pardus ETAP'ta yazıcılarınızı saniyeler içinde kurup yönetmenizi sağlayan yeni nesil hızlı kurulum aracıdır.",
+      "**1. Pardus Yazılım Mağazasını Açın:** Uygulamalar menüsünden **Mağaza** uygulamasını açın.",
+      "**2. Depo Sekmesine Geçin:** Mağaza penceresinde üst kısımda yer alan **Depo** sekmesine tıklayın.",
+      "**3. Uygulamayı Arayın:** Arama kutusuna <span class=\"terminal-kodu\">eta-printer-manager</span> yazın ve **Ara** düğmesine tıklayın.",
+      "**4. Uygulamayı Bulun ve Yükleyin:** Listelenen **eta-printer-manager** uygulamasını seçip **Yükle** butonuna tıklayın. *(UYARI: Bu uygulama BETA aşamasındadır. Geri bildirimleriniz değerlidir.)*",
+      "**5. Kurulumu Tamamlayın ve Kullanın:** Kurulum tamamlandığında uygulamayı açarak **+ Yazıcı Ekle** ile ağdaki veya USB'den bağlı yazıcınızı kolayca ekleyin ve yönetin.",
+      "**Neden Kullanmalıyım?:**<br>• Yazıcı kurulumunu basitleştirir<br>• Otomatik sürücü algılama sağlar<br>• Ağdaki yazıcıları kolayca bulur<br>• BETA aşamasındadır, geri bildirimlerinizi iletebilirsiniz."
+    ]
+  },
+  {
     "id": "ipucu-ozgur-yazilim-felsefesi",
     "category": "ipucu",
     "title": "Pardus ve **Özgür Yazılım** Mantığı",

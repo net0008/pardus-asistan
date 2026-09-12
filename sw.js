@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pardus-asistan-v8.8';
+const CACHE_NAME = 'pardus-asistan-v8.9';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

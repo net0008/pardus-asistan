@@ -6,21 +6,23 @@ let secretTimer;
 document.addEventListener("DOMContentLoaded", () => {
     loadData();
     setupEventListeners();
-    checkInstallPrompt();
+    setAutomaticDate();
+    registerServiceWorker();
     if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
-        document.getElementById('darkModeToggle').checked = true;
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        if (darkModeToggle) darkModeToggle.checked = true;
     }
 });
 
 async function loadData() {
-    const dataFile = 'datamobil.json'; // Ayrım kaldırıldı, sadece datamobil.json kullanılacak
+    const dataFile = 'datamobil.json';
     try {
         const response = await fetch(dataFile);
         if (!response.ok) throw new Error("Dosya bulunamadı");
         ALL_DATA = await response.json();
         // Sayfa ilk yüklendiğinde varsayılan olarak 'Göç' kategorisini seçili getir.
-        document.querySelector('button[onclick="filterCategory(\'goc\')"]').click();
+        filterCategory('goc');
     } catch (error) {
         console.error(error);
         document.getElementById("menuGrid").innerHTML = `<p style="text-align:center;">Veriler yükleniyor...</p>`;
@@ -51,9 +53,20 @@ function renderMenu(data) {
     });
 }
 
-function filterCategory(category) {
+function filterCategory(category, btnElement) {
     document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    
+    let targetBtn = btnElement;
+    if (!targetBtn && typeof window !== 'undefined' && window.event && window.event.target) {
+        targetBtn = window.event.target.closest('.cat-btn');
+    }
+    if (!targetBtn) {
+        targetBtn = document.querySelector(`.cat-btn[data-category="${category}"]`) ||
+                    document.querySelector(`.cat-btn[onclick*="'${category}'"]`);
+    }
+    if (targetBtn) {
+        targetBtn.classList.add('active');
+    }
     renderMenu(category === 'all' ? ALL_DATA : ALL_DATA.filter(item => item.category === category));
 }
 
@@ -194,7 +207,10 @@ function checkInstallPrompt() {
     }
 }
 
-function setupEventListeners() { checkInstallPrompt(); }
+function setupEventListeners() { 
+    checkInstallPrompt(); 
+}
+
 // Tarih fonksiyonu
 function setAutomaticDate() {
     const dateElement = document.getElementById('lastUpdateDate');
@@ -207,8 +223,17 @@ function setAutomaticDate() {
     }
 }
 
-// Sayfa yüklendiğinde otomatik olarak tarihi göstermek için fonksiyonu çağırıyoruz
-document.addEventListener("DOMContentLoaded", () => {
-    // ... diğer fonksiyonlar ...
-    setAutomaticDate(); // Tarih fonksiyonunu çağırıyoruz
-});
+// PWA Service Worker Kaydı
+function registerServiceWorker() {
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+                .then(reg => {
+                    console.log('[Service Worker] Kayıt başarılı:', reg.scope);
+                })
+                .catch(err => {
+                    console.error('[Service Worker] Kayıt hatası:', err);
+                });
+        });
+    }
+}

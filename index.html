@@ -57,15 +57,15 @@
     </div>
 
         <div class="category-scroll">
-            <button class="cat-btn active" onclick="filterCategory('all')">Tümü</button>
-            <button class="cat-btn" onclick="filterCategory('donanim')"><i class="fas fa-microchip"></i> Donanım</button>
-            <button class="cat-btn" onclick="filterCategory('internet')"><i class="fas fa-wifi"></i> İnternet</button>
-            <button class="cat-btn" onclick="filterCategory('ofis')"><i class="fas fa-file-alt"></i> Ofis</button>
-            <button class="cat-btn" onclick="filterCategory('uygulama')"><i class="fas fa-cube"></i> Uygulama</button>
-            <button class="cat-btn" onclick="filterCategory('goc')"><i class="fas fa-route"></i> Göç Süreci</button>
-            <button class="cat-btn" onclick="filterCategory('sistem')"><i class="fas fa-cog"></i> Sistem</button>
-            <button class="cat-btn" onclick="filterCategory('etap')"><i class="fas fa-chalkboard"></i> ETAP</button>
-            <button class="cat-btn" onclick="filterCategory('ipucu')"><i class="fas fa-lightbulb"></i> İpuçları</button>
+            <button class="cat-btn" data-category="all" onclick="filterCategory('all', this)">Tümü</button>
+            <button class="cat-btn" data-category="donanim" onclick="filterCategory('donanim', this)"><i class="fas fa-microchip"></i> Donanım</button>
+            <button class="cat-btn" data-category="internet" onclick="filterCategory('internet', this)"><i class="fas fa-wifi"></i> İnternet</button>
+            <button class="cat-btn" data-category="ofis" onclick="filterCategory('ofis', this)"><i class="fas fa-file-alt"></i> Ofis</button>
+            <button class="cat-btn" data-category="uygulama" onclick="filterCategory('uygulama', this)"><i class="fas fa-cube"></i> Uygulama</button>
+            <button class="cat-btn" data-category="goc" onclick="filterCategory('goc', this)"><i class="fas fa-route"></i> Göç Süreci</button>
+            <button class="cat-btn" data-category="sistem" onclick="filterCategory('sistem', this)"><i class="fas fa-cog"></i> Sistem</button>
+            <button class="cat-btn" data-category="etap" onclick="filterCategory('etap', this)"><i class="fas fa-chalkboard"></i> ETAP</button>
+            <button class="cat-btn" data-category="ipucu" onclick="filterCategory('ipucu', this)"><i class="fas fa-lightbulb"></i> İpuçları</button>
         </div>
 
         <div class="grid" id="menuGrid"></div>
@@ -129,7 +129,7 @@
     </p>
     <div style="width: 40%; height: 1px; background-color: #e0e0e0; margin: 10px auto;"></div>
     <p id="secretTrigger" onclick="triggerSecret(this)" style="cursor:pointer; user-select:none; display:inline-block; padding:5px;">
-        <strong>Pardus Asistan v8.8</strong>
+        <strong>Pardus Asistan v8.9</strong>
     </p>
     <p>Geliştirici: <a href="https://hasbierdogmus.com.tr" target="_blank">Hasbi Erdoğmuş</a></p>
     <p id="lastUpdateDate" style="margin-top: 5px; font-style: italic; font-size: 0.75rem; opacity: 0.7;"></p>
