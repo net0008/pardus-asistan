@@ -97,6 +97,13 @@ function closeSecretModal() {
 }
 
 // --- DETAY SAYFASI ---
+function openDetailById(id) {
+    const item = ALL_DATA.find(i => i.id === id);
+    if (item) {
+        openDetail(item);
+    }
+}
+
 function openDetail(item) {
     document.getElementById("mainView").style.display = "none";
     document.getElementById("detailView").style.display = "block";

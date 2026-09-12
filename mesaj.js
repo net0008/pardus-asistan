@@ -1,7 +1,7 @@
 // mesaj.js - Dinamik Duyuru ve İpucu Yönetimi
 
 const announcements = [
-    "<strong>Duyuru:</strong> Pardus'ta yazıcı kurulumu kolaylaştı.",
+    `<strong>Duyuru:</strong> <a href="javascript:void(0)" onclick="openDetailById('etap-yazici-kurulumu-eta-printer-manager')" style="color: inherit; text-decoration: underline; cursor: pointer; font-weight: 600;">Pardus'ta yazıcı kurulumu kolaylaştı. <i class="fas fa-arrow-right" style="font-size:0.8rem;"></i></a>`,
     //`<strong>İpucu:</strong> Arama kutusuna Windows'taki adını (Örn: Görev Yöneticisi) yazarak Pardus karşılığını bulabilirsiniz.`,
     `<strong>Önemli:</strong> Tahtanız donduğunda fişi çekmeyin, güç düğmesine 10-15 saniye basılı tutarak güvenle kapatın.`,
     //`<strong>Biliyor muydunuz?</strong> Pardus Kalem'de arka planı şeffaf yaparak Z-Kitap üzerine çizim yapabilirsiniz.`,
