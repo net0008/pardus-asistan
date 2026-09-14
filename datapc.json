@@ -183,7 +183,7 @@
     "windows_karsiligi": "Rufus / Format",
     "icon": "fa-hdd",
     "steps": [
-      "**1. İndir:** Pardus ETAP 23 ISO dosyasını indirin.",
+      "**1. İndir:** <a href='https://meb.ai/UX7MChD' target='_blank'>meb.ai/UX7MChD</a> adresinden Pardus ETAP 23.4 ISO dosyasını indirin.",
       "**2.** **Rufus** programını açın, ISO'yu seçin.",
       "**3.** Başlat'a basınca çıkan uyarıda mutlaka **DD Yansısı (DD Image)** modunu seçin."
     ]
