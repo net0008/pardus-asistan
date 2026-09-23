@@ -1,7 +1,7 @@
 // mesaj.js - Dinamik Duyuru ve İpucu Yönetimi
 
 const announcements = [
-    `<strong>Yapay Zeka:</strong> <a href="javascript:void(0)" onclick="openChatbot()" style="color: inherit; text-decoration: underline; cursor: pointer; font-weight: 600;">Pardus Etap Rehber Yardım Sohbeti Robotu Yayında <i class="fas fa-robot" style="font-size:0.85rem; margin-left:3px;"></i></a>`,
+    `<strong>Yapay Zeka:</strong> <a href="https://notebook.google.com/notebook/939ae59c-bdfc-4afa-b5a6-72790c19a0cf" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline; cursor: pointer; font-weight: 600;">Pardus Etap Rehber Yardım Sohbeti Robotu Yayında <i class="fas fa-external-link-alt" style="font-size:0.75rem; margin-left:3px;"></i></a>`,
     `<strong>Duyuru:</strong> <a href="javascript:void(0)" onclick="openDetailById('etap-yazici-kurulumu-eta-printer-manager')" style="color: inherit; text-decoration: underline; cursor: pointer; font-weight: 600;">Pardus'ta yazıcı kurulumu kolaylaştı. <i class="fas fa-arrow-right" style="font-size:0.8rem;"></i></a>`
 ];
 

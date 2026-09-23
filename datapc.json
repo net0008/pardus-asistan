@@ -1,5 +1,18 @@
 [
   {
+    "id": "etap-sohbet-robotu-notebooklm",
+    "category": "etap",
+    "title": "Pardus ETAP **Rehber Yardım Sohbeti Robotu**",
+    "windows_karsiligi": "Copilot / Akıllı Asistan",
+    "icon": "fa-robot",
+    "steps": [
+      "**Yapay Zeka Destekli Asistan:** Google NotebookLM altyapısıyla geliştirilen Pardus ETAP akıllı tahta asistanı, ETAP 23 hakkındaki tüm teknik sorularınızı anında ve doğru şekilde yanıtlar.",
+      "**Nasıl Kullanılır?:** Aşağıdaki bağlantıya dokunarak sohbet robotunu doğrudan başlatabilir ve Pardus ile ilgili merak ettiğiniz tüm soruları sorabilirsiniz:",
+      "<a href='https://notebook.google.com/notebook/939ae59c-bdfc-4afa-b5a6-72790c19a0cf' target='_blank' class='confirm-btn' style='display:inline-block; text-align:center; text-decoration:none; padding:12px 20px; margin-top:8px; border-radius:8px;'><i class='fas fa-robot'></i> Sohbet Robotunu Başlat ↗</a>",
+      "**Özellikleri:**<br>• Pardus ETAP 23 rehberleri ile eğitilmiştir.<br>• Akıllı tahta kullanımında takıldığınız noktalara anında çözüm sunar.<br>• Tamamen ücretsiz ve güvenlidir."
+    ]
+  },
+  {
     "id": "etap-yazici-kurulumu-eta-printer-manager",
     "category": "etap",
     "title": "ETA Yazıcı Yöneticisi ile **Yazıcı Kurulumu** (BETA)",

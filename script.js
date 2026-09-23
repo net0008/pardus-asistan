@@ -128,40 +128,13 @@ function openDetail(item) {
 function closeDetail() {
     document.getElementById("detailView").style.display = "none";
     document.getElementById("settingsView").style.display = "none";
-    const chatbotView = document.getElementById("chatbotView");
-    if (chatbotView) chatbotView.style.display = "none";
     document.getElementById("mainView").style.display = "block";
-}
-
-// --- SOHBET ROBOTU IFRAME ---
-function openChatbot() {
-    const chatbotView = document.getElementById("chatbotView");
-    const iframe = document.getElementById("chatbotIframe");
-    const targetUrl = "https://notebook.google.com/notebook/939ae59c-bdfc-4afa-b5a6-72790c19a0cf";
-    if (chatbotView && iframe) {
-        if (!iframe.src || iframe.src === "about:blank" || iframe.src === window.location.href) {
-            iframe.src = targetUrl;
-        }
-        chatbotView.style.display = "flex";
-        document.body.style.overflow = "hidden";
-    }
-}
-
-function closeChatbot() {
-    const chatbotView = document.getElementById("chatbotView");
-    if (chatbotView) {
-        chatbotView.style.display = "none";
-        document.body.style.overflow = "";
-    }
 }
 
 function switchTab(tab) {
     document.getElementById("mainView").style.display = "none";
     document.getElementById("detailView").style.display = "none";
     document.getElementById("settingsView").style.display = "none";
-    const chatbotView = document.getElementById("chatbotView");
-    if (chatbotView) chatbotView.style.display = "none";
-    document.body.style.overflow = "";
     document.querySelectorAll('.nav-item, .pc-nav button').forEach(el => el.classList.remove('active'));
 
     if (tab === 'home') {
