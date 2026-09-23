@@ -1,11 +1,8 @@
 // mesaj.js - Dinamik Duyuru ve İpucu Yönetimi
 
 const announcements = [
-    `<strong>Duyuru:</strong> <a href="javascript:void(0)" onclick="openDetailById('etap-yazici-kurulumu-eta-printer-manager')" style="color: inherit; text-decoration: underline; cursor: pointer; font-weight: 600;">Pardus'ta yazıcı kurulumu kolaylaştı. <i class="fas fa-arrow-right" style="font-size:0.8rem;"></i></a>`,
-    //`<strong>İpucu:</strong> Arama kutusuna Windows'taki adını (Örn: Görev Yöneticisi) yazarak Pardus karşılığını bulabilirsiniz.`,
-    `<strong>Önemli:</strong> Tahtanız donduğunda fişi çekmeyin, güç düğmesine 10-15 saniye basılı tutarak güvenle kapatın.`,
-    //`<strong>Biliyor muydunuz?</strong> Pardus Kalem'de arka planı şeffaf yaparak Z-Kitap üzerine çizim yapabilirsiniz.`,
-    //`<strong>Güvenlik:</strong> Sınıftan çıkarken tahtanızı ETA USB Anahtarınız ile kilitlemeyi unutmayın.`
+    `<strong>Yapay Zeka:</strong> <a href="javascript:void(0)" onclick="openChatbot()" style="color: inherit; text-decoration: underline; cursor: pointer; font-weight: 600;">Pardus Etap Rehber Yardım Sohbeti Robotu Yayında <i class="fas fa-robot" style="font-size:0.85rem; margin-left:3px;"></i></a>`,
+    `<strong>Duyuru:</strong> <a href="javascript:void(0)" onclick="openDetailById('etap-yazici-kurulumu-eta-printer-manager')" style="color: inherit; text-decoration: underline; cursor: pointer; font-weight: 600;">Pardus'ta yazıcı kurulumu kolaylaştı. <i class="fas fa-arrow-right" style="font-size:0.8rem;"></i></a>`
 ];
 
 let currentAnnouncementIndex = 0;
