@@ -1,5 +1,18 @@
 [
   {
+    "id": "etap-eba-qr-oturum-acma",
+    "category": "etap",
+    "title": "Akıllı Tahtalarda **EBA QR ile Oturum Açma**",
+    "windows_karsiligi": "Hızlı Giriş / QR Oturum",
+    "icon": "fa-qrcode",
+    "steps": [
+      "**EBA QR ile Oturum Açma:** Akıllı tahtalarda EBA QR kod ile oturum açma işlemi çalışmaya başlamıştır. Sorunsuz çalışabilmesi için aşağıdaki adımları uygulayınız:",
+      "**1. Sistem Güncellemelerini Kontrol Edin:** QR ile oturum açma işleminin çalışması için sistem güncellemelerinde **EBA QR login** uygulamasının güncellenmesi gereklidir.",
+      "**2. Güncelleme Gelmiyorsa Manuel Kurulum Yapın:** Eğer güncelleme ile gelmiyorsa, aşağıdaki deb paketini indirip kurarak versiyon yükseltme seçeneği ile güncellemeyi yapabilirsiniz:<br><a href='http://depo.etap.org.tr/etap/pool/main/e/eta-qr-login/eta-qr-login_0.2.7_all.deb' target='_blank' class='confirm-btn' style='display:inline-block; text-align:center; text-decoration:none; padding:8px 16px; margin-top:8px; border-radius:8px;'><i class='fas fa-download'></i> eta-qr-login_0.2.7_all.deb İndir</a>",
+      "**3. EBA Uygulamasını Güncelleyin:** Ayrıca akıllı telefon veya tabletlerinizdeki **EBA mobil uygulamasının** varsa güncellemesini yapınız."
+    ]
+  },
+  {
     "id": "etap-sohbet-robotu-notebooklm",
     "category": "etap",
     "title": "Pardus ETAP **Rehber Yardım Sohbeti Robotu**",
