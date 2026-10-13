@@ -1,5 +1,21 @@
 [
   {
+    "id": "faz2-bios-pili-boot-ayari",
+    "category": "donanim",
+    "title": "Faz 2 Vestel **BIOS Pili ve Boot Ayarları**",
+    "windows_karsiligi": "CMOS Checksum Error / Boot Sırası",
+    "icon": "fa-microchip",
+    "steps": [
+      "**Sorun Özeti:** Faz 2 Vestel etkileşimli tahtalarda BIOS pilinin (CMOS pili) bitmesi veya değiştirilmesi durumunda anakart üzerindeki tarih, saat ve önyükleme (boot) ayarları sıfırlanır. Pardus ETAP işletim sistemi varsayılan önyükleme sırasını ve sistem zamanını kaybettiği için tahta açılışta siyah ekranda kalabilir veya disk bulamama hatası verebilir.",
+      "**1. BIOS Ekranına Giriş Yapın:**<br>• Tahtaya harici bir USB klavye bağlayın ve açılış tuşuna basın.<br>• Ekran geldiği anda klavyeden art arda **F2** veya **Delete** tuşlarına basarak BIOS ekranına girin *(Önyükleme menüsü için **F7** tuşunu kullanabilirsiniz)*.",
+      "**2. Tarih ve Saat Ayarlarını Güncelleyin:**<br>• BIOS ana menüsünde (**Main**) yer alan **Date** (Tarih) ve **Time** (Saat) parametrelerini güncel tarih ve saate ayarlayın.",
+      "**3. Disk Önyükleme (Boot) Sırasını Düzenleyin:**<br>• Üst menüden **Boot** sekmesine gelin.<br>• Pardus ETAP'ın kurulu olduğu diski (SSD / HDD) ilk önyükleme seçeneği (**1st Boot Device**) olarak belirleyin.<br>• Boot Modu seçeneği bulunuyorsa, Pardus ETAP kurulum tipinize uygun olarak **UEFI** veya **Legacy** modunu kontrol edin.",
+      "**4. Ayarları Kaydedip Yeniden Başlatın:**<br>• Klavyeden **F10** (Save & Exit) tuşuna basın.<br>• Çıkan onay penceresinde **Yes (Evet)** seçeneğini işaretleyip **Enter** tuşuna basarak tahtayı yeniden başlatın.",
+      "**5. Pardus İçerisinde Ağ Zamanını Kontrol Edin:**<br>• Tahta Pardus ETAP masaüstünde açıldıktan sonra **Sistem Ayarları > Tarih ve Saat** menüsünden **Ağ Zamanı** seçeneğini aktif hale getirerek saat senkronizasyonunu sağlayın.",
+      "**Teknik Destek:**<br>Tüm adımlara rağmen sorun devam ederse aşağıdaki resmi kanallardan destek alabilirsiniz:<br>• **FATİH PYS Arıza Kaydı:** <a href='https://fatihpys.eba.gov.tr/' target='_blank'>FATİH PYS Portalına</a> giriş yaparak arıza türü olarak **'İşletim Sistemi Arızası'** seçip kayıt açabilirsiniz.<br>• **Pardus Çağrı Merkezi:** <a href='tel:4445773' style='color:#f57f17; font-weight:bold;'>444 5 773</a> (Hafta içi 09:00 – 18:00)<br>• **E-Posta:** <a href='mailto:bilgi@pardus.org.tr' style='color:#f57f17; font-weight:bold;'>bilgi@pardus.org.tr</a>"
+    ]
+  },
+  {
     "id": "etap-eba-qr-oturum-acma",
     "category": "etap",
     "title": "Akıllı Tahtalarda **EBA QR ile Oturum Açma**",
