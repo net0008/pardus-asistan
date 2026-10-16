@@ -1,5 +1,54 @@
 [
   {
+    "id": "etap-tahta-pasif-aksiyon-rehberi",
+    "category": "etap",
+    "title": "Etkileşimli Tahtanız **Pasif mi? (Saha Aksiyon Rehberi)**",
+    "windows_karsiligi": "Sistem Durumu / Aktiflik / LiderAhenk Takibi",
+    "icon": "fa-desktop",
+    "steps": [
+      "**Saha Aksiyon Rehberi:** Etkileşimli tahtaların merkezi sistemde 'Pasif' duruma düşmesi istatistikleri ve yönetimi olumsuz etkiler. Tahtanızın durumunu belirleyip aşağıdaki 6 temel aksiyonu uygulayınız:",
+      "**1. USB Dışı Yöntemle Kurulum Yapıldıysa (Clonezilla vb.):**<br>• Clonezilla gibi klonlama yöntemleriyle imaj yüklenmiş tahtalar pasife düşer.<br>• **Aksiyon:** <a href='https://etap.org.tr/iso' target='_blank'>etap.org.tr/iso</a> adresinden güncel ISO'yu indirin. Ventoy ile hazırlanan USB üzerinden **normal kurulum** yapın.<br>• Kurulum sonrası **ETAP Admin** oturumuyla bir kez oturum açıp LiderAhenk yazılımlarının son sürümlerinin kurulmasını sağlayın.",
+      "**2. Güncel Olmayan Sistem (Eski Sürüm):**<br>• İşletim sistemi güncel olmayan tahtalar merkezi sistemle sağlıklı iletişim kuramaz.<br>• **Aksiyon:** Mevcut sistemin güncellemelerini yapın. Güncelleme sırasında sorun yaşanırsa USB üzerinden sıfırdan kurulum yapın.<br>• Güncelleme sonrası **ETAP Admin** oturumuyla bir kere oturum açıp LiderAhenk yazılımlarının son versiyonlarının kurulmasını sağlayın.",
+      "**3. İşletim Sistemi Değiştirilmişse:**<br>• Pardus yerine farklı bir işletim sistemi (Windows vb.) kullanılan tahtalarda merkezi yönetim çalışmaz.<br>• **Aksiyon:** Tahtayı Pardus ETAP işletim sistemiyle kullanın ve tahtanın kendi sisteminde oturum açın.",
+      "**4. Yalnızca HDMI ile Kullanım (Harici Cihaz):**<br>• Harici cihazdan görüntü alınıp kendi sisteminde oturum açılmayan tahtalar pasife düşer.<br>• **Aksiyon:** Tahtayı yalnızca HDMI bağlantısıyla harici ekran olarak kullanmayın; tahtanın kendi ETAP sisteminde oturum açarak kullanın.",
+      "**5. İnternet Altyapısı ile İlgili İşlemler:**<br>• **Okul genelinde internet yoksa:** <a href='https://fatihpys.eba.gov.tr/' target='_blank'>FATİH PYS</a> üzerinden İnternet erişim arızası açın.<br>• **Sadece bazı tahtalarda internet yoksa:** FATİH PYS üzerinden altyapı kaynaklı arıza bildirimi açın.<br>• **Çözüm uzun sürecekse:** Durumun pasif istatistiklerine yansımaması için durumu resmî yazıyla bildirin.",
+      "**6. Çalışmayan Tahtalar ve Hurda Süreç Takibi:**<br>• Etkileşimli tahta resmen hurdaya ayrılmamışsa, aktif olması gereken tahta olarak istatistiklere yansır.<br>• Arıza durumunda FATİH PYS üzerinden arıza bildirimi yapın ve arıza çözülene kadar süreci takip edin.<br>• Arıza giderilemez ve tahta onarılamaz hâle düşerse derhal hurdaya ayırma işlemlerini başlatın ve hurda süreci sonuçlanıncaya kadar takip edin."
+    ]
+  },
+  {
+    "id": "etap-dokunmatik-calismiyor-cozum",
+    "category": "donanim",
+    "title": "Dokunmatik Çalışmıyor mu? **(Faz 1, 2, 3, 4 Çözümleri)**",
+    "windows_karsiligi": "Dokunmatik Ekran / HID Sürücüsü",
+    "icon": "fa-hand-pointer",
+    "steps": [
+      "**Dokunmatik Sorun Giderme:** Tahtanızın Faz modeline göre adımları sırayla uygulayınız. *(Dokunmatik çalıştığı anda sonraki hamleye geçmeyiniz.)*",
+      "--- **FAZ 1 TAHTALAR İÇİN ADIMLAR** ---",
+      "**FAZ 1 - Hamle 1: Tahtayı Kapatın ve USB Girişlerini Boşaltın:**<br>1. Tahtayı tamamen kapatın.<br>2. USB ile çalışan tüm cihazların bağlantısını tahtadan çıkarın.<br>3. Tahtadaki tüm USB girişleri boş olsun.<br>4. Tahtayı yeniden açın ve dokunmatiği kontrol edin.<br>*(Dokunmatik çalışırsa çıkardığınız cihazları tekrar bağlayabilirsiniz. Dokunmatik gelmezse Hamle 2'ye geçin.)*",
+      "**FAZ 1 - Hamle 2: Dokunmatik Sürücüsünü Yeniden Kurun:**<br>Komutları uçbirimde sırayla çalıştırın (Biri bitince diğerini girin):<br><code class='terminal-kodu'>sudo apt remove --purge eta-touchdrv</code><code class='terminal-kodu'>sudo apt clean</code><code class='terminal-kodu'>sudo apt update</code><code class='terminal-kodu'>sudo apt install eta-touchdrv</code>*(Dokunmatik gelmezse Hamle 3'e geçin.)*",
+      "**FAZ 1 - Hamle 3: Sistemi Yeniden Kurun:**<br>1. <a href='https://etap.org.tr/iso' target='_blank'>etap.org.tr/iso</a> adresinden son sürüm ISO'yu yeniden indirin.<br>2. İndirdiğiniz ISO'yu mutlaka **Ventoy** ile USB'ye yazdırın.<br>3. Hazırladığınız USB ile sistemi tahtaya kurun.<br>4. Kurulumdan sonra tahtayı internete bağlayın.<br>5. Son gelen güncelleştirmeleri yükleyin.<br>6. **ÖNEMLİ:** Ardından **Hamle 1'i (USB girişlerini boşaltıp yeniden başlatma)** tekrar uygulayın.<br>*(Dokunmatik yine gelmezse Hamle 4'e geçin.)*",
+      "**FAZ 1 - Hamle 4: Donanım Arıza Kaydı Açın:**<br>Tüm adımlara rağmen dokunmatik çalışmıyorsa <a href='https://fatihpys.eba.gov.tr/' target='_blank'>FATİH PYS Portalı</a> üzerinden donanım arıza kaydı açın.",
+      "--- **FAZ 2 • FAZ 3 • FAZ 4 TAHTALAR İÇİN ADIMLAR** ---",
+      "**FAZ 2, 3, 4 - Hamle 1: Dokunmatik Sürücüsünü Yeniden Kurun:**<br>Komutları uçbirimde sırayla çalıştırın (Biri bitince diğerini girin):<br><code class='terminal-kodu'>sudo apt remove --purge eta-touchdrv</code><code class='terminal-kodu'>sudo apt clean</code><code class='terminal-kodu'>sudo apt update</code><code class='terminal-kodu'>sudo apt install eta-touchdrv</code>*(Dokunmatik gelmezse Hamle 2'ye geçin.)*",
+      "**FAZ 2, 3, 4 - Hamle 2: Sistemi Yeniden Kurun:**<br>1. <a href='https://etap.org.tr/iso' target='_blank'>etap.org.tr/iso</a> adresinden son sürüm ISO'yu yeniden indirin.<br>2. İndirdiğiniz ISO'yu mutlaka **Ventoy** ile USB'ye yazdırın.<br>3. Hazırladığınız USB ile sistemi tahtaya kurun.<br>4. Kurulumdan sonra tahtayı internete bağlayın ve son güncellemeleri yükleyin.<br>*(Dokunmatik yine gelmezse Hamle 3'e geçin.)*",
+      "**FAZ 2, 3, 4 - Hamle 3: Donanım Arıza Kaydı Açın:**<br>Sorun çözülemediyse <a href='https://fatihpys.eba.gov.tr/' target='_blank'>FATİH PYS Portalı</a> üzerinden donanım arıza kaydı açın."
+    ]
+  },
+  {
+    "id": "app-labplot-bilimsel-veri",
+    "category": "uygulama",
+    "title": "LabPlot ile **Bilimsel Veri Keşfi ve Grafik**",
+    "windows_karsiligi": "OriginLab / SPSS / Excel Veri Analizi",
+    "icon": "fa-chart-line",
+    "steps": [
+      "**LabPlot Nedir?:** ETAP 23 etkileşimli tahtalarda da kullanılabilen ücretsiz, açık kaynaklı (GPL) gelişmiş veri görselleştirme, istatistiksel analiz ve Python destekli bilimsel grafik yazılımıdır.",
+      "**Öne Çıkan Özellikleri:**<br>• **2D ve 3D Çizimler:** Yüksek kaliteli grafikler, regresyon analizleri, ısı haritaları, LaTeX ve Markdown desteği.<br>• **Analiz ve İstatistik:** Tanımlayıcı istatistikler, Fourier Dönüşümü (FFT), Hilbert dönüşümü, eğri uydurma, sayısal türev ve integral.<br>• **Etkileşimli Not Defterleri:** Python, R, Julia, Octave ve Maxima dilleriyle entegre hesaplama.<br>• **Geniş Format Desteği:** CSV, Excel, Origin, SAS, Stata, SPSS, MATLAB, JSON, SQL ve HDF5 dosyalarını içe/dışa aktarma.",
+      "**ETAP 23'e Nasıl Kurulur?:**<br>1. **Mağaza ile:** Pardus Yazılım Mağazası'nı açın, **Depo** sekmesinde <span class='terminal-kodu'>labplot</span> aratarak **Yükle** butonuna tıklayın.<br>2. **Uçbirim ile:** Terminalden <br><code class='terminal-kodu'>sudo apt install labplot</code> komutunu çalıştırarak kurabilirsiniz.",
+      "**Temel Kullanım Adımları:**<br>• **Veri Yükleme:** Dosya > İçe Aktar menüsünden CSV veya Excel dosyanızı seçin; veriler hesap tablosuna yüklenir.<br>• **Grafik Çizme:** Veri sütunlarını seçip Sağ Tık > **Veriyi Çiz > Çizgi Çizimleri** yolunu izleyin.<br>• **Eğri Uydurma (Regresyon):** Sütunları seçip Sağ Tık > **Veriyi Çözümle ve Çiz > Uydur > Doğrusal** ile regresyon denklemi ve R² değerini grafiğe ekleyin.<br>• **Python Entegrasyonu:** Panelden Python not defterini açarak veri işleyebilir, anında grafik çıktısı üretebilirsiniz.",
+      "**Eğitimde Kullanım Senaryoları:**<br>• Fizik ve kimya deney verilerinin grafiğe dökülmesi ve eğri uydurma.<br>• Matematik ve istatistik derslerinde dağılım ve standart sapma hesaplamaları.<br>• Biyoloji popülasyon grafikleri ve robotik/mühendislik sinyal analizleri.<br>• <a href='https://gonullu.pardus.org.tr/labplot-ile-bilimsel-veri-kesfi/' target='_blank'>Pardus Gönüllü Platformundaki Ayrıntılı Rehberi İnceleyin ↗</a>"
+    ]
+  },
+  {
     "id": "faz2-bios-pili-boot-ayari",
     "category": "donanim",
     "title": "Faz 2 Vestel **BIOS Pili ve Boot Ayarları**",
