@@ -1,5 +1,19 @@
 [
   {
+    "id": "pardus-meb-25-surumleri",
+    "category": "goc",
+    "title": "Pardus MEB 25 **Yeni Sürümleri Yayında! (LAB & İdari)**",
+    "windows_karsiligi": "Windows 10/11 Pro / Kurumsal Eğitim Sürümü",
+    "icon": "fa-rocket",
+    "steps": [
+      "**Pardus MEB 25 Yayında!:** Millî Eğitim Bakanlığı ve TÜBİTAK iş birliğiyle okullarımız için özel optimize edilen yeni nesil **Pardus MEB 25** sürümleri kullanıma sunuldu.",
+      "**Yenilikler ve Öne Çıkanlar:**<br>• **Güncel Linux Çekirdeği:** En yeni donanım ve çevre birimleri için üstün çekirdek desteği.<br>• **Geniş Donanım Uyumluluğu:** Eski ve yeni tüm masaüstü / dizüstü bilgisayarlarla tam uyum.<br>• **Yüksek Performans:** Hızlı açılış, düşük bellek tüketimi ve güncel yazılım depoları.<br>• **ETAP 23 ile Aynı Arayüz:** Öğretmen ve öğrencilerin akıllı tahtalardan aşina olduğu sade ve pratik masaüstü ortamı.",
+      "**1. Pardus MEB LAB (Eski adıyla Pardus EDU):**<br>• Bilişim teknolojileri sınıfları ve okul laboratuvar bilgisayarlarına özel geliştirilmiştir.<br>• Kodlama (Scratch vb.), eğitim, grafik ve ofis araçları önceden hazır yüklenmiş olarak gelir.<br><a href='https://indir.pardus.org.tr/ETAP/ETAP25/MEB-LAB/' target='_blank' class='confirm-btn' style='display:inline-block; text-align:center; text-decoration:none; padding:8px 16px; margin-top:8px; border-radius:8px;'><i class='fas fa-download'></i> Pardus MEB LAB ISO İndir ↗</a>",
+      "**2. Pardus MEB İdari:**<br>• Okul idarecileri, memurlar ve öğretmenlerimizin kişisel/idari bilgisayarları için en kararlı çözümdür.<br>• DYS, e-Okul, MEBBİS ve resmi yazışma süreçleriyle tam uyumlu ve güvenli altyapı sunar.<br><a href='https://indir.pardus.org.tr/ETAP/ETAP25/MEB-IDARI/' target='_blank' class='confirm-btn' style='display:inline-block; text-align:center; text-decoration:none; padding:8px 16px; margin-top:8px; border-radius:8px;'><i class='fas fa-download'></i> Pardus MEB İdari ISO İndir ↗</a>",
+      "**Nasıl Kurulur?:**<br>1. İlgili ISO kalıbını yukarıdaki bağlantılardan bilgisayarınıza indirin.<br>2. ISO dosyasını **Ventoy** yüklü bir USB belleğe doğrudan kopyalayın (veya **Rufus** ile yazdırırken mutlaka **DD Yansısı** modunu seçin).<br>3. Bilgisayarı USB bellekten başlatıp (F7, F11 veya F12 tuşlarıyla Boot Menü) adımları takip ederek kolayca kurulumu tamamlayın."
+    ]
+  },
+  {
     "id": "etap-tahta-pasif-aksiyon-rehberi",
     "category": "etap",
     "title": "Etkileşimli Tahtanız **Pasif mi? (Saha Aksiyon Rehberi)**",

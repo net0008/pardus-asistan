@@ -1,5 +1,19 @@
 [
   {
+    "id": "pardus-meb-25-surumleri",
+    "category": "goc",
+    "title": "Pardus MEB 25 **Yeni Sürümleri Yayında! (LAB & İdari)**",
+    "windows_karsiligi": "Windows 10/11 Pro / Kurumsal Eğitim Sürümü",
+    "icon": "fa-rocket",
+    "steps": [
+      "**Pardus MEB 25 Yayında!:** Millî Eğitim Bakanlığı ve TÜBİTAK iş birliğiyle okullarımız için özel optimize edilen yeni nesil **Pardus MEB 25** sürümleri kullanıma sunuldu.",
+      "**Yenilikler ve Öne Çıkanlar:**<br>• **Güncel Linux Çekirdeği:** En yeni donanım ve çevre birimleri için üstün çekirdek desteği.<br>• **Geniş Donanım Uyumluluğu:** Eski ve yeni tüm masaüstü / dizüstü bilgisayarlarla tam uyum.<br>• **Yüksek Performans:** Hızlı açılış, düşük bellek tüketimi ve güncel yazılım depoları.<br>• **ETAP 23 ile Aynı Arayüz:** Öğretmen ve öğrencilerin akıllı tahtalardan aşina olduğu sade ve pratik masaüstü ortamı.",
+      "**1. Pardus MEB LAB (Eski adıyla Pardus EDU):**<br>• Bilişim teknolojileri sınıfları ve okul laboratuvar bilgisayarlarına özel geliştirilmiştir.<br>• Kodlama (Scratch vb.), eğitim, grafik ve ofis araçları önceden hazır yüklenmiş olarak gelir.<br><a href='https://indir.pardus.org.tr/ETAP/ETAP25/MEB-LAB/' target='_blank' class='confirm-btn' style='display:inline-block; text-align:center; text-decoration:none; padding:8px 16px; margin-top:8px; border-radius:8px;'><i class='fas fa-download'></i> Pardus MEB LAB ISO İndir ↗</a>",
+      "**2. Pardus MEB İdari:**<br>• Okul idarecileri, memurlar ve öğretmenlerimizin kişisel/idari bilgisayarları için en kararlı çözümdür.<br>• DYS, e-Okul, MEBBİS ve resmi yazışma süreçleriyle tam uyumlu ve güvenli altyapı sunar.<br><a href='https://indir.pardus.org.tr/ETAP/ETAP25/MEB-IDARI/' target='_blank' class='confirm-btn' style='display:inline-block; text-align:center; text-decoration:none; padding:8px 16px; margin-top:8px; border-radius:8px;'><i class='fas fa-download'></i> Pardus MEB İdari ISO İndir ↗</a>",
+      "**Nasıl Kurulur?:**<br>1. İlgili ISO kalıbını yukarıdaki bağlantılardan bilgisayarınıza indirin.<br>2. ISO dosyasını **Ventoy** yüklü bir USB belleğe doğrudan kopyalayın (veya **Rufus** ile yazdırırken mutlaka **DD Yansısı** modunu seçin).<br>3. Bilgisayarı USB bellekten başlatıp (F7, F11 veya F12 tuşlarıyla Boot Menü) adımları takip ederek kolayca kurulumu tamamlayın."
+    ]
+  },
+  {
     "id": "etap-tahta-pasif-aksiyon-rehberi",
     "category": "etap",
     "title": "Etkileşimli Tahtanız **Pasif mi? (Saha Aksiyon Rehberi)**",
@@ -833,7 +847,7 @@
       "**3. Yönetim:** Aynı menüden **Otomatik Giriş** açılabilir veya kullanıcı seçilip **'Kullanıcıyı Kaldır'** diyerek silinebilir."
     ]
   },
-   {
+  {
     "id": "etap-23-yenilikler",
     "category": "etap",
     "title": "Pardus **ETAP 23** Yeni Özellikleri",
@@ -926,8 +940,7 @@
       "**3. Uygulama:** Kurulumdan sonra konsola <br><code class='terminal-kodu'>xinput_calibrator</code> yazın. Ekranda çıkan 4 noktaya sırasıyla dokunarak kalibrasyonu tamamlayın.",
       "**4. Kesin Çözüm:** (Windows): Sorun düzelmezse donanımsal kalibrasyon gerekir. Windows imajını kurup 'Optical Touch Device' ile kalibre edin, düzelince tekrar Pardus yükleyin."
     ]
-  }
-  ,
+  },
   {
     "id": "uygulama-pardus-kalem-detay",
     "category": "uygulama",
@@ -1041,8 +1054,7 @@
       "**E-Posta:** Sorunlarınızı, hata veren uygulamanın ekran görüntüleriyle birlikte **bilgi@pardus.org.tr** adresine iletebilirsiniz.",
       "**Topluluk Forumu:** Diğer bilişim öğretmenlerinin de bulunduğu **forum.pardus.org.tr** adresinden hazır çözümlere ulaşabilir veya soru sorabilirsiniz."
     ]
-  }
-  ,
+  },
   {
     "id": "uygulama-pardus-kalem-arkaplan",
     "category": "ipucu",
@@ -1056,8 +1068,7 @@
       "**Şeffaf Arka Plan:** Arka planı **'Şeffaf'** olarak seçtiğinizde masaüstünüz görünür. Bu sayede açık olan bir PDF, Z-Kitap veya web sitesi üzerine doğrudan çizim yapabilir ve not alabilirsiniz.",
       "**Özel Görsel Ekleme:** Kendi bilgisayarınızda (veya USB belleğinizde) bulunan herhangi bir görseli de (örneğin bir sınav sorusu veya ders afişi) arka plan olarak ekleyip üzerinde işlem yapabilirsiniz."
     ]
-  }
-  ,
+  },
   {
     "id": "uygulama-pardus-kalem-detay",
     "category": "uygulama",
@@ -1171,8 +1182,7 @@
       "**E-Posta:** Sorunlarınızı, hata veren uygulamanın ekran görüntüleriyle birlikte **bilgi@pardus.org.tr** adresine iletebilirsiniz.",
       "**Topluluk Forumu:** Diğer bilişim öğretmenlerinin de bulunduğu **forum.pardus.org.tr** adresinden hazır çözümlere ulaşabilir veya soru sorabilirsiniz."
     ]
-  }
-  ,
+  },
   {
     "id": "sistem-liderahenk-baglanti-cozumu",
     "category": "sistem",
@@ -1204,8 +1214,7 @@
       "**Alternatif Komut:** Sadece Pardus sürüm adını görmek isterseniz şu komutu kullanabilirsiniz:",
       "<code class='terminal-kodu'>cat /etc/pardus-release</code>"
     ]
-  }
-  ,
+  },
   {
     "id": "goc-hazirlik-ve-takvim",
     "category": "goc",
@@ -1270,8 +1279,7 @@
       "**Konum:** Tahtanın bulunduğu sınıf/şube adını (Örn: 10-A, Öğretmenler Odası) girip kaydedin.",
       "**Ahenk:** Kayıt başarılı olduktan sonra 'Ahenk' (merkezi yönetim) servisi otomatik kurulacaktır; bu ekranı kapatmadan kurulumun bitmesini bekleyin."
     ]
-  }
-  ,
+  },
   {
     "id": "sistem-versiyon-sorgulama",
     "category": "goc",
@@ -1288,48 +1296,48 @@
       "<code class='terminal-kodu'>cat /etc/pardus-release</code>"
     ]
   },
-{
-  "id": "sorun-dokunmatik-guncelleme-cozumu",
-  "category": "goc",
-  "title": "Güncelleme Sonrası Dokunmatik Sorunu",
-  "windows_karsiligi": "Dokunmatik Ekran Sürücüsü Onarma / Touchscreen Fix",
-  "icon": "fa-hand-point-up",
-  "steps": [
-    "Bazı etkileşimli tahtalarda güncelleme sonrası dokunmatik özelliğinin çalışmaması, sistemde kalan eski beta sürücülerinden kaynaklanabilir.",
-    "Bu sorunu çözmek için öncelikle **Uçbirim (Terminal)** uygulamasını açın.",
-    "**1. Adım:** Paket listesini güncellemek için şu komutu çalıştırın: <br><code class='terminal-kodu'>sudo apt update</code>",
-    "**2. Adım:** Test aşamasından kalan eski beta paketini sistemden tamamen kaldırmak için: <br><code class='terminal-kodu'>sudo apt purge eta-touchdrv</code>",
-    "**3. Adım:** Güncel ve stabil dokunmatik sürücüsünü yeniden kurmak için şu komutu girin: <br><code class='terminal-kodu'>sudo apt install eta-touchdrv</code>",
-    "Kurulum bittikten sonra sürücünün devreye girmesi için tahtayı yeniden başlatmanız önerilir."
-  ]
-},
-{
-  "id": "sorun-usb-disk-acilmiyor",
-  "category": "sistem",
-  "title": "USB Bellek Neden Okunmuyor?",
-  "windows_karsiligi": "Sürücü Hataları / Disk Yönetimi",
-  "icon": "fa-usb",
-  "steps": [
-    "Belleklerin tahtada görünmemesi genellikle donanımsal bir arıza değil, işletim sistemleri arasındaki 'dosya yazma' ve 'güvenlik' protokolü farklarından kaynaklanır.",
-    "**Yazma Tamponu ve Ani Çıkarma:** Pardus verileri doğrudan değil, bir ara bellek üzerinden diske yazar. İşlem bitti görünse de arka planda veri akışı sürebilir. 'Donanımı Çıkar' demeden çekmek, disk haritasında (MFT/FAT) hatalara yol açar.",
-    "**Windows'un Disk Kilidi (Hibernation):** Windows 8 ve üzeri sistemler hızlı açılmak için diskleri 'hazırda bekletme' modunda kilitli bırakır. Pardus, verileri korumak adına bu 'meşgul' disklere erişimi varsayılan olarak reddeder.",
-    "**Dosya Sistemi Dayanıklılığı:** FAT32 dosya sistemleri günlüğe kaydetme (journaling) yapmadığı için bu hatalardan çok çabuk etkilenir; NTFS ise daha dirençli olmasına rağmen 'kilit' sorunundan muaf değildir.",
-    "**Önleyici Yaklaşım:** Sorun yaşamamak için Windows bilgisayarlarda USB'yi çekmeden önce sağ alt panelden mutlaka 'Sürücüyü Çıkar' komutunu uygulayın.",
-    "**Pratik Çözüm:** Eğer USB takıldığında hata uyarısı alıyorsanız veya boş görünüyorsa, Pardus uygulama menüsündeki **'ETA USB Onarıcı'** aracını çalıştırarak diskteki kilitleri saniyeler içinde temizleyebilirsiniz."
-  ]
-},
-{
-  "id": "sistem-etap-yetkili-sifre-degistirme",
-  "category": "sistem",
-  "title": "Etap Yetkili Şifresini Değiştirme",
-  "windows_karsiligi": "Kullanıcı Şifresi Değiştirme / Parola Güncelleme",
-  "icon": "fa-key",
-  "steps": [
-    "Sistem güvenliği için varsayılan yönetici şifresini değiştirmeniz önerilir. Bu işlemi iki farklı yöntemle gerçekleştirebilirsiniz:",
-    "**1. Grafik Arayüzden (En Kolay):** Etap Yetkili kullanıcısı ile oturum açtıktan sonra **Ayarlar → Kullanıcılar** menüsüne girin. Listeden **Etap Yetkili** kullanıcısını seçin ve **'Parola Değiştir'** seçeneğine tıklayarak yeni şifrenizi tanımlayın.",
-    "**2. Terminal Üzerinden:** Uçbirim (Terminal) uygulamasını açın ve aşağıdaki komutu girin:",
-    "<code class='terminal-kodu'>sudo passwd etapadmin</code>",
-    "Komutu çalıştırdıktan sonra önce mevcut parolanızı, ardından yeni belirlediğiniz şifreyi iki kez tuşlayın. Şifreyi yazarken ekranda hiçbir karakter (yıldız dahil) görünmeyecektir; yazıp Enter'a basmanız yeterlidir."
-  ]
-}
+  {
+    "id": "sorun-dokunmatik-guncelleme-cozumu",
+    "category": "goc",
+    "title": "Güncelleme Sonrası Dokunmatik Sorunu",
+    "windows_karsiligi": "Dokunmatik Ekran Sürücüsü Onarma / Touchscreen Fix",
+    "icon": "fa-hand-point-up",
+    "steps": [
+      "Bazı etkileşimli tahtalarda güncelleme sonrası dokunmatik özelliğinin çalışmaması, sistemde kalan eski beta sürücülerinden kaynaklanabilir.",
+      "Bu sorunu çözmek için öncelikle **Uçbirim (Terminal)** uygulamasını açın.",
+      "**1. Adım:** Paket listesini güncellemek için şu komutu çalıştırın: <br><code class='terminal-kodu'>sudo apt update</code>",
+      "**2. Adım:** Test aşamasından kalan eski beta paketini sistemden tamamen kaldırmak için: <br><code class='terminal-kodu'>sudo apt purge eta-touchdrv</code>",
+      "**3. Adım:** Güncel ve stabil dokunmatik sürücüsünü yeniden kurmak için şu komutu girin: <br><code class='terminal-kodu'>sudo apt install eta-touchdrv</code>",
+      "Kurulum bittikten sonra sürücünün devreye girmesi için tahtayı yeniden başlatmanız önerilir."
+    ]
+  },
+  {
+    "id": "sorun-usb-disk-acilmiyor",
+    "category": "sistem",
+    "title": "USB Bellek Neden Okunmuyor?",
+    "windows_karsiligi": "Sürücü Hataları / Disk Yönetimi",
+    "icon": "fa-usb",
+    "steps": [
+      "Belleklerin tahtada görünmemesi genellikle donanımsal bir arıza değil, işletim sistemleri arasındaki 'dosya yazma' ve 'güvenlik' protokolü farklarından kaynaklanır.",
+      "**Yazma Tamponu ve Ani Çıkarma:** Pardus verileri doğrudan değil, bir ara bellek üzerinden diske yazar. İşlem bitti görünse de arka planda veri akışı sürebilir. 'Donanımı Çıkar' demeden çekmek, disk haritasında (MFT/FAT) hatalara yol açar.",
+      "**Windows'un Disk Kilidi (Hibernation):** Windows 8 ve üzeri sistemler hızlı açılmak için diskleri 'hazırda bekletme' modunda kilitli bırakır. Pardus, verileri korumak adına bu 'meşgul' disklere erişimi varsayılan olarak reddeder.",
+      "**Dosya Sistemi Dayanıklılığı:** FAT32 dosya sistemleri günlüğe kaydetme (journaling) yapmadığı için bu hatalardan çok çabuk etkilenir; NTFS ise daha dirençli olmasına rağmen 'kilit' sorunundan muaf değildir.",
+      "**Önleyici Yaklaşım:** Sorun yaşamamak için Windows bilgisayarlarda USB'yi çekmeden önce sağ alt panelden mutlaka 'Sürücüyü Çıkar' komutunu uygulayın.",
+      "**Pratik Çözüm:** Eğer USB takıldığında hata uyarısı alıyorsanız veya boş görünüyorsa, Pardus uygulama menüsündeki **'ETA USB Onarıcı'** aracını çalıştırarak diskteki kilitleri saniyeler içinde temizleyebilirsiniz."
+    ]
+  },
+  {
+    "id": "sistem-etap-yetkili-sifre-degistirme",
+    "category": "sistem",
+    "title": "Etap Yetkili Şifresini Değiştirme",
+    "windows_karsiligi": "Kullanıcı Şifresi Değiştirme / Parola Güncelleme",
+    "icon": "fa-key",
+    "steps": [
+      "Sistem güvenliği için varsayılan yönetici şifresini değiştirmeniz önerilir. Bu işlemi iki farklı yöntemle gerçekleştirebilirsiniz:",
+      "**1. Grafik Arayüzden (En Kolay):** Etap Yetkili kullanıcısı ile oturum açtıktan sonra **Ayarlar → Kullanıcılar** menüsüne girin. Listeden **Etap Yetkili** kullanıcısını seçin ve **'Parola Değiştir'** seçeneğine tıklayarak yeni şifrenizi tanımlayın.",
+      "**2. Terminal Üzerinden:** Uçbirim (Terminal) uygulamasını açın ve aşağıdaki komutu girin:",
+      "<code class='terminal-kodu'>sudo passwd etapadmin</code>",
+      "Komutu çalıştırdıktan sonra önce mevcut parolanızı, ardından yeni belirlediğiniz şifreyi iki kez tuşlayın. Şifreyi yazarken ekranda hiçbir karakter (yıldız dahil) görünmeyecektir; yazıp Enter'a basmanız yeterlidir."
+    ]
+  }
 ]

@@ -1,6 +1,7 @@
 // mesaj.js - Dinamik Duyuru ve İpucu Yönetimi
 
 const announcements = [
+    `<strong>Müjde:</strong> <a href="javascript:void(0)" onclick="openDetailById('pardus-meb-25-surumleri')" style="color: inherit; text-decoration: underline; cursor: pointer; font-weight: 600;">Pardus MEB 25 Yeni Sürümleri Yayında! (LAB & İdari İndir) <i class="fas fa-arrow-right" style="font-size:0.8rem;"></i></a>`,
     `<strong>Saha Rehberi:</strong> <a href="javascript:void(0)" onclick="openDetailById('etap-tahta-pasif-aksiyon-rehberi')" style="color: inherit; text-decoration: underline; cursor: pointer; font-weight: 600;">Etkileşimli Tahtanız Pasif mi? Saha Aksiyon Rehberi <i class="fas fa-arrow-right" style="font-size:0.8rem;"></i></a>`,
     `<strong>Önemli:</strong> <a href="javascript:void(0)" onclick="openDetailById('etap-dokunmatik-calismiyor-cozum')" style="color: inherit; text-decoration: underline; cursor: pointer; font-weight: 600;">Tahtada Dokunmatik Çalışmıyor mu? Faz 1-2-3-4 Çözümleri <i class="fas fa-arrow-right" style="font-size:0.8rem;"></i></a>`,
     `<strong>Yeni Uygulama:</strong> <a href="javascript:void(0)" onclick="openDetailById('app-labplot-bilimsel-veri')" style="color: inherit; text-decoration: underline; cursor: pointer; font-weight: 600;">LabPlot ile Bilimsel Veri Keşfi ve Grafik Çizimi <i class="fas fa-arrow-right" style="font-size:0.8rem;"></i></a>`,
