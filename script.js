@@ -3,6 +3,40 @@ let isMobile = window.innerWidth <= 768;
 let secretClickCount = 0;
 let secretTimer;
 
+const DEFAULT_TITLE = document.title;
+const DEFAULT_DESCRIPTION = document.querySelector('meta[name="description"]')?.getAttribute('content') || '';
+
+function setMetaDescription(text) {
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && text) {
+        metaDesc.setAttribute('content', text);
+    }
+}
+
+function stripMarkdown(text) {
+    return String(text || '')
+        .replace(/<br\s*\/?>/gi, ' ')
+        .replace(/<[^>]*>/g, ' ')
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
+        .replace(/\*\*(.*?)\*\*/g, '$1')
+        .replace(/\*(.*?)\*/g, '$1')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function handleGuideLink(event, id) {
+    if (event && (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || (typeof event.button === 'number' && event.button !== 0))) {
+        return true;
+    }
+    const item = ALL_DATA.find(i => i.id === id);
+    if (item) {
+        if (event) event.preventDefault();
+        openDetail(item);
+        return false;
+    }
+    return true;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     loadData();
     setupEventListeners();
@@ -23,6 +57,18 @@ async function loadData() {
         ALL_DATA = await response.json();
         // Sayfa ilk yüklendiğinde varsayılan olarak 'Göç' kategorisini seçili getir.
         filterCategory('goc');
+
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get('q');
+        const guideParam = params.get('rehber') || window.location.hash.replace(/^#/, '');
+
+        if (query) {
+            const searchInput = document.getElementById('searchInput') || document.querySelector('.search-box input');
+            if (searchInput) searchInput.value = query;
+            filter(query);
+        } else if (guideParam && ALL_DATA.some(i => i.id === guideParam)) {
+            openDetailById(guideParam, false);
+        }
     } catch (error) {
         console.error(error);
         document.getElementById("menuGrid").innerHTML = `<p style="text-align:center;">Veriler yükleniyor...</p>`;
@@ -36,17 +82,21 @@ function renderMenu(data) {
         grid.innerHTML = "<p style='text-align:center; width:100%; grid-column:1/-1;'>Sonuç bulunamadı.</p>";
         return;
     }
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     data.forEach(item => {
-        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         const isFav = favorites.includes(item.id);
         const formattedCardTitle = item.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         const card = document.createElement("div");
         card.className = "card";
-        card.onclick = (e) => { if(!e.target.classList.contains('fav-btn')) openDetail(item); };
+        card.onclick = (e) => {
+            if (!e.target.classList.contains('fav-btn') && !e.target.closest('a.card-link')) {
+                openDetail(item);
+            }
+        };
         card.innerHTML = `
-            <i class="${isFav ? "fas fa-star active" : "far fa-star"} fav-btn" onclick="toggleFav('${item.id}', this)"></i>
-            <i class="fas ${item.icon} main-icon"></i>
-            <span>${formattedCardTitle}</span>
+            <i class="${isFav ? "fas fa-star active" : "far fa-star"} fav-btn" role="button" aria-label="${isFav ? 'Favorilerden çıkar' : 'Favorilere ekle'}" onclick="toggleFav('${item.id}', this)"></i>
+            <i class="fas ${item.icon} main-icon" aria-hidden="true"></i>
+            <span><a href="rehber/${item.id}/" class="card-link" onclick="return handleGuideLink(event, '${item.id}')">${formattedCardTitle}</a></span>
             <small>${item.windows_karsiligi || ''}</small>
         `;
         grid.appendChild(card);
@@ -74,7 +124,9 @@ function filter(keyword) {
     const lower = keyword.toLowerCase().trim();
     if (lower === "yonetici") {
         document.querySelector('.search-box input').value = "";
-        document.getElementById('secretModal').style.display = 'flex';
+        const modal = document.getElementById('secretModal');
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
         document.getElementById('secretPass').focus();
         renderMenu(ALL_DATA); 
         return;
@@ -91,21 +143,24 @@ function filter(keyword) {
 function checkPassword(){var _0x1c9d=['\x76\x61\x6C\x75\x65','\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64','\x73\x65\x63\x72\x65\x74\x50\x61\x73\x73','\x31\x32\x33\x34','\x68\x72\x65\x66','\x6C\x6F\x63\x61\x74\x69\x6F\x6E','\x72\x61\x70\x6F\x72\x2E\x68\x74\x6D\x6C','\x6C\x6F\x67\x69\x6E\x45\x72\x72\x6F\x72','\x73\x74\x79\x6C\x65','\x64\x69\x73\x70\x6C\x61\x79','\x62\x6C\x6F\x63\x6B'];var _0x3b2a=document[_0x1c9d[1]](_0x1c9d[2])[_0x1c9d[0]];if(_0x3b2a===_0x1c9d[3]){window[_0x1c9d[5]][_0x1c9d[4]]=_0x1c9d[6];}else{document[_0x1c9d[1]](_0x1c9d[7])[_0x1c9d[8]][_0x1c9d[9]]=_0x1c9d[10];}}
 
 function closeSecretModal() {
-    document.getElementById('secretModal').style.display = 'none';
+    const modal = document.getElementById('secretModal');
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
     document.getElementById('loginError').style.display = 'none';
     document.getElementById('secretPass').value = '';
 }
 
 // --- DETAY SAYFASI ---
-function openDetailById(id) {
+function openDetailById(id, pushHistory = true) {
     const item = ALL_DATA.find(i => i.id === id);
     if (item) {
-        openDetail(item);
+        openDetail(item, pushHistory);
     }
 }
 
-function openDetail(item) {
+function openDetail(item, pushHistory = true) {
     document.getElementById("mainView").style.display = "none";
+    document.getElementById("settingsView").style.display = "none";
     document.getElementById("detailView").style.display = "block";
     
     // --- BAŞLIKTAKİ ** ** İŞARETLERİNİ STRONG ETİKETİNE ÇEVİRİR ---
@@ -113,28 +168,56 @@ function openDetail(item) {
     let formattedTitle = item.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     document.getElementById("detailTitle").innerHTML = formattedTitle;
     
+    const cleanTitle = stripMarkdown(item.title);
+    document.title = cleanTitle + ' | Pardus Asistan';
+    const firstStep = item.steps && item.steps.length > 0 ? stripMarkdown(item.steps[0]) : '';
+    const winText = item.windows_karsiligi ? 'Windows karşılığı: ' + item.windows_karsiligi + '. ' : '';
+    setMetaDescription((cleanTitle + '. ' + winText + firstStep).slice(0, 155));
+
+    if (pushHistory && window.location.hash !== '#' + item.id) {
+        history.pushState({ view: 'detail', id: item.id }, '', '#' + item.id);
+    }
+
     document.getElementById("detailWindows").innerText = "Windows: " + (item.windows_karsiligi || "Yok");
     const container = document.getElementById("detailStepsContainer");
     container.innerHTML = "";
-    item.steps.forEach((step, index) => {
+    item.steps.forEach((step) => {
         let formatted = step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
-        // Aşağıdaki satırdan "<strong>${index + 1}.</strong>" kodu kaldırıldı
+                            .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
         container.innerHTML += `<div class="step-box">${formatted}</div>`; 
     });
     window.scrollTo(0,0);
 }
 
-function closeDetail() {
+function closeDetail(fromPopState = false) {
     document.getElementById("detailView").style.display = "none";
     document.getElementById("settingsView").style.display = "none";
     document.getElementById("mainView").style.display = "block";
+    document.title = DEFAULT_TITLE;
+    setMetaDescription(DEFAULT_DESCRIPTION);
+    if (!fromPopState && window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
 }
+
+window.addEventListener('popstate', () => {
+    const hashId = window.location.hash.replace(/^#/, '');
+    if (hashId && ALL_DATA.some(i => i.id === hashId)) {
+        openDetailById(hashId, false);
+    } else if (document.getElementById("detailView").style.display === "block") {
+        closeDetail(true);
+    }
+});
 
 function switchTab(tab) {
     document.getElementById("mainView").style.display = "none";
     document.getElementById("detailView").style.display = "none";
     document.getElementById("settingsView").style.display = "none";
+    document.title = DEFAULT_TITLE;
+    setMetaDescription(DEFAULT_DESCRIPTION);
+    if (window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
     document.querySelectorAll('.nav-item, .pc-nav button').forEach(el => el.classList.remove('active'));
 
     if (tab === 'home') {
@@ -162,9 +245,11 @@ function toggleFav(id, btn) {
     if (favs.includes(id)) {
         favs = favs.filter(f => f !== id);
         btn.className = "far fa-star fav-btn";
+        btn.setAttribute('aria-label', 'Favorilere ekle');
     } else {
         favs.push(id);
         btn.className = "fas fa-star fav-btn active";
+        btn.setAttribute('aria-label', 'Favorilerden çıkar');
     }
     localStorage.setItem('favorites', JSON.stringify(favs));
 }
@@ -182,7 +267,9 @@ function triggerSecret(element) {
     secretTimer = setTimeout(() => { secretClickCount = 0; }, 2000);
 
     if (secretClickCount >= 5) {
-        document.getElementById('secretModal').style.display = 'flex';
+        const modal = document.getElementById('secretModal');
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
         document.getElementById('secretPass').focus();
         secretClickCount = 0;
     }

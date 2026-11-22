@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#ed800d">
+    <title>Sayfa Bulunamadı (404) | Pardus Asistan</title>
+    <link rel="icon" type="image/png" href="/icon.png">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <script>
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+
+    <header class="app-header">
+        <a href="/" class="header-left" aria-label="Pardus Asistan Ana Sayfa">
+            <img src="/header-logo.png" alt="Pardus Asistan" width="107" height="45" class="new-header-logo">
+        </a>
+        <nav class="pc-nav" aria-label="Ana Menü">
+            <a href="/" class="pc-nav-link"><i class="fas fa-home" aria-hidden="true"></i> Ana Sayfa</a>
+            <a href="/rehber/" class="pc-nav-link"><i class="fas fa-book-open" aria-hidden="true"></i> Tüm Rehberler</a>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <div class="not-found-box">
+            <i class="fas fa-compass" aria-hidden="true"></i>
+            <h1>404 - Sayfa Bulunamadı</h1>
+            <p>Aradığınız rehber taşınmış veya bağlantı adresi hatalı olabilir. Aşağıdaki bağlantılardan çözüm rehberlerimize ulaşabilirsiniz.</p>
+            <div class="static-nav-actions">
+                <a href="/" class="action-btn-primary"><i class="fas fa-home" aria-hidden="true"></i> Ana Sayfaya Dön</a>
+                <a href="/rehber/" class="action-btn-secondary"><i class="fas fa-list" aria-hidden="true"></i> Tüm Çözüm Rehberleri</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

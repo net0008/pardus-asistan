@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pardus-asistan-v9.6';
+const CACHE_NAME = 'pardus-asistan-v9.7';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -40,11 +40,17 @@ self.addEventListener('activate', (e) => {
   return self.clients.claim();
 });
 
-// 3. İstekleri Yakala (Veri/Script için Network-First, Statikler için Cache-First)
+// 3. İstekleri Yakala (HTML/Veri/Script için Network-First, Diğer Statikler için Cache-First)
 self.addEventListener('fetch', (e) => {
+  if (e.request.method !== 'GET') return;
+
   const url = e.request.url;
-  // JSON veya JS dosyalarında önce internetten günceli dene, internet yoksa önbellekten ver
-  if (url.includes('.json') || url.includes('.js')) {
+  if (!url.startsWith('http') || url.includes('googletagmanager.com') || url.includes('google-analytics.com')) {
+    return;
+  }
+
+  // Sayfa gezinmeleri, HTML, JSON veya JS dosyalarında önce internetten günceli dene, internet yoksa önbellekten ver
+  if (e.request.mode === 'navigate' || url.includes('.json') || url.includes('.js') || url.endsWith('.html')) {
     e.respondWith(
       fetch(e.request).then((networkResponse) => {
         if (networkResponse && networkResponse.status === 200) {
@@ -59,7 +65,7 @@ self.addEventListener('fetch', (e) => {
       })
     );
   } else {
-    // Diğer statik dosyalar (HTML, CSS, Görseller)
+    // Diğer statik dosyalar (CSS, Görseller, Fontlar)
     e.respondWith(
       caches.match(e.request).then((cachedResponse) => {
         return cachedResponse || fetch(e.request).then((networkResponse) => {

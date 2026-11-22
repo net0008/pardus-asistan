@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: /rehber/
+
+Disallow: /rapor.html
+Disallow: /DataMobilYedek.txt
+Disallow: /indexyedek.txt
+Disallow: /indexsonyedek.txt
+Disallow: /scriptyedek
+Disallow: /css3
+Disallow: /say
+
+Sitemap: https://pardusasistan.org.tr/sitemap.xml

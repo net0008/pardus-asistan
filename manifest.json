@@ -1,11 +1,13 @@
 {
+  "id": "/",
+  "lang": "tr",
   "name": "Pardus Asistan - ETAP Çözüm Rehberi",
   "short_name": "Pardus Asistan",
-  "start_url": "./index.html",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#fbc02d",
-  "description": "Pardus ETAP akıllı tahtalar için internetsiz çözüm asistanı.",
+  "theme_color": "#ed800d",
+  "description": "Pardus ETAP 23 ve MEB 25 etkileşimli tahtalar için çevrimdışı çalışan teknik çözüm asistanı ve rehberi.",
   "orientation": "portrait",
   "icons": [
     {

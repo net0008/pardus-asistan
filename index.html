@@ -2,19 +2,266 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#ed800d"> 
-    <title>Pardus Asistan - ETAP Akıllı Tahta Çözüm Rehberi</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ed800d">
+    <title>Pardus Asistan | ETAP 23 &amp; MEB 25 Akıllı Tahta Çözüm Rehberi</title>
+    <meta name="description" content="Pardus ETAP 23 ve MEB 25 etkileşimli tahta sorunlarına çevrimdışı hızlı çözümler. Dokunmatik, yazıcı, EBA QR, format, Z-Kitap ve Windows karşılıkları tek rehberde.">
+    <meta name="keywords" content="Pardus Asistan, Pardus ETAP 23, Pardus MEB 25, akıllı tahta, etkileşimli tahta, EBA QR, dokunmatik sorunu, yazıcı kurulumu, LiderAhenk, Windows karşılıkları, MEB, TÜBİTAK">
+    <meta name="author" content="Hasbi Erdoğmuş">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://pardusasistan.org.tr/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Pardus Asistan">
+    <meta property="og:title" content="Pardus Asistan | ETAP 23 &amp; MEB 25 Akıllı Tahta Çözüm Rehberi">
+    <meta property="og:description" content="Pardus ETAP 23 ve MEB 25 etkileşimli tahta sorunlarına çevrimdışı hızlı çözümler. Dokunmatik, yazıcı, EBA QR, format, Z-Kitap ve Windows karşılıkları tek rehberde.">
+    <meta property="og:url" content="https://pardusasistan.org.tr/">
+    <meta property="og:image" content="https://pardusasistan.org.tr/share-image.png">
+    <meta property="og:image:width" content="821">
+    <meta property="og:image:height" content="357">
+    <meta property="og:image:alt" content="Pardus Asistan - ETAP 23 ve MEB 25 Akıllı Tahta Çözüm Rehberi">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pardus Asistan | ETAP 23 &amp; MEB 25 Akıllı Tahta Çözüm Rehberi">
+    <meta name="twitter:description" content="Pardus ETAP 23 ve MEB 25 etkileşimli tahta sorunlarına çevrimdışı hızlı çözümler. Dokunmatik, yazıcı, EBA QR, format, Z-Kitap ve Windows karşılıkları tek rehberde.">
+    <meta name="twitter:image" content="https://pardusasistan.org.tr/share-image.png">
+
     <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
     <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "url": "https://pardusasistan.org.tr/",
+          "name": "Pardus Asistan",
+          "inLanguage": "tr",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://pardusasistan.org.tr/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Pardus Asistan",
+          "url": "https://pardusasistan.org.tr/",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web, Android, iOS, Pardus ETAP",
+          "isAccessibleForFree": true,
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TRY"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Hasbi Erdoğmuş",
+            "url": "https://hasbierdogmus.com.tr"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Pardus ETAP akıllı tahtada dokunmatik çalışmıyor, nasıl çözülür?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Faz 1 tahtalarda öncelikle tahtayı tamamen kapatıp tüm USB girişlerini boşaltarak yeniden açın. Faz 1, 2, 3 ve 4 tahtalarda uçbirimden sırasıyla sudo apt remove --purge eta-touchdrv, sudo apt clean, sudo apt update ve sudo apt install eta-touchdrv komutlarıyla dokunmatik sürücüsünü yeniden kurun."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Akıllı tahtada EBA QR ile oturum açma nasıl etkinleştirilir?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sistem güncellemelerinde EBA QR login (eta-qr-login) uygulamasını güncelleyin ve telefonunuzdaki EBA mobil uygulamasının güncel olduğundan emin olun. Güncelleme gelmiyorsa depo.etap.org.tr üzerinden eta-qr-login_0.2.7_all.deb paketini kurarak sürümü yükseltebilirsiniz."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Pardus ETAP tahtaya veya bilgisayara yazıcı nasıl kurulur?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pardus Yazılım Mağazası Depo sekmesinden eta-printer-manager (ETA Yazıcı Yöneticisi) uygulamasını kurabilir veya Ayarlar > Yazıcılar menüsünden Ekle (+) diyerek USB ya da ağ yazıcısını IP adresiyle ekleyebilirsiniz. Model listede yoksa Generic > PCL 6/PCL XL sürücüsü seçilebilir."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Pardus ETAP'ta Z-Kitap açılmıyor, Wine 32-bit nasıl kurulur?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Z-Kitap uygulamalarını çalıştırmak için 32-bit Wine desteği gerekir. Uçbirimi açıp sırasıyla sudo dpkg --add-architecture i386, sudo apt update ve sudo apt install wine wine32 wine64 komutlarını çalıştırabilirsiniz."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Pardus ETAP yetkili (etapadmin / etapyetkili) şifresi nasıl değiştirilir?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Etap Yetkili oturumunda Ayarlar > Kullanıcılar menüsünden Parola Değiştir seçeneğini kullanabilir veya uçbirimden sudo passwd etapadmin komutunu girerek yeni parolanızı tanımlayabilirsiniz."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Pardus ETAP 23 format USB belleği nasıl hazırlanır?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Güncel Pardus ETAP 23.4 ISO dosyasını indirdikten sonra Windows'ta Rufus kullanıyorsanız Başlat dediğinizde mutlaka DD Yansısı (DD Image) modunu seçin veya Ventoy yüklü USB belleğe ISO dosyasını kopyalayın. Pardus'ta ise Pardus Disk Kalıbı Yazıcı programını kullanabilirsiniz."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
-    <div id="secretModal" class="modal-overlay">
+    <header class="app-header">
+        <div class="header-left" onclick="switchTab('home')" style="cursor: pointer;">
+            <img src="header-logo.png" alt="Pardus Asistan" width="107" height="45" class="new-header-logo">
+        </div>
+
+        <nav class="pc-nav" aria-label="Ana Menü">
+            <button onclick="switchTab('home')" id="pcBtnHome" class="active"><i class="fas fa-home"></i> Ana Sayfa</button>
+            <button onclick="switchTab('fav')" id="pcBtnFav"><i class="fas fa-star"></i> Favoriler</button>
+            <button onclick="switchTab('settings')" id="pcBtnSettings"><i class="fas fa-cog"></i> Ayarlar</button>
+        </nav>
+        
+        <div class="header-right-wrapper">
+            <div id="installContainer" style="display: none;">
+                <button id="installApp" class="install-btn-final"><i class="fas fa-download"></i> Yükle</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="sr-only">Pardus Asistan - Pardus ETAP 23 ve MEB 25 Etkileşimli Tahta Çözüm Rehberi</h1>
+
+        <div id="mainView" class="main-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" aria-label="Sorun veya Windows karşılığı ara" placeholder="Sorun ara... (Örn: Görev Yöneticisi, Denetim Masası)" onkeyup="filter(this.value)">
+            </div>
+
+           <div class="announcement-box" style="margin: 10px 0 20px 0; padding: 12px; background-color: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; color: #856404; display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
+            <i class="fas fa-bullhorn" style="color: #f57f17; font-size: 1.2rem;"></i>
+            <div id="announcement-text" style="transition: opacity 0.5s ease;">
+                <strong>Müjde:</strong> <a href="rehber/pardus-meb-25-surumleri/" onclick="return handleGuideLink(event, 'pardus-meb-25-surumleri')" style="color: inherit; text-decoration: underline; cursor: pointer; font-weight: 600;">Pardus MEB 25 Yeni Sürümleri Yayında! (LAB &amp; İdari İndir) <i class="fas fa-arrow-right" style="font-size:0.8rem;"></i></a>
+            </div>
+        </div>
+
+            <nav class="category-scroll" aria-label="Kategoriler">
+                <button class="cat-btn" data-category="all" onclick="filterCategory('all', this)">Tümü</button>
+                <button class="cat-btn" data-category="donanim" onclick="filterCategory('donanim', this)"><i class="fas fa-microchip"></i> Donanım</button>
+                <button class="cat-btn" data-category="internet" onclick="filterCategory('internet', this)"><i class="fas fa-wifi"></i> İnternet</button>
+                <button class="cat-btn" data-category="ofis" onclick="filterCategory('ofis', this)"><i class="fas fa-file-alt"></i> Ofis</button>
+                <button class="cat-btn" data-category="uygulama" onclick="filterCategory('uygulama', this)"><i class="fas fa-cube"></i> Uygulama</button>
+                <button class="cat-btn" data-category="goc" onclick="filterCategory('goc', this)"><i class="fas fa-route"></i> Göç Süreci</button>
+                <button class="cat-btn" data-category="sistem" onclick="filterCategory('sistem', this)"><i class="fas fa-cog"></i> Sistem</button>
+                <button class="cat-btn" data-category="etap" onclick="filterCategory('etap', this)"><i class="fas fa-chalkboard"></i> ETAP</button>
+                <button class="cat-btn" data-category="ipucu" onclick="filterCategory('ipucu', this)"><i class="fas fa-lightbulb"></i> İpuçları</button>
+            </nav>
+
+            <div class="grid" id="menuGrid">
+                <noscript>
+                    <div class="step-box" style="grid-column: 1 / -1;">
+                        <strong>Pardus ETAP Çözüm Rehberleri:</strong> Tarayıcınızda JavaScript kapalı görünüyor. Tüm rehberlere statik arşivden ulaşabilirsiniz: <a href="rehber/">Tüm Çözüm Rehberleri (90+ Konu)</a>
+                    </div>
+                </noscript>
+            </div>
+
+            <footer class="seo-footer">
+                <p>Pardus ETAP 23 ve MEB 25 etkileşimli tahtalarda öğretmenlerimizin karşılaştığı teknik sorunlara yönelik ücretsiz, reklamsız ve çevrimdışı çözüm rehberi.</p>
+                <p><a href="rehber/"><i class="fas fa-book-open" aria-hidden="true"></i> Tüm Çözüm Rehberleri Arşivi (90+ Konu)</a></p>
+            </footer>
+        </div>
+
+        <div id="detailView" class="detail-view">
+            <div class="detail-header">
+                <button onclick="closeDetail()" class="back-btn" aria-label="Ana listeye dön"><i class="fas fa-arrow-left"></i></button>
+                <h2 id="detailTitle" class="detail-title">Başlık</h2>
+            </div>
+            <div class="detail-content">
+                <div id="detailWindows" class="windows-badge"></div>
+                <div id="detailStepsContainer"></div>
+            </div>
+        </div>
+
+        <div class="settings-container" id="settingsView">
+            <h2 style="margin-top:0;">Uygulama Ayarları</h2>
+            
+            <div class="setting-item">
+                <div>
+                    <div style="font-weight:bold;"><i class="fas fa-moon"></i> Gece Modu</div>
+                    <div style="font-size:0.8rem; opacity:0.7;">Göz yormayan koyu tema</div>
+                </div>
+                <label class="switch"><input type="checkbox" id="darkModeToggle" onchange="toggleTheme()"></label>
+            </div>
+
+            <div class="why-box">
+        <h3 style="margin: 0 0 10px 0; color: #f57f17; font-size: 1rem;">
+            <i class="fas fa-lightbulb"></i> Neden Pardus Asistan?
+        </h3>
+        <p style="margin: 0 0 15px 0; color: var(--text-main); font-size: 0.95rem; line-height: 1.5;">
+            Bu proje, Millî Eğitim Bakanlığı ve TÜBİTAK iş birliğiyle yürütülen "Millî İşletim Sistemi PARDUS'un Etkileşimli Tahta ve BT Sınıflarında Yaygınlaştırılması" çalışmaları kapsamında, öğretmenlerimizin teknik sorunlarına hızlı çözümler üretmek amacıyla geliştirilmiştir.
+        </p>
+        <ul style="margin: 0; padding-left: 20px; color: var(--text-main); line-height: 1.6;">
+            <li style="margin-bottom: 8px;"><strong>Anında ve Basit Çözüm:</strong> İnternette arama yapıp vakit kaybetmeden, basit ve kullanıcı dostu adımlarla sorunları anında çözmenizi sağlar.</li>
+            <li style="margin-bottom: 8px;"><strong>İnternet Gerekmez (Çevrimdışı):</strong> Telefonunuza yüklediğinizde, internetin çekmediği alanlarda dahi kesintisiz çalışır.</li>
+            <li style="margin-bottom: 8px;"><strong>Mobil Uyumluluk:</strong> Olası tüm saha senaryoları düşünülerek akıllı telefonlarda en iyi deneyimi sunacak şekilde kodlanmıştır.</li>
+            <li style="margin-bottom: 8px;"><strong>Güvenli:</strong> Arka planda hiçbir kişisel veri toplamaz.</li>
+            <li style="margin-bottom: 8px;"><strong>Öğrenme Aktarımı (Transfer Learning):</strong> Windows'taki özelliklerin, güncel <strong>Pardus ETAP 23</strong>'teki karşılıkları verilerek geçiş süreci hızlandırılmıştır.</li>
+            <li style="margin-bottom: 8px;"><strong>Nokta Atışı :</strong> Windows'tan Pardus'a geçişte öğretmenlerimizin en çok karşılaştığı sahadaki problemlere odaklanılmıştır.</li>
+        </ul>
+    </div>
+
+            <div class="why-box">
+                <h3 style="margin: 0 0 10px 0; color: #f57f17; font-size: 1rem;">
+                    <i class="fas fa-paw"></i> Pardus’u Tercih Edin Çünkü:
+                </h3>
+                <ul style="margin: 0; padding-left: 20px; color: var(--text-main);">
+                    <li>Özgürdür ve ücretsizdir</li>
+                    <li>Hızlıdır ve güvenlidir</li>
+                    <li>Virüs derdi yoktur</li>
+                </ul>
+            </div>
+
+            <div style="text-align:center; margin-top:30px; opacity:0.8; font-size:0.85rem; color:#555; padding-bottom:20px;">
+        <p style="margin-bottom: 10px; line-height: 1.6;">
+            Bu rehber hazırlanırken <a href="https://pardus.org.tr" target="_blank" rel="noopener noreferrer" style="color: #f57f17; font-weight: bold; text-decoration: none;">Pardus.org.tr</a> ve 
+            Sayın <strong>Şenol ALDIBAŞ</strong>'ın çalışmalarından faydalanılmıştır.<br>
+            Ayrıca sitenin özgün logo tasarımı için grafiker <strong>Murat ERDUMAN</strong>'a desteklerinden dolayı teşekkür ederiz.
+        </p>
+        <div style="width: 40%; height: 1px; background-color: #e0e0e0; margin: 10px auto;"></div>
+        <p id="secretTrigger" onclick="triggerSecret(this)" style="cursor:pointer; user-select:none; display:inline-block; padding:5px;">
+            <strong>Pardus Asistan v9.7</strong>
+        </p>
+        <p>Geliştirici: <a href="https://hasbierdogmus.com.tr" target="_blank" rel="noopener noreferrer">Hasbi Erdoğmuş</a></p>
+        <p id="lastUpdateDate" style="margin-top: 5px; font-style: italic; font-size: 0.75rem; opacity: 0.7;"></p>
+    </div>
+        </div>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Mobil Menü">
+        <div class="nav-item active" id="btnHome" onclick="switchTab('home')"><i class="fas fa-home"></i><span>Ana Sayfa</span></div>
+        <div class="nav-item" id="btnFav" onclick="switchTab('fav')"><i class="fas fa-star"></i><span>Favoriler</span></div>
+        <div class="nav-item" id="btnSettings" onclick="switchTab('settings')"><i class="fas fa-cog"></i><span>Ayarlar</span></div>
+    </nav>
+
+    <div id="secretModal" class="modal-overlay" aria-hidden="true">
         <div class="modal-content">
             <h3 style="margin-top:0; color:#ed800d;"><i class="fas fa-user-shield"></i> Yönetici Girişi</h3>
             <p style="font-size:0.9rem; color:#666;">Erişim şifresi:</p>
@@ -24,123 +271,6 @@
             <p id="loginError" style="color:red; display:none; font-size:0.85rem; margin-top:10px; font-weight:bold;">Hatalı şifre!</p>
         </div>
     </div>
-
-    <div class="app-header">
-        <div class="header-left" onclick="switchTab('home')" style="cursor: pointer;">
-            <img src="header-logo.png" alt="Pardus Asistan" class="new-header-logo">
-        </div>
-
-        <div class="pc-nav">
-            <button onclick="switchTab('home')" id="pcBtnHome" class="active"><i class="fas fa-home"></i> Ana Sayfa</button>
-            <button onclick="switchTab('fav')" id="pcBtnFav"><i class="fas fa-star"></i> Favoriler</button>
-            <button onclick="switchTab('settings')" id="pcBtnSettings"><i class="fas fa-cog"></i> Ayarlar</button>
-        </div>
-        
-        <div class="header-right-wrapper">
-            <div id="installContainer" style="display: none;">
-                <button id="installApp" class="install-btn-final"><i class="fas fa-download"></i> Yükle</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="mainView" class="main-container">
-        <div class="search-box">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Sorun ara... (Örn: Görev Yöneticisi, Denetim Masası)" onkeyup="filter(this.value)">
-        </div>
-
-       <div class="announcement-box" style="margin: 10px 0 20px 0; padding: 12px; background-color: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; color: #856404; display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
-        <i class="fas fa-bullhorn" style="color: #f57f17; font-size: 1.2rem;"></i>
-        <div id="announcement-text" style="transition: opacity 0.5s ease;">
-            <strong>Müjde:</strong> <a href="javascript:void(0)" onclick="openDetailById('pardus-meb-25-surumleri')" style="color: inherit; text-decoration: underline; cursor: pointer; font-weight: 600;">Pardus MEB 25 Yeni Sürümleri Yayında! (LAB & İdari İndir) <i class="fas fa-arrow-right" style="font-size:0.8rem;"></i></a>
-        </div>
-    </div>
-
-        <div class="category-scroll">
-            <button class="cat-btn" data-category="all" onclick="filterCategory('all', this)">Tümü</button>
-            <button class="cat-btn" data-category="donanim" onclick="filterCategory('donanim', this)"><i class="fas fa-microchip"></i> Donanım</button>
-            <button class="cat-btn" data-category="internet" onclick="filterCategory('internet', this)"><i class="fas fa-wifi"></i> İnternet</button>
-            <button class="cat-btn" data-category="ofis" onclick="filterCategory('ofis', this)"><i class="fas fa-file-alt"></i> Ofis</button>
-            <button class="cat-btn" data-category="uygulama" onclick="filterCategory('uygulama', this)"><i class="fas fa-cube"></i> Uygulama</button>
-            <button class="cat-btn" data-category="goc" onclick="filterCategory('goc', this)"><i class="fas fa-route"></i> Göç Süreci</button>
-            <button class="cat-btn" data-category="sistem" onclick="filterCategory('sistem', this)"><i class="fas fa-cog"></i> Sistem</button>
-            <button class="cat-btn" data-category="etap" onclick="filterCategory('etap', this)"><i class="fas fa-chalkboard"></i> ETAP</button>
-            <button class="cat-btn" data-category="ipucu" onclick="filterCategory('ipucu', this)"><i class="fas fa-lightbulb"></i> İpuçları</button>
-        </div>
-
-        <div class="grid" id="menuGrid"></div>
-    </div>
-
-    <div id="detailView" class="detail-view">
-        <div class="detail-header">
-            <button onclick="closeDetail()" class="back-btn"><i class="fas fa-arrow-left"></i></button>
-            <h2 id="detailTitle" class="detail-title">Başlık</h2>
-        </div>
-        <div class="detail-content">
-            <div id="detailWindows" class="windows-badge"></div>
-            <div id="detailStepsContainer"></div>
-        </div>
-    </div>
-
-    <div class="settings-container" id="settingsView">
-        <h2 style="margin-top:0;">Uygulama Ayarları</h2>
-        
-        <div class="setting-item">
-            <div>
-                <div style="font-weight:bold;"><i class="fas fa-moon"></i> Gece Modu</div>
-                <div style="font-size:0.8rem; opacity:0.7;">Göz yormayan koyu tema</div>
-            </div>
-            <label class="switch"><input type="checkbox" id="darkModeToggle" onchange="toggleTheme()"></label>
-        </div>
-
-        <div class="why-box">
-    <h4 style="margin: 0 0 10px 0; color: #f57f17;">
-        <i class="fas fa-lightbulb"></i> Neden Pardus Asistan?
-    </h4>
-    <p style="margin: 0 0 15px 0; color: var(--text-main); font-size: 0.95rem; line-height: 1.5;">
-        Bu proje, Millî Eğitim Bakanlığı ve TÜBİTAK iş birliğiyle yürütülen "Millî İşletim Sistemi PARDUS'un Etkileşimli Tahta ve BT Sınıflarında Yaygınlaştırılması" çalışmaları kapsamında, öğretmenlerimizin teknik sorunlarına hızlı çözümler üretmek amacıyla geliştirilmiştir.
-    </p>
-    <ul style="margin: 0; padding-left: 20px; color: var(--text-main); line-height: 1.6;">
-        <li style="margin-bottom: 8px;"><strong>Anında ve Basit Çözüm:</strong> İnternette arama yapıp vakit kaybetmeden, basit ve kullanıcı dostu adımlarla sorunları anında çözmenizi sağlar.</li>
-        <li style="margin-bottom: 8px;"><strong>İnternet Gerekmez (Çevrimdışı):</strong> Telefonunuza yüklediğinizde, internetin çekmediği alanlarda dahi kesintisiz çalışır.</li>
-        <li style="margin-bottom: 8px;"><strong>Mobil Uyumluluk:</strong> Olası tüm saha senaryoları düşünülerek akıllı telefonlarda en iyi deneyimi sunacak şekilde kodlanmıştır.</li>
-        <li style="margin-bottom: 8px;"><strong>Güvenli:</strong> Arka planda hiçbir kişisel veri toplamaz.</li>
-        <li style="margin-bottom: 8px;"><strong>Öğrenme Aktarımı (Transfer Learning):</strong> Windows'taki özelliklerin, güncel <strong>Pardus ETAP 23</strong>'teki karşılıkları verilerek geçiş süreci hızlandırılmıştır.</li>
-        <li style="margin-bottom: 8px;"><strong>Nokta Atışı :</strong> Windows'tan Pardus'a geçişte öğretmenlerimizin en çok karşılaştığı sahadaki problemlere odaklanılmıştır.</li>
-    </ul>
-</div>
-
-        <div class="why-box">
-            <h4 style="margin: 0 0 10px 0; color: #f57f17;">
-                <i class="fas fa-paw"></i> Pardus’u Tercih Edin Çünkü:
-            </h4>
-            <ul style="margin: 0; padding-left: 20px; color: var(--text-main);">
-                <li>Özgürdür ve ücretsizdir</li>
-                <li>Hızlıdır ve güvenlidir</li>
-                <li>Virüs derdi yoktur</li>
-            </ul>
-        </div>
-
-        <div style="text-align:center; margin-top:30px; opacity:0.8; font-size:0.85rem; color:#555; padding-bottom:20px;">
-    <p style="margin-bottom: 10px; line-height: 1.6;">
-        Bu rehber hazırlanırken <a href="https://pardus.org.tr" target="_blank" style="color: #f57f17; font-weight: bold; text-decoration: none;">Pardus.org.tr</a> ve 
-        Sayın <strong>Şenol ALDIBAŞ</strong>'ın çalışmalarından faydalanılmıştır.<br>
-        Ayrıca sitenin özgün logo tasarımı için grafiker <strong>Murat ERDUMAN</strong>'a desteklerinden dolayı teşekkür ederiz.
-    </p>
-    <div style="width: 40%; height: 1px; background-color: #e0e0e0; margin: 10px auto;"></div>
-    <p id="secretTrigger" onclick="triggerSecret(this)" style="cursor:pointer; user-select:none; display:inline-block; padding:5px;">
-        <strong>Pardus Asistan v9.6</strong>
-    </p>
-    <p>Geliştirici: <a href="https://hasbierdogmus.com.tr" target="_blank">Hasbi Erdoğmuş</a></p>
-    <p id="lastUpdateDate" style="margin-top: 5px; font-style: italic; font-size: 0.75rem; opacity: 0.7;"></p>
-</div>
-    </div>
-
-    <nav class="bottom-nav">
-        <div class="nav-item active" id="btnHome" onclick="switchTab('home')"><i class="fas fa-home"></i><span>Ana Sayfa</span></div>
-        <div class="nav-item" id="btnFav" onclick="switchTab('fav')"><i class="fas fa-star"></i><span>Favoriler</span></div>
-        <div class="nav-item" id="btnSettings" onclick="switchTab('settings')"><i class="fas fa-cog"></i><span>Ayarlar</span></div>
-    </nav>
 
     <script src="script.js"></script>
     <script src="mesaj.js"></script>
